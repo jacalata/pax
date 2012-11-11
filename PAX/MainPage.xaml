@@ -1,0 +1,235 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PAX7.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:PAX7.View"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:tilt="clr-namespace:ControlTiltEffect"
+    xmlns:c4="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+
+
+    tilt:TiltEffect.IsTiltEnabled="True"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeLarge}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <controls:Panorama Title="PAX East 2012">
+            
+            
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="schedule" Foreground="{StaticResource PhoneAccentBrush}" >
+                <ListBox x:Name="scheduleMenu"  
+                         ItemTemplate="{StaticResource menuOptionTemplate}"
+                         />
+                  
+            </controls:PanoramaItem>
+
+            <!--Panorama item two: twitter feed-->
+            <controls:PanoramaItem  Foreground="{StaticResource PhoneAccentBrush}"
+                Header="twitter feeds" 
+                IsHitTestVisible="False" 
+                Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                  
+                    <!--
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                        <Border
+                            BorderBrush="{StaticResource PhoneForegroundBrush}"
+                            BorderThickness="{StaticResource PhoneBorderThickness}"
+                            Background="Transparent">
+                            <ListBox x:Name="tweetList" ItemsSource="{Binding tweetlist}" 
+                         ItemTemplate="{StaticResource tweetTemplate}">
+                            </ListBox>
+                        </Border>   
+                    </StackPanel>    
+                    <phone:WebBrowser x:Name="twitterBrowser" 
+                                      Source="{Binding twitterListUrl}"
+                                      />
+                    <StackPanel Orientation="Vertical">
+                        <Button x:Name="refreshButton" Content="refresh" 
+                        Click="refreshButton_Click" 
+                        HorizontalAlignment="Left" VerticalAlignment="Bottom"                            
+                    />
+                        <Button x:Name="getTwitterButton" Content="get real Twitter" 
+                        Click="getTwitterButton_Click" 
+                        HorizontalAlignment="right" VerticalAlignment="Bottom"                            
+                    />
+                    </StackPanel>
+                    -->
+                </Grid>               
+
+            </controls:PanoramaItem>
+
+            <!--Panorama item two: local (to the phone) resources-->
+           <controls:PanoramaItem 
+               Header="maps" Orientation="Horizontal"  Foreground="{StaticResource PhoneAccentBrush}">
+               
+                    <toolkit:WrapPanel 
+                        Orientation="Vertical"  
+                        Name="localResources">
+                    <!-- area maps: no good equivalent for boston? -->
+                        <!--
+                    <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
+                                     NavigateUri="/View/ImageViewer.xaml?Image=map_world"
+                                         Width="170">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="Images\map_world.png"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton  >
+                            -->
+
+                    <!-- floor maps-->
+                        <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
+                                     NavigateUri="/View/ImageViewer.xaml?Image=map_level"
+                                         Width="170">
+                            <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="Images\Boston\bcclevel0.png"/>
+                            <!-- seattle map_level1_2_3.png-->
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton  >
+
+                        <!-- expo maps --> <!-- using East 2011 for now-->
+                        <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
+                                     NavigateUri="/View/ImageViewer.xaml?Image=map_expo"
+                                         Width="170">
+                            <HyperlinkButton.Background>
+                                <ImageBrush ImageSource="Images\Boston\expoLevel1Level2.png"/>
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton  >
+                       
+
+                        <!-- city map-->
+                        <HyperlinkButton Style="{StaticResource imageButtonStyle}"
+                                     NavigateUri="/View/ImageViewer.xaml?Image=map_city"
+                                         Width="170">
+                            <HyperlinkButton.Background>
+                                <ImageBrush ImageSource="Images\Boston\Boston.png"/>
+                                <!-- seattle = seattle/seattleMapDowntown.jpg-->
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton  >
+
+                        <!-- hg pax east
+                        <HyperlinkButton Style="{StaticResource imageButtonStyle}"
+                                     NavigateUri="/Page1.xaml"
+                                    Width="170">
+                            <HyperlinkButton.Background>
+                                <ImageBrush ImageSource="Images\hgpax.png"/>
+                            </HyperlinkButton.Background>
+                        </HyperlinkButton  >-->
+
+
+                    </toolkit:WrapPanel>
+            </controls:PanoramaItem>
+           
+            
+            <!--Panorama item three: web resources-->
+            <controls:PanoramaItem Header="web links" Orientation="Vertical" 
+                                   Foreground="{StaticResource PhoneAccentBrush}">
+
+                <StackPanel>
+                  
+                    <TextBlock Text="genuine PAX stuff"
+                               Margin="20 20"/>
+
+                    <!-- twitter link-->
+                    <HyperlinkButton 
+                        NavigateUri="http://twitter.com/#!/search/%23pax"
+                        TargetName="_blank" 
+                        Content="- #pax on twitter"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>
+                        
+                    <!-- official site-->
+                    <HyperlinkButton
+                        TargetName="_blank"
+                    NavigateUri="http://paxsite.com/"
+                        Content="- PAX official site"
+                         HorizontalAlignment="Left"
+                        Margin="2 2"/>
+
+                    <!-- penny arcade-->
+                    <HyperlinkButton 
+                        NavigateUri="http://www.penny-arcade.com"
+                        TargetName="_blank" 
+                        Content="- Penny Arcade! where it all began" 
+                         HorizontalAlignment="Left"
+                        Margin="2 2"/>
+                       
+                    <!-- penny arcade forums-->
+                    <HyperlinkButton 
+                        NavigateUri="http://forums.penny-arcade.com/forumdisplay.php?f=26"
+                                    TargetName="_blank"
+                        Content="- Penny Arcade forums"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>
+
+                    <TextBlock Text="useful local info"
+                               Margin="20 20"/>
+
+                    <!-- Lost In Seattle 
+                    <HyperlinkButton 
+                        NavigateUri="http://lostinseattle.com/"
+                        TargetName="_blank"
+                        Content="- Seattle businesses + opening hours"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/> -->
+
+                    <!-- eat24-->
+                    <!-- for Prime, change zip code-->
+                    <HyperlinkButton 
+                        NavigateUri="http://seattle.eat24hours.com/"
+                        TargetName="_blank"
+                        Content="- eat24 food delivery (BCEC zip:02210)"
+                        HorizontalAlignment="Left" 
+                        Margin="2 2"/>
+                    
+                    <!-- OnebusAway
+                    <HyperlinkButton 
+                        NavigateUri="http://onebusaway.org/"
+                        TargetName="_blank"
+                        Content="- one bus away: seattle bus info"
+                        HorizontalAlignment="Left"   
+                        Margin="2 2"/> -->
+                    
+                    <!--MBTA web app -->
+                    <HyperlinkButton
+                        NavigateUri="http://www.mbtainfo.com/"
+                        TargetName="_blank"
+                        Content="- transit info web app"
+                        HorizontalAlignment="Left"   
+                        Margin="2 2"/>
+
+                    <!--list of Boston taxi numbers -->
+                    <HyperlinkButton
+                        NavigateUri="http://www.bostoncitylinks.com/boston_taxi_cabs.html"
+                        TargetName="_blank"
+                        Content="- official Boston taxi info"
+                        HorizontalAlignment="Left"   
+                        Margin="2 2"/>
+                    
+
+                </StackPanel>
+            </controls:PanoramaItem>
+
+
+        </controls:Panorama>
+
+    </Grid>
+
+
+</phone:PhoneApplicationPage>

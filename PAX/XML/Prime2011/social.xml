@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+
+    <Event
+    kind ="Social"
+name="PAXtra Life Party"
+location="FOX SPORTS GRILL, 1522 6th Avenue, Seattle, WA"
+    datetime="08/26/2011 21:00:00"
+    end ="08/26/2011 23:00:00"
+description="4th Annual Sarcastic Gamer PAXtra Life Party. 
+	REGISTRATION: $36 (proceeds will benefit Seattle Children's Hospital via Extra Life)
+http://www.splitreason.com/product/967"
+/>
+
+    <Event
+    kind ="Social"
+	name="PAX Afterparty featuring the ProtoMen!"	
+location="El Corazon, Seattle"
+    datetime="08/26/2011 18:00:00"
+    end ="08/26/2011 23:00:00"
+	description="Fangamer is hosting an afterparty at El Corazon after the exhibition hall closes on Friday! We're proud to present our good friends the PROTOMEN, whom you may have seen during last year's PAX Prime concerts, or at either of the PAX East concerts.
+Joining them with be chiptune artist Jonny Nero Action Hero and nerdy rapper and all-around nice guy Klopfenpop!
+You can get into the event totally free, so long as you have a PAX Badge! Providing we have the room, of course.
+You can guarantee your way in (and support the performers) by purchasing a ticket.
+So come hang out with us, rock out with us, and show your support for these acts!"
+	/>
+
+  
+</Schedule>
+</xs:schema>
+

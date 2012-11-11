@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+    <Event
+     kind ="Freeplay"
+    datetime="03/11/2011 10:00:00"
+    end ="03/11/2011 13:00:00"
+    location="Example"
+    name="a freeplay time"
+    description="games for all!"
+/>
+
+  </Schedule>
+</xs:schema>

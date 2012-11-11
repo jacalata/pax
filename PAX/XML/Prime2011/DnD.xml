@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+<Event
+name="Adventure Boardgame Challenge"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/27/2011 11:00:00"
+end="08/27/2011 21:00:00"
+description="Want to play a D&amp;D game without a DM? Like cooperative games? Come take the challenge of the D&amp;D Adventure Games. Pick Castle Ravenloft, Wrath of Ashardalon, or a special preview of Legend of Drizzt, and see if your team can get a high score! No play experience necessary.
+RUNS: Friday + Saturday 11 am, 1 pm, 3 pm, 5 pm, 7 pm, 9 pm; Sunday 11 am, 1 pm, 3 pm"
+/>
+
+<Event
+name="Adventure Boardgame Challenge"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/28/2011 11:00:00"
+end="08/28/2011 17:00:00"
+description="Want to play a D&amp;D game without a DM? Like cooperative games? Come take the challenge of the D&amp;D Adventure Games. Pick Castle Ravenloft, Wrath of Ashardalon, or a special preview of Legend of Drizzt, and see if your team can get a high score! No play experience necessary.
+RUNS: Friday + Saturday 11 am, 1 pm, 3 pm, 5 pm, 7 pm, 9 pm; Sunday 11 am, 1 pm, 3 pm"
+/>
+
+<Event
+name="Adventure Boardgame Challenge"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/26/2011 11:00:00"
+end="08/26/2011 21:00:00"
+description="Want to play a D&amp;D game without a DM? Like cooperative games? Come take the challenge of the D&amp;D Adventure Games. Pick Castle Ravenloft, Wrath of Ashardalon, or a special preview of Legend of Drizzt, and see if your team can get a high score! No play experience necessary.
+RUNS: Friday + Saturday 11 am, 1 pm, 3 pm, 5 pm, 7 pm, 9 pm; Sunday 11 am, 1 pm, 3 pm"
+/>
+
+<Event
+name="D&amp;D Learn-to-Play"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/26/2011 11:00:00"
+end="08/26/2011 21:00:00"
+description="Want to learn how to play D&amp;D 4th Edition? We&apos;ll teach you all the basics, and send you out on your first adventure! Everything is provided for you, and you can even keep your character. A 2 hour D&amp;D 4th Edition play experience.
+RUNS: Friday + Saturday 11 am, 1 pm, 3 pm, 5 pm, 7 pm, 9 pm; Sunday 11 am, 1 pm, 3 pm"
+/>
+
+<Event
+name="D&amp;D Learn-to-Play"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/27/2011 11:00:00"
+end="08/27/2011 21:00:00"
+description="Want to learn how to play D&amp;D 4th Edition? We&apos;ll teach you all the basics, and send you out on your first adventure! Everything is provided for you, and you can even keep your character. A 2 hour D&amp;D 4th Edition play experience.
+RUNS: Friday + Saturday 11 am, 1 pm, 3 pm, 5 pm, 7 pm, 9 pm; Sunday 11 am, 1 pm, 3 pm"
+/>
+
+<Event
+name="D&amp;D Learn-to-Play"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/28/2011 11:00:00"
+end="08/28/2011 17:00:00"
+description="Want to learn how to play D&amp;D 4th Edition? We&apos;ll teach you all the basics, and send you out on your first adventure! Everything is provided for you, and you can even keep your character. A 2 hour D&amp;D 4th Edition play experience.
+RUNS: Friday + Saturday 11 am, 1 pm, 3 pm, 5 pm, 7 pm, 9 pm; Sunday 11 am, 1 pm, 3 pm"
+/>
+
+
+
+<Event
+name="D&amp;D Encounters: Lost Crown of Neverwinter Catch-up"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/26/2011 13:00:00"
+end="08/26/2011 18:00:00"
+description="Experience the first three sessions of Lost Crown of Neverwinter, the current D&amp;D Encounters campaign playing at local stores each Wednesday. Earn gold and experience, and take your character back to your local store to continue the adventure! You can create your own 1st-level character using rules provided on-site or grab one of our pre-generated characters. This game is a 5 hour D&amp;D 4th Edition play experience. New and experienced Players welcome."
+/>
+
+<Event
+name="D&amp;D Encounters: Lost Crown of Neverwinter Catch-up"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/27/2011 13:00:00"
+end="08/27/2011 18:00:00"
+description="Experience the first three sessions of Lost Crown of Neverwinter, the current D&amp;D Encounters campaign playing at local stores each Wednesday. Earn gold and experience, and take your character back to your local store to continue the adventure! You can create your own 1st-level character using rules provided on-site or grab one of our pre-generated characters. This game is a 5 hour D&amp;D 4th Edition play experience. New and experienced Players welcome."
+/>
+
+
+<Event
+name="D&amp;D Encounters: Lost Crown of Neverwinter Catch-up"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/28/2011 11:00:00"
+end="08/28/2011 16:00:00"
+description="Experience the first three sessions of Lost Crown of Neverwinter, the current D&amp;D Encounters campaign playing at local stores each Wednesday. Earn gold and experience, and take your character back to your local store to continue the adventure! You can create your own 1st-level character using rules provided on-site or grab one of our pre-generated characters. This game is a 5 hour D&amp;D 4th Edition play experience. New and experienced Players welcome."
+/>
+
+
+<Event
+name="D&amp;D Convention Delve: Lair of the Dread Witch"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/28/2011 11:00:00"
+end="08/28/2011 16:00:00"
+description="In the deep forest, a place of dark power lies, its corruptive influence seeping into the lands beyond its borders. Can you contain the threat of the Dread Witch, and stop her rituals before all falls into darkness? A 1st-level D&amp;D convention delve with characters provided. Play as often as you like and earn tokens that can be redeemed for prizes! 1 hour per adventure."
+/>
+
+<Event
+name="D&amp;D Convention Delve: Lair of the Dread Witch"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/26/2011 11:00:00"
+end="08/26/2011 23:00:00"
+description="In the deep forest, a place of dark power lies, its corruptive influence seeping into the lands beyond its borders. Can you contain the threat of the Dread Witch, and stop her rituals before all falls into darkness? A 1st-level D&amp;D convention delve with characters provided. Play as often as you like and earn tokens that can be redeemed for prizes! 1 hour per adventure."
+/>
+
+<Event
+name="D&amp;D Convention Delve: Lair of the Dread Witch"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/27/2011 11:00:00"
+end="08/27/2011 23:00:00"
+description="In the deep forest, a place of dark power lies, its corruptive influence seeping into the lands beyond its borders. Can you contain the threat of the Dread Witch, and stop her rituals before all falls into darkness? A 1st-level D&amp;D convention delve with characters provided. Play as often as you like and earn tokens that can be redeemed for prizes! 1 hour per adventure."
+/>
+
+
+<Event
+name="Preview: Madness at Gardmore Abbey"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/26/2011 19:00:00"
+end="08/26/2011 21:00:00"
+description="During the golden age of the lands of Nerath, a bastion of civilization known as Gardmore Abbey was home to the greatest knights and its most valuable riches, including the fabled Deck of Many Things. However, a mysterious leader known as &quot;Nightbringer&quot; and his orc horde threaten the walls of the great citadel. You are a band of adventurers, called together from your easy living in the reserves, to aid Gardmore in its time of need. This official D&amp;D adventure serves as a preview to the upcoming Madness at Gardmore Abbey boxed adventure. 6th-level characters are provided. This game is 4 hour D&amp;D 4th Edition play experience. Some experience recommended."
+/>
+
+<Event
+name="D&amp;D DM&apos;s Challenge: Neverwinter"
+location="TableTop"
+kind="D&amp;D"
+datetime="08/27/2011 19:00:00"
+end="08/27/2011 21:00:00"
+description="A fabled city straddled between order and chaos, where factions vie for glory and adventurers find danger where they least expect it. Neverwinter is here! The DM&apos;s Challenge is a special one-time event running only at PAX Prime. DMs bring their best and most dangerous 3rd-level Neverwinter-themed adventures for you to conquer; rate your play experience to determine the best adventure of the evening! 3rd-level characters are provided. A 4 hour D&amp;D 4th Edition play experience. Some previous experience recommended. Details for DMs at http://forums.penny-arcade.com/discussion/145450/pax-prime-2011-dms-challenge-saturday-827-7pm"
+/>
+
+</Schedule>
+</xs:schema>

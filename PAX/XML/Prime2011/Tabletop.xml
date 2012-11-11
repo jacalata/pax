@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+  
+    <Event
+     kind ="Contest"
+	 location="Tabletop"
+datetime="08/26/2011 10:30:00"
+end ="08/26/2011  14:30:00"
+name="Puerto Rico"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 10:30:00"
+end ="08/26/2011  14:30:00"
+name="Innovation"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 11:00:00"
+end ="08/26/2011  15:00:00"
+name="Citadels"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 11:00:00"
+end ="08/26/2011  20:00:00"
+name="Power Grid"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Rm 206"
+datetime="08/26/2011 12:00:00"
+end ="08/26/2011  17:00:00"
+name="Settlers of Catan: World Championship Prequalifier"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 15:00:00"
+end ="08/26/2011  19:00:00"
+name="Ticket to Ride"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 15:30:00"
+end ="08/26/2011  17:30:00"
+name="GUBS -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 18:00:00"
+end ="08/26/2011  21:00:00"
+name="Food Fight -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 18:00:00"
+end ="08/26/2011  21:00:00"
+name="Gloom"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 19:00:00"
+end ="08/26/2011  21:00:00"
+name="Slapshot -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 21:00:00"
+end ="08/27/2011  02:00:00"
+name="Friday Night Frenzy -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 21:00:00"
+end ="08/27/2011  02:00:00"
+name="7 Wonders"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/26/2011 21:30:00"
+end ="08/27/2011  02:00:00"
+name="Agricola"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/27/2011 10:00:00"
+end ="08/27/2011  14:00:00"
+name="Carcassonne"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/27/2011 10:30:00"
+end ="08/27/2011  14:30:00"
+name="Memoir &apos;44, basic 2 player (no expansions)"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/27/2011 10:30:00"
+end ="08/27/2011  14:30:00"
+name="Race For The Galaxy"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Tabletop"
+datetime="08/27/2011 10:30:00"
+end ="08/27/2011  15:00:00"
+name="Dominion"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="Rm 206"
+datetime="08/27/2011 11:00:00"
+end ="08/27/2011  16:00:00"
+name="Settlers of Catan: World Championship Prequalifier"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+name="The Munchkin Munchathlon"
+   	 location="TableTop"
+datetime="08/27/2011 14:30:00"
+end ="08/27/2011  20:00:00"
+description="Players will get to play in five rounds of Munchkin. Each round, players will be seated at one of the many Munchkin standalone base sets (e.g. Munchkin, Munchkin Bites, Munchkin Fu, Munchkin Zombies, etc.). Every round, you will move to a different standalone Munchkin set, so by the end of the tournament, you will have played five different flavors of Munchkin. Each game, your Level will revert to 1, but you will be recording your cumulative Level total, round after round. So if you win every game you play, you might end up at Level 50, and be the tournament champion!"
+
+
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/27/2011 15:00:00"
+end ="08/27/2011  19:00:00"
+name="Small World"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/27/2011 15:00:00"
+end ="08/27/2011  21:00:00"
+name="Dominion Challenge League (Session 2)"
+description="We&apos;ll be asking players to show off their skill using every flavor of Dominion (Base, Intrigue, Seaside, Alchemy, Prosperity, Cornucopia) during the three set-aside time blocks:
+
+Friday 03:00 pm - 09:00 pm (Session 1)
+Saturday 03:00 pm - 09:00 pm (Session 2)
+Sunday 10:30 am - 03:30 pm (Session 3)
+
+You do not need to participate in all three sessions!!
+Instead, you will be recording the results from your play sessions during these session time blocks. You might choose to play Alchemy and Prosperity on Friday, Cornucopia and the Base game Saturday, and Seaside and Intrigue on Sunday. Or you could power through, and record all six variants during a single session.
+At your first session, and each time you play a game, you will fill out a scorecard. This scorecard will be used to record your placement and Victory Points for each of your six games. Your placement is the game (1st, 2nd, 3rd, 4th) is the number of points you receive. Victory Points are recorded as a tiebreaker, but game finish trumps VPs.
+Best score at the end of PAX is the winner. You can only log each variant once, so you will not be able to replace your record by playing the same expansion again later on.
+So the best score possible at the end of PAX is 6 points, meaning you came in first place in all six games. The worst score is a 24. If you don't log a specific expansion play, you receive 4 points for it.
+Each Kingdom card set will be pre-defined -- that way, there's no disparity when one game has the Witch, and one doesn't, when taking into account cumulative VPs for tiebreakers. Scorecards will be turned in to the session's Tournament Enforcer, who will record your results in our system, and then hand the card back to you. All games will be 4 player games whenever possible."
+/>
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/28/2011 10:30:00"
+end ="08/28/2011  15:30:00"
+name="Dominion Challenge League (Session 3)"
+description="We&apos;ll be asking players to show off their skill using every flavor of Dominion (Base, Intrigue, Seaside, Alchemy, Prosperity, Cornucopia) during the three set-aside time blocks:
+
+Friday 03:00 pm - 09:00 pm (Session 1)
+Saturday 03:00 pm - 09:00 pm (Session 2)
+Sunday 10:30 am - 03:30 pm (Session 3)
+
+You do not need to participate in all three sessions!!
+Instead, you will be recording the results from your play sessions during these session time blocks. You might choose to play Alchemy and Prosperity on Friday, Cornucopia and the Base game Saturday, and Seaside and Intrigue on Sunday. Or you could power through, and record all six variants during a single session.
+At your first session, and each time you play a game, you will fill out a scorecard. This scorecard will be used to record your placement and Victory Points for each of your six games. Your placement is the game (1st, 2nd, 3rd, 4th) is the number of points you receive. Victory Points are recorded as a tiebreaker, but game finish trumps VPs.
+Best score at the end of PAX is the winner. You can only log each variant once, so you will not be able to replace your record by playing the same expansion again later on.
+So the best score possible at the end of PAX is 6 points, meaning you came in first place in all six games. The worst score is a 24. If you don't log a specific expansion play, you receive 4 points for it.
+Each Kingdom card set will be pre-defined -- that way, there's no disparity when one game has the Witch, and one doesn't, when taking into account cumulative VPs for tiebreakers. Scorecards will be turned in to the session's Tournament Enforcer, who will record your results in our system, and then hand the card back to you. All games will be 4 player games whenever possible."
+/>
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/26/2011 15:00:00"
+end ="08/26/2011  21:00:00"
+name="Dominion Challenge League (Session 1)"
+description="We&apos;ll be asking players to show off their skill using every flavor of Dominion (Base, Intrigue, Seaside, Alchemy, Prosperity, Cornucopia) during the three set-aside time blocks:
+
+Friday 03:00 pm - 09:00 pm (Session 1)
+Saturday 03:00 pm - 09:00 pm (Session 2)
+Sunday 10:30 am - 03:30 pm (Session 3)
+
+You do not need to participate in all three sessions!!
+Instead, you will be recording the results from your play sessions during these session time blocks. You might choose to play Alchemy and Prosperity on Friday, Cornucopia and the Base game Saturday, and Seaside and Intrigue on Sunday. Or you could power through, and record all six variants during a single session.
+At your first session, and each time you play a game, you will fill out a scorecard. This scorecard will be used to record your placement and Victory Points for each of your six games. Your placement is the game (1st, 2nd, 3rd, 4th) is the number of points you receive. Victory Points are recorded as a tiebreaker, but game finish trumps VPs.
+Best score at the end of PAX is the winner. You can only log each variant once, so you will not be able to replace your record by playing the same expansion again later on.
+So the best score possible at the end of PAX is 6 points, meaning you came in first place in all six games. The worst score is a 24. If you don't log a specific expansion play, you receive 4 points for it.
+Each Kingdom card set will be pre-defined -- that way, there's no disparity when one game has the Witch, and one doesn't, when taking into account cumulative VPs for tiebreakers. Scorecards will be turned in to the session's Tournament Enforcer, who will record your results in our system, and then hand the card back to you. All games will be 4 player games whenever possible."
+/>
+
+
+    <Event
+   kind ="Contest"   
+   	 location="TableTop"
+datetime="08/27/2011 15:30:00"
+end ="08/27/2011  20:30:00"
+name="Penny Arcade The Game - Gamers vs. Evil -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/27/2011 19:30:00"
+end ="08/27/2011  21:00:00"
+name="Bananagrams"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/27/2011 20:00:00"
+end ="08/27/2011  21:30:00"
+name="Poo: The Card Game"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/27/2011 21:00:00"
+end ="08/28/2011  02:00:00"
+name="Saturday Night Showdown -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"
+   	 location="TableTop"
+datetime="08/27/2011 21:30:00"
+end ="08/28/2011  02:00:00"
+name="Thunderstone"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"   
+   	 location="TableTop"
+datetime="08/27/2011 22:00:00"
+end ="08/28/2011  02:00:00"
+name="Galaxy Trucker"
+  description=" "
+/>
+
+    <Event
+   kind ="Contest"   
+   	 location="TableTop"
+datetime="08/28/2011 10:00:00"
+end ="08/28/2011  11:30:00"
+name="Tsuro -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"  
+   	 location="TableTop"
+datetime="08/28/2011 10:30:00"
+end ="08/28/2011  14:30:00"
+name="Revolution!"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"  
+   	 location="TableTop"
+datetime="08/28/2011 11:00:00"
+end ="08/28/2011  15:00:00"
+name="Ascension: Chronicle of the Godslayer"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"  
+   	 location="Rm 206"
+datetime="08/28/2011 11:00:00"
+end ="08/28/2011  16:00:00"
+name="Settlers of Catan: World Championship Prequalifier"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest"  
+   	 location="TableTop"
+datetime="08/28/2011 12:00:00"
+end ="08/28/2011  18:00:00"
+name="Robo Rally"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/28/2011 15:00:00"
+end ="08/28/2011  18:00:00"
+name="Guillotine"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/28/2011 15:00:00"
+end ="08/28/2011  18:00:00"
+name="Munchkin Axe Cop - World Premiere - no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/28/2011 15:30:00"
+end ="08/28/2011  18:00:00"
+name="Blokus"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/26/2011 10:00:00"
+end ="08/26/2011  15:30:00"
+name="Warhammer Fantasy"
+  description="Must bring your own army. No scenarios will require special or specific terrain. 1750 point buy with standard force organization.
+  http://forums.penny-arcade.com/discussion/144495/pax-prime-tabletop-boardcard-game-and-miniatures-tournaments-schedule"
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/26/2011 15:30:00"
+end ="08/26/2011  21:00:00"
+name="Super Dungeon Explore -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/27/2011 10:00:00"
+end ="08/27/2011  15:30:00"
+name="Warhammer 40k"
+  description="Must bring your own army. No scenarios will require special or specific terrain. 750 point buy with standard force organization.
+  http://forums.penny-arcade.com/discussion/144495/pax-prime-tabletop-boardcard-game-and-miniatures-tournaments-schedule"
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/27/2011 10:00:00"
+end ="08/27/2011  18:00:00"
+name="Warmachine/Hordes - Masters"
+  description="Must bring your own army. No scenarios will require special or specific terrain. Points info TBA.
+  http://forums.penny-arcade.com/discussion/144495/pax-prime-tabletop-boardcard-game-and-miniatures-tournaments-schedule"
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/27/2011 15:30:00"
+end ="08/27/2011  21:00:00"
+name="MERCS Minis -  no experience necessary"
+  description=" "
+/>
+
+
+    <Event
+   kind ="Contest" 
+   	 location="TableTop"
+datetime="08/28/2011 10:00:00"
+end ="08/28/2011  15:30:00"
+name="Malifaux"
+  description="Must bring your own army. No scenarios will require special or specific terrain. 35 points with standard rules for building your force.
+  http://forums.penny-arcade.com/discussion/144495/pax-prime-tabletop-boardcard-game-and-miniatures-tournaments-schedule"
+/>
+
+
+</Schedule>
+</xs:schema>

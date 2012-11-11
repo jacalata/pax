@@ -1,0 +1,243 @@
+Game Art & Design Roundtable
+IGDA Dev Center
+Sunday, 10:00am - 10:50am
+
+Role-specific roundtables will consist of top game artists, designers, community managers, and marketing professionals. Each roundtable will be structured into four sections focusing on roles/responsibilities, personal history, career paths, and hot topics/issues. • John Comes (Creative Director, Uber Entertainment) • Terrence Masson (Director of Creative Industries, Northeastern University) • Mark Soderwall (Art Director & Visual Game Design Consultant) • Bert Snow (VP of Design & Content, Muzzy Lane) • Anne Toole (Writer & Narrative Designer)
+
+Do Brands Really Matter in Gaming
+Cat Theatre
+Sunday, 10:30am - 11:30am
+
+We've all grown up with brands as an integral part of our lives and purchase behavior. It can be the sneakers we buy, food we eat, paint we use, books we read, movies or TV we watch, and of course the games we play. Does building a game based upon a branded IP ensure success? What are the opportunities and challenges of branding a game? Come listen to leaders within the industry from both camps who have launched branded games and from others who have launched without a brand.
+
+Panelists include: Robert Ferrari [vice president of publishing and business development, Sanrio Digital], John Nam [chief operating officer, Neowiz Games America, Inc], Calvin Yang [vice president of marketing, ijji.com], Ben Colayco [CEO, Kill3r Kombo Interactive], Jason Wonacott [CEO, Wonacott Communications]
+
+Omegathon Round 4
+Merman Theatre
+Sunday, 10:30am - 11:30am
+
+Details TBA
+
+Game Mechanics and Mechanism Design
+Wyvern Theatre
+Sunday, 10:30am - 11:30am
+
+"Mechanism Design" is perhaps one of the most fundamental concepts required in good game design. Simply put, it is the idea that the game creator, by manipulating the rules of the game, can encourage, without coercion, particular play behavior. Or, to put it another way, a game can manipulate you into certain behaviors you might not otherwise have considered. While it's one of those scary, math-heavy "game theory" constructs, it can be illustrated (and used) without an advanced mathematics degree. If you're a gamer, it's likely been used to great effect on you already. Why not learn the secrets behind the science of game-centered mind control? From the creators of Beyond Dungeons & Dragons, Beyond Candyland, and Losing Should Be Fun.
+
+Panelists include: Brandon "Rym" DeCoster [Producer, GeekNights], Scott Rubin [Host, GeekNights]
+
+Game Marketing & Community Management Roundtable
+IGDA Dev Center
+Sunday, 11:00am - 11:45 am
+
+Role-specific roundtables will consist of top game artists, designers, community managers, and marketing professionals. Each roundtable will be structured into four sections focusing on roles/responsibilities, personal history, career paths, and hot topics/issues.
+
+Panelists include: Arne Meyer [Senior Manager of Marketing, Naughty Dog], Chris Parsons [Product Manager, Muzzy Lane], James Stevenson [Marketing Manager, Insomniac Games], Allison Thresher [Community Moderator, Harmonix]
+
+PAX East Chiptune Showcase Part 3
+Jamspace
+Sunday, 11:00am - 2:00pm
+
+Details TBA
+
+Further Greetings from a Dead-Tree Dinosaur Cartoonist
+Manticore Theatre
+Sunday, 11:00am - 12:00pm
+
+FoxTrot cartoonist Bill Amend returns to PAX East with an all-new slide show!
+
+Public Play: The Secret to Making Games that Are Social, Embarrassing, and Fun!
+Naga Theatre
+Sunday, 11:00am - 12:00pm
+
+Games are social. We play to compete, but we also play to let our guard down around strangers and strengthen our friendships. Why are so many people happy to make fools of themselves in Dance Central? Can Facebook games treat us as more than just marketing devices? And what's next for the non-player sidekicks we spend so much time with - isn't Dragon Age just a dating sim with blood spatter? This panel will bring experts from multiple fields together to talk about the ways that games bring us closer. Invitees will include a range of experts from academia (MIT Media Lab), the game industry (Harmonix), and designers of games that are meant to be played in public. And as an audience-participation bonus, we will include a game that can be played by the entire audience in just five minutes.
+
+The Sorting Workshop
+Cat Theatre
+Sunday, 12:00pm - 1:00pm
+
+Industry vets walk you through a writing exercise that will determine where in the industry an aspiring writer belongs. A game developer and publicist kick things off with a 10-minute product demo that you get 20 minutes to write up. Then we (journalists, community managers, publicists, and marketing specialists) sort your writing sample into which field it ought to be in based on tone, content, and accuracy. You won't be graded, but you might be mocked with dramatic readings of your sample. Whatever happens, you'll have a chance to make industry contacts and learn the difference between writing for journalism, for community management, for marketing, and for PR. Bring pens, pencils, and a surface to write on (we recommend the PAX guide) -- we'll provide the rest.
+
+Panelists include: AJ Glasser [News Editor, GamePro Media], Susan Arendt [Senior Editor, The Escapist], Dan Amrich [Social Media Manager, Activision], Arne Meyer [Community Strategist, Naughty Dog], Sue Bohle [Boss, The Bohle Company]
+
+One of Us
+IGDA Dev Center
+Sunday, 12:00pm - 12:50 pm
+
+Are people surprised to learn that you're a gamer? Do the clerks at the Local Generic Game Retailer ignore you when you shop? If they do talk to you, do they assume you're shopping for something with more pink on the box? Or worse, ask you if you're buying a game for your son or boyfriend? Gamers who do not fit the stereotypical image of the hardcore gamer often feel left out in the cold. Our panel of game writers and hardcore gamers discuss the obstacles to acceptance they've faced and their strategies for coping with them.
+
+Panelists include: Mark Barlet [President & CEO, The AbleGamers Foundation, Inc.], Regina Buenaobra [Community Manager, ArenaNet], David Edison [Writer, Gaygamer.net], Alex Horn [Writer, Big Huge Games/38 Studios], Alexandra Raymond [Writer, The Borderhouse Blog]
+
+The Making of Octodad: A Game About Destruction, Deception, and Fatherhood
+Merman Theatre
+Sunday, 12:00pm - 1:00pm
+
+Octodad. The game that forever changed the way we see tentacles and fatherhood. Beginning in June, a team of 19 students at DePaul University set to revolutionize gaming with unlikeliest of heroes -- an octopus that happens to be husband and wife to a human family. Where did the inspiration come from? Did they use mocap and live octopi to get the animation right? These questions (and many more) will be answered by the core team behind Octodad in yet another supremely informative PAX panel.
+
+Panelists include: Kevin Zuhn [Project Lead, DePaul University], Nick Esparza [Lead Artist, DePaul University], Jake Anderson [Lead Designer, DePaul University], John Murphy [Producer, DePaul University], Scott Roberts [Associate Professor, DePaul University]
+
+When I Grow Up: It's Never Too Late to Try Something Crazy
+Wyvern Theatre
+Sunday, 12:00pm - 1:00pm
+
+Two years ago, Sean Baptiste was at the top of his game. A wunderkind in social marketing in the game industry, he traveled the country meeting fans and celebrities- promoting games he loved. But an inoperable brain tumor and a series of surguries led to long ICU stays over several months. He came home and discovered that he had major memory problems-at times even forgetting his own name. Struggling with simple tasks most take for granted, Sean decided to do the scariest thing he could think of: stand-up comedy. A documentary crew followed Sean as he met a tutor, did an open mic, and debuted in a local stand-up night. Did he succeed? Watch the premiere screening of 'When I Grow Up' and talk to director (Trevor Chamberlain), stand-up tutor (Dana Bein) and editor (Jon Mercer) to find out!
+
+Panelists include: Trevor Chamberlain [Director, Wicked Smart Kids], Dana Bein [Comedian], Jon Mercer [Editor], Urvi Fontenot [Producer], Sean Baptiste [Harmonix]
+
+TypeFrag Presents: Raid Warning Live!
+Manticore Theatre
+Sunday, 12:30pm - 1:30pm
+
+It happened at PAX Prime and it’s happening here. Seven, David, and Joe, hosts of the ill-humored World of Warcraft podcast, Raid Warning, step out from behind their Brewfest steins for a live broadcast show. Expect the latest in WoW community news, prizes, and Cataclysm information while the hosts and their guests attempt to do what their fans have requested: be funny live. Guest Lineup: Jeff Cannata (The Totally Rad Show, Weekend Confirmed), Dustin Blackwell (MMOMFG.com) and more!
+
+Panelists include: Seven DeBord [Host, Raid Warning], David Morrison [Co-Host, Raid Warning], Joe Perez [Co-Host, Raid Warning], Dustin Blackwell [guest, MMOMFG.com], Jeff Cannata [guest, Weekend Confirmed]
+
+X Play Panel (G4)
+Main Theatre
+Sunday, 12:30pm - 1:30pm
+
+Details TBA
+
+How to Win at Games
+Naga Theatre
+Sunday, 12:30pm - 1:30pm
+
+It seems obvious that, when playing a game of skill, one attempts to win. Interestingly, this is often not the case, and even skilled gamers rarely analyze to any depth the underlying mechanics and strategy of a given game. By deconstructing the games we play, you too can make them far less fun for yourself, "seeing the Matrix" as it were, and beat the everliving hell out of your friends. We'll hit the theory pretty heavily, but also specific examples from games like "Advance Wars," "Settlers of Catan," and even "Risk." From the creators of "Beyond Candyland", "Beyond Dungeons & Dragons", "Losing Should be Fun", and "Game Mechanics and Mechanism Design" to name a few.
+
+Panelists include: Brandon "Rym" DeCoster [Producer, GeekNights], Scott Rubin [Host, GeekNights]
+
+THE AXE AT PAX! - Team EpicBattleAxe.com talks gaming in 2011
+Cat Theatre
+Sunday, 1:30pm - 2:30pm
+
+THE AXE AT PAX! - Team EpicBattleAxe.com talks gaming in 2011 as we Cry Havoc and Let Our Voices Be Heard. As the most productive platform for discussion amongst gaming enthusiasts, EpicBattleAxe.com has given gamers a voice that has been heard loud and clear throughout the world. Here at PAX East, founder Daniel Kayser and hosts Brent Adams and Tony Grice will be on-hand to meet the AxeHead Army and talk about the state of gaming in the year ahead. How much has digital distribution altered the landscape of gaming? What has the motion movement meant for the traditionalist gamer? Who the hell stole our beer!?!?! Audience questions, fan tributes, and more will highlight THE AXE AT PAX!
+
+Panelists include: Daniel Kayser [Founder/CEO/LOL, EpicBattleAxe.com], Brent Adams [Host/Vids/Lead Leader, EpicBattleAxe.com], Tony Grice [Host/PimpDaddy, EpicBattleAxe.com], Reuben Moretz [Tech/Knowledge Wizard, EpicBattleAxe.com]
+
+Get Inside 'Magic: The Gathering'...Your Sunday isn't Complete without it!
+Merman Theatre
+Sunday, 1:30pm - 2:30pm
+
+Come join us for a lively, informative seminar on Magic: The Gathering, including a Q&A session led by Magic Brand & R&D.
+
+PATV Season 2: Vantage Point Productions
+Wyvern Theatre
+Sunday, 1:30pm - 2:30pm
+
+Join Vantage Point Productions for an exclusive screening and an open Q&A session about the current season.
+
+Panelists include: Van Blumreich Patrick Smith Adam Croft
+
+Penny Arcade Q&A #2
+Main Theatre
+Sunday, 2:00pm - 3:00pm
+
+Two mics on stage, two mics in the crowd. Line up for your questions and Gabe and Tycho will do their best to accommodate! And God, please no “who would win in a fight” questions. This is the second and last Q&A session, so also check the one on Friday at 11:30 right after the keynote.
+
+Ten Games You Need to Play: The Digital Game Canon
+IGDA Dev Center
+Sunday, 2:00pm - 2:50 pm
+
+This panel takes inspiration from the challenge of preserving game history and gets right to the key question: What is the canon of digital game history? What games should be first on the list for preservation? What games should game researchers and designers study? In other words, what games do you really need to play? Our panel mixes game designers, researchers, and journalists -- all players, too -- to answer this question. Expect to hear an appeal or two about the need to solve the problem of long-term preservation of these games as part of our cultural heritage...before they disappear forever.
+
+Panelists include: Jon Gibson [Founder, I am 8-bit], Christopher Grant [Editor-in-Chief, Joystiq.com], Henry Lowood [Curator/Professor, Stanford University], Chris Melissinos [Curator, Smithsonian’s Art of Video Games Exhibition]
+
+Getting to Know Your Games
+Manticore Theatre
+Sunday, 2:00pm - 3:00pm
+
+Are you always the one your friends come to for news on the next big game? Have you ever stopped to think how you learned all about those hot upcoming game that you haven’t even played yet? The shadowy curtain over how the games industry talks to you will be raised, as Gaming PR professional Ryan Jones (Access Communications), community manager Ronnie Singh (2K Sports), social media specialist Sid Shuman (PlayStation Blog), and Activision blogger Dan Amrich discuss how game publishers get the message out about their next big (and not so big) games. When you get the best professionals from every channel of gaming communication in one room, the industry secrets shared may just shock you!
+
+Panelists include: Corri Barret [VP, Access Communications], Ryan Jones [Account Director, Access Communications], Ronnie Singh [Community Manager, 2K Sports], Sid Shuman [Senior Social Media Specialist, PlayStation], Dan Amrich [Blogger, Activision]
+
+We Like to Move It Move It! (An Animated Discussion)
+Naga Theatre
+Sunday, 2:00pm - 3:00pm
+
+Ever wonder what goes into breathing life and character into the heroes and villains of today's games? Animation for games is where old school animation principles meet new school technical ability and game design theory. Come listen to our panelists discuss how they got their start animating for games, and the difference between animating for games versus film. We will also talk about what the panelists look for in a demo reel and their thoughts on the current state and future of animation for games. (We may talk about animation for Red Dead Redemption, Dance Central, Lord of the Rings Online and Afro Samurai too!)
+
+Panelists include: Daniel Salsberg [Lead Artist, Double Tap Games], Andy Welihozkiy [Lead Animator, Rockstar New England], Ron Friedman [Lead Animator, Tencent Boston], John Lindemuth [Animation Director, Turbine Inc.], Calvin Barreto [Animator, Harmonix Music Systems]
+
+So I Still Have This Website...
+Cat Theatre
+Sunday, 3:00pm - 4:00pm
+
+The community-focused panel from PAX Prime is making its way to the East Coast. You've spent the time and money building your community site, and now you're looking to take it to the next level. Maybe you want to get a job as a professional Community Manager, or maybe you're just looking for tips on how to get publishers and developers to pay more attention to your site. Whether you're just starting out, or have been running a site for years, this panel is the best place to get your questions answered. Together, these community managers have represented some of the biggest franchises, developers, and publishers in the game industry, and most of them started out just like you - running a fan site.
+
+Panelists include: Justin Korthof [Community Manager, Robot Entertainment], James Stephenson [Senior Community Manager, Insomniac Games], Matthew Pruitt [FPS Community Manager, Electronic Arts], Sam Houston [Community Manager, Independent], Jessica Shea [Community Manager, 343 Industries]
+
+Game Design Jam
+IGDA Dev Center
+Sunday, 3:00pm - 4:35 pm
+
+This jam involves the creation of paper game prototypes. Participants will have access to tables and supplies -- and they would need to complete their prototypes prior to session close. Industry pros will be on hand to monitor progress, provide guidance when needed, and select a "winner" (if we decide to go the "competition" route). Each project would be presented at the end of the session.
+
+Panelists include: John Comes [Creative Director, Uber Entertainment], Bert Snow [VP of Design & Content, Muzzy Lane], Anne Toole [Writer & Narrative Designer]
+
+Money for Nothing and Your Kicks for Free
+Merman Theatre
+Sunday, 3:00pm - 4:00pm
+
+Remember the bad old days, when you had to pay for your games? 2010 was they year that AAA games went free-to-play. In this provocative session we'll look at how this new model has evolved, how it's influencing game design, and whether it will change the way we forever buy our entertainment. We'll talk hard numbers and hard facts, share what's worked and what's bombed, and ponder the biggest question of all: will micro-transactions take over the old box-copy model once and for all? Freelance Writer Julian Murdoch interrogates a panel of folks who've done it all.
+
+Panelists include: Julian Murdoch [Writer, Freelance], Fred Howard [VP, KingIsle Entertainment], Kate Paiz [Executive Producer, Turbine], Chris Enock [Marketing Director, Riot Games]
+
+Making the "Citizen Kane" of Poker Games: Poker Night at the Inventory
+Wyvern Theatre
+Sunday, 3:00pm - 4:00pm
+
+Wondering how Tycho, Strong Bad, Max and The Heavy ended up in a cross-over poker video game? Come hear about the making of what independent reviewer/Telltale marketing guru Earnest Oinktoast called "The greatest achievement in first person card games since solitaire." Enjoy a dev talk of Telltale's "Poker Night at The Inventory" and then ask Sean Vanaman (designer/writer) how cold it was in the shadow of Jerry Holkins when writing dialog for Tycho; or ask Jake Rodkin (designer) about building The Inventory. Nick Herman (cinematic director) will be available to field questions about the tear-jerking cinematography, or, if you want to give someone what for about having a pocket pair busted by a rivered straight draw, Tulley Rafferty (programmer) will be on hand.
+
+Panelists include: Sean Vanaman [Designer, Telltale Games], Jake Rodkin [Designer, Telltale Games], Nick Herman [Cinematic Director, Telltale Games], Tulley Rafferty [Programmer, Telltale Games]
+
+GameScoop (Live Podcast)
+Manticore Theatre
+Sunday, 3:30pm - 4:30pm
+
+Holy balls! Join the guys from IGN Game Scoop! for the live podcast to end all podcasts. Yes, IGN’s own Daemon Hatfield and a bevy of other IGN Editorial gods are back to discuss the latest video game news and releases, PAX gossip, answers to questions from real fans like you, and much more. Special guests to be announced. Just what will be discussed? How about: How much do you get paid to overrate games? How do you sleep at night after your review closes a studio? How can I knock them boots? Come one, come all, we’ve got plenty of Scoops! to go around!
+
+Start Your Own Damned Company
+Cat Theatre
+Sunday, 4:30pm - 5:30pm
+
+Sometimes, people have great ideas for games. We're happy for you, we are. But you know what? Our studio isn't gonna help you realize your vision, and chances are no other company will. It's shocking, but the reason we dove headfirst into the start-up ocean full of shattered dreams and razor blades was because WE ACTUALLY HAVE A GREAT IDEA FOR A GAME TOO! If you really feel passionately about your idea and want nothing more than to see it live then go make it your own damn self, we're busy. But we'll throw you a bone with this helpful panel full of tidbits on how to get started. Let us regale you with tales of wonder and woe, led by our fearless moderator Ichiro Lambe. Only the brave will survive, no refunds.
+
+Panelists include: Chris Oltyan [Producer, Dire Wolf Digital], Eitan Glinert [President, Fire Hose Games], Scott Macmillan [President, Macguffin Games], Ichiro Lambe [President, Dejobaan Games], Damian Isla [Director of Technology, Moonshot Games]
+
+Getting What You Want Out of Your Gamemaster
+Merman Theatre
+Sunday, 4:30pm - 5:30pm
+
+Gaming books are full of sage advice for GMs on why players play and how to keep them happy, but what do GMs want? Why do they spend so much time preparing games for us? And most importantly, how can players use this to get what they want out of their RPG campaign? Award winning game designers Luke Crane, Jack Graham, and Joshua A.C. Newman talk about why we play games, why we run games, and how we design them to make them engaging for everyone involved.
+
+Panelists include: Luke Crane [Writer/Game Designer, Burning Wheel], Jack Graham [Writer/Game Designer, Posthuman Studios/Eclipse Phase], Joshua A.C Newman [Writer/Game Designer, The Glyphpress]
+
+It's not the Length, it's the Mirth: Game Length Versus Value
+Wyvern Theatre
+Sunday, 4:30pm - 5:30pm
+
+With new forms of distribution for video games come new pricing models. Outlets like Apple's iOS App Store and digital distribution storefronts like Xbox Live Arcade and PSN are challenging the convention of $60 AAA retail titles, and complicating the already peculiar brand of calculus that gamers use when determining "value". Why is $1 okay on iPhone but $6 is too expensive? Why is one ten-hour retail game criticized for being "too short" while others aren't? Why are we so hung up on game length? Join Christopher Grant (editor-in-chief, Joystiq.com) and panelists as they wrestle with this age-old quandary.
+
+Panelists include: Christopher Grant [Editor-In-Chief, Joystiq]
+
+Game Art Jam
+IGDA Dev Center
+Sunday, 5:00pm - 6:45 pm
+
+This jam involves a series of quick contests where approximately 5 artists must create images based on themes that are given to them at the beginning of each session. Art is digital, with equipment/tablets provided. Each series of contests are separated by art student, art pro, and general public so that no one has an unfair advantage. Prizes are awarded. Audience gets to watch each contest in action; judges score each project in real time.
+
+Panelists include: Adam Chapman [President & COO, Poptank Studios], Terrence Masson [Director of Creative Industries, Northeastern University], Mark Soderwall [Art Director & Visual Game Design Consultant]
+
+It's Okay to Admit It. You Like Free-to-Play MMO Games
+Naga Theatre
+Sunday, 5:00pm - 6:00pm
+
+One out of every 10americans is playing free-to-play MMO games. That’s more than 35 million people in the US. According to a recent study by Newzoo, there are more people playing free-to-play MMO games than Wii consoles sold. Chances are you’re one of those 35 million people on the free-to-play train. So, join a panel of top free-to-play experts as they discuss free-to-play gaming, how it’s changing the video game industry forever and how it can get better. Current gaming trends will be discussed. The future of the industry will be explored.
+
+Panelists include: Robert Ferarri [vice president of publishing and business development, Sanrio Digital ], John Nam [chief operating officer, Neowiz Gamesamerica, Inc.], Calvin Yang [vice president of marketing, ijji.com], Ben Colayco [CEO, Kill3r Kombo Interactive], Jason Wonacott [CEO, Wonacott Communications]
+
+Final Round of the Omegathon
+Main Theatre
+Sunday, 5:30pm - 6:30pm
+
+Bear witness to the Final Round of the Omegathon and let us bid thee farewell. 

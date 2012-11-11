@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+
+  <Schedule>
+
+
+
+    <Event
+      kind="Panel"
+    datetime="03/11/2011 10:00:00"
+    end ="03/11/2011 11:00:00"
+location="Pegasus Theatre"
+name="Rock Band 3 Design QandA Free-for-all!"
+description="Are you excited about Rock Band 3, but still have burning questions that haven't been answered in the press? Do you want to find out some of the decisions behind your favorite Rock Band 3 feature? Do you want to hear about some of the crazy features that were cut from the final game? Then this is for you! Come and join Sylvain Dubrofsky and Brian Chan, along with recent Rock Band design alumni Casey Malone and Dan Teasdale, and ask them ANYTHING about the design and features of Rock Band 3.
+Panelists include: Brian Chan [Senior Designer, Harmonix Show Systems], Sylvain Dubrofsky [Senior Designer, Harmonix Show Systems], Dan Teasdale [Lead Designer, Twisted Pixel Games]"
+/>
+
+    <Event
+          kind="Featured"
+        datetime="03/11/2011 11:30:00"
+        end ="03/11/2011 12:30:00"
+location="Main Theatre"
+name="PAX Prime 2010 Keynote"
+description="Best known for his work on the Thief series, System Shock and Deus Ex, we welcome Warren Spector as he delivers the keynote for PAX 2010. His history as a master storyteller and game designer will no-doubt play into his keynote as he shares his insight on games and gaming culture in the Main Theatre at Benaroya Hall. Note that the theatre will not be cleared between this session and the first Penny Arcade QandA."
+/>
+
+    <Event
+          kind="Panel"
+        datetime="03/11/2011 10:30:00"
+        end ="03/11/2011 11:30:00"
+location="Raven Theatre"
+name="Game Design 101"
+description="In an hour we’re going to try to answer all your questions about what a game designer does, how to become a game designer and how to improve your game design skills. Impossible? Yes. Will it be awesome anyway? Absolutely! All levels of experience are welcome, from students to seasoned industry veteran to kick ass DMs who just wants to improve their DnD game. If you want to become a better designer this is the place to be! So join James Portnow, Richard Garfield, Nichole Lazzaro, Nick Fortugno and Jeff Hickman as we discuss how to get your design on.
+-.-. --- -- . - --- .-. --- --- -- ...-- .---- -----
+Panelists include: Nichole Lazzaro [Founder XEO Design], Richard Garfield [Designer, Magic: the Gathering, RoboRally], Nick Fortugno [Designer, Diner Dash, Playmatics], James Portnow [CEO, Rainmaker Games], Jeff Hickman [EP Warhammer Online]"
+/>
+
+    <Event
+              kind="Panel"
+            datetime="03/11/2011 10:30:00"
+            end ="03/11/2011 11:30:00"
+location="Unicorn Theatre"
+name="GameTrailers.com Presents: Hello Fellow Babies! – Pach-Attack! LIVE"
+description="Michael Pachter. Yes, he’s real. Yes, he’s here. And yes, you can ask him your burning questions at this exclusive panel! Pach-Attack! has taken the web by storm, and since it was debuted on GameTrailers.com, the smarmy seer has become a household name. Here at PAX, this is your chance to challenge the analyst’s legendary wit and have your game industry questions answered live at this exclusive interactive panel.
+Presented by: Michael Pachter [Managing Director of Equity Research/Analyst, Wedbush Securities]"
+/>
+
+    <Event
+              kind="Panel"
+            datetime="03/11/2011 11:00:00"
+            end ="03/11/2011 12:00:00"
+location="Wolfman Theatre"
+name="8-Bit Soundwaves: A Look into the World of Chiptune Show"
+description="The chiptune phenomenon has exploded throughout the gamer scene! Chiptune (or 8-Bit) music has been rising in popularity since it first took shape in video games and computer programs of decades past. But chiptune isn't just background music! More and more artists today are creating intricate and original musical compositions using retro gaming consoles as instruments. Find out where the method came from, where it's going, and how artists such as Anamanaguchi, KGHB, and Fighter X are utilizing it to create unique 8-bit hits. Presented by CrunchyCo.com
+Panelists include: Celene Ramadan [Musician, Leeni], Jack Waterman [Musician, Fighter X], Aaron Campion [Co-Owner/Musician, CrunchyCo/KGHB], Peter Berkman [Musician, Anamanaguchi], Gabe Hayward [Co-Owner/Musician, CrunchyCo/KGHB], Chris Lehfeldt [Musician, Infradead]"
+/>
+
+    <Event
+              kind="Featured"
+            datetime="03/11/2011 11:30:00"
+            end ="03/11/2011 12:45:00"
+location="Main Theatre"
+name="Penny Arcade QandA #1"
+description="Two mics on stage, two mics in the crowd. Line up for your questions and Gabe and Tycho will do their best to accommodate! And God, please no “who would win in a fight” questions. If you can't make this particular QandA, be sure to catch the second Penny Arcade Panel Sunday at 2:00pm. Note that the theatre will not be cleared before this session as it runs immediately after the keynote address.
+Presented by Gabe and Tycho"
+/>
+
+    <Event
+      kind="Panel"
+                datetime="03/11/2011 11:30:00"
+                end ="03/11/2011 12:30:00"
+location="Pegasus Theatre"
+name="Hal Halpin and Adam Sessler Talking Games"
+description="ECA President Hal Halpin and G4's host of X-Play and Editor-in-Chief of games content, Adam Sessler discuss the hot topics that are affecting the video game industry today and look at trends that could impact gamers in the future. Topics of discussion will include net neutrality, digital rights, and the upcoming violence in video games U.S. Supreme Court case. The panelists will take questions from the audience if time permits.
+Panelists include: Adam Sessler [Host of X-Play and Editor-in-Chief of games content, G4], Hal Halpin [President, The ECA]"
+/>
+
+    <Event
+      kind="Panel"
+                datetime="03/11/2011 12:00:00"
+                end ="03/11/2011 13:00:00"
+location="Raven Theatre"
+name="Make a Scene with Telltale"
+description="Here’s your chance to get involved in the front lines of game creation, live! Team up with Telltale’s ace designers to create an impromptu game scene right before your eyes. You decide what should happen in the scene and work with our team to bring it to life right there at the panel, using our game engine and the magic of creative thinking. Plus, hear behind the scenes secrets about Telltale’s Sam and Max episodic game series, other upcoming projects, and the wonderful world of game design. In sessions that have become highlights of PAX each year, the event plays like your favorite night at an Improv club – with videogames. What could be better?"
+/>
+
+    <Event
+          kind="Panel"
+                    datetime="03/11/2011 12:00:00"
+                    end ="03/11/2011 13:00:00"
+location="Unicorn Theatre"
+name="The Myth of the Gamer Girl: True Demographic or Anthropological Hooha?"
+description="Whether it's just a single gal at home or an entire crew like the Frag Dolls and PMS clan, there are definitely hardcore gamers out there of the female variety. That said, is there something unique about women who play games? This panel will explore the myth of the gamer girl to settle the question once and for all: are there attributes that game designers and publishers need to consider to appeal to the women, or is it all just a bunch of hogwash that the marketing team is selling? Come listen to an expert panel of women who are confirmed passionate gamers of both the video and table topvariety. We will be providing cards at the beginning of the panel on which the audience can submit questions or discussion topics to ensure no stone is unturned in our quest for truth!
+Panelists include: Karen Clark [Co-Founder GameMentorOnline at Women in Games International , EA and Bioware], Farah Houston [Sr. PM Xbox, Microsoft], Cassie Wallender [Product Manager, MySpace], Beth Goza [Sr. Community Manager, Microsoft], Alexis Hebert [Community Relations Manager, Terminal Reality]"
+/>
+
+    <Event
+          kind="Panel"
+                    datetime="03/11/2011 12:30:00"
+                    end ="03/11/2011 13:30:00"
+location="Serpent Theatre"
+name="Raid Warning Live"
+description="Really, it's all downhill from here. Seven and Brian Hough, hosts of the ill-humored World of Warcraft podcast, Raid Warning, step out from behind their avatars for their first ever live broadcast show. Expect the latest in WoW community news, prizes, and Cataclysm information while the hosts and their guests attempt to do what their fans have requested: be funny live. Guest Lineup: Alex Albrecht (The Totally Rad Show, Diggnation) Kim Evey (Producer of The Guild) and more!
+Panelists include: Seven DeBord [Raid Warning Host, Caution4], Brian Hough [Raid Warning Host, Caution4]"
+/>
+
+    <Event
+          kind="Panel"
+                    datetime="03/11/2011 12:30:00"
+                    end ="03/11/2011 13:30:00"
+location="Wolfman Theatre"
+name="The Basics of Good Game Design"
+description="Veteran designers James Ernest and Keith Baker have designed nearly every type of game imaginable. Board games? Pen and paper roleplaying? MMORPGs? Transparent gothic storytelling card games? Button based fighting games? They've done it. Join them for a discussion of the underlying principles of good game design, and a few laughs as well.
+Panelists include: Keith Baker and James Ernest [Loneshark Games]"
+/>
+
+    <Event
+          kind="Panel"
+                    datetime="03/11/2011 13:00:00"
+                    end ="03/11/2011 14:00:00"
+location="Main Theatre"
+name="A Sophisticated Evening with Rooster Teeth Productions"
+description="Brace yourself for awesomeness as the Rooster Teeth crew provides you with an hour's worth of mind-boggling epicness of immense proportions. Be the first to see the final two episodes of Red vs. Blue: Revelation and have your face melted off.
+This rousing panel will also include videos from other Rooster Teeth projects and more surprises so incredible that they are currently being guarded by attack dogs. Big f@$#ing attack dogs. If you miss this panel, you miss the opportunity to feel superior to your friends. Be there. Cake* will also be provided.
+*There will be no cake.
+Panelists include: The Rooster Teeth Gang, Hardened Inmates"
+/>
+
+    <Event
+          kind="Panel"
+                    datetime="03/11/2011 13:30:00"
+                    end ="03/11/2011 14:30:00"
+location="Unicorn Theatre"
+name="Tips to Develop a Freelance Illustration Career"
+description="This panel, lead by Wizards of the Coast Art Directors, will be cover topics including building a strong portfolio, soliciting your work, avoiding pitfalls to get the job along with what to expect when you do. The presentation will be followed by a QandA."
+/>
+
+    <Event
+              kind="Panel"
+                        datetime="03/11/2011 13:30:00"
+                        end ="03/11/2011 14:30:00"
+              location="Raven Theatre"
+    name="OverClocked ReMix: Video Game Show Community"
+    description="Video Game Show ROCKS! For over 10 years, OverClocked ReMix (http://ocremix.org) has been remixing your favorite video game music! Join us again at PAX as we cover the ins and outs of the site, challenge you with VGM trivia, give away exclusive prizes (physical albums GET!), and share news about current and upcoming album projects, including Mega Man X and Final Fantasy 9!! LET'S GO! \m/
+Panelists include: David 'djpretzel' Lloyd [Founder and President, OverClocked ReMix, LLC], Larry 'Liontamer' Oji [Head Submissions Evaluator, OverClocked ReMix, LLC], Vinnie 'Palpable' Prabhu [Judge, OverClocked ReMix, LLC], Amy 'diotrans' Hsieh [ReMixer, OverClocked ReMix]"
+/>
+
+    <Event
+              kind="Panel"
+                        datetime="03/11/2011 13:30:00"
+                        end ="03/11/2011 14:30:00"
+location="Pegasus Theatre"
+name="Booms, Headshots, and Scathing Comments: The Magical World of Web Video"
+description="Remember the dark internet of 1997? When animated gifs and stamp-sized screenshots were the best gaming media had to offer? Well that world is gone, replaced with a veritable utopia of web video, custom-crafted by gamers for gamers. Graham, Kim, Alex, and Garrett team up with Jeremy in a super-friendsian alliance to discuss the present state of web video, and what it took for them to get where they are today. Interested in knowing the differences between filming in LA and a quiet Canadian suburb? Want to dip your toe into the mysterious world of YouTube? This may well be the panel for you.
+Panelists include: Graham Stark [Partner, Bionic Trousers Media], Jeremy Petter [Writer/Filmmaker/Graphic, Independent Contractor], Kim Evey [The Guild, Gorgeous Tiny Chicken Machine Show], Alex Albrecht [The Totally Rad Show], Garrett Hunter [Mega64]"
+/>
+
+    <Event
+              kind="Panel"
+                        datetime="03/11/2011 14:00:00"
+                        end ="03/11/2011 16:00:00"
+location="Wolfman Theatre"
+name="Testers vs. The Game, the life of a Tester"
+description="Have you ever wondered, 'What does a QA Tester really do?'. We've got a panel of grizzled QA vets, filled to the brim with experience. Looking to get in the industry? We'll dole out pearls of wisdom about life as a Tester, and you can decide if it's the life for you! We'll explore some of the horrific and awesome experience that our QA vets have been thru, as well as a demonstration about the different types of testers. When we're done with our soapbox-rantings, we'll open our panelists to your questions, No-Holds-Barred.
+Panelists include: Michael Jorgensen [QA Lead, Zombie Studios], Ryan Sharpe [Founder, Get Well Gamers], James Costello [QA Lead, Sandlot Games], Chris Chamberlain [Lead SDET, and Co-Host of “Platform Biased”, MGS Rare], Kevin Darby [GTO Lead SDET - Halo Waypoint, MGS]"
+/>
+
+    <Event
+              kind="Panel"
+                        datetime="03/11/2011 14:30:00"
+                        end ="03/11/2011 15:30:00"
+location="Pegasus Theatre"
+name="The Community Manager Challenge"
+description="Come watch as your favorite Community Managers compete in trivia, stupid human tricks, social media savvy and gamer skills. This two-part panel includes audience participation and flying swag. Hosted by the Bob Barker of the games industry Larry 'Major Nelson' Hryb, contestants include community managers from Xbox, PlayStation, Terminal Reality, Perfect World, EA Sports, BioWare, Harmonix, Infinity Ward and more.
+Panelists include: Larry Hryb [Major Nelson, Xbox], Stephanie Bayer [Community Mgr, Bioware], Alexis Hebert-Ruiz [Community Mgr, Terminal Reality], Will Kinsler [Community Mgr, EA Sports], Sam Houston [Social Media Mgr, Perfect World], Christa 'Trixie360' Charter [Xbox], Arne Meyer [Naughty Dog], Will Kinsler [EA Sports], Kathleen 'cookiecups' Sanders [Xbox Indie Games], Robert 'fourzerotwo' Bowling [Infinity Ward], Jeff Rubenstein Rubenstein [Playstation], John Drake [Manager, Communications and Special Projects, Harmonix]"
+/>
+
+    <Event
+              kind="Panel"
+                        datetime="03/11/2011 15:00:00"
+                        end ="03/11/2011 16:00:00"
+location="Raven Theatre"
+name="LoadingReadyRun presents Desert Bus, Unskippable, ENN, and hilarity"
+description="Join the LoadingReadyRun crew as they talk about all their work, show you some new stuff and maybe even drop aggravatingly vague hints about future projects! Also, they'll answer a bunch of your questions, assuming they don't get distracted."
+/>
+
+    <Event
+              kind="Panel"
+                        datetime="03/11/2011 14:00:00"
+                        end ="03/11/2011 16:00:00"
+location="Unicorn Theatre"
+name="Memoirs of a Triple Agent"
+description="The game industry is like Starcraft: It has three sides (two of which hate each other) and you're likely to get destroyed when first you get near any of them. Developers, publishers, and the media continue to coexist in a tense symbiotic relationship, and in this panel, industry veteran Greg Kasavin will walk you through what it's like being on the inside of all three, and tips for how to deal with each. Kasavin's unique experience having worked as editor-in-chief of a major gaming publication, as a line producer on a noted development team, and on the publishing side of a company behind some of the year's biggest games has given him a broad perspective he hopes will usher in a new age of peace and prosperity in the industry. On second thought, he'd settle for you coming to this panel.
+Moderated by: Greg Kasavin [Producer, 2K Games]"
+/>
+
+    <Event
+              kind="Panel"
+                        datetime="03/11/2011 15:30:00"
+                        end ="03/11/2011 16:30:00"
+location="Serpent Theatre"
+name="What Do Fans Want? Fan Feedback on Community"
+description="InsomniacGames.Com, Naughtydog.com, IrrationalGames.com, Rockband.com: communities and websites devoted to them are everywhere, offering tons of unique content for fans. You can listen to podcasts about your favorite games, read blogs from CEOs or testers, talk to friends on forums, and participate in contests and polls. While every top developer has these offerings, they are all there for you. With that in mind, we want to ask you, how can we improve? In this panel we review some of the most popular community features and types of content and ask for your ideas and suggestions on how to make our communities better. Get a chance to talk directly with community managers and tell them what works and doesn’t in their community, and offer your own suggestions on what you’d like to see!
+Panelists include: James Stevenson [Senior Community Manager, Insomniac Games], Allison Thresher [Community Manager, Harmonix Show Systems], Arne Meyer [Community Strategist, Naughty Dog], Ben Swanson [Senior Community Manager, Visceral Games], Stephanie Bayer [Community Manager, Roundhouse Media]"
+/>
+
+    <Event
+                  kind="Panel"
+                            datetime="03/11/2011 15:30:00"
+                            end ="03/11/2011 16:30:00"
+location="Wolfman Theatre"
+name="Making Stories Worth Playing"
+description="For years, interactive fiction authors have grappled with the often conflicting demands of story, gameplay, interactivity and immersion. Good stories are not always good games, and while simulation and emergent story can ease pressure on designers, they come with their own problems. Interactive fiction authors and graphical game designers unite to discuss their solutions.
+Panelists include: Robb Sherwin, Andrew Plotkin, Annie Carlson, Deirdra Kiai, Dan Shiovitz"
+/>
+    <Event
+                  kind="Panel"
+                            datetime="03/11/2011 16:00:00"
+                            end ="03/11/2011 17:00:00"
+location="Pegasus Theatre"
+name="Mega64: Panel For Laughs"
+description="No, they've never been arrested. There, now that that question is out of the way, who KNOWS what questions the Mega64.com crew will answer! Oh my gosh! I have to attend this!
+Panelists include: Rocco Botte [Mega64], Derrick Acosta [Mega64], Shawn Chatfield [Mega64], Garret Hunter [Mega64], Eric Badour [Mega64]"
+/>
+
+    <Event
+                  kind="Panel"
+                            datetime="03/11/2011 16:30:00"
+                            end ="03/11/2011 17:30:00"
+location="Raven Theatre"
+name="Aion: Assault on Balaurea - An Evolved Fantasy MMO"
+description="Find out how the Aion MMORPG is expanding the online experience in Atreia with the upcoming free expansion Aion: Assault on Balaurea. Key members of the Aion team will share how the lore, design, and gameplay of Aion is evolving to give your Daeva the ultimate in-game experience. The panelists will take questions from the audience at the end of the presentation."
+/>
+
+    <Event
+                  kind="Panel"
+                            datetime="03/11/2011 16:30:00"
+                            end ="03/11/2011 17:30:00"
+location="Unicorn Theatre"
+name="Movin’ on Up: How to Make It (Or Not) in Videogames Journalism"
+description="Do you run a videogame website and not getting enough PR love? Do you write about videogames and looking to go pro? Are you looking to get into videogame journalism? We’ll drop knowledge on how to get your site or writing noticed by the right people, how to run into the 'right' people, and how to just get started in the first place -- all straight from PR folks, veteran, and panelists who have gone virtual unknowns to writing for some of the biggest sites or publications out there. We’ll also dedicate a good amount of time to answer to your questions, so come prepared!
+Panelists include: Arne Meyer [Community Strategist, Naughty Dog], John Drake [Manager, Communications and Special Projects, Harmonix Show Systems], Chris Kohler [Game|Life Editor, Wired.com], John Ricciardi [8-4]"
+/>
+
+    <Event
+                  kind="Show"
+                            datetime="03/11/2011 17:00:00"
+                            end ="03/11/2011 18:00:00"
+location="Serpent Theatre"
+name="Penny Arcade: The Series Screening and Panel"
+description="Join 2 Player Productions for a screening of an episode, and then an open QandA session with the guys behind the camera!
+Panelists include: Paul Levering, Paul Owens, Asif Siddiky and Gabe Liberti"
+/>
+
+    <Event
+                  kind="Panel"
+                            datetime="03/11/2011 17:00:00"
+                            end ="03/11/2011 18:00:00"
+location="Wolfman Theatre"
+name="Beyond Pen and Paper: RPGs, Videogames, and the Mainstream"
+description="Role Playing Games - RPGs - have been around for decades now, evolving from their pen and paper roots to computers and consoles of all kinds. However, what started out as a niche genre has now crept into titles with mainstream appeal - Fallout 3, Mass Effect, and Oblivion. How did this jump happen? What differentiates the development of an RPG from other game genres, like shooters or platformers? Is it positive or negative to be an RPG game with their roots in pen and paper? And how in the heck do you go about defining what a 'role-playing game' is to BEGIN with?? These questions and more will be discussed! Boundaries will be broken! Horizons will be expanded! And someone might actually use the term 'THAC0'! Come roll twenties with us! 
+Panelists include: Brian Mitsoda [lead designer/founder, DoubleBear Games], Annie VanderMeer Mitsoda [game designer, ArenaNet], Tim Cain [design director, Carbine], Jeff Grubb [game designer, ArenaNet]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 17:30:00"
+                                end ="03/11/2011 18:30:00"
+location="Pegasus Theatre"
+name="GameTrailers.com Presents: Entertaining the Gamer: What Does It Take?"
+description="What do Hey Ash What’cha Playin’?, Once Upon a Pixel and ScrewAttack all have in common? They’re all in this panel and they’re all original content producers on GameTrailers.com! Anthony Birch, Ashley Davis and Stuttering Craig discuss how their shows came to be and take the audience through the process of creating new shows. In addition, they will answer your questions – for a full hour of niche bliss! Moderated by GameTrailers’ own Daniel Kayser, this is the opportunity to pick the brains of some of your favorite content creators and discuss what it takes to create compelling gamer-centric content for the internet. Plus, be present to witness a special message from the Angry Video Game Nerd you’ll have to see to believe!
+
+Panelists include: Craig Skistimas [Program Director, ScrewAttack], Anthony Burch [Content Creator, HAWP], Ashley Davis [Once Upon a Pixel], Daniel Kayser [Host/Producer, GameTrailers.com]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 18:00:00"
+                                end ="03/11/2011 18:30:00"
+location="Raven Theatre"
+name="Do You Have A Chance Against IGN, 1UP, and GameSpot?"
+description="There are thousands of video game sites out there but most of the views and news are monopolized by bigger, better funded, more talented company websites. Game companies are out creating content for themselves, cutting out the middle man. But still you have dreams of making your own website about video games. How do you make a name for yourself? How much do you personally invest? How do you overcome these incredible odds? Or is there even a point? Come listen to people talk about both sides of the industry, those who made it and those who haven't.
+
+Panelists include: Gus Sorola [Director of Moon Based Operations, Rooster Teeth Productions], David Liao [Co-Founder, 4Player Podcast], Brad Simons [Co-Founder, 4Player Podcast], Nick Henderson [Co-Founder, 4Player Podcast]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 18:00:00"
+                                end ="03/11/2011 18:30:00"
+location="Unicorn Theatre"
+name="The Various Roads to Becoming a Community Manager"
+description="You hear us on podcasts, see us in videos, read our blogs on websites, retweet us, argue with us on forums, and give us high fives at PAX. But have you ever wondered how we became community managers? From games journalism to forum moderation to public policy and QA, every road is different. Find out the random history of some of your favorite game studio community managers, and hear their advice on what skills and knowledge you’ll need to become one of gaming’s next-generation of community managers.
+
+Panelists include: James Stevenson [Senior Community Manager, Insomniac Games], Jay Frechette [Community Manager, Visceral Games], Allison Thresher [Community Manager, Harmonix], Arne Meyer [Community Strategist, Naughty Dog], Jennifer Kye [Company Blogger, Gameloft], Sam Huston [Independent]"
+/>
+
+    <Event
+                          kind="Panel"
+                                    datetime="03/11/2011 18:30:00"
+                                    end ="03/11/2011 19:30:00"
+location="Main Theatre"
+name="Square Enix"
+description="Details TBA"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 18:30:00"
+                                end ="03/11/2011 19:30:00"
+location="Serpent Theatre"
+name="Going Indie"
+description="Once upon a time, indie games were rare and solitary creatures, living lives of seclusion in the wilds of the internet - mod projects of best-sellers, small titles appealing to publishers to see a wider release. Now, thanks partly to the advent of programs like Steam, XNA, and Apple's App Store, indie gaming has been on the rise, moving from niche audiences to gain mainstream acclaim and attention. Join indie devs Brian Mitsoda and Annie VanderMeer Mitsoda (DoubleBear Productions, 'ZRPG'), James Silva (Ska Studios, 'Dishwasher: Dead Samurai'), Ron Alpert (Headcase Games, '180') and Derek Paxton and Matt Kimball (Theogenic, 'Fall From Heaven') about their experiences of going indie, tales of development, and advice for those looking to develop their own indie titles.
+
+Panelists include: Derek Paxton [lead designer, Theogenic], Brian Mitsoda [lead designer/founder, DoubleBear Productions], James Silva ['lead dishwasher', Ska Studios], Ron Alpert [lead programmer, Headcase Games]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 18:30:00"
+                                end ="03/11/2011 19:30:00"
+location="Wolfman Theatre"
+name="PC Gaming: A Playground For The Exotic"
+description="The rarest experiences that happen in gaming happen on the PC. It's a platform defined by it's openness, inherently individual and made up of hundreds of incredible niches: flight sim enthusiasts that erect replica cockpits in their garage; hardcore military simmers that play 60-man co-op with real-life protocol; Starcraft athletes; authentic Indie gaming; Team Fortress 2 leagues; and machinima directors that bring drama, personality, and insanity to film. Join the PC gamer staff (and friends!) as we curate these wild gems - a selection of the most exotic experiences and sub-cultures that exist today on our platform. The session will be followed by an open QandA.
+
+Panelists include: Evan Lahti [Senior Editor, PC Gamer], Logan Decker [Editor-In-Chief, PC Gamer], Dan Stapleton [Reviews Editor, PC Gamer], Andy Bauman [Podcast Producer]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 19:00:00"
+                                end ="03/11/2011 23:59:00"
+location="Pegasus Theatre"
+name="inFAMOUS 2: An Inside Glimpse into Creating the Superpowered Franchise"
+description="Go behind the scenes with key team members of Sucker Punch Productions, the developer behind the critically acclaimed PS3 blockbuster inFamous and upcoming inFAMOUS 2, as they showcase how they're extending the superpowered franchise."
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 19:30:00"
+                                end ="03/11/2011 20:30:00"
+location="Raven Theatre"
+name="The PAX 10 Panel #1"
+description="The PAX 10 is a showcase of independent games to be exhibited at PAX. Our group of 50 industry experts have culled a selection of games into what they collectively feel are the ten best in regard to gameplay and overall fun-factor. Join the creators of those games live and on stage! Questions will be asked! Answers may appear! and you will get a chance to talk to these up and coming indie game superstars. This panel will feature the creators of Puzzle Bots, Retro City Rampage, Plane Weaver, Bastion, and Fowl Space. Also check out the second PAX 10 panel Saturday at 7:30pm.
+
+Moderated by: Jeff Kalles [Penny Arcade]"
+/>
+
+    <Event
+      kind="Show"
+                                datetime="03/11/2011 19:30:00"
+                                end ="03/11/2011 22:00:00"
+    location="Unicorn Theatre"
+    name="Of Dice And Men: The Play"
+    description="Of Dice and Men -- a play by Cameron McNary How we roll. Why we play. Who we love. At PAX East, 150 people walked into the Naga Theater to see a reading of 'a play about DandD'. Two hours and one thunderous standing ovation later, here's what they had to say: 'Genuinely funny... and surprisingly touching.' 'We were both blown away... it's something everyone should see and experience for themselves.' 'I cried. ALL the tears. It was accurate and poignant.' Join us for the world premiere of 'Of Dice and Men' -- a play about friendship, what it means to be a grown-up, and why gaming matters.
+
+Panelists include: Cameron McNary [Artistic Director, Critical Threat Theatre], Maureen McNary [Managing Director, Critical Threat Theatre], [CAST, Critical Threat Theatre]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 20:00:00"
+                                end ="03/11/2011 22:00:00"
+location="Serpent Theatre"
+name="Get Your Girlfight On!"
+description="Get Your Girlfight On! Savvy lady-gamers get their game on in this all-live, all-female podcast from the women of IGN’s editorial team. Join the ladies of “Girlfight” as they dish about the games they love the most, the hottest new titles, inside scoop from the world of videogames, and of course, why chicks who love games kick a%$. The claws may come out for this one – you don’t want to miss it!
+
+Panelists include: Nicole Tanner [Associate Editor, IGN.com], Dana Jongewaard [Editor-in-Chief, Green Pixels], Kristine Steimer [Games Content Planner, IGN.com], Meghan Sullivan [GamesDB Team, IGN Entertainment], Jessica Chobot [Host/Staff Writer, IGN.com]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 20:00:00"
+                                end ="03/11/2011 21:00:00"
+location="Wolfman Theatre"
+name="From CG to Reality"
+description="From CG to Reality One costume designer is taking characters from your favorite games and making real, wearable, animatronic versions of them because she can. Come see how animatronic costumes are made, worn, and how taking a sculpt from Z-brush into reality sucks. A lot. Have you ever wondered how movie costumes are made, how to make space armor, or how a Krogan from Mass Effect 2 would look standing in front of you? Join Holly Conrad, a costume designer who made tiny clothes for Robot Chicken, as well as worked for leading animatronics company Garner Holt Productions, in a romp through making what normally never leaves the screen into functional, wearable creatures for scaring babies.
+
+Panelists include: Jessica Merizan [Pop Culture, Writer], Tayler Hudson [Costume Actor], Holly Conrad [Designer, Fyriel Art]"
+/>
+
+    <Event
+                      kind="Show"
+                                datetime="03/11/2011 20:30:00"
+                                end ="03/12/2011 00:30:00"
+location="Main Theatre"
+name="Friday Night Concerts"
+description="Join us and rock out with our musical guest friends. The lineup for Friday night includes: Anamanaguchi, Metroid Metal, The Protomen, and The Minibosses. Wristbands granting priority access to this event will be given out Friday morning to those at the front of the WSCC and Main Theatre lines, with the remaining seats being given away on a first-come, first-serve basis."
+/>
+
+    <Event
+                      kind="Show"
+                                datetime="03/11/2011 20:30:00"
+                                end ="03/11/2011 22:00:00"
+location="Pegasus Theatre"
+name="Giant Bombcast Live!"
+description="The world's most popular podcast that is occasionally, tangentially about video games is descending on PAX, and there's not a good goddamn thing any of you can do about it! Watch in abject horror as Ryan Davis, Vinny Caravella, Jeff Gerstmann, and Brad Shoemaker actively waste everyone's time with stupid anecdotes, highly questionable inside jokes, and probably some ill-conceived audience interaction. Yes, it promises to be a magical hour of whimsy and glory as we all laugh, learn, and hopefully, make a few new friends along the way. Join us, won't you?
+
+Panelists include: Ryan Davis [Editor, Giant Bomb], Vinny Caravella [Producer, Giant Bomb], Jeff Gerstmann [Editor, Giant Bomb], Brad Shoemaker [Editor, Giant Bomb]"
+/>
+
+    <Event
+                      kind="Panel"
+                                datetime="03/11/2011 21:00:00"
+                                end ="03/11/2011 22:00:00"
+location="Raven Theatre"
+name="Gaming for Dollars: Pro or Con?"
+description="Why are pro gamers like David Hasselhoff? Because they have to leave the country to meet their biggest fans. Despite the millions of gamers living in the United States, pro gaming has never really caught on here. Why is that? Is it really just a bunch of sponsor hype? Does it hurt the gaming community? Are pros motivated by anything more than making a buck? Here’s your chance to find out – and to give them your side of the story. Bigfoot Networks, Alienware and AMD will join Evil Geniuses coach Alexander Garfield to make the case for pro gaming – why it means more PvP options, faster RnD and better gameplay overall. Agree or disagree, if you have strong opinions about fragging for cash, or are even just curious about the debate, this is the session for you.
+
+Panelists include: Sean McCann [Senior Marketing Manager, Bigfoot Networks], Chris Sutphen [Partner Marketing Manager, Alienware], Kim Rom [Chief Marketing Officer, SteelSeries], Alex Garfield [Pro Gamer, Team Evil Geniuses], Jordan Gilbert [Pro Gamer, Team Evil Geniuses]"
+/>
+
+    <Event
+                      kind="Show"
+                                datetime="03/11/2011 22:00:00"
+                                end ="03/11/2011 23:00:00"
+location="Raven Theatre"
+name="Penny Arcade: The Series Screening Part #1"
+description="Join us and watch the first half of the hit (according to us) web series Penny Arcade TV.
+
+Panelists include: Paul Levering, Paul Owens, and Gabe Liberti"
+/>
+
+    <Event
+                          kind="Show"
+                                    datetime="03/11/2011 22:00:00"
+                                    end ="03/11/2011 23:30:00"
+location="Serpent Theatre"
+name="PAX Late Show Recording Session"
+description="The PAX Late Show is the brand new talk show featuring your favorite geek celebrities. Also includes the premiere of new video content from hot web video creators, and a very special musical performance. Don't miss your chance to be a part of the live studio audience for this first ever recording of the PAX late show with your hosts Rym and Scott of GeekNights.
+
+Guests include: Alex Albrecht [Diggnation, The Screen Savers], Rooster Teeth [Red vs Blue], Jon St John [Duke Nukem], and more!"
+/>
+
+  </Schedule>
+</xs:schema>
+
+

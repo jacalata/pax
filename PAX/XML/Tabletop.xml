@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+<Schedule>
+<Event
+name="What is Burning Wheel?"
+location="Tabletop"
+kind="Panel"
+datetime="Friday April 6 2012  12:00PM"
+end="Friday April 6 2012  1:00PM"
+description="Talk with the author of Burning Wheel about the history, rules and theory behind this cult hit fantasy roleplaying game.
+Panelists: Luke Crane [Author, Burning Wheel]"
+/>	
+	
+<Event
+name="DriveThruRPG"
+location="Tabletop"
+kind="Panel"
+datetime="Friday April 6 2012  2:00PM"
+end="Friday April 6 2012  3:00PM"
+description="DriveThruComics.com was the first download comics store. Working with publishers like Top Cow, Archaia Entertainment, Moonstone, UDON and more to bring you digital editions of your favorite comics. DriveThruComics sister site, DriveThruRPG is the worlds largest download RPG site with games from White Wolf, Green Ronin, Fantasy Flight Games, Mongoose and Chaosium.
+RPGs and comics cross-overs are quite common. On DriveThruRPG you can get Green Ronin's DC Adventures RPG, Mongoose's Judge Dredd RPG and other great licensed properties. On DriveThruComics you can get UDON's Exalted, Moonstone's Vampire: the Masquerade and more. Stop by this panel to join the discussion on how games and comics fit well together. Learn new developments from the DriveThru crew and meet some of our current publishers.
+We'll have samples of the Now in Print books, prizes and more!
+Panelists: Matt McElroy [DriveThruRPG], Cam Banks [Margaret Weis Productions]"
+/>	
+	
+<Event
+name="An Inside Look at Indie RPGs"
+location="Tabletop"
+kind="Panel"
+datetime="Friday April 6 2012  4:00PM"
+end="Friday April 6 2012  5:00PM"
+description="Curious what's been going on in the coffeehouses and dark alleys of tabletop roleplaying? Wondering what's got those stodgy old dudes' and self-appointed moral watchdogs' knickers all bunched up? Just looking for something beyond “roll to hit, roll damage”? Join some enthusiastic long-timers for an off-the-record tour. We'll show you what's out there, why it's cool, and how you can be part of it. Tell ‘em lumpley sent you.
+Panelists:D. Vincent Baker [lumpley games], Meguey Baker [Night Sky Games], Robert Bohl [Robert Bohl Games], Ben Lehman [These Are Our Games], Joshua A.C. Newman [The Glyphpress], Jake Richmond [Atarashi Games]"
+/>	
+	
+<Event
+name="GeekNights Boardgame Workshop"
+location="Tabletop"
+kind="Panel"
+datetime="Friday April 6 2012  6:00PM"
+end="Friday April 6 2012  8:00PM"
+description="Dive into tabletop gaming!  Rym and Scott (GeekNights) are here to teach you to play (and more importantly, to win).  Agricola is a super popular resource management game with little wooden animals and surprising strategic depth.  Carcassonne is a classic tile-laying area control game that teaches the fundamentals of optimal play and point denial.  We're here to teach you both—first the rules, then the strategy—in a hands-on workshop with no experience necessary.
+Panelists:Rym DeCoster [GeekNights], Scott Rubin [GeekNights], Chie Fujioka [GeekNights]"
+/>	
+
+	
+<Event
+name="Want to break into RPGs? Then JUST MAKE GAMES!"
+location="Tabletop"
+kind="Panel"
+datetime="Saturday April 7 2012  10:00AM"
+end="Saturday April 7 2012  11:00AM"
+description="A wide variety of super-awesome indie RPG designers will tell you to stop sending freelancer applications in the RPG industry and set you onto a path to the promised-land of self-publication— where you're in charge and the paydays can be bigger. We'll cover how to stay motivated, when you know a game sucks too much to finish, when you know you're on to something hot and how to get it in front of the right people— all without mortgaging your house for a giant print run.
+Panelists:Elizabeth Shoemaker Sampat [Two Scooters Press], D. Vincent Baker [lumpley games], Joshua A.C. Newman [The Glyphpress], Meguey Baker [Night Sky Games], Ben Lehman [These Are Our Games]"
+/>	
+
+	
+<Event
+name="Legend of the Cipher: the Game of Hip Hop"
+location="Tabletop"
+kind="Panel"
+datetime="Saturday April 7 2012  12:00PM"
+end="Saturday April 7 2012  1:00PM"
+description="LOC is battle-card game designed for exploring hip hop's skills and strategies. Collaborate with Allies and lead your Crew in a race to the top. Manage Ventures and Venues, buy Shine and play Moves. Come see how we've integrated rhyming with card play to immerse players in real battles and ciphers, while learning the basics of the hip hop industry.
+Special guest MC's will be on hand to demo the game with select members of the audience, and we'll be giving away PAX East 2012 exclusive cards of all Nerdcore rappers attending the conference, as well as chummy buckets of fresh LOC swag.
+Video overview, creator Q&amp;A, audience participation and snacks.
+Panelists:Benjamin Sanchez [LOC Originator, Legend of the Cipher, LLC], Todd ‘MR' Anderson [Head Writer, Legend of the Cipher, LLC], Zeen Rachidi [Media Director, Legend of the Cipher, LLC], Special Guest Rappers"
+/>	
+
+	
+<Event
+name="Steampunk Worldbuilding Workshop and Exhibition"
+location="Tabletop"
+kind="Panel"
+datetime="Saturday April 7 2012  2:00PM"
+end="Saturday April 7 2012  3:00PM"
+description="Is your brain full of rivets, gears, and external combustion engines? Do you find yourself inexplicably drawn to outdated technologies and outmoded scientific thought? Have you ever wished for a world where the morning commute looked like hot air balloon race? Then come on down the Steampunk Worlds' Fair! Join your fellow thinkers and tinkers as you split into teams focused on a different element of a steampunk universe; then come together for the Grand Exhibition of Ideas! Listen to your fellow creators, present your ideas, re-calibrate for feedback, and discover you have crafted, from the ether, a brave new world!
+Panelists:Jack Graham [Writer, Freelance], Andrew Linstrom [Writer, Freelance], Caroline Willis [Writer, Freelance]"
+/>	
+
+	
+<Event
+name="Roleplaying Theory, Hardcore"
+location="Tabletop"
+kind="Panel"
+datetime="Saturday April 7 2012  4:00PM"
+end="Saturday April 7 2012  5:00PM"
+description="What's a GM? Is there even such a thing? What's the relationship between your character - a fictional person - and your character sheet? Who really owns your character and what can you do about it? What are dice for, and do we really need them? How does roleplaying even, y'know, work?
+Join Vincent Baker (Dogs in the Vineyard, Apocalypse World) and Ben Lehman (Polaris, The Drifter's Escape) for a crash course in the tabletop roleplaying theories that kicked off the indie rpg movement. From social context and creative agenda to reward cycle, currency and the components of character, with a good hard look at the real causality at the table. Guaranteed to push conventional wisdom down and take its lunch money.
+Panelists:D. Vincent Baker, Ben Lehman"
+/>	
+
+	
+<Event
+name="Kickstarter: More Than Meets The Eye"
+location="Tabletop"
+kind="Panel"
+datetime="Saturday April 7 2012  6:00PM"
+end="Saturday April 7 2012  7:00PM"
+description="Kickstarter and other crowd-funding sites have created an opportunity for passionate people to share their ideas and gather support to make those ideas into reality. The concept of crowd-funding it simple, but there's much more to running a successful campaign than just listing your idea. Join us for a discussion of all the elements needed to run a successful Kickstarter campaign including preparation, marketing, project coordination, follow up and follow through.
+Panelists:Dan Yarrington [CEO, Game Salute]"
+/>	
+
+	
+<Event
+name="The D&amp;D You Never Knew"
+location="Tabletop"
+kind="Panel"
+datetime="Saturday April 7 2012  8:00PM"
+end="Saturday April 7 2012  9:00PM"
+description="Talk with Luke Crane (author of the Burning Wheel and Mouse Guard) to rediscover the edition wars of 30 years ago, why D&amp;D was perfect in 1981 and why playing by (almost all) of the rules is the best game you never played.
+Panelists:Luke Crane [Author, Burning Wheel]"
+	/>
+	
+	<Event
+	name="Parsely: Spooky Manor"
+	location="Tabletop"
+kind="Panel"
+datetime="Sunday April 8 2012  10:00AM"
+end="Sunday April 8 2012  11:00AM"
+description="They say that Spooky Manor is haunted...and it's your job to deliver a parcel to its mysterious resident. But on this dark and stormy night, not everything is as it seems!
+Panelists:Jared Sorensen [Owner/Designer, Memento Mori Games]"
+	/>
+	
+	<Event
+	name="Getting Your Games Published"
+	location="Tabletop"
+kind="Panel"
+datetime="Sunday April 8 2012  12:00PM"
+end="Sunday April 8 2012  1:00PM"
+description="Everyone dreams of getting their game published. We'll explore and discuss all the aspects of bringing your game from concept to market including: design, development, playtesting, promotion, prototyping, funding, marketing, production, conventions, sales, distribution, fulfillment, and much more!
+Panelists:Dan Yarrington [CEO, Game Salute]"
+	/>
+	
+	<Event
+	name="Parsely: Jungle Adventure"
+	location="Tabletop"
+kind="Panel"
+datetime="Sunday April 8 2012  2:00PM"
+end="Sunday April 8 2012  3:00PM"
+description="Lost, alone and starving in the jungle on a quest for lost treasures. Will you make it back to civilization or will you never return from your Jungle Adventure?
+Panelists:Jared Sorensen [Writer, Memento Mori]"
+	/>
+	
+	<Event
+	name="Parsely: Z-Ward"
+	location="Tabletop"
+kind="Panel"
+datetime="Sunday April 8 2012  4:00PM"
+end="Sunday April 8 2012  5:00PM"
+description="They sent your sister away to get better—but she only got worse. Now, find her. Walk the blood-spattered halls, hear the screams and try to get out alive.
+A live-action text adventure game from the creator of Action Castle.
+Panelists:Jared Sorensen [Writer, Memento Mori]"
+	/>
+
+
+
+
+
+</Schedule>
+
+</xs:schema>

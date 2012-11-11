@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+
+  <Schedule>
+
+    <Event
+     kind="Panel"
+       datetime="03/13/2011 10:30:00"
+       end ="03/13/2011 11:30:00"
+   location="Main Theatre"
+   name="Why Should Gamers Care About Kinect?"
+   description="Kinect for Xbox 360 is coming this November and promises to revolutionize the way we have fun and experience entertainment in the home, but what does it really mean for gamers? Come join Microsoft's Jorg Neumann and guests for an insider's tour to the hardware, technology and games that will take your living room into the future this holiday and beyond.
+Presented by Jörg Neumann [Executive Producer, Microsoft]"
+
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 10:30:00"
+       end ="03/13/2011 11:30:00"
+    location="Pegasus Theatre"
+    name="Blamimations ALIVE! with Kris and Scott"
+    description="PA: TV veterans Scott Kurtz (pvponline.com) and Kris Straub (chainsawsuit.com) take you deeply behind the scenes of their hit Blamimation series for one magical hour. Will you help come up with the next breakout hit character? Will you watch it come to life? Will you see Kris and Scott BS for 55 minutes? No, maybe, and yes."
+
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 10:30:00"
+       end ="03/13/2011 11:30:00"
+    location="Raven Theatre"
+    name="The GameSpy Debriefings LIVE!"
+    description="Every week, a bunch of bozos who used to work at GameSpy (and one bozo who still does) get together in a room and fill gamers' ears with some of the most insane crap ever heard on iTunes. And for one night only these bozos are assembling to do their thing on a live podcast where you will most likely learn nothing of value about games. Or anything else, for that matter. Join IGN Entertainment's Ryan Scott, Anthony Gallegos, Scott Bromley, Arthur Gies, and Putnam Whipple, as well as the CEO of Threadless and the former president of Orion Pictures, as they sound off on... well, come see (and hear) for yourself!"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 10:30:00"
+       end ="03/13/2011 11:30:00"
+    location="Unicorn Theatre"
+    name="LEGO Universe: MMOG Building Creativity Exposed"
+    description="Take an in-depth look inside the creative process of bringing LEGO worlds to life through storytelling and fan collaboration, to create a truly unique MMOG. Six LEGO Group and NetDevil panelists will discuss their roles in the development of LEGO Universe, from senior directors to mega fans and builders. In addition to discussion of the game's storyline and creative building aspects, panel attendees will watch an in-game creation come to life in real time.
+Panelists include: Mark Hansen [Senior Director, The LEGO Group], Ryan Seabury [Creative Director, NetDevil], Chris Brubaker [Media Coordinator, NetDevil], Ryan Baier [Videographer, NetDevil], Steve Barker [LEGO Universe Partner, The LEGO Group]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 11:00:00"
+       end ="03/13/2011 12:00:00"
+    location="Wolfman Theatre"
+    name="Organizing a Child's Play Fundraiser"
+    description="Starting a fundraiser for Child's Play Charity? Make this panel your next step! Join the founders of Ümloud! (San Francisco) and 'Desert Bus for Hope' (Victoria, B.C., Canada) as they talk about their process in creating a charity event for Child's Play. Whether your idea is to run a fund-drive over the internet or a local event set in the real world, we'll help point you to the right path to make a successful event.
+Panelists include: Graham Stark [Co-Creator, LoadingReadyRun], Chris Kohler [Co-Founder, Ümloud!], John 'Seg' Seggerson [Co-Founder, Ümloud!]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 12:00:00"
+       end ="03/13/2011 13:00:00"
+    location="Pegasus Theatre"
+    name="Further Greetings from a Dead-Tree Dinosaur Cartoonist"
+    description="FoxTrot cartoonist Bill Amend returns to PAX with an all-new slide show! Presented by: Bill Amend"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 12:00:00"
+       end ="03/13/2011 13:00:00"
+    location="Raven Theatre"
+    name="In(die)credible! The Best New Games You Haven't Played"
+    description="Curious about the Indie Games community? Wondering which upcoming titles have developers talking? Looking for something different? Then go play 'Don't Shit Your Pants'! Or better yet, come to our talk! Our mile-a-minute panel will highlight the new, the innovative and the exciting; games that inspired our work, recent releases we can't stop playing, and upcoming projects we're dying to get our hands on. From elegant experiences to mind-bending mechanics to hilarious premises, we'll showcase some of the best and brightest games that Indie Games has to offer in 2010... and beyond!
+Panelists include: Eitan Glinert [Fire Chief, Fire Hose Games], Robin Hunicke [thatgamecompany], Nathan Vella [Capybara Games], Dylan Fitterer [Audiosurf LLC], Andy Schatz [Pocketwatch Games]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 12:00:00"
+       end ="03/13/2011 13:00:00"
+    location="Unicorn Theatre"
+    name="The Art of the Dungeon Master"
+    description="Being a great Dungeon Master requires a variety of skills. Part referee, part storyteller, and part actor. The art of the Dungeon Master is in combining all of these talents to become a superhuman, DnD-propelling package. Join a team as they discuss various tips and tricks to bring the best adventure to your players, as well as ways to make them equal participants in the story. A QandA session will follow the panel discussion."
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 12:30:00"
+       end ="03/13/2011 13:30:00"
+   location="Main Theatre"
+   name="X-Play LIVE: A Show on Television"
+   description="Through 12 years, 3 name changes and over 1,084 episodes X-Play has persevered as the most watched videogame show on television and was almost nominated for a Primetime Emmy. Each episode is packed with brutally honest reviews, hands-on demos, and the occasional off-hand reference to early David Cronenberg movies. Join hosts Adam Sessler and Morgan Webb with correspondents Blair Herter, Abbie Heppe and the X-Play crew for their biggest live event ever (**this year**). They'll take questions from the audience, reveal world exclusive behind-the-scenes stories, and mock whoever dares ask about the infamous 'Crisis Core' review. Be there for the event of a lifetime and learn what it really feels like when you win a Telly, how deep cable is a life changing experience, and why having a career playing video games can actually be as fun as it sounds.
+Panelists include: Adam Sessler [Host and Editor-in-Chief, Games Content, G4], Morgan Webb [Host, G4], Blair Herter [X-Play correspondent and Deep Teaser, G4], Abbie Heppie [Games Editorial, G4], JP Shub [X-Play Supervising Producer, G4], Wade Beckett [X-Play Executive Producer, G4]"
+
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 12:30:00"
+       end ="03/13/2011 13:30:00"
+   location="Serpent Theatre"
+   name="Rookie Years: Stories from First Projects"
+   description="How did you get that gig and what happens after you've landed your dream job? Julian Murdoch (Gamer's with Job's podcast) uncovers the stories of four new developers and their first projects. Developers including Jeff Green (Electronic Arts) and David Heron (Hothead) reveal their shared experiences, misconceptions, successes and failures. Audience questions will be answered.
+Panelists include: David Heron [Game Designer, Hothead Games], Julian Murdoch [Founder, Gamer's with Jobs], Jeff Green [Electronic Arts]"
+
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 12:30:00"
+       end ="03/13/2011 13:30:00"
+   location="Wolfman Theatre"
+   name="SO I HAVE THIS WEBSITE..."
+   description="You've spent the time and money building your community site, and now you're looking to take it to the next level. Maybe you want to get a job as a professional Community Manager, or maybe you're just looking for tips on how to get publishers to pay more attention to your site. Whether you're just starting out, or have been running a site for years, this panel is the best place to get your questions answered. Together, these community managers have represented some of the biggest franchises, developers, and publishers in the game industry, and most of them started out just like you - running a fan site.
+Panelists include: Matthew Pruitt [FPS Community Manager, Electronic Arts], Jon Goff [Community Manager, 343 Industries], James Stevenson [Senior Community Manager, Insomniac Games], Justin Korthof [Community Manager, Robot Entertainment]"
+
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 13:30:00"
+       end ="03/13/2011 14:30:00"
+   location="Pegasus Theatre"
+   name="Xbox LIVE Enforcement: Tales from the Din Part 3: The Conclusioning"
+   description="Enforcement on the Xbox LIVE service isn't just about whacking the bad guys. Join Stephen 'Stepto' Toulouse, head of Xbox LIVE Policy and Enforcement, as he walks you through the ins and outs of policing the service (along with some fun stories), working with game developers to keep ahead of the miscreants when designing their titles, and working with the gaming community as a whole to understand how gamers want to be safe online. Stepto and his team will also take your questions about banning, cheating, or anything else you'd like to know about protecting the service. This panel will complete the trilogy of the previous parts presented at PAX Prime 2009 and PAX East 2010 with all new content and fun.
+Panelists include: Steve Clark [Enforcement Program Manager, Microsoft], Boris Erickson [Enforcement Program Manager, Microsoft], Andreas Holbrook [Enforcement Program Manager, Microsoft], Stephen Toulouse [Director, Policy and Enforcement, Xbox LIVE, Microsoft]"
+
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 13:30:00"
+       end ="03/13/2011 14:30:00"
+   location="Raven Theatre"
+   name="1UP's Retronauts: Holy Crap, the NES is 25 Years Old"
+   description="Can you believe that Nintendo's NES console is twenty-freaking-five years old this fall? Do you feel old yet? Well, you certainly will if you come to this panel and listen to a bunch of old people reminisce about the console's history (and about their back pains and bunions). Jeremy Parish, Frank Cifaldi, Chris Kohler, and Nich Maragos will lead you on a guided tour of classic 8-bit gaming, alleged monopolism, and your own looming sense of mortality.
+Panelists include: Nich Maragos [Localization Editor, Atlus], Chris Kohler [Editor, Wired], Frank Cifaldi [News Editor, 1UP], Jeremy Parish [Executive Editor, 1UP]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 13:30:00"
+       end ="03/13/2011 14:30:00"
+   location="Unicorn Theatre"
+   name="The Insomniac Games Full Moon Show LIVE"
+   description="One of gaming's most beloved and long-time developer podcasts brings the show live to PAX Prime. Join host James Stevenson (Senior Community Manager, Insomniac Games) and key talent from Insomniac Games as they record the next episode of the Full Moon Show. Also on tap will be a special mystery guest, and a new Behind the Scenes look at Insomniac Games. The live show will also feature a segment of 'I Want Your Job!' as well as plenty of time for you to ask questions - and perhaps even win some rare swag!
+Panelists include: James Stevenson [Host, Senior Community Manager, Insomniac Games], Chad Dezern [Studio Manager, NC, Insomniac Games], TJ Fixman [Senior Writer, Insomniac Games], Shaun McCabe [Production Director, Insomniac Games], Calvin Wong [Associate Content Artist, Insomniac Games]"
+/>
+
+    <Event
+     kind="Featured"
+       datetime="03/13/2011 14:00:00"
+       end ="03/13/2011 15:00:00"
+   location="Main Theatre"
+   name="Penny Arcade QandA #2"
+   description="For their return tour of PAX Prime 2010 they’re back for another QandA! Live! On stage! Like never before! Except for that time on Friday! Line up for your questions and they’ll do their best to answer them. Anyone who starts with 'who would win in a fight…' will be escorted out of the Main Theatre.
+Presented by: Gabe and Tycho"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 14:00:00"
+       end ="03/13/2011 15:00:00"
+   location="Wolfman Theatre"
+   name="Idle Thumbs Podcast live episode"
+   description="Join the hosts of the Idle Thumbs podcast for a live reunion episode. Not content speaking to you solely through your computer, we've decided go to the extra mile -- to cast an actual pod into your actual face, before your very eyes! Video games. Panelists include: Chris Remo (Gamasutra), Jake Rodkin (Telltale Games), Nick Breckon (Bethesda), and possible guests. There will be a song this week.
+Panelists include: Jake Rodkin [Designer, Telltale Games], Chris Remo [Editor-At-Large, Gamasutra], Nick Breckon [Community Manager, Bethesda Softworks]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 15:00:00"
+       end ="03/13/2011 16:00:00"
+   location="Pegasus Theatre"
+   name="Gearbox!"
+   description="Gearbox Software continues the now well established PAX tradition of “What’s up with Gearbox” panel! We’ll be discussing Borderlands and the DLC packs, the Brothers in Arms franchise and Aliens: Colonial Marines. There will be time during the panel for gamers to get answers on all their favorite Gearbox games. There may even be a little Claptrap surprise!
+Panelists include: Randy Pitchford [CEO, Gearbox Software], [Brian Martel, Executive Vice President, Gearbox Software], Mikey Neumann [Creative Director, Gearbox Software]"
+/>
+    <Event
+     kind="Featured"
+       datetime="03/13/2011 15:00:00"
+       end ="03/13/2011 16:00:00"
+      location="Queue room"
+    name="Penny Arcade Signing! Nearly 12 Years of Bullshit"
+    description="Need to get your copy of Nearly 12 years of Bullshit: The Splended Magic of Penny Arcade signed? This is the place, for nearly an hour Gabe (Mike) and Tycho (Jerry) will be signing in the queue room."
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 15:00:00"
+       end ="03/13/2011 16:00:00"
+   location="Unicorn Theatre"
+   name="Ask a Games Journalist: Veteran Editors Answer Any and All Questions"
+   description="How do I get a job in the games industry? What college degree should I pursue? Are games journalists on the take? How can anyone give Heavy Rain a 7 out of 10? Walk up to the mic and ask away - we’ve assembled a team of industry professionals who are ready to field your questions. BTW, the answers are: Show up, Doesn’t matter, No, we barely have enough money for soup and rent, and Because it’s a story-driven game with a crappy story.
+Panelists include: Francesca Reyes [EIC, Official Xbox Magazine, Future US], Brett Elston [Executive Editor, GamesRadar, Future US], Logan Decker [EIC, PC Gamer, Future US]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 15:30:00"
+       end ="03/13/2011 16:30:00"
+   location="Raven Theatre"
+   name="How NOT to Get a Job in the Games Industry"
+   description="Want to learn how to make every mistake in the book when applying for a job? Need tips on how to 
+  submit an unprofessional looking cover letter, resume or portfolio to a game development company? Interested 
+  in understanding what it takes to make a poor or unmemorable first impression? Join industry Hiring Managers
+  Lindsey McQueeney (38 Studios and Big Huge Games LLC), Jim Rivers (Obsidian Entertainment), and Allison Foote 
+  (Kaos Studios) as they provide, and offer advice and solutions to, real-world examples of the common pitfalls 
+  and mistakes candidates make when applying for a game development position.
+Panelists include: Jim Rivers [Hiring Manager, Obsidian Entertainment], Lindsey McQueeney [Corporate Recruiter, 
+38 Studios LLC and Big Huge Games]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 15:30:00"
+       end ="03/13/2011 16:30:00"
+   location="Serpent Theatre"
+   name="ChatterBox TreasureBox"
+   description="Can you name all the bosses in the original Mega Man? Do you know what Ocarina song we just played? 
+  If you're a trivia know-it-all or want to be one, this is the event you'd be ashamed to miss. Once referred to
+  as 'the best kept secret of PAX', the ChatterBox crew is teaming up with Golgotron.com to bring back their 
+  gaming guru trivia show and all the prizes that go with it. Challenge yourself to learn what you never thought 
+  you needed to know about gaming history and bring home a reward for answering that totally easy question no one
+  else in the audience could get. Hosted by Alon Waisman, Producer of the ChatterBox Video Game Radio show 
+  Starring: The audience, three contestants, and those charming fellows from Golgotron.com
+Moderated by: Alon Waisman [Producer, Chatterbox Videogame Radio Show]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 15:30:00"
+       end ="03/13/2011 16:30:00"
+    location="Wolfman Theatre"
+    name="Legal Issues in the Games Industry"
+    description="The successful panel returns again to cover the latest developments in the legal arena surrounding games. From Activision and Infinity Ward, to Evony and everyone else, if you've never thought about it before, you're missing out.
+Panelists include: Ross Dannenberg [Partner, Banner Witcoff], Greg Boyd [Attorney, Davis and Gilbert], Tom Buscaglia [Board Member, IGDA], Dan Rosenthal [Contributing Editor, GamePolitics], Seth Krauss [VP and General Counsel, Take Two Games]"
+/>
+
+    <Event
+      kind="Panel"
+       datetime="03/13/2011 16:30:00"
+       end ="03/13/2011 17:30:00"
+    location="Raven Theatre"
+    name="Egregiously Unrealized Potential"
+    description="How many times have you played a new game, only to think to yourself, 'Wow, this would have been awesome if they'd just done X?' How often do you imagine the never-made sequel to a game that was, for lack of a better term, itself a game-changer? These are not uncommon sentiments in the gaming community. But why is this the case? Conventional wisdom dictates that, if a market existed, these seemingly obvious games would be made. Are gamers naive and unrealistic? Or is there some yet unexplored factor in this phenomenon? From the creators of Beyond Dungeons and Dragons, Beyond Candyland, and Losing Should Be Fun.
+Panelists include: Brandon 'Rym' DeCoster [Producer, GeekNights], Scott Rubin [Host, GeekNights]"
+/>
+
+    <Event
+      kind="Omegathon"
+       datetime="03/13/2011 17:30:00"
+       end ="03/13/2011 18:30:00"
+    location="Main Theatre"
+  name="Final Round of the Omegathon"
+    description="Bear witness to the Final Round of the Omegathon and let us bid thee farewell."
+/>
+
+  </Schedule>
+
+</xs:schema>

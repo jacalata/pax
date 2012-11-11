@@ -1,0 +1,142 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Input;
+
+
+using Microsoft.Phone.Controls;
+using PAX7.Model;
+using PAX7.ViewModel;
+
+using System.Windows.Threading;
+
+namespace PAX7.View
+{
+    public partial class SchedulePivotView
+    {
+        private ScheduleViewModel vm;
+        private string pivotString = null;
+        public SchedulePivotView() { } //empty constructor: code in OnNavigatedTo
+
+        public void OnLoadComplete()
+        {
+            if (LayoutRoot == null) return; // hack to avoid UI stuff during test
+            LoadingProgressBar.IsIndeterminate = false;
+            progressBar.Visibility = Visibility.Collapsed;
+            searchExplanation.Visibility = Visibility.Collapsed;
+            //if search header was visible, it remains visible.
+            text_noMySchedule.Visibility = Visibility.Collapsed;
+            text_noSearchResults.Visibility = Visibility.Collapsed;
+
+            schedulePivot.ItemsSource = vm.EventSlices; //this is slow: because I need to do the whole list load first?
+
+            //if there are no elements in 'my schedule' or for search results, show explanatory text
+            bool empty = true;
+            int firstResult = 0;
+            foreach (ScheduleSlice slice in vm.EventSlices)
+            {
+                if (slice.events.Count > 0)
+                {
+                    empty = false;
+                    break;
+                }
+                firstResult++;
+            }
+            if (empty == true)
+            {
+                if (pivotString == ScheduleViewModel.PivotView.Search.ToString())
+                {
+                    if (_searchText.Text.Contains("bacon"))
+                    {
+                        text_bacon.Visibility = Visibility.Visible;
+                        text_noSearchResults.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        text_noSearchResults.Visibility = Visibility.Visible;
+                        text_bacon.Visibility = Visibility.Collapsed;
+                    }
+                }    
+                else if (pivotString == ScheduleViewModel.PivotView.Stars.ToString())
+                    text_noMySchedule.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                // swoop the user to the first populated pivot
+                schedulePivot.SelectedIndex = firstResult;
+                text_bacon.Visibility = Visibility.Collapsed;
+                text_noSearchResults.Visibility = Visibility.Collapsed;
+            }
+
+        }
+       
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            InitializeComponent();
+
+            //read parameters
+            if (this.NavigationContext.QueryString.ContainsKey("PivotOn"))
+                pivotString = this.NavigationContext.QueryString["PivotOn"];
+            else 
+                pivotString = "Day";
+
+            if (pivotString == ScheduleViewModel.PivotView.Search.ToString())
+            {
+                searchHeader.Visibility = Visibility.Visible;
+                searchExplanation.Visibility = Visibility.Visible;
+                progressBar.Visibility = Visibility.Collapsed;
+                schedulePivot.Margin = new Thickness(20, 100, 20, 20); //setting the margin to give space for the search box
+                _searchText.Focus(); //focus in textbox
+                //now wait for a search to be entered before we load the items
+            }
+            else
+            {
+                LoadingProgressBar.IsIndeterminate = true;
+                LoadingProgressBar.Visibility = Visibility.Visible;
+                progressBar.Visibility = Visibility.Visible;
+                searchHeader.Visibility = Visibility.Collapsed;
+                searchExplanation.Visibility = Visibility.Collapsed;
+                //not a search, so just load the schedule view immediately
+                vm = new ScheduleViewModel(this, pivotString, null);  
+                vm.LoadSchedule();
+
+            }
+            base.OnNavigatedTo(e);
+        }
+
+
+        private void searchButtonClick(object sender, RoutedEventArgs e)
+        {
+            search();
+        }
+
+        private void SearchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key.Equals(Key.Enter))
+            {
+                search();
+            }
+        }
+
+        private void search()
+        {
+            // instant ui reaction
+            searchExplanation.Visibility = Visibility.Collapsed;
+            LoadingProgressBar.IsIndeterminate = true;
+            LoadingProgressBar.Visibility = Visibility.Visible;
+            loadingText.Visibility = Visibility.Collapsed;
+            progressBar.Visibility = Visibility.Visible;
+            // now begin actual search
+            string searchString = _searchText.Text;
+            vm = new ScheduleViewModel(this, pivotString, searchString);
+            vm.LoadSchedule();
+        }
+
+
+    }
+}

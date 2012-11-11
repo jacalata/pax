@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+<Event
+kind="GameDev"
+name="Turbine Keynote"
+location="IGDA Dev Center"
+    datetime="03/12/2011 10:00:00"
+    end ="03/12/2011 10:50:00"
+	description="The Game Monetization Revolution: Embracing new business models that are good for both players and developers.
+Presented by Fernando Paiz [Executive Producer, Turbine] "
+/>
+
+<Event
+name="A Brief History of Chip Music"
+kind="Panel"
+location="Jamspace"
+    datetime="03/12/2011 10:00:00"
+    end ="03/12/2011 11:00:00"
+description="Using the lo-bit sound chips trapped within retro videogame consoles and other vintage electronics to synthesize new forms of musical composition, chiptune artists across the globe have slowly but surely brought enthusiasm for their craft to a fever pitch. The basements of yesteryear have become stages, and the upon those stages a new breed of performer has arisen -- not to merely evoke the nostalgic timbres of Nintendo-era videogame music, but to re-define and celebrate the limitations of the machines we once called our toys. From videogame soundtracks and demoscene/cracktro hackers to the thriving underground music scenes that exist today, join chiptune journalist Zen Albatross as he expounds on the vibrant history and promising future of chip music."
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 10:30:00"
+    end ="03/12/2011 11:30:00"
+    location="Cat"
+    name="Radio Free Nintendo: A Live Nintendo Podcast for Grown-Ups... 2!"
+	description="We love Nintendo games just as much as we love to criticize the company itself. From Mario, Metroid, and Zelda to Wii and 3DS, we'll cover classic games and upcoming releases, plus whatever you want to hear about with lots of audience interaction. Come see the PAX East return of the best Nintendo-centric podcast crew, with over 200 weekly episodes since 2006. Radio Free Nintendo is a show (and panel) about Nintendo and gaming in general, made by and for gamers who have long out-grown system warz and blind devotion.
+Panelists include: Jonathan Metts [Contributing Editor, Nintendo World Report], Mike Sklens [Staff Writer, Nintendo World Report], James Jones [Features Editor, Nintendo World Report], Jon Lindemann [Director, Nintendo World Report], Karl Castaneda [Staff Columnist, Nintendo World Report]"
+/>
+
+
+    <Event
+     kind ="Featured"
+    datetime="03/12/2011 10:30:00"
+    end ="03/12/2011 11:30:00"
+    location="Main"
+    name="Penny Arcade Make-a-Strip Panel"
+	description="Ever wonder what goes into making a Penny Arcade comic? Join Gabe and Tycho in the Main location and take part in creating Monday's HILARIOUS comic."
+/>
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 10:30:00"
+    end ="03/12/2011 11:00:00"
+    location="Wyvern"
+    name="Just Because You Have an Idea, You Are Not a Game Designer"
+	description="Many of us have worked with some amazing designers over the years, and they are much more than walking idea factories. Passion for concepts is great, but don't confuse passion for skill. In this panel we'll talk about the characteristics that make a good game designer, and specific skills we look for when hiring on new talent. We'll also spend some time to point out the differences between good ideas for projects, theoretically good ideas, and bad ideas that you think are good.
+Panelists include: Ichiro Lambe [President, Dejobaan Games], Chris Oltyan [Producer, Dire Wolf Digital], Eitan Glinert [President, Fire Hose Games], Scott Macmillan [President, Macguffin Games]"
+/>
+
+
+    <Event
+     kind ="Show"
+    datetime="03/12/2011 11:00:00"
+    end ="03/12/2011 14:00:00"
+    location="Jamspace"
+    name="PAX East Chiptune Showcase Part 2"
+	description="Check out some chipbands in Jamspace, the lineup for Saturday includes: 8bitbetty Br1ght Pr1mate Danimal Cannon Zen Albatross Sabrepulse"
+	/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 11:00:00"
+    end ="03/12/2011 12:00:00"
+    location="Manticore"
+    name="A Reverse QandA with the Harmonix Community Team"
+	description="The Harmonix Community Team spends a good part of their day answering questions about Rock Band and Dance Central on forums, in emails and on camera... but what happens when the tables are turned and they're given free reign to question a captive audience in a PAX panel? Part focus group and part interrogation, this panel turns the traditional notion of a QandA on its head, giving community members the opportunity to answer questions submitted by developers. You may be wonder: 'What kind of questions will be asked?' and 'Do attendees answer individually or as a collective?' and 'Will this be a disaster?' Continue to wonder, because the Harmonix folks aren't dishing out any answers, only questions.
+Panelists include: Aaron Trites [Community Manager Manager, Harmonix Music], Allison Thresher [Community Manager, Harmonix Music], Eric Pope [Community Manager, Harmonix Music], John Veneron [Associate Producer, Harmonix Music], Jason Brau [Community Moderator, Harmonix Community Member]"
+/>
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 11:00:00"
+    end ="03/12/2011 12:00:00"
+    location="Naga"
+    name="Owned but Independent: Running a Studio at Activision"
+	description="How do you make gamers happy, make your development team happy, AND make your corporate parent company happy all at the same time? Somehow, the people on this panel have found a way. Join our panelists as they explain what life is really like working with the world's biggest gaming software publisher. Dan 'One of Swords' Amrich moderates.
+Panelists include: Brian Raffel [Studio Head, Raven Software], Peter Della Penna [Studio Head, High Moon Studios], Eric Biessman [Senior Project Lead, Raven Software], Jennifer O'Neal [Executive Producer, Vicarious Visions], Dan Amrich [Social Media Manager, Activision]"
+/>
+
+    <Event
+     kind ="Omegathon"
+    datetime="03/12/2011 11:30:00"
+    end ="03/12/2011 12:30:00"
+    location="Merman"
+    name="Omegathon Round 2"
+	description="Details TBA"
+	/>
+
+
+
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 12:00:00"
+    end ="03/12/2011 13:00:00"
+    location="Cat"
+    name="City of Heroes - Ascending to the Next Level of Super-Powered MMOs"
+	description="City of Heroes, the worlds most popular super-powered MMO, is celebrating its seventh year of super powered adventures in cosmic style. The Paragon Studios development team will unveil never before revealed secrets about our upcoming game update, Issue 20 - Incarnates. The battle against Praetoria steps up as Emperor Cole and his Lieutenants continue their invasion of Earth. Heroes and Villains must rise to new levels of power in order to save the world. Find out about the brand new Incarnate Abilities that players can unlock on their level 50 Heroes and Villains. Get your first peek at the stunning group encounters in the alternate world of Praetoria. The City of Heroes panel will also be the first time players can see the brilliant new environments, characters and art that will be in Issue 20 - Incarnates.
+Panelists include: Matt Miller [Lead Systems Designer, Paragon Studios], Nate Birkholz [Lead Producer, Paragon Studios], Ryan Roth [Senior Environment Artist, Paragon Studios], Tia Paraurahi [Associate Community Manager, Paragon Studios]"
+/>
+
+
+    <Event
+    kind ="Panel"
+    datetime="03/12/2011 12:00:00"
+    end ="03/12/2011 13:00:00"
+    location="Wyvern"
+    name="The PAX Musical Guest Panel!"
+	description="Join a mix of our musical guests as they tell stories about their experiences as geek rock icons, what it's like to have an internet fanbase, the games and other influences they've had along the way, and what you should and shouldn't do if you're interested in starting up a band in this genre."
+	/>
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 12:30:00"
+    end ="03/12/2011 13:30:00"
+    location="Naga"
+    name="Snagging the Marketing or Writing Job of Your Dreams"
+	description="In addition to technical roles, opportunities exist for jobs in marketing, writing and PR. Learn what skills are needed and how to apply. Five senior executives from different sectors of the industry will give you advice. This session, one of the most popular panels last year at at PAX East, will allow everyone attending the chance to ask their personal questions.
+Panelists include: Sue Bohle [CEO, The Bohle Company], James Seamon [Managing Director, Topware Interactive], AJ Glasser [News Editor, GamePro Media], Jay Pietta [Director of QA, Turbine], Jonathon Myers [Writer, Reactive Games], Kevin Joyce [Liquid Advertising]"
+/>
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 12:30:00"
+    end ="03/12/2011 13:30:00"
+    location="Manticore"
+    name="TBA"
+	description="TBA"
+	/>
+	
+	
+ <Event
+     kind ="GameDev"
+    datetime="03/12/2011 11:30:00"
+    end ="03/12/2011 12:30:00"
+    location="IGDA Dev Center"
+    name="You Got the Touch, You Got the Power"
+	description="Over 30 years ago the game industry created controllers, it was a way to interact with objects on screen, but really it was just faking our fingers. Finally after all these years of faking 'the finger', we are finally getting to play games the way they were originally played, using touch. This session will focus on the growing casual market of touch screen games. It will cover designing and porting games to multiple touch screen devices, and the common rules and pitfalls that occur within this medium.
+Presented by Grant Shonkwiler [Philadelphia IGDA Head, Producer and Game Designer, Megatouch], Terrence Masson [Director of Creative Industries, Northeastern University], [DigiPen Institute of Technology], Jim Rivers [Hiring Manager, Obsidian Entertainment]"
+/>
+
+
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 13:00:00"
+    end ="03/12/2011 14:30:00"
+    location="Merman"
+    name="Geek Parenting"
+	description="How young is too young for The Hobbit? Why is LEGO Star Wars the best console game for your child? What's the best way to deal with bullying? How old should your child be before you stop letting/helping them win games against you? As a parent, how do you deal with smart phones, texting and technology in your kids' lives? These questions and many more will be discussed by writers for GeekDad.com, GeekMom.com, and geek parents in the audience. Come share your stories and advice for how to ensure our kids grow up to be geeks like us! Don't have kids? Show up and find out what may be in store for you if you ever do!
+Panelists include: John Booth [Geekdad.com], Matt Blum [Managing Editor, GeekDad.com], Natania Barron [Senior Editor, GeekMom.com], Corrina Lawson [Senior Editor, GeekMom.com], Dave Banks [Core Contributor, GeekDad.com], Doug Cornelius [Core Contributor, GeekDad.com]"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 13:30:00"
+    end ="03/12/2011 14:30:00"
+    location="Cat"
+    name="American Classic Arcade Museum"
+	description="Join Mike Stulir of the American Classic Arcade Museum as he discusses classic videogame development and history with former employees of General Computer Corporation. GCC designed products that created over $750 million in revenue for Midway and Atari between 1981-1984. Some of those products include coin-operated arcade games such as Ms. Pac-Man, Jr. Pac-Man, Quantum and Food Fight. Other GCC development included the hardware for the Atari 7800 console and multiple Atari 2600-7800 came cartridges.
+Panelists include: Steve Golson, Doug Macrae, Mike Horowitz, Tim Hoskins, Tom Westberg."
+	/>
+	
+	
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 13:00:00"
+    end ="03/12/2011 14:30:00"
+    location="Wyvern"
+    name="A Live Demonstration of RAGE"
+	description="Join Design Director Matt Hooper and Senior Producer Jason Kim for a live demonstration of RAGE, the groundbreaking new first-person shooter from id. Set in the not-too-distant future after an asteroid impacts Earth, you emerge into a vast and ravaged wasteland to discover humanity struggling to survive the deadly threat of bandit gangs, mutants, and the Authority - an oppressive government regime that has a special interest in you in particular. Featuring intense first-person shooter action, breakneck vehicle combat, an expansive world to explore and jaw-dropping graphics powered by id's revolutionary id Tech 5 technology, RAGE promises an experience like no other. QandA session to follow the demonstration."
+	/>
+
+<Event
+     kind ="GameDev"
+    datetime="03/12/2011 14:00:00"
+    end ="03/12/2011 15:00:00"
+    location="IGDA Dev Center"
+    name="Everything I Know About Social Games I Learned From Call of Duty"
+    description="The games industry is evolving. Social Games, once a fringe games industry enclave, discussed under hushed tones in shadowy corners of interactive entertainment gatherings, has taken its place as an established game development discipline with nuances, best practices, and pillars all its own. That said, are 'Triple-A' console games like Call of Duty so different from smash hit Social Games like FrontierVille and Mafia Wars? Is it possible that Call of Duty conned us into believing it was just another shooter, when it was actually a groundbreaking foray into the burgeoning Social Games space? This session examines the core compulsion loops, long-term feedback mechanics, and economy or itemization strategies of games like Call of Duty, and explores the parallels between the console shooter market's biggest blockbuster and the industry's newest untamed frontier.
+Coray Seifert [IGDA Board Member, Senior Designer, Arkadium]"
+/>
+
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 14:00:00"
+    end ="03/12/2011 15:00:00"
+    location="Manticore"
+    name="Pitch Your Game Idea"
+	description="You've got 45 seconds to deliver your idea to our panel of experts. The top three pitches will be picked for prizes and swag! (Please note that this is an open forum - there's nothing keeping anyone, judges and attendees alike, from stealing your ideas! If you're not comfortable with this, please don't pitch your idea!)"
+	/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 14:00:00"
+    end ="03/12/2011 15:00:00"
+    location="Naga"
+    name="Community: Some Assembly Required and Batteries Definitely Not Included"
+	description="Building a community around games takes work and may be a little rough around the edges -- just like this session! But stick with it and you'll find yourself in the middle of one of the most fun and most vocal communities around. Come discuss how to build a following, how to find your own voice, success stories, what Xbox LIVE is doing to build community, and how you can try to work with the 'big guys', with Xbox LIVE Community Manager Eric 'DMZilla' Doty. There is no instruction booklet for Community, but there are plenty of ways to start your journey. Possibility of Powerpoint and FREE stuff.
+Presented by: DMZilla Doty [Community Manager, Xbox LIVE]"
+/>
+
+    <Event
+   kind ="Panel"
+  datetime="03/12/2011 14:30:00"
+  end ="03/12/2011 15:30:00"
+  location="Main"
+  name="2027 - The Near-Future: Live Demo of Deus Ex: Human Revolution and Dev Team QandA"
+description="Want to see what world will look like in 2027? The truth will change you. Join core development team members of the highly anticipated action RPG, Deus Ex: Human Revolution, for a live demo of never before seen gameplay! Deus Ex: Human Revolution is the return to one of the most critically-acclaimed video game franchises of all time. The game tells the story of Adam Jensen, a man cybernetically augmented against his will, who finds himself in the middle of a global conspiracy to which he holds the key. By offering players the chance to advance through the game in multiple and vastly different ways, Deus Ex: Human Revolution challenges the foundations of gaming and provides an immersive experience where every choice has a lasting consequence. A QandA session will follow the presentation. "
+/>
+    
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 14:30:00"
+    end ="03/12/2011 15:30:00"
+    location="Merman"
+    name="Here Be Danger: Turn Back Now Before the Game Industry Eats You Alive"
+description="Please, step just a little closer so we can eat your brains! Mwuahahahaha! This session will not be a cheery 'breaking into the game industry' type presentation, instead it'll go in the reverse direction. Meaning, we'll cover all the problems and crap and sore spots, and how best to avoid them, and work around them. More like the dirty secrets no one tells you about before you get into the industry, which make you sorry you ever did.
+Presented by: Jason Della Rocca [Founder, Perimeter Partners]"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 15:00:00"
+    end ="03/12/2011 16:00:00"
+    location="Cat"
+    name="Guild Wars 2 - Fantasy MMO Redefined"
+description="Are you tired of grind, repetitive combat and MMORPGs that have no RPG? Key creators of ArenaNet's upcoming Guild Wars 2 MMORPG will discuss the game's creation from an art and design perspective. Accompanied by stunning GW2 concept art, Lead Content Designer Colin Johanson, Game Designer Jon Peters, Community Manager Regina Buenaobra, Global Brand Manager Brian Porter, and SVP, Global Business Randy Price will examine how the lore, design, and gameplay of Guild Wars 2 has evolved from the original game. The panel will field questions about the highly anticipated Guild Wars 2."
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 15:00:00"
+    end ="03/12/2011 16:00:00"
+    location="Wyvern"
+    name="Females on Female Characters"
+description="Join Susan Arendt, Senior Editor of The Escapist; Kathleen de Vere, star of LoadingReadyRun; AJ Glasser, News Editor of GamePro; and Lisa Foiles, star of Lisa Foiles Top 5; as they discuss what they embrace in female fictional characters and why these attributes are important. They will identify their favorite characters and how they would like more heroines with similar attributes integrated into Geek culture. This fresh, positive approach to female characters shouldn't be missed. Moderated by Elizabeth Grunewald, Not Games Editor of The Escapist."
+/>
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 15:00:00"
+    end ="03/12/2011 16:30:00"
+    location="IGDA Dev Center"
+    name="Growing Your Market"
+	description="All the data suggests vast untapped markets exist-- people who do play games, or might play games, but who certainly aren't playing -your- games. Our panel of industry professionals will discuss strategies they've employed for increasing market penetration of their products.
+
+Panelists include: Kate Edwards [Principal Consultant and Founder, Englobe Inc], N'Gai Croal [Consultant/Writer/Columnist, Hit Detection LLC], Alex Horn [Writer, Big Huge Games and 38 Studios], Tobi Saulnier [CEO and Founder, 1st Playable Productions]"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 15:30:00"
+    end ="03/12/2011 16:30:00"
+    location="Manticore"
+    name="G4 Feedback Live!"
+	description="Details TBA"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 15:30:00"
+    end ="03/12/2011 16:30:00"
+    location="Naga"
+    name="To Hell and Back Again: How the Game Industry Has Changed Since Diablo"
+	description="President of Gazillion Entertainment and former President of Blizzard North, David Brevik, has seen the gaming industry change immensely since he created the Diablo franchise. With the growth of social games, free-to-play business models, the digital distribution of titles, and the industry itself being thrust into the spotlight of mainstream media; David will be discussing what he has seen as the most pivotal shifts in gaming over the past decade and where the industry may be heading."
+	/>
+
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 16:00:00"
+    end ="03/12/2011 17:00:00"
+    location="Merman"
+    name="Publish Your Own RPG - And Don't Go Broke Doing It!"
+	description="Want to publish your own tabletop RPG? Publishing your own game used to mean shelling out thousands of dollars for a huge print run and art, and still risk never earning your money back. Not any more. Join an all-star team of self-publishers: D. Vincent Baker ('Dogs In The Vineyard,' 'Apocalypse World'), Meguey Baker ('1001 Nights', 'Psi Run'), Emily Boss ('Three Games About The Human Heart'), Epidiah Ravachol ('Dread,' 'Time And Temp'), Elizabeth Sampat ('Blowback') and Shreyas Sampat ('Mist-Robed Gate') as they discuss all of the tips and tricks for publishing a great game without going broke. Want to know how Apocalypse World made money before it hit the printer? How Mist-Robed Gate was published for less than $50? These are the people to talk to! QandA welcome!"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 16:30:00"
+    end ="03/12/2011 17:30:00"
+    location="Cat"
+    name="Video Game Music and Nerdcore Hip-Hop"
+description="Nerds who rap? Sounds foolish... maybe. MC and gamer Random, aka Mega Ran will take you through the history of both hip-hop and video games, and explain how they both met up at a strange crossroads called 'nerdcore hip-hop.' Guest Panelists include Damien 'MC Frontalot' Hess, Godfather of Nerdcore and more!
+Panelists include: Raheem Jarbo [Musician, Mega Ran.Com], Damian Hess [Musician, MC Frontalot, Level Up Records], Kyle Murdock [Producer, Neo Sonic Productions]"
+/>
+
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 16:30:00"
+    end ="03/12/2011 17:30:00"
+    location="Main"
+	name="Rooster Teeth"
+	description="Come to the Rooster Teeth panel to see the world premiere of several new videos and to take part in a QandA with Burnie Burns, Monty Oum, Geoff Ramsey and Gus Sorola. Topics may or may not include machinima, gaming, podcasting and animal husbandry. Some topics will be covered more thoroughly than others."
+	/>
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 16:30:00"
+    end ="03/12/2011 17:30:00"
+    location="Wyvern"
+    name="The Roads to Becoming a Community Manager (East Coast Version!)"
+description="Based on the great feedback we received after this panel at PAX Prime, we've decided to do it again! East-Coast Style. You hear us on podcasts, see us in videos, read our blogs on websites, retweet us, argue with us on forums, and give us high fives at PAX. But have you ever wondered how we became community managers? From games journalism to forum moderation to public policy and QA, every road is different. Find out the random history of some of your favorite game studio community managers, and hear their advice on what skills and knowledge you'll need to become one of gaming's next-generation of community managers.
+Panelists include: Alli Thresher [Community Moderator, Harmonix Music Systems, Inc], James Stevenson [Community Manager, Insomniac Games], Arne Meyer [Manager, Community, Naughty Dog], Sam Houston [Online Content Manager, Playfish, EA], Jennifer Kye [Company Blogger, Social Media Editor, Gameloft], Michael Abbot [Owner / Writer, Brainy Gamer ], Arne Meyer [Senior Manager of Marketing Communications, Naughty Dog], Justin McElroy [Reviews Coordinator, Joystiq]"
+/>
+
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 17:00:00"
+    end ="03/12/2011 18:00:00"
+    location="Manticore"
+    name="Major Nelson Podcast"
+	description="Come for a live recording of Major Nelson's Podcast with Xbox LIVE's own Major Nelson, E, Stepto, and lollip0p. Expect shenanigans, epic giveaways, and Kinect!"
+	/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 17:00:00"
+    end ="03/12/2011 18:00:00"
+    location="Naga"
+    name="MMORPG.com: The Future of Online Gaming"
+	description="
+A panel of MMORPG experts gather to chat with fans on where the online game market is going. With games moving into the mobile space, free to play pricing models and five major launches in 2011 the online market is in for a major year. The panel will have speakers from some of the top upcoming games in the online space plus legends in the industry. Fan will be able to ask questions and get answers from top development studios about upcoming games as we hope to explore where online games will be going for the next decade.
+Panelists include: Craig Alexander [Turbine], Scott Hartsman [Trion], Garrett Fuller [Industry Relations, MMORPG.com ]"
+/>
+
+
+<Event
+kind="Show"
+    datetime="03/12/2011 17:00:00"
+    end ="03/12/2011 20:00:00"
+name="Jamspace Concert"
+location="Jamspace"
+description="BrentalFloss
+Armcannon
+Powerglove"
+/>
+
+<Event
+     kind ="GameDev"
+    datetime="03/12/2011 17:00:00"
+    end ="03/12/2011 18:00:00"
+    location="IGDA Dev Center"
+    name="Creating Compelling Worlds for Original IP"
+    description="Starting from scratch to create a believable, compelling world that gets players excited about your otherwise unknown project is a massive, difficult and potentially extremely rewarding task. Team KAOS will converge on the IGDA PAX East Game Development Summit to discuss the unique challenges, opportunities and pitfalls of creating entire worlds from a single spark of inspiration.
+Panelists include: Coray Seifer [Senior Designer, Arkadium], Jason Bennett [Concept Artist, 4mm Entertainment], Matthew Harwood [Audio Director, Kaos Studios, THQ], CJ Kershner [Writer, Kaos Studios, THQ], JT Petty [Narrative Director, Creo Ludus Entertainment]"
+/>
+
+    <Event
+     kind ="GameDev"
+    datetime="03/12/2011 17:30:00"
+    end ="03/12/2011 18:30:00"
+    location="Merman"
+    name="Careers in Paper Gaming"
+	description="Digital games are great, but the competition for jobs is insane. Games are still published on paper, in decks of cards, in rulebooks, and on boards. What does it take to find a job in the paper gaming industry? Should you look for a position with an established publisher, or find a way to self-publish? Pick the brains of our luminary panelists for answers to all these questions and much more.
+Panelists include: Steve Jackson [Founder, Steve Jackson Games], Andrew Hackard [Line Editor, Munchkin], Phil Reed [Founder, Ronin Arts]"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 18:00:00"
+    end ="03/12/2011 19:00:00"
+    location="Cat"
+    name="Running a Child's Play Fundraiser"
+	description="Starting a fundraiser for Child's Play Charity? Make this panel your next step! Whether your idea is to run a fund-drive over the internet or a local event set in the real world, this panel will help point you to the right path to make a successful event.
+Panelists include: John Seggerson [Co-Founder / Content Programmer, Umloud! and Telltale Games], Kristin Lindsay [Foundation Coordinator, Child's Play Charity]"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 18:00:00"
+    end ="03/12/2011 19:00:00"
+    location="Wyvern"
+    name="Penny Arcade: The Series, Season 2 QandA"
+	description="Join Vantage Point Productions for an exclusive screening and an open QandA session about the current season of Penny Arcade: The Series. Panelists include: Van Blumreich, Patrick Smith, and Adam Croft"
+	/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 18:30:00"
+    end ="03/12/2011 19:30:00"
+    location="Manticore"
+    name="Videogame Antiques Roadshow: Are Your Old Games Actually Buried Treasure?"
+	description="Television shows like 'Pawn Stars' and 'Antiques Roadshow' have captured the imagination of Americans who would love to find a priceless collectible at a yard sale. There's just one thing missing - classic videogames. No longer. Bring the rarities from your collection, and you'll have a chance to come up on stage and have your games appraised and evaluated by our handpicked panel of experts. Along the way, the whole audience will learn some fascinating tidbits about gaming history!
+Panelists include: Chris Kohler [Editor, Game|Life, Wired.com], Frank Cifaldi [Editor, 1up.com], Mike Mika [Head of Development, Other Ocean]"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 18:30:00"
+    end ="03/12/2011 19:30:00"
+    location="Naga"
+    name="The 'Other' Us: If We're All Gamers, Does Our Gender Matter?"
+	description="Abbie Heppe's review of Metroid: Other M prompted a wave of backlash across the gaming community. Words like 'feminist' got thrown around in comments sections of popular gaming sites as if it were the new 'f' word. But what is really feminist versus what is perceived as feminist by virtue of the fact that it comes from a woman's perspective? Using these reactions as a jumping off point, a panel of gamers, journalists, and members of the industry will look at the ways gender is treated in gaming culture at large. In our debate and discussion of Abbie's review, we'll be looking at the larger question: 'As our industry becomes more progressive and, arguably, gender-blind, is geek and gamer culture regressing?'
+Panelists include: Alli Thresher [Community Moderator, Harmonix Music Systems, Inc], Abbie Heppe [Senior Gaming Content Producer, G4 TV], Eric Pope [Community Moderator, Harmonix Music Systems, Inc.], Yesenia Cisneros [Games Tester, Excell], Jennifer Kye [Company Blogger, Social Media Editor, Gameloft]"
+/>
+
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 19:00:00"
+    end ="03/12/2011 20:00:00"
+    location="Merman"
+	name="Ledo and Ix Screening and QandA"
+	description="The Adventures of Ledo and Ix is the latest series to air on PATV. Inspired by a deep love of FFIV and A Link To The Past, its story delves the inner lives of two characters in a 1990s RPG as they ask themselves the really Big Questions: Who are we, and how many points to we have? Is it wrong to take townspeople's stuff? And what happens when the quest is over?
+
+Season One of Ledo and Ix will be screened in dazzling high definition (including a first look at Episodes 6 and 7), and the audience will be invited to participate in a moderated discussion with series creator Emily Carmichael. Much like an electron's, the flitting movements of Carmichael's thought process are outside our or any human's power to predict, but those familiar with her in private life know she enjoys discussing the relative merits of Final Fantasy games (including those she has not played all the way through), as well as the Big Issues of Gender, Genre Tropes and Storytelling. "
+	/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 19:30:00"
+    end ="03/12/2011 20:30:00"
+    location="Cat"
+	name="Where's my Spaceship!? Adventures in Video Game Costuming"
+	description="Have an awesome costume you want to show off? Want to start cosplaying but haven't made the leap? Join Crabcat Industries as we escape from reality to share your triumphs, horror stories, and battle damage. Show your love for video games by running around and embarrassing yourself in costume! We'll also discuss professional costuming techniques you can do in your garage, and our current project: transforming face model Rana into her Mass Effect 2 character Samara. Then we'll set our eyes on world domination. Or something.
+Panelists include: Holly Conrad [Chief Executive Officer, Crabcat Industries], Jessica Merizan [Chief Operations Officer, Crabcat Industries], Hilary Shapiro [Chief Financial Officer, Crabcat Industries], Rana McAnear"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 19:30:00"
+    end ="03/12/2011 20:30:00"
+    location="Wyvern"
+    name="The LoadingReadyRun Panel"
+	description="LoadingReadyRun, manufacturers of the finest internet comedy, have sent a delegation to the forbidden wilds of the east coast for one, single purpose: Answering your questions and being generally amusing for your entertainment. LoadingReadyRun produces Unskippable, ENN and Daily Drop for the Escapist Magazine, and runs the annual Desert Bus Fundraising Marathon in support of Child's Play."
+	/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 20:00:00"
+    end ="03/12/2011 21:00:00"
+    location="Manticore"
+    name="The Twisted Pixel Variety Hour"
+	description="Come join the crew from Twisted Pixel in a jam packed hour of entertainment. See exclusive never-before-seen presentations of both new Twisted Pixel games in development! Hear the awesome stories behind your favorite characters! Help us create and design parts of our new games over the course of the hour! Mere exclamation points don't convey the amount of awesomeness crammed into this panel! You should probably start lining up now!
+Panelists include: Mike Wilford [CEO, Twisted Pixel Games], Dan Teasdale [Lead Designer, Twisted Pixel Games], Matt 'Chainsaw' Chaney [Supreme High Commander of Audiological Endeavors, Twisted Pixel Games]"
+/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 20:00:00"
+    end ="03/12/2011 21:00:00"
+    location="Naga"
+    name="Joystiq's Xbox 360 Fancast LIVE"
+	description="Drop bears, marmite, bromance, asparagus, bad accents, San Francisco trolleys ... it's time for X3F LIVE. Join Richard Mitchell, Alexander Sliwinski and David Hinkle as they put on the show about the Xbox 360 for your eyeballs that you've been digesting through your earholes for over 200 episodes. The show will also be visited by ghosts of X3F's past, involve a mass moment of masochism and, if you're lucky, you may just come out the experience a better person -- but that's doubtful."
+/>
+
+    <Event
+    kind ="Show"
+    datetime="03/12/2011 20:30:00"
+    end ="03/12/2011 23:59:00"
+    location="Main"
+    name="Saturday Night Concerts and Omegathon Round 3"
+	description="Not only will you get to enjoy the third round of the Omegathon (and trust us, you will enjoy it!), but you'll also get a chance to enjoy the VGO, Paul and Storm, and Jonathan Coulton."
+	/>
+
+    <Event
+     kind ="Panel"
+    datetime="03/12/2011 20:30:00"
+    end ="03/12/2011 21:30:00"
+    location="Merman"
+    name="Hidden Value of Punching Trees: What Minecraft Reveals About Game Culture"
+	description="Minecraft, the indie PC game designed by Markus Persson (aka. notch), ignited the gaming scene inspiring communities to band together to, of all things, create. Create castles, rollercoasters, and 1:1 scale copies of the Starship Enterprise out of blocks... but what does Minecraft uncover about today's gamers and game culture? Media scholar Alex Leavitt will look at the development and spread of Minecraft to explain the cultural implications behind why notch spends hours interacting with fans, how online forums are replacing outdated game manuals, and what value there is in the hundreds of thousands of YouTube videos that feature players building dilapidated forts. A panel for Minecraft newbies and seasoned tree-punching veterans alike."
+	/>
+
+    <Event
+     kind ="Show"
+    datetime="03/12/2011 21:30:00"
+    end ="03/12/2011 22:30:00"
+    location="Manticore"
+    name="After Hours with Kris and Scott (Scott and Kris)"
+	description="PAX again heralds the coming of its official late-night talk show with hosts Scott Kurtz and Kris Straub, the talent behind PATV's Blamimation series. After Hours with Kris and Scott promises an hour of laughs, celebrity interviews and probably even a musical guest -- it's a show so spontaneous, we won't know what's planned until the show's over!"
+/>
+
+    <Event
+     kind ="Show"
+    datetime="03/12/2011 21:30:00"
+    end ="03/12/2011 23:30:00"
+    location="Merman"
+    name="PA The Series: Season 2"
+	description="Details TBA"
+	/>
+
+    <Event
+     kind ="Show"
+    datetime="03/12/2011 21:30:00"
+    end ="03/12/2011 22:30:00"
+    location="Naga"
+    name="King of Chinatown"
+	description="King of Chinatown isn't a documentary about a video game, it's a STORY about a player and his manager struggling to make a living playing video games. It is a story about their relationship through the rise of the Empire and Justin Wong's fame. It covers a 2 year period, which ends in their eventual breakup. If you ever wanted to know the whole story and what this all was about, here is your chance, and even if you have no idea who these people are, you will find their tale an interesting one."
+	/>
+
+    <Event
+     kind ="Show"
+    datetime="03/12/2011 21:30:00"
+    end ="03/12/2011 23:30:00"
+    location="Wyvern"
+    name="The LoadingReadyRun Screening Block"
+	description="In what has become a PAX tradition for LRR, join Graham, Paul and Kathleen as they provide live creator commentary on a bunch of their videos. It's a really fun time for everyone, come on by!"
+/>
+
+
+    <Event
+     kind ="Show"
+    datetime="03/12/2011 22:00:00"
+    end ="03/12/2011 23:00:00"
+    location="Cat"
+    name="An Evening with Day[9] and Husky"
+	description="Celebrated professional shoutcasters Day[9] and Husky are coming to PAX East to demonstrate the excitement and energy of StarCraft 2. They will be casting the finals from the official PAX East 2011 StarCraft 2 tournament, as well as the finals from a special professional-level tournament hosted in honor of PAX East. Attendees of PAX will be the first people to see the finals of this tournament - the rest of the world will have to wait until after PAX in order to see the thrilling conclusion! "
+	/>
+
+
+<Event
+     kind ="Show"
+    datetime="03/12/2011 10:00:00"
+    end ="03/12/2011 18:00:00"
+    location="Exhibition Hall"
+    name="expo day 2: closes 6pm"
+    description="demos and swag!"
+/>
+
+
+
+  </Schedule>
+</xs:schema>

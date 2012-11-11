@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+	<Schedule>
+
+		<Event
+		 kind ="Contest"
+		datetime="08/26/2011 12:00:00"
+		end ="03/11/2011 14:00:00"
+		location="Console"
+		name="Puzzle Bobble, Peggle, NBA Jam"
+		description=""
+/>
+
+		<Event
+		 kind ="Contest"
+		datetime="08/26/2011 14:30:00"
+		end ="08/26/2011 16:30:00"
+		location="Console"
+		name="Puzzle Fighter HDR, Super SF2 Turbo HDR, Tekken 6"
+		description=""
+/>
+		<Event
+		 kind ="Contest"
+		datetime="08/26/2011 17:00:00"
+		end ="08/26/2011 19:00:00"
+		location="Console"
+		name="Lumines Live!, Joust, Galaga"
+		description=" "
+/>
+
+		<Event
+		kind ="Contest"
+		datetime="08/26/2011 20:00:00"
+		end ="08/26/2011 23:59:00"
+		location="Console"
+		name="Super Smash Bros Brawl"
+		description=" "
+/>
+
+
+		<Event
+	 kind ="Contest"
+		datetime="08/27/2011 11:00:00"
+		end ="08/27/2011 13:00:00"
+		location="Console"
+	name="Pac-Man CE DX, Geometry Wars 2, Mortal Kombat 9"
+	description=" "
+/>
+
+
+		<Event
+	 kind ="Contest"
+		datetime="08/27/2011 14:00:00"
+		end ="08/27/2011 18:00:00"
+		location="Console"
+	name="Super Street Fighter 4: Arcade Edition"
+	description=" "
+/>
+
+		<Event
+		 kind ="Contest"
+		datetime="08/27/2011 19:00:00"
+		end ="08/27/2011 23:59:00"
+		location="Console"
+		name="Marvel vs. Capcom 3"
+	description=""
+/>
+
+		<Event
+		 kind ="Contest"
+		datetime="08/28/2011 13:00:00"
+		end ="08/28/2011 17:00:00"
+		location="Console"
+		name="Street Fighter 3: 3rd Strike Online"
+		description=" "
+/>
+
+
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/26/2011 17:00:00"
+		end ="08/26/2011 21:00:00"
+		location="PC Tourney"
+		name="Team Fortress 2, 6v6"
+		description="details: http://forums.penny-arcade.com/discussion/146625/pax-2011-pc-tournaments-rules-info
+			Registration for ALL PC tournaments begins on Friday, September 3rd at 10am, right outside of the PC-Tournament area.
+		Only full teams will be signed up. It is your job to join and/or create a team, we're not your babysitter. It is recommended you linger around the PC-Tournament area at signup time, and at tournament time and your chances of joining a team will be Pretty Good.
+		Check-in time will begin 45 minutes prior to a tournament's starting time. Competitors are required to check-in at least 15 minutes before the tournament's start time. If you/your team doesn't check in during this time, your spot will be opened for another person/team.
+
+
+General Information
+
+		All tournaments will be exclusively using tournament computers provided by Intel and Nvidia. You will be allowed to bring over your mice and keyboards and customize your configurations, you will not be allowed to load software of any kind.
+		If you sign up for a tournament, please be there. If you decide you will be unable to, check in with us and let us know so we can open up a spot for someone else.
+		As a general rule, it's a good idea to show up at least 20 minutes in advance of each tournament, and that will give you time to configure your settings and warm up before the tournament begins."
+/>
+
+ <Event
+		 kind ="Contest"
+		datetime="08/26/2011 20:00:00"
+		end ="08/26/2011 22:00:00"
+		location="PC Tourney"
+		name="SUPER SECRET TOURNAMENT"
+		description="details: http://forums.penny-arcade.com/discussion/146625/pax-2011-pc-tournaments-rules-info
+		 Registration for ALL PC tournaments begins on Friday, September 3rd at 10am, right outside of the PC-Tournament area.
+		Only full teams will be signed up. It is your job to join and/or create a team, we're not your babysitter. It is recommended you linger around the PC-Tournament area at signup time, and at tournament time and your chances of joining a team will be Pretty Good.
+		Check-in time will begin 45 minutes prior to a tournament's starting time. Competitors are required to check-in at least 15 minutes before the tournament's start time. If you/your team doesn't check in during this time, your spot will be opened for another person/team.
+
+
+General Information
+
+		All tournaments will be exclusively using tournament computers provided by Intel and Nvidia. You will be allowed to bring over your mice and keyboards and customize your configurations, you will not be allowed to load software of any kind.
+		If you sign up for a tournament, please be there. If you decide you will be unable to, check in with us and let us know so we can open up a spot for someone else.
+		As a general rule, it's a good idea to show up at least 20 minutes in advance of each tournament, and that will give you time to configure your settings and warm up before the tournament begins."
+/>
+
+		<Event
+	 kind ="Contest"
+		datetime="08/27/2011 11:00:00"
+		end ="08/27/2011 18:00:00"
+		location="PC Tourney"
+	name="League of Legends (5v5)"
+	description="details: http://forums.penny-arcade.com/discussion/146625/pax-2011-pc-tournaments-rules-info
+			Registration for ALL PC tournaments begins on Friday, September 3rd at 10am, right outside of the PC-Tournament area.
+		Only full teams will be signed up. It is your job to join and/or create a team, we're not your babysitter. It is recommended you linger around the PC-Tournament area at signup time, and at tournament time and your chances of joining a team will be Pretty Good.
+		Check-in time will begin 45 minutes prior to a tournament's starting time. Competitors are required to check-in at least 15 minutes before the tournament's start time. If you/your team doesn't check in during this time, your spot will be opened for another person/team.
+
+
+General Information
+
+		All tournaments will be exclusively using tournament computers provided by Intel and Nvidia. You will be allowed to bring over your mice and keyboards and customize your configurations, you will not be allowed to load software of any kind.
+		If you sign up for a tournament, please be there. If you decide you will be unable to, check in with us and let us know so we can open up a spot for someone else.
+		As a general rule, it's a good idea to show up at least 20 minutes in advance of each tournament, and that will give you time to configure your settings and warm up before the tournament begins."
+/>
+
+		<Event
+	 kind ="Contest"
+		datetime="08/27/2011 20:00:00"
+		end ="08/27/2011 23:59:00"
+		location="PC Tourney"
+	name="Warsow (1v1)"
+	description="details: http://forums.penny-arcade.com/discussion/146625/pax-2011-pc-tournaments-rules-info
+	Registration for ALL PC tournaments begins on Friday, September 3rd at 10am, right outside of the PC-Tournament area.
+		Only full teams will be signed up. It is your job to join and/or create a team, we're not your babysitter. It is recommended you linger around the PC-Tournament area at signup time, and at tournament time and your chances of joining a team will be Pretty Good.
+		Check-in time will begin 45 minutes prior to a tournament's starting time. Competitors are required to check-in at least 15 minutes before the tournament's start time. If you/your team doesn't check in during this time, your spot will be opened for another person/team.
+
+General Information
+
+		All tournaments will be exclusively using tournament computers provided by Intel and Nvidia. You will be allowed to bring over your mice and keyboards and customize your configurations, you will not be allowed to load software of any kind.
+		If you sign up for a tournament, please be there. If you decide you will be unable to, check in with us and let us know so we can open up a spot for someone else.
+		As a general rule, it's a good idea to show up at least 20 minutes in advance of each tournament, and that will give you time to configure your settings and warm up before the tournament begins."
+/>
+
+
+		<Event
+	 kind ="Contest"
+		datetime="08/28/2011 11:00:00"
+		end ="08/28/2011 17:00:00"
+		location="PC Tourney"
+	name="Starcraft 2 (1v1)"
+	description="details: http://forums.penny-arcade.com/discussion/146625/pax-2011-pc-tournaments-rules-info
+	 Registration for ALL PC tournaments begins on Friday, September 3rd at 10am, right outside of the PC-Tournament area.
+		Only full teams will be signed up. It is your job to join and/or create a team, we're not your babysitter. It is recommended you linger around the PC-Tournament area at signup time, and at tournament time and your chances of joining a team will be Pretty Good.
+		Check-in time will begin 45 minutes prior to a tournament's starting time. Competitors are required to check-in at least 15 minutes before the tournament's start time. If you/your team doesn't check in during this time, your spot will be opened for another person/team.
+
+General Information
+
+		All tournaments will be exclusively using tournament computers provided by Intel and Nvidia. You will be allowed to bring over your mice and keyboards and customize your configurations, you will not be allowed to load software of any kind.
+		If you sign up for a tournament, please be there. If you decide you will be unable to, check in with us and let us know so we can open up a spot for someone else.
+		As a general rule, it's a good idea to show up at least 20 minutes in advance of each tournament, and that will give you time to configure your settings and warm up before the tournament begins."	
+/>
+
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/26/2011 12:00:00"
+		end ="08/26/2011 13:00:00"
+		location="Handheld Tourney"
+		name="Dissidia 012, Round 1A"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/26/2011 15:00:00"
+		end ="08/26/2011 16:00:00"
+		location="Handheld Tourney"
+		name="Dissidia 012, Round 1B"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/26/2011 18:00:00"
+		end ="08/26/2011 19:00:00"
+		location="Handheld Tourney"
+		name="Dissidia 012, Final Round"
+		description=" "
+/>
+
+		<Event
+		 kind ="Contest"
+		datetime="08/27/2011 12:00:00"
+		end ="08/27/2011 13:00:00"
+		location="Handheld Tourney"
+		name="Mario Kart DS, Rd 1A"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/27/2011 15:00:00"
+		end ="08/27/2011 16:00:00"
+		location="Handheld Tourney"
+		name="Mario Kart DS, Rd 1B"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/27/2011 18:00:00"
+		end ="08/27/2011 19:00:00"
+		location="Handheld Tourney"
+		name="Mario Kart DS, Final Round"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/27/2011 19:00:00"
+		end ="08/27/2011 22:00:00"
+		location="Handheld Tourney"
+		name="TBA"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/28/2011 12:00:00"
+		end ="08/28/2011 13:00:00"
+		location="Handheld Tourney"
+		name="Tetris DS, Rd 1A"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/28/2011 14:00:00"
+		end ="08/28/2011 15:00:00"
+		location="Handheld Tourney"
+		name="Tetris DS, Rd 1B"
+		description=" "
+/>
+
+
+		<Event
+		 kind ="Contest"
+		datetime="08/28/2011 16:00:00"
+		end ="08/28/2011 17:00:00"
+		location="Handheld Tourney"
+		name="Tetris DS, Final Round"
+		description=" "
+/>
+
+	
+	</Schedule>
+</xs:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+<files> 
+<file type="xml" name="friday.xml"/>
+<file type="xml" name="saturday.xml"/>
+<file type="xml" name="sunday.xml"/>
+<file type="xml" name="contests.xml" />
+<file type="xml" name="social.xml" />
+<file type="xml" name="Tabletop.xml" />
+</files>
+</xs:schema>

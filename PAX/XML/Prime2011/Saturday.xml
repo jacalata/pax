@@ -1,0 +1,606 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+  
+     <Event
+    kind ="Panel"
+	name="ArenaNet Artists Review Your Portfolio"
+location="NCSoft"
+datetime="08/27/2011 10:00:00"
+end ="08/27/2011 10:45:00"
+description="Are you an aspiring game artist? Would you like pointers about how to improve your portfolio? At this session, ArenaNet artists will be on hand to review portfolios that include 2D and 3D art. Get advice on how to put together an awesome portfolio that will get you noticed, and tips on how to improve your art so you can get your foot in the door of the games industry. Bring your best work!"
+/>
+
+
+     <Event
+    kind ="Panel"
+	name="The Yogscast - Digging a Hole"
+location="Pegasus"
+datetime="08/27/2011 10:00:00"
+end ="08/27/2011 11:00:00"
+description="One man, one dwarf... The Yogscast are the runaway hit of the UK webcasting scene, bringing their irrepressible humour, Jaffa Cakes and gaming experience 'to a world they did not understand'. Millions of viewers have watched them struggle (and sometimes fail) with WoW, Minecraft, Portal 2, Rift and Fable III. Here, the Yogscast are streamed live from the UK to explore the world of Minecraftia, answer questions, and maybe even sing a song about digging a hole. Starring Simon and Lewis, with the cast of Shadow of Israphel, and hosted from the floor by Dr Esther MacCallum-Stewart.
+Panelists include: Hannah Rutherford [Owl Keeper, Yogscast], Simon Lane [Miner, Yogscast], Lewis Brindley [Spaceman, Yogscast], Esther MacCallum-Stewart [Host, The University of Chichester, DiGRA]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="JourneyQuest Season 1 Showing and Panel"
+location="Raven"
+datetime="08/27/2011  10:00:00"
+end = "08/27/2011   11:30:00"
+description="From the makers of The Gamers, and Dorkness Rising comes the 1st Season of JourneyQuest! See the new fantasy based web series created by Writer/Director Matt Vancil. Panel and Q &amp; A afterwards discussing the pros and cons of working outside the studio system, how to go about releasing a web series, how to land major Hollywood talent to give your project a step up, and exciting news about Season 2!
+Panelists include: Beau Prichard [Publicist, ZOE+Dead Gentlemen], Brian Lewis [Performer, Dead Gentlemen], Matt Vancil [Director+Writer, DG], Jen Page [Performer, DG], Tony Becerra [Publicist, ZOE/Dead Gentlemen], Christian Doyle [Performer, Dead Gentlemen], Samara Lerman [Assassin, JourneyQuest], Kevin Pitman [Glorion, JourneyQuest]
+"/>
+
+<Event
+kind="Panel"
+name="The Journey of Taitale Studios"
+location="Unicorn"
+datetime="08/27/2011  11:00:00"
+end = "08/27/2011   12:00:00"
+description="How A Teenager Created An Indie Start-up That Created The Worlds First True MMORTS - A conversation with Founder and CEO, Nick Talmers Nieuwoudt and Curtis Silver of Wired.com&apos;s Geek Dads
+
+Learn the story of Nick Talmers Nieuwoudt, who went from South African Olympic hopeful to winning Crysis tournaments and meet the world class team that was willing to take on the daunting challenge of creating Novus Aeterno, the worlds first seamless and persistent MMORTS. Spend an hour hearing a truly inspirational story of adversity and how overcoming personal obstacles can lead to big ideas and achieving great things."
+/>
+
+ <Event
+    kind ="Panel"
+	name="Hey Ash, Whatcha Playin&apos;"
+location="Kraken"
+datetime="08/27/2011  10:30:00"
+end = "08/27/2011   11:30:00"
+description="For the first time ever, the entire cast of the not-quite-hit web series &quot;Hey Ash, Whatcha Playin&apos;&quot; will be at PAX Prime. Ashly, Anthony, Justin and Papa Burch will be available to answer questions (such as, &quot;do you guys know that Papa Burch is the best part of your stupid show?&quot;), tell stories (such as, &quot;that time we realized Papa Burch was the best part of our stupid show&quot;), and premiere a brand-new episode of HAWP (probably including Papa Burch).
+Panelists include: Justin Yngelmo, Ashly Burch, David Burch, Anthony Burch, Ashley Davis
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Make a Strip"
+location="Main"
+datetime="08/27/2011  10:30:00"
+end = "08/27/2011 12:00:00"
+description="Ever wonder what goes into making a Penny Arcade comic? Join Gabe and Tycho in the Main Theatre and take part in creating Monday&apos;s HILARIOUS comic.
+"/>
+
+<Event
+    kind ="Panel"
+	name="(stream) Make a Strip"
+location="Wolfman"
+datetime="08/27/2011  10:30:00"
+end = "08/27/2011 12:00:00"
+description="Ever wonder what goes into making a Penny Arcade comic? Watch live as Gabe and Tycho create Monday&apos;s HILARIOUS comic. Note: This is a live stream of the event from Main Theatre to Wolfman."
+/>
+
+ <Event
+    kind ="Panel"
+	name="Infinite Respawn: How Gaming Can Keep &amp; Save Your Relationship"
+location="Serpent"
+datetime="08/27/2011  10:30:00"
+end = "08/27/2011  11:30:00"
+description="Video games have been the scapegoat for many of society&apos;s ills, but not enough is being said about how video games are creating positive, happy, and loving relationships between families, partners, and married couples. Join us as we share not just tips but funny anecdotes and personal stories of gaming sessions that help bring people closer, including the saving of a fractured relationship. Have stories of your own to share, come to the panel and bestow the story on your fellow PAX following.
+Panelists include: Chris Brown [Site Owner &amp; Host, The Married Gamers], Christa Charter [Trixie Enterprises], Aubrey Norris [Deep Silver], Dan Amrich [Activision], Elizabeth Parmeter [Editor-In-Chief, GamingAngels], Zachary Snell
+"/>
+
+
+ <Event
+    kind ="Panel"
+	name="City of Heroes Freedom is the Future!"
+location="NCSoft"
+datetime="08/27/2011  11:30:00"
+end = "08/27/2011 12:15:00"
+description="City of Heroes Freedom is coming! Join the Paragon Studios Development Team as they talk about the bold changes coming to the world&apos;s leading Super Heroic MMORPG with the launch of City of Heroes Freedom and Issue 21. Matt &quot;Positron&quot; Miller, Nate &quot;Second Measure&quot; Birkholz, Gilbert &quot;El Topo&quot; Martinez and others discuss why Freedom is the Future for City of Heroes."
+/>
+
+
+ <Event
+    kind ="Panel"
+	name="PC Gaming is (Not) Dead"
+location="Pegasus"
+datetime="08/27/2011  11:30:00"
+end = "08/27/2011   12:30:00"
+description="Join Razer CEO Min-Liang Tan for a live presentation of Razer&apos;s new, groundbreaking project for PC Gamers worldwide. If you were impressed with Razer&apos;s Switchblade concept, which won the Best of CES 2011 People&apos;s Voice Award, wait until you get a load of what Razer has in store for you at PAX Prime. Don&apos;t miss this opportunity to experience first-hand, the hottest thing to redefine the industry. The official worldwide announcement will be made during this session at PAX Prime, and don&apos;t miss your chance to win epic Razer gear! Q&amp;A session to follow the presentation.
+"/>
+
+<Event
+kind="Panel"
+name="Bungie: Hatching the Cosmic Halo Egg"
+location="Halo Fest"
+datetime="08/27/2011  12:00:00"
+end = "08/27/2011   13:00:00"
+description="At this years PAX, Halo Fest is enormous! But ten years ago, it only took a small core of ambitious Bungie developers to fill the Halo universe with life. In this panel, the birth mother and father of Halo-Joseph Staten and Marty O&apos;Donnell-along with a handful of Bungie alumni discuss the origins and development of the Halo franchise, and field your questions from the Community."
+/>
+
+ <Event
+    kind ="Panel"
+	name="The Agony and Ecstasy of RPG Writing"
+location="Kraken"
+datetime="08/27/2011  12:00:00"
+end = "08/27/2011  13:00:00"
+description="More than any other genre, role-playing games are known for their story - such that their success may entirely depend on it! But how do you wrangle scripts that may clock in at thousands of lines? How do you organize complex webs of character choices? And how do you manage to create unique and memorable characters after you&apos;ve already made dozens?! Join an array of game writer/designers to hear them share their knowledge and tales of triumph and tragedy.
+Panelists include: John Gonzales [Writer, Warner Bros], Travis Stout [Writer/Designer, Obsidian Entertainment], Annie VanderMeer Mitsoda [Content Designer, ArenaNet], Brian Mitsoda [Creative Director, DoubleBear Productions]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="OC ReMix: Making Sweet, Sweet Love to Video Game Music Since 1999"
+location="Raven"
+datetime="08/27/2011  12:00:00"
+end = "08/27/2011   13:00:00"
+description="You like video game music? Koji Kondo? Nobuo Uematsu? Of course you do, they&apos;re awesome. Come on down and celebrate the greatness of VGM with OC ReMix founder David &quot;djpretzel&quot; Lloyd, head judge Larry &quot;Liontamer&quot; Oji and OCR&apos;s elite staff of video game music ninjas! Whether you want to create OC ReMixes, compose for indie &amp; pro video games, or just listen to badass game music, we&apos;re here to bestow advice and recommend awesome music. Get the scoop on upcoming OC ReMix albums from games like NiGHTS, Mega Man X, Donkey Kong Country 3 &amp; Final Fantasy 9! You can also win FREE limited edition physical copies of our Sonic the Hedgehog album: The Sound of Speed (Sonic 1, son!), AND other merchandise for people that are awesome at our SECRET CHALLENGE. Come rock out with us and win some swag!
+Panelists include: Justin Medford [Judge, OverClocked ReMix, LLC], Jimmy Hinson [Composer: Mass Effect 2, Wall of Sound inc], Larry Oji [Community Manager &amp; Head Submissions Evaluator, OverClocked ReMix, LLC], David Lloyd [Founder &amp; President, OverClocked ReMix, LLC], Stevo Bortz [Staff, OverClocked ReMix, LLC]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Discover the Forgotten Masters"
+location="Serpent"
+datetime="08/27/2011  12:00:00"
+end = "08/27/2011   13:00:00"
+description="For every one game you know and love, ten are forgotten to time. While most of these &quot;lost&quot; games are, to be perfectly, brutally honest, unplayable monstrosities, there are more diamonds in the rough than one might expect. Join us for some &quot;gaming archaeology&quot; as we explore the surprisingly elegant mechanics of a number of games you&apos;ve likely never heard of (and should probably steal ideas from), games like Sopwith or Outlaw! Game design has come a long way, but there are still lessons from the past that are perennially forgotten. Experience the best of the lost, first-hand!
+Panelists include: Brandon &quot;Rym&quot; DeCoster [Producer, GeekNights], Scott Rubin [Host, GeekNights], Emily Compton [Lead Artist, Muse Games]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="How to Run Your Own Gaming Website and Win at Life"
+location="Unicorn"
+datetime="08/27/2011  12:30:00"
+end = "08/27/2011   13:30:00"
+description="Why do most new gaming sites fail? If you&apos;ve ever thought about creating your own, have trouble running one, or just want a damn job at one, I have a lot to say. Over the last 5 years I&apos;ve grown my personal blog into Destructoid.com, an independent gaming community that reaches over 4 million every month. My presentation also features insights from the founders of IGN, ScrewAttack, GiantBomb, CheapAssGamer, and TheEscapist.
+I will waste no time on vague motivational crap: Topics include what to focus on first, technical set-up, working with PR people, growing traffic, avoiding stupid mistakes, taking necessary risks, making money, and how to break out from the pack -- followed by the usual rowdy Q/A session.
+Panelists include: Yanier Gonzalez [Founder, Destructoid], Sean St Clair [Moderator, Glyde], Craig Skistimas [CEO, ScrewAttack], Tara Long [Host, Revision3], Nick Chester [Editor-in-Chief, Destructoid]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="From 0 to Indie in 5 Easy Steps"
+location="Wolfman"
+datetime="08/27/2011  12:30:00"
+end = "08/27/2011   13:30:00"
+description="Want to make video games but not quite sure where to start? Curious to see what goes into making those great indie games you love? Interested in hearing developers argue about a secret-sauce list for making delicious video game burgers? Then come to our talk and learn the 5 easy steps* for getting started and creating that indie masterpiece. *Note: 5 easy steps may not be steps, easy, or 5. No refunds. Funny hats welcome.
+Panelists include: Chris Harvey [Co-Founder, DrinkBoxStudios], Jake Kazdal [Art Director, Haunted Temple Studios], Matt Gilgenbach [Co-Founder, 24 Caret Games], Eitan Glinert [Fire Chief, Fire Hose Games]
+"/>
+
+
+ <Event
+    kind ="Panel"
+	name="NCsoft Panel about New Game"
+location="NCSoft"
+datetime="08/27/2011  13:00:00"
+end = "08/27/2011   13:45:00"
+description="Panel Presentation by Carbine Studios Staff"
+/>
+
+ <Event
+    kind ="Panel"
+	name="Guild Wars 2: Designing a Cooperative Experience"
+location="Pegasus"
+datetime="08/27/2011  13:00:00"
+end = "08/27/2011   14:00:00"
+description="In this in-depth presentation, Guild Wars 2 Lead Designer Eric Flannum and Lead Content Designer Colin Johanson will take a look at the history of player vs. environment (PvE) in massively multiplayer online games. Has PvE been about player cooperation or competition? Where is the PvE format headed and what impact will it have on future games? Eric and Colin will discuss how they are developing Guild Wars 2 as a cooperative PvE experience, and will break down how each aspect of system and content design can either encourage or discourage cooperative gameplay. Using specific examples from their development history, they will illustrate both successes and failures of different PvE design approaches. Anyone interested in the future of MMO gaming shouldn&apos;t miss this panel!
+Panelists include: Eric Flannum [Lead Designer, ArenaNet], Colin Johanson [Lead Content, ArenaNet]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Ask the Dungeon Master"
+location="Kraken"
+datetime="08/27/2011  13:30:00"
+end = "08/27/2011   14:30:00"
+description="Being a great Dungeon Master requires a variety of skills. Part referee, part storyteller, and part actor; the art of the Dungeon Master is in combining all of these talents to become a superhuman, D&amp;D-propelling package. Join a team as they discuss various tips and tricks to bring the best adventure to your players, as well as ways to make them equal participants in the story. A Q&amp;A session will follow the panel discussion.
+Panelists include: Chris Perkins, Chris Tulach, Greg Bilsland
+"/>
+
+ <Event
+    kind ="Panel"
+	name="The Ivory Tower: BA, MA, PhD in Games Studies WTFBBQ?"
+location="Raven"
+datetime="08/27/2011  13:30:00"
+end = "08/27/2011   14:30:00"
+description="Dozens of trade schools already teach how to make games. Did you know that you can also study games from an academic perspective?
+Whether it&apos;s a film major studying Alan Wake, or an anthropologist analyzing the cultural aspects of gaming, the study of games has gained increased popularity in universities the world over, even becoming its own standalone discipline. This panel of uber-nerds will discuss: What use is this academic research to gamers and/or developers? How can you become a games studies scholar? What kind of research needs to be done--and what&apos;s just fluff?
+Panelists include: Elisa Melendez [Frag Doll Cadette, Ubisoft], Avery Alix [Product Manager, PopCap Games], Morgan Romine [Frag Doll Captain, Ubisoft]
+
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Gamers Doing Good, How Video Games Change People&apos;s Lives"
+location="Serpent"
+datetime="08/27/2011  13:30:00"
+end = "08/27/2011   14:30:00"
+description="The AbleGamers Foundation will present a panel on how video games can change people&apos;s lives for the better. From managing depression to making a stay in the hospital more bearable, games have the power to make things happen. AGF will partner with 2 or 3 gaming charities to highlight our missions and to share how we use games to make everyone&apos;s world a better place.
+Panelists include: Johnny Richardson [Developer, Jack Morton Worldwide], Ryan Sharp [President , Get Well Gamers], Ben Heckendorn, Mark Barlet [President, AbleGamers Foundation], Stefanie Doctor Shea [Gamers Outreach], Kari Toyama [Fight Like a Girl]
+"/>
+
+<Event
+kind="Panel"
+name="Halo: Building a Universe of Toys and Collectibles"
+location="Halo Fest"
+datetime="08/27/2011  14:00:00"
+end = "08/27/2011  15:00:00"
+description="Meet some of the biggest names in the toy and collectible industry and get an exclusive first look at upcoming Halo products! Get the scoop from fan favorites McFarlane Toys, MEGA Bloks, and NKOK."
+/>
+
+<Event
+kind="Omegathon"
+name="Omegathon Round 3"
+location="Wolfman"
+datetime="08/27/2011  14:00:00"
+end = "08/27/2011  15:00:00"
+description="Are you a swiftly falling block of four colors? Do you generate hypnotic rhythms in sync with player actions? No? Well then the Omeganauts do not give two shits about you."
+/>
+
+ <Event
+    kind ="Panel"
+	name="Irrational Games"
+location="Unicorn"
+datetime="08/27/2011  14:00:00"
+end = "08/27/2011  15:00:00"
+description="In 2007, the BioShock review in The Los Angeles Times concluded, &quot;Sure, it&apos;s fun to play, looks spectacular and is easy to control. But it also does something no other game has done to date: It really makes you feel.&quot; Those last few words really struck a chord with the development team. How can a game express the complexities of a relationship between characters? How can the player interact, feel and become emotionally connected to them? In 2012, Irrational Games looks to provide the answers with the stars of BioShock Infinite, Elizabeth and Booker Dewitt. Join Ken Levine (Creative Director, Irrational Games), Troy Baker (Voice of Booker DeWitt), and Courtnee Draper (Voice of Elizabeth) as they discuss the evolution of Elizabeth and Booker as characters, as well as their relationship in-game and its impact on the player&apos;s experience.
+"/>
+
+ <Event
+    kind ="Panel"
+	name="A Panel on Panels: Creating the Comic Inspired Cutscence of inFAMOUS 2"
+location="Pegasus"
+datetime="08/27/2011  14:30:00"
+end = "08/27/2011   15:30:00"
+description="Drop by for an exciting presentation from Suckerpunch.
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Fat, Ugly or Slutty: Exposing Harassment in Online Gaming"
+location="Kraken"
+datetime="08/27/2011   15:00:00"
+end = "08/27/2011   16:00:00"
+description="This panel is NSFW! It&apos;s also a little disturbing... and maybe a little funny. We&apos;ll laugh at some of the &apos;spirited&apos; things that online gamers are saying to one another, as well as discuss some of the issues with harassment in gaming. Join the staff of FatUglyorSlutty.com as we debate some of the finer points of John Gabriel&apos;s &quot;Greater Internet Fuckwad Theory&quot;.
+Panelists include: Grace (gtz) [Co-founder, FatUglyorSlutty.com], Jon (inklesspen) [Co-founder, FatUglyorSlutty.com], Jennifer (likeOMGitsFEDAY) [Co-founder, FatUglyorSlutty.com], Ashlee (Jaspir) [Co-founder, FatUglyorSlutty.com], Morgan Romine [Frag Doll Team Captain &amp; PhD Candidate, Ubisoft &amp; UC Irvine]"
+/>
+
+<Event
+kind="Panel"
+name="Goddess of Destruction: First Look"
+location="NCSoft"
+datetime="08/27/2011  14:30:00"
+end = "08/27/2011   15:15:00"
+description="Be one of the first to experience Lineage II: Goddess of Destruction before it releases this fall. You&apos;ll see the overhauled newbie zone, the process for trading up to more powerful Awakening skills, what happens during Awakening, plus a few other surprises! This will be the first-ever showing in English of this much anticipated Fantasy PVP MMO, including a Q&amp;A session with the games producer and the community manager. You can find more game info at www.lineage2.com. All attendees will receive a 6&quot; plushie and 30 free days of Lineage II: High Five as a thank-you gift."
+/>
+
+
+<Event
+kind="Panel"
+name="A Panel on Panels: Creating the Comic Inspired Cutscence of inFAMOUS 2"
+location="Pegasus"
+datetime="08/27/2011  14:30:00"
+end = "08/27/2011   15:30:00"
+description="Come and see how we create our distinct comic inspired cutscenes. Starting from the script to storyboarding to inking to composite and post production. We are going to cover it all. You will get to see some never before versions of cutscenes. Here is a trailer on the style we are going to be talking about, inFAMOUS 2 2D Comic Cutscene. We will also have some special treats for those that show up, so this isn't something you want to miss! Join Dave Malloy (Video Production Creative Lead), Jance Allen ( Composimator), Mike Haney (Senior Artist), Edward Pun (Digital Penciler), and Collin Moore (Community Manager) for an hour of fun."
+/>
+
+ <Event
+    kind ="Panel"
+	name="Game Development Secrets Exposed: Everything You Wanted To Know"
+location="Raven"
+datetime="08/27/2011  15:00:00"
+end = "08/27/2011   16:00:00"
+description="Sausages and video games. People say that if you love them, you don&apos;t really want to know how they get made. If you&apos;re unwise enough to ignore that warning, then this is the talk for you!
+Commercial game developers these days aren&apos;t allowed to say anything honest to the public without it being filtered through ten layers of PR and marketing people. That means every time you hear about a game, you hear the same bland bull about &quot;commercial realities,&quot; and &quot;unexpected constraints,&quot; and &quot;DRM to enhance the user experience,&quot; and &quot;cracking open the skulls of our users in order to feast upon their tender brainmeats, while giving their credit cards to the Russian mafia.&quot;
+In this talk, Morgan Jaffit (ex Irrational, Relic, Pandemic now indie dev) tells you all about how the sausage is made!
+Panelists include: Morgan Jaffit [Director, Defiant Development]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Behind the Scenes with League of Legends: Dominion"
+location="Serpent"
+datetime="08/27/2011  15:00:00"
+end = "08/27/2011   16:00:00"
+description="Join members of the Riot Games development team behind the exciting new game mode for League of Legends: Dominion. Available hands-on at PAX, Dominion is an all-new capture-and-hold game mode for the uber-popular multiplayer online battle arena. This panel will break down the nuts and bolts of Dominion, providing an exclusive peek into the design and development of the mode, followed by an extensive Q&amp;A where Summoners can ask their most burning questions about the soon-to-be-released feature.
+
+Panelists include: Travis George [Producer, Riot Games], Richard Hough [Designer, Riot Games]
+"/>
+
+<Event
+kind="Panel"
+name="Halo Universe Fiction"
+location="Halo Fest"
+datetime="08/27/2011  15:30:00"
+end = "08/27/2011   16:30:00"
+description="Join Frank O&apos;Connor and Kevin Grace as well as special Halo guests Greg Bear and Karen Traviss for a discussion of the first 10 years of Halo and what&apos;s coming next!"
+/>
+
+ <Event
+    kind ="Panel"
+	name="Acquisitions, Inc: The Last Will and Testament of James Darkmagic I"
+location="Main"
+datetime="08/27/2011  15:30:00"
+end = "08/27/2011   17:30:00"
+description="Jim Darkmagic receives a magical missive, informing him that his grandfather has died. There&apos;s to be a reading of the Last Will and Testament at the family estate. Not long after the family convenes, wackiness ensues.
+Join Gabe, Tycho, Scott Kurtz and Wil Wheaton as they guide Jim Darkmagic, Binwin Bronzebottom, Omin Dran and Aeofel &quot;Al&quot; Elhromane through an unscripted Dungeons &amp; Dragons adventure before a live audience.
+"/>
+
+ <Event
+    kind ="Panel"
+	name="(stream) Acquisitions, Inc: The Last Will and Testament of James Darkmagic I"
+location="Wolfman"
+datetime="08/27/2011  15:30:00"
+end = "08/27/2011   17:30:00"
+description="Jim Darkmagic receives a magical missive, informing him that his grandfather has died. There&apos;s to be a reading of the Last Will and Testament at the family estate. Not long after the family convenes, wackiness ensues.
+Join Gabe, Tycho, Scott Kurtz and Wil Wheaton as they guide Jim Darkmagic, Binwin Bronzebottom, Omin Dran and Aeofel &quot;Al&quot; Elhromane through an unscripted Dungeons &amp; Dragons adventure before a live audience.
+Note: This is a live stream of the event from Main Theatre to Wolfman."
+/>
+
+
+ <Event
+    kind ="Panel"
+	name="The Elder Scrolls V: Skyrim"
+location="Unicorn"
+datetime="08/27/2011  15:30:00"
+end = "08/27/2011   16:30:00"
+description="Game Director Todd Howard guides you through the world of The Elder Scrolls V: Skyrim in this exclusive PAX demo running live off the Xbox 360.
+"/>
+
+<Event
+kind="Panel"
+name="Character Art in Guild Wars 2: Creation and Iteration"
+location="NCSoft"
+datetime="08/27/2011  16:00:00"
+end = "08/27/2011   16:45:00"
+description="Character design in MMO games draws players in and gets them invested in both the game world and their own characters. Designing compelling, unique races and characters while making them a cohesive part of the world's lore is critical for creating an immersive game experience. Join ArenaNet character artists, including Kristen Perry, as they dive deep into character and racial design in Guild Wars 2. Using specific examples, the artists will take a look at what it takes to create compelling character designs, discuss design challenges and how they overcame them, and provide insight into their creative process."
+/>
+
+ <Event
+    kind ="Panel"
+	name="GameTrailers.com Presents: Hello Fellow Babies! - Pach-Attack! LIVE"
+location="Kraken"
+datetime="08/27/2011  16:30:00"
+end = "08/27/2011   17:30:00"
+description="Michael Pachter. Yes, he&apos;s real. Yes, he&apos;s here. And yes, you can ask him your burning questions at this exclusive panel! Pach-Attack! has taken the web by storm, and since it was debuted on GameTrailers.com, the smarmy seer has become a household name, with video views over 5 million. Here at PAX, this is your chance to challenge the analyst&apos;s legendary wit and have your game industry questions answered live at this exclusive interactive panel. Plus, what&apos;s this about special guests dubbing themselves the &quot;Grumpy Old Men of Gaming&quot;...? Find out!
+Panelists include: Michael Pachter [Host, Wedbush Security / GameTrailers]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Raising Kids (Girls, Even) as Gamers"
+location="Raven"
+datetime="08/27/2011 16:30:00"
+end = "08/27/2011   17:30:00"
+description="Gaming with your kids is a deeply excellent part of parenting. Instant bonding, plus it teaches them problem-solving, and even makes them shut up. But it&apos;s also a challenge: some spouses don&apos;t understand why games are important (if you&apos;re in a mixed gamer/non-gamer marriage). Some kids want to play violent games, or lame girly games that AREN&apos;T VIOLENT ENOUGH. Plus games are addictive, and kids aren&apos;t always emotionally ready to handle it when it&apos;s time to shut down and log off for the night. Hell, a lot of adults aren&apos;t. When do you start your kids on games? What games do you play with them, and what do you play them on? And how do you handle the hard parts?
+Panelists include: Lev Grossman [Senior Writer, Time]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="AppNation LIVE!"
+location="Serpent"
+datetime="08/27/2011  16:30:00"
+end = " 08/27/2011  17:30:00"
+description="Appaholics represent! What happens when you get two unofficial Apple app fiends together with some of the gaming industry&apos;s most opinionated reviewers? Chaos... and quite a few laughs. Come join us as we discuss portable gaming&apos;s clunkers, hidden gems, and outright disastrous attempts at game making on the iPhone and iPad. Join Aaron Morris (Apple, Appnation), Seven (Appnation, Raid Warning), Richard Mitchell (Joystiq), and Jeff Cannata (Weekend Confirmed, Totally Rad Show) for some off the record rants and reviews.
+Panelists include: Richard Mitchell [Host, Joystiq], Jeff Cannata [Host, Weekend Confirmed], Aaron Morris [Host, Apple], Seven DeBord [Host, Apple]
+"/>
+
+<Event
+kind="Panel"
+name="Halo Anniversary Campaign Discussion"
+location="Halo Fest"
+datetime="08/27/2011  17:00:00"
+end = "08/27/2011   18:00:00"
+description="Can't get enough Silent Cartographer? Does Assault on the Control Room make you weak in the knees? If so, this panel discussing the reimagining of the classic single player Campaign is a can't-miss!"
+/>
+
+ <Event
+    kind ="Panel"
+	name="We Make Xbox and Xbox LIVE. Ask Us Anything"
+location="Unicorn"
+datetime="08/27/2011  17:00:00"
+end = " 08/27/2011  18:00:00"
+description="What does it take to work on Xbox? How do we determine what cool features to add? What was it like in the early days of creating Kinect? Who has the highest Gamerscore? Ask us anything. We mean it! Join an expert panel moderated by Xbox LIVE&apos;s own Larry &quot;Major Nelson&quot; Hryb as the people who work on creating the Xbox itself, as well as Xbox LIVE, take your questions.
+"/>
+
+
+<Event
+kind="Panel"
+name="NCsoft New Game Demo"
+location="NCSoft"
+datetime="08/27/2011  17:30:00"
+end = "08/27/2011   18:15:00"
+description="Panel Presentation by Carbine Studios Staff"
+/>
+
+ <Event
+    kind ="Panel"
+	name="BioWare Mythic - Content to be Announced"
+location="Pegasus"
+datetime="08/27/2011 17:30:00"
+end = "08/27/2011   18:30:00"
+description="Come and meet the minds behind some of your favorite games plus check back to this page for exciting updates as PAX draws closer...
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Brothers to the End - A Gears Community Panel"
+location="Kraken"
+datetime="08/27/2011 18:00:00"
+end = "08/27/2011   19:00:00"
+description="Join a panel of key Gears community members as we discuss our expectations for Gears of War 3, the universe of Gears and possible future directions for the franchise. We&apos;ll also be throwing in an added mix of terrible Maria jokes, Gears of War product giveaways and a bunch of special guests for good measure.
+Panelists include: George Lampard [Production Lead, DotSwoof], Justin Korfoth [Community Manager, Robot Entertainment], Liam Ashley [Lead Manager, Gears Community Online Network], Dan Rowntree [Events Coordinator, Gears Community Online Network]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Nerdcore Hip-Hop"
+location="Raven"
+datetime="08/27/2011 18:00:00"
+end = " 08/27/2011  19:00:00"
+description="Who says nerds can&apos;t rap? Through harnessing the power of the Internet and rapping from the heart about what&apos;s really meaningful to them, these artists have made a name for themselves, even seeing financial successes in a dwindling industry without following the traditional music business model. Find out about the origins of nerdcore from the godfather himself, MC Frontalot and learn where artists see themselves going forward.
+Panelists include: Kyle Murdock [Producer, Engineer, Neosonic Productions], Karl Olson, Billy The Fridge, Damian Hess [CEO, Musician, Level Up Records and Tapes], Raheem Jarbo [Musician, Producer, RandomBeats LLC]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="The Return of The Reverse Q&amp;A with The Harmonix Community Team"
+location="Serpent"
+datetime="08/27/2011 18:00:00"
+end = "08/27/2011   19:00:00"
+description="The Harmonix Community Team spends a lot of time answering questions about Rock Band &amp; Dance Central, but what happens when they get to question a captive audience at PAX? Part focus group and part interrogation, this panel promises to turn the idea of a traditional Q&amp;A on its head. Harmonix employees will kick off discussion by sharing secrets about your favorite games, unveiling features for upcoming titles and maybe even announcing a new project... assuming it hasn&apos;t all been leaked already.
+You may be wondering: &quot;What kind of questions will be asked?&quot; and &quot;What kind of cool new things will they announce?&quot; and &quot;Will this be as big a disaster as the time they did this panel at PAX East?&quot; All valid questions, but you&apos;ll have to attend to learn the answers!
+Panelists include: Annette Gonzalez [Community Manager, Harmonix Music], Eric Pope [Community Manager, Harmonix Music], John Drake [Director of Brand Management, Harmonix Music], Aaron Trites [Manager: Community Development, Harmonix Music]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="The PAX 10 Panel: Part 2"
+location="Unicorn"
+datetime="08/27/2011  18:30:00"
+end = "08/27/2011   19:30:00"
+description="The PAX 10 is a showcase of independent games to be exhibited at PAX. Our group of 50 industry experts have culled a selection of games into what they collectively feel are the ten best in regard to gameplay and overall fun-factor. Join the creators of those games LIVE and on stage! Questions will be asked! Answers may appear! And you will get a chance to talk to these up and coming indie game superstars. This panel will feature the creators of A Flipping Good Time, Atom Zombie Smasher, Jamestown: Legend of the Lost Colony, Solar 2, and Splatters.
+"/>
+
+ <Event
+    kind ="Panel"
+	name="You Call That Fun?!"
+location="Wolfman"
+datetime="08/27/2011  18:30:00"
+end = "08/27/2011   19:30:00"
+description="You Call That Fun?!
+We all have opinions...and man how they vary. Nonetheless, most of us know a fun game when we see it. But, what is it that really makes a game fun? On the flip side, what type of games do you start playing but have to walk away from because they just don&apos;t have &quot;it&quot;? Join game designers Frank Savage (Jumala), Jeff Pobst (Hidden Path Entertainment), Mark Subotnick (Intel) and Mark Griffin (OnLive) as they discuss the path to fun and ponder questions such as: What gameplay elements elevate a game&apos;s fun factor? What are the deal breakers? Open dialogue encouraged!
+Panelists include: Frank Savage [CTO, Jumala], Jeff Pobst [CEO, Hidden Path Entertainment], Mark Subotnick [Business Development Manager, Intel], Mark Griffin [Sr. Technical Acct. Manager, OnLive]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Games and Books: Will Their Mutual Enmity Burn Forever?"
+location="Kraken"
+datetime="08/27/2011  19:30:00"
+end = "08/27/2011   20:30:00"
+description="Do gamers read? Do readers game? The answers are yes and yes, obviously. But most people consider games and books to be hereditary enemies. So what do gamers read? What do we look for in books? Which novelists really &apos;get&apos; games (Orson Scott Card, Neal Stephenson, Greg Egan?) and which don&apos;t? Which try to and fail miserably? What are the good game novelizations, and which ones are ass? Have any books been successfully adapted as games (Alice in Wonderland, Harry Potter, etc.)? Why/why not? What do books do for you that games can&apos;t, and vice versa? Join bestselling novelist and Time book critic etc. etc. [Maybe we can get Rothfuss to come out for this one. And/or Mark Laidlaw.]
+Panelists include: Lev Grossman [Senior Writer, Time]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="SQUARE ENIX Presents..."
+location="Pegasus"
+datetime="08/27/2011  19:00:00"
+end = "08/27/2011   20:00:00"
+description="SQUARE ENIX Presents...
+
+Join Square Enix and Airtight Games as they reveal a top-secret joint project. Meet the development team, including Creative Director Kim Swift (Portal, Left 4 Dead, Left 4 Dead 2) and the rest of the Airtight Games team, and hear them explain how they&apos;re bringing an incredibly fascinating and quirky game to life.
+Panelists include: Kim Swift, Chris Madden, Matt Salladay, Mark Pottorf, Tom Smurdon"
+/>
+
+ <Event
+    kind ="Panel"
+	name="Education Through Play"
+location="Raven"
+datetime="08/27/2011  19:30:00"
+end = "08/27/2011   20:30:00"
+description="The modern education system has failed. We&apos;ve watched it collapse around us. Many of us wish there was something we could do. There is: game.
+In this room we&apos;ll be spending the day with some of the best educators and game designers from around the country discussing how we can improve education through play. Everyone is welcome (parents, teachers, students, designers, and players) to have an open and honest conversation about how we can use everything we&apos;ve learned about creating joy in games to improve our schools and better prepare our society for the future.
+All games teach, so why shouldn&apos;t learning be something every child loves?
+Panelists include: James Portnow [CEO, Rainmaker Games], Lee Sheldon [Rensselaer Polytechnic Institute], Dan Floyd [Pixar], David Samuelson [EVP Director Games &amp; Augmented Reality, Pearson]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Flying a Pride Flag"
+location="Serpent"
+datetime="08/27/2011  19:30:00"
+end = "08/27/2011   20:30:00"
+description="Slowly, but surely, it&apos;s becoming mainstream to identify as a gamer in modern society. Meanwhile, the same thing is happening for queer identity. Yet, within gay culture, gaming is generally looked on as a fringe activity; and amongst hardcore gamers, it&apos;s very common to hear people trash talking with homo-unfriendly insults. How&apos;s an average gaymer supposed to get along? Join Link Hughes, an openly gay game designer at CCP Games, as he explores the current state of queer gaming - from the perspectives of the queer developers who make the games you love, to the hardcore gaymers you&apos;ve played with online.
+Panelists include: Link Hughes [Game Designer, CCP Games]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Weekend Confirmed"
+location="Unicorn"
+datetime="08/27/2011  20:00:00"
+end = "08/27/2011   21:00:00"
+description="Details coming soon!
+"/>
+
+ <Event
+    kind ="Show"
+	name="Saturday Night Concerts and Round 4 of the Omegathon"
+location="Main"
+datetime="08/27/2011  20:30:00"
+end = "08/27/2011   1:30:00"
+description="Not only will you have the chance to enjoy the audible pleasures of Paul and Storm, JoCo, and Supercommuter, but the concerts will be kicked off by Round 4 of the Omegathon.
+Note: If you don&apos;t make it in, DON&apos;T PANIC...this round of the Omegathon and concerts will both be streamed into Wolfman Theatre.
+"/>
+
+
+
+ <Event
+    kind ="Show"
+	name="(stream) Saturday Night Concerts and Round 4 of the Omegathon"
+location="Wolfman"
+datetime="08/27/2011  20:30:00"
+end = "08/27/2011   1:30:00"
+description="Not only will you have the chance to enjoy the audible pleasures of Paul and Storm, JoCo, and Supercommuter, but the concerts will be kicked off by Round 4 of the Omegathon.
+Note: This is a live stream of the concert from Main Theatre to Wolfman."
+/>
+
+ <Event
+    kind ="Panel"
+	name="PAX After Hours with Scott and Kris"
+location="Pegasus"
+datetime="08/27/2011  20:30:00"
+end = "08/27/2011   22:30:00"
+description="Send the kids to bed and ready yourself for a PAX tradition like none other. The late-night programming block once again yields control to hosts Kris Straub and Scott Kurtz (Blamimations, The Scott and Kris Show) for their much-talked-about talk show after hours. Will there be stories from the biz? Celebrity interviews? A musical guest? Someone help us out here, we honestly don&apos;t know and we&apos;re scared.
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Creating a Xanatos Gambit: All Paths Lead to Victory"
+location="Raven"
+datetime="08/27/2011  21:00:00"
+end = "08/27/2011   22:00:00"
+description="Sure, you play chess, go, and several RTSs. But, how strategically do you really think? Join Dr. Chris Hazard (president of Hazardous Software, creators of the time travel RTS Achron) on a discussion about the principles of strategy in gaming: from game theory, to foundations of trust and reputation, to strategic revelation of information, to how others&apos; beliefs affect your best strategy. No math background required.
+Panelists include: Chris Hazard [President/Founder, Hazardous Software Inc.]
+"/>
+
+ <Event
+    kind ="Panel"
+	name="Dragon Age - The Future"
+location="Unicorn"
+datetime="08/27/2011  21:00:00"
+end = "08/27/2011   22:00:00"
+description="Join BioWare and members of the Dragon Age development team as they discuss the Dragon Age franchise with a look back at what has been done so far and a look ahead to what you can expect in the future. BioWare staff and Dragon Age team members will be on hand to answer questions and to give a look at what is still to come for Dragon Age.
+"/>
+
+ <Event
+    kind ="Show"
+	name="FRAG Movie Screening"
+location="Raven"
+datetime="08/27/2011  22:00:00"
+end = "08/27/2011   23:30:00"
+description="As a documentary covering the lives of pro-gamers, FRAG sheds light on the world of pro-gaming. Pro-gamers, referred to as cyber-athletes, face the same problems that professional athletes face, making decisions that can affect them for the rest of their lives. As gaming spreads not only as a hobby, but as a profession, FRAG reveals some of the secrets behind one of the biggest sports industries in the world that many know nothing about. Judd Saul plans to be on hand after the screening to sell videos/answer questions as well.
+Panelists include: Judd Saul [Executive Producer, Cohesion Productions]
+"/>
+
+ <Event
+    kind ="Show"
+	name="King of Chinatown Movie Screening"
+location="Serpent"
+datetime="08/27/2011  22:00:00"
+end = "08/27/2011   23:30:00"
+description="King of Chinatown isn&apos;t a documentary about a video game, it&apos;s a STORY about a player and his manager struggling to make a living playing video games. It is a story about their relationship through the rise of Empire Arcadia and Justin Wong&apos;s fame. It covers a two year period, which ends in their eventual breakup. If you ever wanted to know the whole story and what this all was about, here is your chance, and even if you have no idea who these people are, you will find their tale an interesting one.
+Panelists include: Jordan Levinson [Executive Producer, PsychoCrusher Production], Mary Gole [PsychoCrusher Production], Illych O. Reyes [PsychoCrusher Production], Walter Day [Founder, Twin Galaxies, Twin Galaxies], Victor Pinter [PsychoCrusher Production]
+"/>
+
+ <Event
+    kind ="Show"
+	name="Escapist Movie Night"
+location="Unicorn"
+datetime="08/27/2011  22:30:00"
+end = "08/27/2011   23:30:00"
+description="Meet the stars of The Escapist&apos;s Loading Ready Run, Extra Credits, Unskippable and more at The Escapist&apos;s Movie Night. You&apos;ll see never-before-seen videos from The Escapist&apos;s most popular web series, including Zero Punctuation and The Big Picture. Plus see favorite episodes from Extra Credits, Unskippable, Daily Drop, Feed Dump, Escape to the Movies, Miracle of Sound, Jimquisition, No Right Answer and more, hosted by Extra Credits&apos; James Portnow, Loading Ready Run and the staff of The Escapist."
+/>
+
+
+</Schedule>
+</xs:schema>

@@ -1,0 +1,6 @@
+# http://www.selenic.com/mercurial/hgignore.5.html
+
+/Bin/*
+/obj/*
+packages/*
+/HGtPE/*

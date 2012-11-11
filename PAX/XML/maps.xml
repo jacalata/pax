@@ -1,0 +1,58 @@
+<Images>
+
+<City name="Boston" >
+
+<Set name="BCEC" size="4">
+<Image name= "level 0" filename= "bcclevel0.png" />
+<Image name= "level 1" filename= "bcclevel1.png" />
+<Image name= "level 2" filename= "bcclevel2.png" />
+<Image name= "level 3" filename= "bcclevel3.png" />
+</Set>
+
+<Set name="city" size="1">
+<Image name= "City map" filename= "boston.png" />
+</Set>
+
+<Set name="PAX layout" size= "5" icon="2">
+<Image name= "level 0" filename= "ExpoLevel0.png" />
+<Image name= "level 1 and 2" filename= "ExpoLevel1Level2.png"/>
+<Image name= "level 3" filename= "ExpoLevel3.png" />
+<Image name= "expo" filename= "ExpoMap.png" />
+<Image name= "key" filename= "ExpoMapKey.png" />
+</Set>
+
+</City>
+
+
+<City name= "Seattle" >
+
+<Set name="SCCC" size="4" icon="2">
+<Image name= "level 0" filename= "bcclevel0.png" />
+<Image name= "level 1" filename= "bcclevel1.png" />
+<Image name= "level 2" filename= "bcclevel2.png" />
+<Image name= "level 3" filename= "bcclevel3.png" />
+</Set>
+
+<Set name="city" size="1">
+<Image name= "City map" filename= "SeattleMapDowntown.png" />
+</Set>
+
+<Set name="world maps" size="3">
+<Image name= "world" filename= "map_world.png" />
+<Image name= "annex" filename= "map_annex.png" />
+<Image name= "sheraton" filename= "map_sheraton.png" />
+</Set>
+
+
+<Set name="PAX layout" size="5" icon="2">
+<Image name= "level 0" filename= "ExpoLevel0.png" />
+<Image name= "level 1 and 2" filename= "ExpoLevel1Level2.png" />
+<Image name= "level 3" filename= "ExpoLevel3.png" />
+<Image name= "expo" filename= "ExpoMap.png" />
+<Image name= "key" filename= "ExpoMapKey.png" />
+</Set>
+
+</City>
+
+</Images>
+

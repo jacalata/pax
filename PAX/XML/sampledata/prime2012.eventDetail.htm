@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<title>PAX Prime - Seattle, WA Aug 31-Sep 2, 2012</title>
+	
+	<link rel="stylesheet" media="screen" type="text/css" href="http://prime.paxsite.com//assets/css/index.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" media="screen" type="text/css" href="http://prime.paxsite.com//assets/css/ie.css" /><![endif]-->
+	<link rel="stylesheet" media="screen" type="text/css" href="http://prime.paxsite.com//assets/css/jquery.fancybox.css" />
+	<link rel="Shortcut Icon" type="image/png" href="http://prime.paxsite.com//assets/img/favicon.png" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.cycle.js"></script>	
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/twitter.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/paxprime.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.fancybox.js"></script>
+	<script type="text/javascript">
+	
+	jQuery(function($){
+		$("#tweets").tweet({
+			username: "Official_PAX",
+			avatar_size: 0,
+			count: 1,
+			fetch: 20,
+			template: "{text}",
+			loading_text: "loading tweets...",
+			filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); }
+		});
+	});
+	
+	
+	
+	$(document).ready(function() {
+		$('.btnDropdown').click(function(event){
+			$(event.target).siblings('.dropdown').toggle();
+			return false;
+		});
+		$('.btnClose').click(function(event){
+			$(event.target).parents('.dropdown').toggle();
+			return false;
+		});
+		$('.dropdown ul a').click(function(event){$(event.target).parents('.dropdown').toggle();});
+	});
+	
+	// Every Page
+    $('#sponsorList').cycle({
+		fx: 'fade',
+		timeout: 5000
+	});
+	</script>
+
+	<script type='text/javascript'>
+	var googletag = googletag || {
+	};
+	googletag.cmd = googletag.cmd || [];
+	(function() {
+	var gads = document.createElement('script');
+	gads.async = true;
+	gads.type = 'text/javascript';
+	var useSSL = 'https:' == document.location.protocol;
+	gads.src = (useSSL ? 'https:' : 'http:') + 
+	'//www.googletagservices.com/tag/js/gpt.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(gads, node);
+	})();
+	</script>
+	
+	<script type='text/javascript'>
+	googletag.cmd.push(function() {
+	googletag.defineSlot('/1002971/PAXSite_Banner', [728, 90], 'div-gpt-ad-1331836661000-0').addService(googletag.pubads());
+	googletag.defineSlot('/1002971/PAXSite_Square', [300, 250], 'div-gpt-ad-1331836684339-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+	});
+	</script>
+
+	<script type="text/javascript">
+	// analytics
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-589570-10']);
+	_gaq.push(['_setDomainName', 'paxsite.com']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+</head>
+<body>
+	<div id="bb">
+		<div class="content">
+			<ul>
+				<li><a class="btnPA" href="http://penny-arcade.com/" title="Penny Arcade">Penny Arcade</a></li>
+				<li><a class="btnPAR" href="http://thepareport.com/" title="The PA Report">The PA Report</a></li>
+				<li><a class="btnPAX" href="http://paxsite.com/" title="PAX">PAX</a></li>
+				<li><a class="btnTrenches" href="http://trenchescomic.com/" title="The Trenches">The Trenches</a></li>
+				<li><a class="btnCP" href="http://childsplaycharity.org/" title="Child's Play">Child's Play</a></li>
+			</ul>
+		</div>
+	</div>
+	<hr />
+	<div id="container">
+		<div id="header">
+			<h1><a href="/" title="PAX Prime Home">PAX Prime</a></h1>
+			<div id="showsAndSocial">
+				<ul class="shows">
+					<li><a class="btn btnPrime" href="http://prime.paxsite.com/" title="PAX Prime: Seattle, WA"><strong>PAX Prime</strong> Seattle</a></li>
+					<li><a class="btn btnEast" href="http://east.paxsite.com/" title="PAX East: Boston, MA"><strong>PAX East</strong> Boston</a></li>
+					<li><a class="btn btnAus" href="http://aus.paxsite.com/" title="PAX Aus: Melbourne, VIC"><strong>PAX Aus</strong> Melbourne</a></li>
+					<li><a class="btn btnDev" href="http://dev.paxsite.com/" title="PAX Dev: Seattle, WA"><strong>PAX Dev</strong> Seattle</a></li>					
+				</ul>
+				<ul class="social">
+					<li><a class="btn btnRSS" href="http://prime.paxsite.com/feed" title="Subscribe via RSS">Subscribe via RSS</a></li>
+					<li><a class="btn btnTwt" href="http://twitter.com/#!/official_pax" title="Follow @Official_PAX on Twitter">Follow @Official_PAX on Twitter</a></li>
+					<li><a class="btn btnFb" href="http://www.facebook.com/pages/Penny-Arcade/19103799704" title="Fan Penny Arcade on Facebook">Fan Penny Arcade on Facebook</a></li>
+				</ul>
+			</div>
+			<div id="countdown">
+				
+				<h2><strong>Seattle, WA</strong> Aug 31-Sep 2, 2012</h2>
+				
+				<div id="countdown-date"><!--<h3><strong>43</strong> Days <strong>10</strong> Hrs <strong>59</strong> Mins <strong>04</strong> Secs</h3>--></div>
+			</div>
+			<ul class="nav">
+				<li><a class="navWhatIsPax" href="/what-is-pax" title="What is PAX?">What is PAX?</a></li>
+				<li><a class="navRegistration" href="/registration" title="Registration">Registration</a></li>
+				<li><a class="active navSchedule" href="/schedule" title="Schedule">Schedule</a></li>
+				<li><a class="navHotels" href="/hotels-and-travel" title="Hotels &amp; Travel">Hotels &amp; Travel</a></li>
+				<li><a class="navFAQ" href="/faq" title="FAQ">FAQ</a></li>
+				<li><a class="navGallery" href="/gallery" title="Gallery">Gallery</a></li>
+				<li><a class="navForums" href="http://forums.penny-arcade.com/categories/pax-prime" title="Forums">Forums</a></li>
+			</ul>
+		</div>
+		<hr />
+<div id="body">
+	<h2 class="title txt titleSchedule">Schedule</h2>
+	<div id="scheduleTools" class="event">
+		<a class="btn red" href="/schedule" title="Back to Full Schedule">Back to Full Schedule</a>
+	</div>
+		
+		
+		
+		
+		
+		
+	
+	
+		<div class="full event">
+			<div class="white">
+				<h2>Hey Ash, Whatcha Playin&#8217;?: Season Four Fast Four Fourious</h2>
+				<p>Intrigue! Suspense! Excitement! The cast and crew of &#8220;Hey Ash, Whatcha Playin&#8217;?&#8221; will probably not elicit any of these emotions as they answer your questions and talk about what they&#8217;ve learned throughout the course of producing the show. Come for the premiere of a new HAWP episode, stay for Papa B&#8217;s insight and wisdom.</p>			
+				<h4>Panelists:</h4>
+				<p>Ashly Burch [actor, co-writer, Hey Ash LLC], Anthony Burch [actor, co-writer, Hey Ash LLC], David Burch [actor, Hey Ash LLC], Ashley Davis [actor, Hey Ash LLC], Justin Yngelmo [co-writer, editor, director, DP, Hey Ash LLC], Grant Cushman [actor, stunt coordinator, Hey Ash LLC], Ulisses Gurgel [actor, stunt coordinator, Hey Ash LLC], Tamara Bruketta [actor, dance choreographer, Hey Ash LLC]</p>
+				<ul class="meta">
+					<li class="kra"><a href="http://prime.paxsite.com/schedule/category/kra-p" title="Kraken Theatre">Kraken Theatre</a></li>				
+					<li class="date">Friday 8/31 <strong>10:00AM - 11:00AM</strong></li>
+				</ul>
+			</div>
+			<div class="grey">
+				<h4>Other events at the same time as this one</h4>
+				<div class="timeBlock">
+					<ul>
+					<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-learn-to-play' title='Pokemon - Learn to Play'><strong>tt</strong> Pokemon - Learn to Play</a></li>
+					<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/idle-thumbs-podcast-live-rising' title='Idle Thumbs Podcast Live: Rising'><strong>peg</strong> Idle Thumbs Podcast Live: Rising</a></li>
+					<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/story-time-with-ted-price-aka-the-pax-prime-keynote' title='Story Time with Ted Price (aka the PAX Prime Keynote!)'><strong>main</strong> Story Time with Ted Price (aka the PAX Prime Keynote!)</a></li>
+					<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/want-to-break-into-rpgs-then-just-make-games' title='Want to break into RPGs? Then JUST MAKE GAMES!'><strong>rav</strong> Want to break into RPGs? Then JUST MAKE GAMES!</a></li>
+					<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/free-to-play-games-brilliant-evil-or-brilliantly-evil' title='Free-To-Play Games: Brilliant, Evil, or Brilliantly Evil?'><strong>ser</strong> Free-To-Play Games: Brilliant, Evil, or Brilliantly Evil?</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<hr />
+<div id="sidebar">
+	<div id="squareAd">
+		<div class="white">
+			<p>Advertisement</p>
+			
+			<!-- PAXSite_Square -->
+			<div id='div-gpt-ad-1331836684339-0' style='width:300px; height:250px;'>
+				<script type='text/javascript'>
+				googletag.cmd.push(function() {googletag.display('div-gpt-ad-1331836684339-0');});
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div id="legend">
+	<div class="grey">
+		<h4>Location Legend</h4>
+		<p>Select a location to filter the schedule.</p>
+	</div>
+	<div class="white">
+		<ul id="locations">
+			<li class="main"><a href="http://prime.paxsite.com/schedule/category/main-p" title="Filter Main Theatre"><strong>Main</strong> Main Theatre</a></li>
+			<li class="rav"><a href="http://prime.paxsite.com/schedule/category/rav-p" title="Filter Raven Theatre"><strong>Rav</strong> Raven Theatre</a></li>
+			<li class="peg"><a href="http://prime.paxsite.com/schedule/category/peg-p" title="Filter Pegasus Theatre"><strong>Peg</strong> Pegasus Theatre</a></li>
+			<li class="hh"><a href="http://prime.paxsite.com/schedule/category/hh-p" title="Filter Handheld Tourney"><strong>HH</strong> Handheld Tourney</a></li>
+			<li class="kra"><a href="http://prime.paxsite.com/schedule/category/kra-p" title="Filter Kraken Theatre"><strong>Kra</strong> Kraken Theatre</a></li>
+			<li class="pc"><a href="http://prime.paxsite.com/schedule/category/pc-p" title="Filter PC Tourney"><strong>PC</strong> PC Tourney</a></li>
+			<li class="uni"><a href="http://prime.paxsite.com/schedule/category/uni-p" title="Filter Unicorn Theatre"><strong>Uni</strong> Unicorn Theatre</a></li>
+			<li class="tt"><a href="http://prime.paxsite.com/schedule/category/tt-p" title="Filter Tabletop"><strong>TT</strong> Tabletop</a></li>
+			<li class="ser"><a href="http://prime.paxsite.com/schedule/category/ser-p" title="Filter Serpent Theatre"><strong>Ser</strong> Serpent Theatre</a></li>
+			<li class="ct"><a href="http://prime.paxsite.com/schedule/category/ct-p" title="Filter Console Tourney"><strong>CT</strong> Console Tourney</a></li>
+			<li class="wol"><a href="http://prime.paxsite.com/schedule/category/wol-p" title="Filter Wolfman Theatre"><strong>Wol</strong> Wolfman Theatre</a></li>
+			<li class="con"><a href="http://prime.paxsite.com/schedule/category/con-p" title="Filter &#9835; Concerts"><strong>&#9835;</strong> Concerts</a></li>
+		</ul>
+	</div>
+</div>
+	<div id="hours">
+	
+	<div class="white">
+		<h4>Show Hours</h4>
+		<ul>
+			<li><h5>Friday 8/31</h5> <strong>10 am - 2 am</strong></li>
+			<li><h5>Saturday 9/1</h5> <strong>10 am - 2 am</strong></li>
+			<li><h5>Sunday 9/2</h5> <strong>10 am - 7 pm</strong></li>
+		</ul>
+	</div>
+	<div class="grey">
+		<h4>Expo Hall Hours</h4>
+		<ul>
+			<li><h5>Friday 8/31</h5> <strong>10 am - 6 pm</strong></li>
+			<li><h5>Saturday 9/1</h5> <strong>10 am - 6 pm</strong></li>
+			<li><h5>Sunday 9/2</h5> <strong>10 am - 6 pm</strong></li>
+		</ul>
+	</div>
+	
+</div>
+
+	
+	
+		
+	
+		<div id="paxApp">
+		<div class="white">
+			<img src="http://prime.paxsite.com//assets/img/icon_guidebook.png" alt="Guidebook" />
+			<h4>Download Guidebook</h4>
+			<p>The official PAX app for smart phones!</p>
+			<ul>
+				<li><a class="btniPhone" href="http://itunes.apple.com/us/app/guidebook/id428713847?mt=8" title="Download app for iPhone">iPhone</a></li>
+				<li><a class="btnDroid" href="https://market.android.com/details?id=com.guidebook.android" title="Download app for Droid">Droid</a></li>
+				<li><a class="btnWP7" href="http://m.guidebook.com/" title="Mobile Site for WP7">WP7</a></li>
+				<li><a class="btnBlackberry" href="http://m.guidebook.com/" title="Mobile Site for Blackberry">Blackberry</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+<hr />
+
+<div id="sponsors">
+	<h3>Sponsors</h3>
+	<div id="sponsorList">
+		<table>
+<tbody>
+<tr>
+<td><a href='http://www.telltalegames.com/' title='Telltale'><img src='http://prime.paxsite.com//assets/img/sponsors/telltale.png' alt='Telltale' /></a></td>
+<td><a href='http://www.intel.com/gaming' title='Intel'><img src='http://prime.paxsite.com//assets/img/sponsors/intel.png' alt='Intel' /></a></td>
+<td><a href='http://www.sfr-inc.com/' title='Dragon Dice'><img src='http://prime.paxsite.com//assets/img/sponsors/dragondice.png' alt='Dragon Dice' /></a></td>
+<td><a href='http://www.digitalgamemuseum.org/' title='Digital Game Museum'><img src='http://prime.paxsite.com//assets/img/sponsors/digitalgamemuseum.png' alt='Digital Game Museum' /></a></td>
+<td><a href='http://www.creativelabs.com' title='Creative Labs'><img src='http://prime.paxsite.com//assets/img/sponsors/creative.jpg' alt='Creative Labs' /></a></td>
+<td><a href='http://www.atlasnetworks.us/' title='Atlas Networks'><img src='http://prime.paxsite.com//assets/img/sponsors/atlas.jpg' alt='Atlas Networks' /></a></td>
+<td><a href='http://www.unclesgames.com/' title='Uncles Games'><img src='http://prime.paxsite.com//assets/img/sponsors/unclesgames.jpg' alt='Uncles Games' /></a></td>
+<td><a href='http://www.pajaggle.com/' title='Pajaggle'><img src='http://prime.paxsite.com//assets/img/sponsors/pajaggle.jpg' alt='Pajaggle' /></a></td>
+<td><a href='http://www.pepwuper.com/' title='Studio Pepwuper'><img src='http://prime.paxsite.com//assets/img/sponsors/studiopepwuper.jpg' alt='Studio Pepwuper' /></a></td>
+<td><a href='http://www.kumobius.com/' title='Kumobius'><img src='http://prime.paxsite.com//assets/img/sponsors/kumobius.png' alt='Kumobius' /></a></td>
+<td><a href='http://www.looneylabs.com/' title='Looney Labs'><img src='http://prime.paxsite.com//assets/img/sponsors/looneylabs.jpg' alt='Looney Labs' /></a></td>
+<td><a href='http://www.games-workshop.com/gws/' title='Games Workshop'><img src='http://prime.paxsite.com//assets/img/sponsors/gamesworkshop.jpg' alt='Games Workshop' /></a></td>
+</tr>
+<tr>
+<td><a href='http://gamesalute.squarespace.com/' title='Game Salute'><img src='http://prime.paxsite.com//assets/img/sponsors/gamesalute.png' alt='Game Salute' /></a></td>
+<td><a href='http://www.forgeworld.co.uk/' title='Forgeworld'><img src='http://prime.paxsite.com//assets/img/sponsors/forgeworld.jpg' alt='Forgeworld' /></a></td>
+<td><a href='http://www.fangamer.net/' title='Fangamer'><img src='http://prime.paxsite.com//assets/img/sponsors/fangamer.png' alt='Fangamer' /></a></td>
+<td><a href='http://ctenophore.com/' title='Ctenophore'><img src='http://prime.paxsite.com//assets/img/sponsors/ctenophore.png' alt='Ctenophore' /></a></td>
+<td><a href='http://www.blacklibrary.com/' title='Black Library'><img src='http://prime.paxsite.com//assets/img/sponsors/blacklibrary.jpg' alt='Black Library' /></a></td>
+<td><a href='http://www.antichamber-game.com/' title='Antichamber'><img src='http://prime.paxsite.com//assets/img/sponsors/antichamber.jpg' alt='Antichamber' /></a></td>
+<td><a href='http://www.yobonja.com/' title='Yobonja'><img src='http://prime.paxsite.com//assets/img/sponsors/YobonjaLogo.png' alt='Yobonja' /></a></td>
+<td><a href='http://tinmangames.com.au/blog/' title='Tin Man Games'><img src='http://prime.paxsite.com//assets/img/sponsors/tinmangames.png' alt='Tin Man Games' /></a></td>
+<td><a href='http://www.ska-studios.com/' title='Ska Studios'><img src='http://prime.paxsite.com//assets/img/sponsors/SkaStudiosLogo.png' alt='Ska Studios' /></a></td>
+<td><a href='http://us.playstation.com/' title='Sony Playstation'><img src='http://prime.paxsite.com//assets/img/sponsors/playstation.jpg' alt='Sony Playstation' /></a></td>
+<td><a href='http://www.radialgames.com/' title='Radial Games'><img src='http://prime.paxsite.com//assets/img/sponsors/radialgames.png' alt='Radial Games' /></a></td>
+<td><a href='http://www.olympiccardsandcomics.com/' title='Olympic Cards and Comics'><img src='http://prime.paxsite.com//assets/img/sponsors/olympiccardsandcomics.jpg' alt='Olympic Cards and Comics' /></a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td><a href='http://www.gammaraygamestore.com/' title='Gamma Ray Games'><img src='http://prime.paxsite.com//assets/img/sponsors/gammaraygames.jpg' alt='Gamma Ray Games' /></a></td>
+<td><a href='http://www.fantasyflightgames.com/' title='Fantasy Flight Games'><img src='http://prime.paxsite.com//assets/img/sponsors/fantasyflight.jpg' alt='Fantasy Flight Games' /></a></td>
+<td><a href='http://www.drinkboxstudios.com/' title='Drinkbox'><img src='http://prime.paxsite.com//assets/img/sponsors/drinkbox.png' alt='Drinkbox' /></a></td>
+<td><a href='http://www.contagion-game.com/' title='Contagion'><img src='http://prime.paxsite.com//assets/img/sponsors/contagion.png' alt='Contagion' /></a></td>
+<td><a href='http://bitflipgames.com/' title='BitFlip Games'><img src='http://prime.paxsite.com//assets/img/sponsors/bitflipgames.com_logo.png' alt='BitFlip Games' /></a></td>
+<td><a href='http://alienware.com/' title='Alienware'><img src='http://prime.paxsite.com//assets/img/sponsors/alienware.jpg' alt='Alienware' /></a></td>
+<td><a href='http://www.futureus.com/' title='Future'><img src='http://prime.paxsite.com//assets/img/sponsors/future.png' alt='Future' /></a></td>
+<td><a href='http://www.zombie.com/' title='Zombie Studios'><img src='http://prime.paxsite.com//assets/img/sponsors/zombie_logo_black_large.png' alt='Zombie Studios' /></a></td>
+<td><a href='http://www.zotac.com/' title='Zotac'><img src='http://prime.paxsite.com//assets/img/sponsors/Zotac.jpg' alt='Zotac' /></a></td>
+<td><a href='http://twitch.tv' title='Twitch'><img src='http://prime.paxsite.com//assets/img/sponsors/twitch.png' alt='Twitch' /></a></td>
+<td><a href='http://www.octodadgame.com/' title='Young Horses'><img src='http://prime.paxsite.com//assets/img/sponsors/YoungHorses.png' alt='Young Horses' /></a></td>
+<td><a href='http://www.soe.com/' title='Sony Online'><img src='http://prime.paxsite.com//assets/img/sponsors/SonyOnline.png' alt='Sony Online' /></a></td>
+</tr>
+<tr>
+<td><a href='http://sanshee.com/' title='Sanshee'><img src='http://prime.paxsite.com//assets/img/sponsors/Sanshee.png' alt='Sanshee' /></a></td>
+<td><a href='https://www.sifteo.com/' title='Sifteo'><img src='http://prime.paxsite.com//assets/img/sponsors/Sifteo_logo.jpg' alt='Sifteo' /></a></td>
+<td><a href='http://roosterteeth.com/home.php' title='Rooster Teeth'><img src='http://prime.paxsite.com//assets/img/sponsors/roosterteeth.jpg' alt='Rooster Teeth' /></a></td>
+<td><a href='http://www.primordialcomputers.com/' title='Primordial'><img src='http://prime.paxsite.com//assets/img/sponsors/Primordial.jpg' alt='Primordial' /></a></td>
+<td><a href='http://pixelscopic.com/' title='Pixelscopic'><img src='http://prime.paxsite.com//assets/img/sponsors/Pixelscopic.jpg' alt='Pixelscopic' /></a></td>
+<td><a href='http://paizo.com/' title='Paizo'><img src='http://prime.paxsite.com//assets/img/sponsors/paizo.jpg' alt='Paizo' /></a></td>
+<td><a href='http://www.orcattack.com/' title='Orc Attack'><img src='http://prime.paxsite.com//assets/img/sponsors/orcattack.jpg' alt='Orc Attack' /></a></td>
+<td><a href='http://onthelevelgames.com/' title='On the Level'><img src='http://prime.paxsite.com//assets/img/sponsors/OnTheLevel.jpg' alt='On the Level' /></a></td>
+<td><a href='http://www.naturalselection2.com/' title='Natural Selection 2'><img src='http://prime.paxsite.com//assets/img/sponsors/NaturalSelection2.jpg' alt='Natural Selection 2' /></a></td>
+<td><a href='kingston.com' title='Kingston'><img src='http://prime.paxsite.com//assets/img/sponsors/Kingston.jpg' alt='Kingston' /></a></td>
+<td><a href='http://www.iadt.edu/' title='IADT'><img src='http://prime.paxsite.com//assets/img/sponsors/IADT.png' alt='IADT' /></a></td>
+<td><a href='http://halfbrick.com/' title='Halfbrick'><img src='http://prime.paxsite.com//assets/img/sponsors/Halfbrick.png' alt='Halfbrick' /></a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td><a href='http://www.huntgamestudios.com/' title='Hunt Game Studios'><img src='http://prime.paxsite.com//assets/img/sponsors/Hunt_Game_Studios_Logo.png' alt='Hunt Game Studios' /></a></td>
+<td><a href='http://www.g4tv.com/' title='G4'><img src='http://prime.paxsite.com//assets/img/sponsors/G4_Logo.jpg' alt='G4' /></a></td>
+<td><a href='http://www.ea.com/' title='EA'><img src='http://prime.paxsite.com//assets/img/sponsors/ea.jpg' alt='EA' /></a></td>
+<td><a href='http://www.firehosegames.com/' title='Fire Hose'><img src='http://prime.paxsite.com//assets/img/sponsors/FireHose.jpg' alt='Fire Hose' /></a></td>
+<td><a href='http://www.doublefine.com/' title='DoubleFine'><img src='http://prime.paxsite.com//assets/img/sponsors/DoubleFine2.png' alt='DoubleFine' /></a></td>
+<td><a href='http://www.dejobaan.com/' title='Dejobaan Games'><img src='http://prime.paxsite.com//assets/img/sponsors/DejobaanGames.png' alt='Dejobaan Games' /></a></td>
+<td><a href='http://www.deepsilver.com/' title='Deep Silver'><img src='http://prime.paxsite.com//assets/img/sponsors/DeepSilver.jpg' alt='Deep Silver' /></a></td>
+<td><a href='http://www.coolminiornot.com/' title='Cool Mini or Not'><img src='http://prime.paxsite.com//assets/img/sponsors/CoolMiniorNot.jpg' alt='Cool Mini or Not' /></a></td>
+<td><a href='http://www.corsair.com/' title='Corsair'><img src='http://prime.paxsite.com//assets/img/sponsors/Corsair.jpg' alt='Corsair' /></a></td>
+<td><a href='http://www.cavebananagames.com/' title='Cave Banana Games'><img src='http://prime.paxsite.com//assets/img/sponsors/cavebananagames.jpg' alt='Cave Banana Games' /></a></td>
+<td><a href='http://www.cardhunter.com/' title='Card Hunter'><img src='http://prime.paxsite.com//assets/img/sponsors/cardhunter.jpg' alt='Card Hunter' /></a></td>
+<td><a href='http://www.cardkingdom.com/' title='Card Kingdom'><img src='http://prime.paxsite.com//assets/img/sponsors/CardKingdom.png' alt='Card Kingdom' /></a></td>
+</tr>
+<tr>
+<td><a href='http://www.brawsome.com.au/' title='Brawsome'><img src='http://prime.paxsite.com//assets/img/sponsors/Brawsome_busy.jpg' alt='Brawsome' /></a></td>
+<td><a href='http://www.bootsnakegames.com/' title='BootSnake Games'><img src='http://prime.paxsite.com//assets/img/sponsors/BootSnakeLogo_Pax.jpg' alt='BootSnake Games' /></a></td>
+<td><a href='http://www.astrogaming.com/' title='Astro'><img src='http://prime.paxsite.com//assets/img/sponsors/ASTRO-Gaming-Logo-Black.jpg' alt='Astro' /></a></td>
+<td><a href='http://blendogames.com/' title='Blendo Games'><img src='http://prime.paxsite.com//assets/img/sponsors/Blendo_Games_LLC.jpg' alt='Blendo Games' /></a></td>
+<td><a href='http://www.adhesivegames.com/' title='Adhesive Games'><img src='http://prime.paxsite.com//assets/img/sponsors/adhesive.jpg' alt='Adhesive Games' /></a></td>
+<td><a href='http://17-bit.com/' title='17bit'><img src='http://prime.paxsite.com//assets/img/sponsors/17bit.jpg' alt='17bit' /></a></td>
+<td><a href='http://24caretgames.com/' title='24 Caret Games'><img src='http://prime.paxsite.com//assets/img/sponsors/24caret.jpg' alt='24 Caret Games' /></a></td>
+</tr>
+</tbody>
+</table>
+	</div>
+</div>
+<hr />
+		<div id="footer">
+			<div id="leaderboard">
+				
+				<!-- PAXSite_Banner -->
+				<div id='div-gpt-ad-1331836661000-0' style='width:728px; height:90px;'>
+					<script type='text/javascript'>
+					googletag.cmd.push(function() {googletag.display('div-gpt-ad-1331836661000-0');});
+					</script>
+				</div>
+			</div>
+			<div id="advertise">
+				<h3>Advertise on PAX Site</h3>
+				<a class="btn grey" href="mailto:paxsales@paxsite.com?subject=PAX%20Prime%202012%20Inquiry" title="Contact Us">Contact Us</a>
+			</div>
+			<ul class="nav">
+				<li><a class="navWhatIsPax" href="/what-is-pax" title="What is PAX?">What is PAX?</a></li>
+				<li><a class="navRegistration" href="/registration" title="Registration">Registration</a></li>
+				<li><a class="navSchedule" href="/schedule" title="Schedule">Schedule</a></li>
+				<li><a class="navHotels" href="/hotels-and-travel" title="Hotels &amp; Travel">Hotels &amp; Travel</a></li>
+				<li><a class="navFAQ" href="/faq" title="FAQ">FAQ</a></li>
+				<li><a class="navGallery" href="/gallery" title="Gallery">Gallery</a></li>
+				<li><a class="navForums" href="http://forums.penny-arcade.com/categories/pax-prime" title="Forums">Forums</a></li>			
+			</ul>
+			<ul class="shows">
+				<li><a class="btn btnPrime" href="http://prime.paxsite.com/" title="PAX Prime: Seattle, WA"><strong>PAX Prime</strong></a></li>
+				<li><a class="btn btnEast" href="http://east.paxsite.com/" title="PAX East: Boston, MA"><strong>PAX East</strong></a></li>
+				<li><a class="btn btnAus" href="http://aus.paxsite.com/" title="PAX Aus: Melbourne, VIC"><strong>PAX Aus</strong></a></li>
+				<li><a class="btn btnDev" href="http://dev.paxsite.com/" title="PAX Dev: Seattle, WA"><strong>PAX Dev</strong></a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

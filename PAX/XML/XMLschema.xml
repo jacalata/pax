@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:simpleType name="eventLocation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Main"/>
+      <xs:enumeration value="Naga"/>
+	    <xs:enumeration value="Arachnid"/>
+	    <xs:enumeration value="Manticore"/>
+  	  <xs:enumeration value="Cat"/>
+  	  <xs:enumeration value="Wyvern"/>
+  	  <xs:enumeration value="Merman" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="eventKind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Panel"/>
+      <xs:enumeration value="Omegathon"/>
+      <xs:enumeration value="Contest"/>
+      <xs:enumeration value="FreePlay"/>
+      <xs:enumeration value="Show"/>
+	    <xs:enumeration value="D&amp;D"/>
+	    <xs:enumeration value="Social"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+    <xs:complexType name="Event">
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="kind" type="eventKind" maxOccurs="unbounded" minOccurs="1"/>
+        <xs:element name="location" type="eventLocation"/>
+        <xs:element name="datetime" type="xs:dateTime"/>
+        <xs:element name="end" type="xs:dateTime"/>
+        <xs:element name="details" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+
+  <xs:element name="Schedule">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element name="Event" type="xs:string"
+      maxOccurs="unbounded" minOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

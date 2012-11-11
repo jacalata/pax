@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+    <Event
+    kind ="Social"
+	name="GLBT meetup"
+    datetime="03/11/2011 23:00:00"
+    end ="03/11/2011 23:59:00"
+	description="Who is allowed here? ANYONE (who is not a dick). Those of us traveling from the convention center will meet beforehand (probably around 10:30 pm) in the lobby of the Westin Boston Waterfront. Bear in mind this is an unofficial community event. http://forums.penny-arcade.com/showthread.php?t=135817."
+	location="Uno, 715 Boylston Street, Boston"
+	/>
+
+
+    <Event
+    kind ="Social"
+	name="girls meetup at PAX!"
+    datetime="03/13/2011 10:00:00"
+    end ="03/13/2011 11:30:00"
+	location="Lucky's Boston, 355 Congress St"
+	description="A Social gathering for girls/women at PAX, organised by EruditeAphrodite. Bear in mind this is an unofficial community event. http://forums.penny-arcade.com/showthread.php?t=133624, http://www.yelp.com/biz/luckys-boston"
+	/>
+
+    <Event
+    kind ="Social"
+	name="XBox live tweetup"
+    datetime="03/11/2011 09:00:00"
+    end ="03/11/2011 10:30:00"
+	location="Lucky's Boston, 355 Congress St"	
+	description="If you are headed to PAX East why not stop by the Xbox Tweetup? Join me, Eric Neustadter (Xbox Operations) Laura Massey (Xbox development) Stephen Toulouse (Xbox Enforcement) Eric Doty (Xbox Community Manager) and many more. Meet other Xbox LIVE members, along with some of the Xbox product team and win prizes. http://majornelson.com/archive/2011/02/10/pax-east-2011-tweet-up.aspx"
+	/>
+
+
+    <Event
+    kind ="Social"
+    datetime="03/10/2011 17:00:00"
+    end ="03/10/2011 20:00:00"
+	name="Pre-PAX Video Game Swap with Harmonix"
+location="Middlesex Lounge - 315 Massachusetts Avenue"
+description="Pre-PAX Video Game Swap with Harmonix: Come swap your games with us from 5-8 pm at Middlesex Lounge, just down the street from all the pre-PAX action at the NERD Center. Entrance is $5 with a video game to swap, $10 without.'Adult' beverages on hand. http://www.facebook.com/event.php?eid=186140881424845"
+/>
+
+    <Event
+    kind ="Social"
+    datetime="03/10/2011 19:00:00"
+    end ="03/10/2011 23:59:00"
+		name="Rock Band Night"
+location="The Brattle Theatre - 40 Brattle St"
+description="We start partying before PAX East even starts. We've got a Rock Band night at the Brattle Theater in Cambridge, maybe a 15 minute train ride from the show. We kick off the night with a showing of Heavy Metal at 7pm, and Rock Band begins at 10pm (but you can do one or the other if you don't want to do both). The gentle jerks at Giant Bomb have agreed to sit in as judges, so hilarity is guaranteed. You can get more info and purchase tickets ($14 for the combo, $6 for RB) in advance here: http://brattlefilm.org/2011/03/10/rock-band-night/"
+/>
+
+    <Event
+    kind ="Social"
+    datetime="03/10/2011 21:00:00"
+    end ="03/10/2011 23:59:00"
+	name="Super Awesome Happy Fun Time Rock Show!"
+location="Great Scott - 1222 Commonwealth Ave" 
+description="We also have a Harmonix band showcase at Great Scott in Allston on Thursday night, starting at 9pm for the kingly sum of $8. This sucker is 18+ but it'll make you feel like a kid again. Some amazing bands, some awesome DJ / VJ action and a great show to kick off the weekend. You can pre order tickets here: http://www.ticketweb.com/t3/sale/Sal...ventId=3474125"
+/>
+
+
+    <Event
+	kind ="Social"
+	name="Mix CD swap at the Harmonix booth!"
+    datetime="03/11/2011 10:00:00"
+    end ="03/11/2011 19:00:00"
+	location="expo hall"
+	description="In true DIY spirit, a bunch of HMX folks are making mix CDs and we're hoping that some of you will bring mixes with you as well. 
+Drop off a mix, take a mix and maybe discover some new music in the process. Nothing too formal, just a good old fashioned music exchange. We'll be doing this all day long and maybe on into Saturday if there's enough interest."
+/>
+
+    <Event
+    kind ="Social"
+name="Gamers Gone Wild"
+    datetime="03/11/2011 20:00:00"
+    end ="03/11/2011 23:59:00"
+description="It's going to be a party of epic proportions for gamers of all walks of life (Provided they're 21+). Running from 8 PM until 2 AM Friday March 11th get ready to dance, game, and otherwise party the night away while three awesome DJ's spin some of the hottest tracks all night long.
+DJ Spin (http://soundcloud.com/turntablezdj) -- DJ Xyande (http://www.myspace.com/djxyanyde) -- Carlos Ferro
+--swag--contests--sponsors--read more at http://forums.penny-arcade.com/showthread.php?t=137486 
+21+, Free with PAX pass, $5 cover without."
+location="The Felt - 533 Washington Street"
+/>
+    <Event
+    kind ="Social"
+    datetime="03/11/2011 18:00:00"
+    end ="03/11/2011 22:00:00"
+name="NCsoft PAX East Meet and Greet"
+description="This is your chance to hang out with your favorite developers, score some sweet loot, and play the Guild Wars 2 demo on one of 20 demo stations. This event will be open to everybody, so keep in mind that admission will be limited to the capacity of the venue.
+http://www.arena.net/blog/unleashed-at-pax-east-arenanet-travels-to-boston-with-new-demo"
+location="Westin Boston Waterfront Hotel"
+/>
+
+    <Event
+      kind="Social"
+      name="Hang with IGN, Get Free Stuff"
+      description="From Friday through Sunday, you're going to be able to play the coolest unreleased games in Boston, and IGN will be there to document the ride. However, we're not happy to just crawl the show floor with you – no, no. Instead, IGN is hosting a party on Saturday night and a live IGN Game Scoop! Podcast panel on Sunday.
+The best part? We're giving away all sorts of free stuff – food, booze, Mortal Kombat Collector's Editions, etc. All you have to do is show up.
+Interested?
+Come grab some free appetizers and brews with your favorite IGN personalities – people like Jessica Chobot, Daemon Hatfield, Greg Miller, Anthony Gallegos, Ty Root and Walter Lopez. Space as well as the free Game Scoop! and Knockin' Boots T-shirts are limited, so get there early and have a ball. "
+    datetime="03/12/2011 18:00:00"
+    end ="03/12/2011 21:00:00"
+      location="Barlow's Restaurant (241 A Street, Boston)"
+/>
+    
+    <Event
+    kind ="Social"
+    datetime="03/11/2011 17:30:00"
+    end ="03/11/2011 18:30:00"
+name="Dragon Quest IX Friday"
+location="handheld lounge"
+description="meet up and play dqIX multiplayer, trade maps, etc. Details: http://forums.penny-arcade.com/showthread.php?t=136779"
+/>
+    <Event
+    kind ="Social"
+    datetime="03/12/2011 14:00:00"
+    end ="03/12/2011 15:0:00"
+name="Dragon Quest IX Saturday"
+location="handheld lounge"
+description="meet up and play dqIX multiplayer, trade maps, etc. Details: http://forums.penny-arcade.com/showthread.php?t=136779"
+/>
+    <Event
+    kind ="Social"
+    datetime="03/13/2011 14:00:00"
+    end ="03/13/2011 15:0:00"
+name="Dragon Quest IX Sunday"
+location="handheld lounge"
+description="meet up and play dqIX multiplayer, trade maps, etc. Details: http://forums.penny-arcade.com/showthread.php?t=136779"
+/>
+
+<Event
+kind="Social"
+name="PAX Pokewalker first meetup"
+    datetime="03/12/2011 13:30:00"
+    end ="03/12/2011 14:0:00"
+location="Outside the Handheld Area"
+description="One of the many benefits of having a Pokewalker is meeting other people with Pokewalkers. At previous PAX it was awesome finding and meeting new people just by noticing the Pokewalker so I thought creating a meet up just for that would be a good idea.
+What to Do:
+Bring your Pokewalker to PAX with you copy of HG/SS of course. Make your Pokewalker viewable to all. Try putting it on your hat, lanyard, shirt, staff, etc. Just make sure it's well secured! Leave no Pokemon behind.
+At the Meetup, say hi to your fellow PAX Trainer, link up Pokewalkers, Trade items, unlock routes and maybe even train and battle for the PAX Pokemon League. Also there will be Prizes!!!!!"
+/>
+
+<Event
+kind="Social"
+name="Pokemon Champion's Challenge"
+    datetime="03/13/2011 18:30:00"
+    end ="03/13/2011 19:0:00"
+location="Westin Lobby"
+description="One of the many benefits of having a Pokewalker is meeting other people with Pokewalkers. At previous PAX it was awesome finding and meeting new people just by noticing the Pokewalker so I thought creating a meet up just for that would be a good idea.
+What to Do:
+Bring your Pokewalker to PAX with you copy of HG/SS of course. Make your Pokewalker viewable to all. Try putting it on your hat, lanyard, shirt, staff, etc. Just make sure it's well secured! Leave no Pokemon behind.
+At the Meetup, say hi to your fellow PAX Trainer, link up Pokewalkers, Trade items, unlock routes and maybe even train and battle for the PAX Pokemon League. Also there will be Prizes!!!!!"
+/>
+
+  </Schedule>
+</xs:schema>

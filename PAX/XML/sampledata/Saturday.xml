@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+
+  <Schedule>
+
+    <Event
+      kind ="Panel"
+    datetime="03/12/2011 10:00:00"
+    end ="03/12/2011 11:00:00"
+    location="Pegasus Theatre"
+    name="Bungie!"
+    description="Details TBA"
+/>
+
+    <Event
+      kind="Panel"
+    datetime="03/12/2011 10:00:00"
+    end ="03/12/2011 11:30:00"
+    location="location 304"
+    name="Guild Wars 2: Designing Dynamic Events"
+    description="What does it take to create MMO content? Veteran game designers Eric Flannum and Colin Johanson, key creators behind ArenaNet’s upcoming Guild Wars 2, will give audience members a unique perspective on designing MMO content in this fascinating talk and workshop. In an informal presentation, Eric and Colin will show you how Guild Wars 2 designers create events in the dynamic, living game world and the many factors to consider when designing any kind of MMO content. Attendees will leave with a greater insight into the work of game designers and a deeper understanding of the Guild Wars 2 dynamic event system.
+This session is a ticketed event with limited attendance. Please stop by the Guild Wars 2 Booth #642 to find out how you could get a ticket.
+Panelists include: Eric Flannum, Colin Johanson"
+/>
+
+    <Event
+      kind ="Featured"
+    datetime="03/12/2011 10:30:00"
+    end ="03/12/2011 12:00:00"
+  location="Main Theatre"
+  name="Penny Arcade Make a Strip Panel"
+  description="Penny Arcade Make a Strip Panel Ever wonder what goes into making a Penny Arcade comic? Join Gabe and Tycho in the Main Theatre, and take part in creating Monday's HILARIOUS comic."
+/>
+
+    <Event
+      kind ="Panel"
+    datetime="03/12/2011 10:30:00"
+    end ="03/12/2011 11:30:00"
+  location="Raven Theatre"
+  name="City of Heroes Going Rogue™….and Beyond!"
+  description="City of Heroes Going Rogue™ is this summer’s biggest super-powered MMO expansion, and the Paragon Studios® development team wants to tell you all about what it was like to once again redefine the on-line gaming experience. The Going Rogue expansion adds the brand-new world of Praetoria, four fantastic power sets, dynamic missions and the innovative Going Rogue alignment system. By going on a unique moral journey, players can finally choose to customize the most important part of their Hero or Villain’s on-line experience – their destiny. The Development Team from Paragon Studios® will share with the audience some of the challenges in revolutionizing the MMO marketplace. Hear about the innovations that Going Rogue introduces, find out about the unique challenges the team faced, and be the first to discover the secrets that lie in the future of City of Heroes.
+Panelists include: Matt 'Positron' Miller, Melissa 'War Witch' Bianco, Ray Soto, Nate Birkholz"
+/>
+
+    <Event
+      kind ="Panel"
+    datetime="03/12/2011 10:30:00"
+    end ="03/12/2011 11:30:00"
+  location="Unicorn Theatre"
+  name="Destructoid Live"
+  description="Destructoid is the most popular indie gaming blog online, thanks in no small part to the unique and outspoken personalities who inhabit it. The site has regularly held PAX panels in the past, and this year aims to provide PAX Prime with its most varied, amusing and fan-friendly panel yet. Destructoid Live will feature three of the community's most well known figures -- Jim Sterling, Jonathan Holmes and Chad Concelmo. They will cover a variety of topics including the current trend of game journalism criticism, the console wars and the controversy of review scores. It's like Destructoid, but live!
+
+Panelists include: Jim Sterling [Reviews editor, Destructoid], Jonathan Holmes [Associate Editor, Destructoid], Chad Concelmo [Associate Editor, Destructoid], Yanier Gonzalez [Founder, Destructoid]"
+/>
+
+    <Event
+      kind ="Panel"
+    datetime="03/12/2011 11:00:00"
+    end ="03/12/2011 12:00:00"
+  location="Wolfman Theatre"
+  name="Raising Geek Generation 2.0: Roll For Parenting Ability"
+  description="How young is too young for The Hobbit? Why is LEGO Star Wars the best console game for your child? What's the best way to deal with bullying? How can I control my disgust if my child tells me he likes Jar Jar? As a parent, how do you deal with smart phones, texting and technology in your kid's life? These questions and many more will be discussed by writers for Wired.com's GeekDad blog and other geek parents. Come share your stories and advice for how to make sure our kids grow up to be geeks like us! Don't have kids? Show up and find out what may be in store for you if you ever do!
+Panelists include: Ken Denmead [Editor], Dave Banks [Core Contributor], Michael Harrison [Core Contributor]"
+/>
+
+    <Event
+      kind ="Panel"
+    datetime="03/12/2011 11:30:00"
+    end ="03/12/2011 12:30:00"
+  location="Pegasus Theatre"
+  name="The Community Manager Challenge Part 2"
+  description="Join our lovely Community Managers for the exciting conclusion of the worlds first (and only) Community Manager Challenge!
+Panelists include: Larry Hryb [Major Nelson, Xbox], Stephanie Bayer [Community Mgr, Bioware], Alexis Hebert-Ruiz [Community Mgr, Terminal Reality], Will Kinsler [Community Mgr, EA Sports], Sam Houston [Social Media Mgr, Perfect World], Christa 'Trixie360' Charter [Xbox], Arne Meyer [Naughty Dog], Will Kinsler [EA Sports], Kathleen 'cookiecups' Sanders [Xbox Indie Games], Robert 'fourzerotwo' Bowling [Infinity Ward], Jeff Rubenstein Rubenstein [Playstation], John Drake [Manager, Communications and Special Projects, Harmonix]"
+/>
+
+    <Event
+      kind ="Panel"
+    datetime="03/12/2011 12:00:00"
+    end ="03/12/2011 13:00:00"
+  location="Raven Theatre"
+  name="Game Masters vs. Rules Lawyers"
+  description="Are you tired of getting swept up in the epic conflicts of ego that have cast their gloomy pall over RPG tables for decades? These power struggles are exhausting and disruptive, whether you’re an easy-going player, munchkin, game master, or rules lawyer yourself. Corvus Elrod, Indie Game Designer and RPG storyteller of 20+ years, discusses the left/right brain conflicts that feed RPG angst. He’ll then outline strategies--including tips on open-world gaming and the sharing of story control--that will help you put the focus back where it belongs--telling stories together.
+Panelists include: Corvus Elrod [Semionaut and Narrative Designer, Zakelro Story Studio]"
+/>
+
+    <Event
+        kind ="Panel"
+      datetime="03/12/2011 12:00:00"
+      end ="03/12/2011 13:00:00"
+  location="Unicorn Theatre"
+  name="World of Farmcraft"
+  description="The lines between casual, social and MMO games are rapidly blurring. As the categories converge, what are the challenges and opportunities facing game designers, publishers and marketers? Will there be any distinction between these categories in the future? Do platforms even matter? Are game features now just direct marketing tools? Join a panel of game designers who are crafting the future of community-powered games. Invite your friends to unlock the special bonus!
+Panelists include: Paul Peterson [Senior Game Designer, Gamehouse], Henry Stern [Director of Design, Zynga], Chuck Osieja [Creative Director, Microsoft], Tyler Bielman [Game Designer, Microsoft]"
+/>
+
+    <Event
+        kind ="Panel"
+      datetime="03/12/2011 12:00:00"
+      end ="03/12/2011 13:00:00"
+  location="location 304"
+  name="Game Developer Workshop: What Videogame School is Right For ME?"
+  description="This panel includes representatives from as many game dev programs as we can muster, moderated by the Education SIG Chair. The point is to get the panel talking about what their programs are like and what kind of student finds them a good fit. DigiPen, USC, Full Sail, Carnegie Mellon."
+/>
+
+    <Event
+        kind ="Panel"
+      datetime="03/12/2011 12:30:00"
+      end ="03/12/2011 13:30:00"
+  location="Serpent Theatre"
+  name="343 Industries Meetup"
+  description="Details TBA"
+/>
+
+
+    <Event
+          kind ="Panel"
+        datetime="03/12/2011 12:30:00"
+        end ="03/12/2011 13:30:00"
+  location="Wolfman Theatre"
+  name="MMO's Empowering the Disabled, Enriching Lives"
+  description="Games are fun to most people that play them, but to many in the disabled community video games can be the only real window to the world they have. The evolution of the MMO has given people with disabilities a way to reach out and have contact with the world in ways that were not possible even 8 years ago. Worlds like SL, and games like EQ and WoW have given many disabled and socially isolated people a way to present themselves to the world in there own way. To not be defined by a wheelchair or other impairments that can become a barrier to rich social engagements, build life long friendships. We will talk about the importance of gaming to the disabled community, touch on the importance of supporting the needs of this community, and explain the benefits that outreach can bring a game.
+Panelists include: Mark Barlet [President and CEO, The AbleGamers Foundation], Halimat Alabi [Professor, Art Institute of California], Donna Prior [Developer, Freelance], Ben Herz [Medical Doctor, George Medical Collage], Johnny Richardson [Game Developer, LiquidBits, Inc.], Paul Barnett [Creative Director, Mythic]"
+/>
+
+    <Event
+          kind ="Show"
+        datetime="03/12/2011 13:00:00"
+        end ="03/12/2011 15:00:00"
+  location="Jamspace"
+  name="PAX Prime Chiptune Show Showcase!"
+  description="For many years, chiptune musicians from lands far and wide have gathered at the gates outside of PAX. Using portable gaming consoles, these lo-tek street buskers would blast their hand-crafted 8-bit tunes onto the streets of Seattle year after year. Slowly but surely, these humble 8-bit minstrels won the hearts of PAX attendees, who danced and cheered as bleeps and bloops filled the Autumn air. Now, charmed by their talent and persistence, the beneficent rulers of PAX have opened their doors to these plucky lo-fi performers, and granted them a special chiptune music showcase to take place this year inside the PAX JamSpace! Come indulge your ear drums and pump your fists to the sounds of Fighter X, Spamtron, Seanbad, Knife City and Zen Albatross at the first-ever PAX Prime Chiptune Show Showcase!"
+/>
+
+    <Event
+          kind ="Panel"
+        datetime="03/12/2011 13:00:00"
+        end ="03/12/2011 14:00:00"
+  location="Pegasus Theatre"
+  name="Pitch Your Game Idea"
+  description="You’ve got 45 seconds to deliver your idea to our panel of experts. The top three pitches will be picked for prizes and swag! (Please note that this is an open forum -- there’s nothing keeping anyone, judges and attendees alike, from stealing your ideas! If you’re not comfortable with this, please don’t pitch your idea!)"
+/>
+
+    <Event
+          kind ="Panel"
+        datetime="03/12/2011 13:30:00"
+        end ="03/12/2011 14:30:00"
+  location="Raven Theatre"
+  name="Game Writing And Rabid Badger Combat"
+  description="Do you want to be a game writer? Do you like single handedly fighting rabid badgers while building a miniature version of the Eiffel Tower in a glass bottle? If you answered yes to either of these questions this is the panel for you! This panel will primarily focus on how to improve your chops as a game writer, discuss the future of storytelling and narrative design in games and answer your questions about how to become a game writer. As rabid badger fighting is vastly simpler than game writing it will be covered more briefly as, while it is an essential skill for any game developer, you should be able to pick it up at home through our series of instructional YouTube videos or the excellent, recently published, Idiot’s Guide to Rabid Badger Combat (chapter 10 covers how to build bottled miniatures while fending off omnivorous weasels). All skill levels are welcome, from hobbyist game writers to industry veterans to gamers who just want to get more out of their games. Join James Portnow, Tom Abernathy, Anne Toole and John Sutherland as the cover the ins and outs of writing for games.
+-.-. --- -- . - --- .-. --- --- -- ...-- .---- -----
+Panelists include: James Portnow [CEO, Rainmaker Games], Tom Abernathy [Game Writer, Microsoft], John Sutherland [Game Writer, Microsoft], Anne Tool, Gary Whitta"
+/>
+
+    <Event
+          kind ="Panel"
+        datetime="03/12/2011 13:30:00"
+        end ="03/12/2011 14:30:00"
+  location="Unicorn Theatre"
+  name="From Concept to Cover: The Game Informer Selection Process"
+  description="Ever wonder how games get on the cover of Game Informer magazine? From the exploration stage to full out execution, editors Andy McNamara and Andy Reiner explain how games go from a phone call to 4.5 million readers in this candid talk about how game journalists work with game companies to reveal gaming’s biggest hits. To share the developer perspective, Irrational Games’ creative director and president Ken Levine, director of marketing Leonie Manshanden, and lead artist Shawn Robertson join us to discuss landing the October cover, which will be revealed on stage for the first time.
+Panelists include: Shawn Elliott [Associate Producer, Irrational Games], Andy McNamara [Editor In Chief, Game Informer], Andy Reiner [Executive Editor, Game Informer], Leonie Manshanden [Director of Marketing, Irrational], Shawn Robertson [Lead Artist, Irrational]"
+/>
+
+    <Event
+            kind ="Panel"
+          datetime="03/12/2011 13:30:00"
+          end ="03/12/2011 14:30:00"
+  location="Game Developer Workshop"
+  name="Getting a Game Industry Internship"
+  description="This panel features representatives from game companies that run active, ongoing internship programs, and perhaps one or two current interns. Also focuses on what it's like to be an intern at a game company and how to get this kind of job."
+/>
+
+    <Event
+            kind ="Show"
+          datetime="03/12/2011 14:00:00"
+          end ="03/12/2011 15:00:00"
+            location=" Serpent Theatre"
+  name="Weekend Confirmed LIVE at PAX 2010"
+  description="Continuing the tradition started with 1UP Yours and then Listen UP, Garnett Lee, Brian Leahy, and Jeff Cannata bring the Weekend Confirmed podcast to PAX to be recorded in front of a live audience. It begins with a special PAX-edition version of Whatcha’ Been Playin? featuring the best of the show floor. In the second half it’s a live version of the Warning, with audience members invited to join the conversation as it happens. And you never know who may show up to fill the legendary fourth chair.
+Panelists include: Garnett Lee [Host], Brian Leahy [Co Host], Jeff Cannata [Co Host]"
+/>
+
+    <Event
+            kind ="Panel"
+          datetime="03/12/2011 14:00:00"
+          end ="03/12/2011 15:00:00"
+  location="Wolfman Theatre"
+  name="BEST PANEL EVER...with Machinima"
+  description="While mostly known for wooing ladies in to 'the act', the Machinima staff is also known for creating entertaining, informative, and ground breaking videos for the gaming generation and beyond. Attendees of the panel will have questions answered, share some laughs, meet their favorite Machinima hosts, and possibly get a sneak peek at future projects.
+Panelists include: Khail Anonymous [Segment Producer, Machinima], Adam Kovic [Senior Segment Producer, Machinima], Ron Campbell [VP Production, Machinima], Scott Robison [Senior Segment Producer, Machinima], Shaun Hutchinson [Segment Producer, Machinima]"
+/>
+
+    <Event
+            kind ="Show"
+          datetime="03/12/2011 14:30:00"
+          end ="03/12/2011 16:30:00"
+  location="Pegasus Theatre"
+  name="Acquisitions Incorporated: DnD Live!"
+  description="Gabe, Tycho, and Scott Kurtz begin an adventure with one goal, find a way to bring back Wil Wheaton’s deceased character, Aeofel. This is unscripted Dungeons and Dragons before a live studio audience... and through the magic of TECHNOLOGY, the audience influences the game! Bring your cell phone and guide Jim Darkmagic, Binwin Bronzebottom, and Omin Dran to riches or ruin.
+Panelists include: Scott Kurtz [Binwin Bronzebottom], Wil Wheaton ['Al'], Gabe and Tycho [Jim Darkmagic of the New Hampshire Darkmagics, and Omin Dran, CEO of Acquisitions Incorporated]"
+/>
+
+    <Event
+            kind ="Panel"
+          datetime="03/12/2011 15:00:00"
+          end ="03/12/2011 16:00:00"
+  location="Raven Theatre"
+  name="We Study Games…Professionally: Academic Research and Game Studies"
+  description="Are you interested in studying how games work or the effects they have on people? This group of academic researchers studies games from a variety of perspectives to help better understand how games work and what they mean for our culture. Working in the industry isn’t the only way to turn your interest in games into a job; this panel will even show sweet ways to approach a research paper about games.
+Panelists include: Christopher Paul [Seattle University], Mark Chen [University of Washington], Nathan Dutton [Ohio University], Todd Harper [Ohio University], Shawna Kelly [University of Southern California]"
+/>
+  </Schedule>
+
+</xs:schema>

@@ -1,0 +1,146 @@
+
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+
+  <Schedule>
+
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 10:00:00"
+    end ="03/11/2011 13:00:00"
+    location="TBA"
+    name="Warhammer"
+    description="Warhammer Fantasy Battle (1000 Points/Three Round Tournament)"
+/>
+
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 13:00:00"
+    end ="03/11/2011 14:00:00"
+    location="TBA"
+    name="Munchkin"
+    description="details TBA"
+/>
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 14:00:00"
+    end ="03/11/2011 15:00:00"
+    location="TBA"
+    name="Dominion"
+    description="details TBA"
+/>
+	
+	    <Event
+     kind ="Contest"
+    datetime="03/11/2011 18:00:00"
+    end ="03/11/2011 19:00:00"
+    location="TBA"
+    name="Small World"
+    description="details TBA"
+/>
+	
+	
+	    <Event
+     kind ="Contest"
+    datetime="03/11/2011 19:00:00"
+    end ="03/11/2011 21:00:00"
+    location="TBA"
+    name="Ticket to Ride"
+    description="details TBA"
+/>
+
+
+	    <Event
+     kind ="Contest"
+    datetime="03/11/2011 21:00:00"
+    end ="03/11/2011 23:00:00"
+    location="TBA"
+    name="Friday Night Frenzy"
+    description="details TBA"
+/>
+
+
+
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 12:00:00"
+    end ="03/11/2011 13:00:00"
+    location="TBA"
+    name="WarMachine/Hordes"
+    description="WarMachine/Hordes (35 Points/Three Round Tournament)"
+/>
+
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 13:00:00"
+    end ="03/11/2011 14:00:00"
+    location="TBA"
+    name="Dominion"
+    description="details TBA"
+/>
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 14:00:00"
+    end ="03/11/2011 15:00:00"
+    location="TBA"
+    name="Robo Rally"
+    description="details TBA"
+/>
+	
+	    <Event
+     kind ="Contest"
+    datetime="03/11/2011 18:00:00"
+    end ="03/11/2011 19:00:00"
+    location="TBA"
+    name="Dominion"
+    description="details TBA"
+/>
+	
+	    <Event
+     kind ="Contest"
+    datetime="03/11/2011 19:00:00"
+    end ="03/11/2011 21:00:00"
+    location="TBA"
+    name="Race for the Galaxy"
+    description="details TBA"
+/>
+
+
+	    <Event
+     kind ="Contest"
+    datetime="03/11/2011 21:00:00"
+    end ="03/11/2011 23:00:00"
+    location="TBA"
+    name="Saturday Night Smackdown"
+    description="details TBA"
+/>
+
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 12:00:00"
+    end ="03/11/2011 13:00:00"
+    location="TBA"
+    name="Warhammer 40,000"
+    description="Warhammer 40,000 (1250 Points/Three Round Tournament)"
+/>
+
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 13:00:00"
+    end ="03/11/2011 14:00:00"
+    location="TBA"
+    name="Carcassonne"
+    description="details TBA"
+/>
+    <Event
+     kind ="Contest"
+    datetime="03/11/2011 11:00:00"
+    end ="03/11/2011 12:00:00"
+    location="TBA"
+    name="Puerto Rico"
+    description="details TBA"
+/>
+	
+
+</Schedule>

@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+
+<Schedule>
+
+<Event
+name="Omegathon Round 1: X-Men"
+kind="Omegathon"
+location="Merman Theatre" 
+datetime="Friday April 6 2012 4:00 PM"
+end = "Friday April 6 2012 5:00PM"
+description="Omegathon!"
+/>
+
+<Event
+name="Omegathon Round  2: Zip-It"
+kind="Omegathon"
+location="Merman Theatre" 
+datetime="Saturday April 7 2012 2:00 PM"
+end = "Saturday April 7 2012 3:00PM"
+description="Omegathon!"
+/>
+
+<Event
+name="Omegathon Round 3: Dance Central 2"
+kind="Omegathon"
+location="Main Theatre" 
+datetime="Saturday April 7 2012 8:00 PM"
+end = "Saturday April 7 2012 9:00PM"
+description="Omegathon! This is the opening act of the Saturday night concerts."
+/>
+
+<Event
+name="PC tourney: Magic: Online" 
+kind="Contest"  
+location="PC Tourney"  
+datetime="Friday April 6 2012 4:00pm"   
+end="Friday April 6 2012 9:00pm"  
+description="Format: 1v1 Swiss followed by Single Elimination Bracket
+Type: Cube Draft
+Player Cap: 64
+Required to have Magic Online account" 
+/>
+
+
+<Event
+name="PC tourney: League of Legends"
+kind="Contest"
+location="PC Tourney"
+datetime="Saturday April 7 2012 2:00pm"   
+end="Saturday April 7 2012 7:00pm"  
+description="Format: 5v5 Single Elimination Bracket, Best of 1
+Map: Summoner's Rift
+Team Cap: 32 (16 can sign up Friday, 16 Saturday, more info later)
+Playing on Live Realm, accounts are provided with all champions"
+/>
+
+
+<Event
+name="PC tourney: Starcraft 2"
+kind="Contest"
+location="PC Tourney"
+datetime="Sunday April 8 2012 12:00pm"   
+end="Sunday April 8 2012 5:00pm"  
+description="Format: 1v1 Single Elimination
+Maps: TBA
+Player Cap: 64
+Required to have Starcraft 2 account"
+/>
+
+<Event
+name="PC game: Minecraft"
+kind="Contest"
+location="PC Tourney"
+datetime="Saturday April 7 2012 11:59pm"   
+end="Sunday April 8 2012 4:00am"  
+description="We are also organizing a Minecraft get together like at PAX Prime:
+Scavenger Hunt
+Teams of 2
+Team Cap: 25
+Map: Random :P
+Starts Saturday at Midnight"
+/>
+
+
+<Event
+name="Mario Kart DS, Round 1a" 
+kind="Contest"  
+location="Handheld Tourney"  
+datetime="Friday April 6 2012 12:30pm"
+end="Friday April 6 2012 1:30pm"
+description="The basic rules are 150cc karts and random courses. Also, no snaking. We frown highly upon snaking. Single elimination with the top 4 moving on to the final round. In the final round we do an actual grand prix. "
+/>
+
+<Event
+name="
+Mario Kart DS, Round 1b" 
+kind="Contest"  
+location="Handheld Tourney"  
+datetime="Friday April 6 2012 2:30pm"
+end="Friday April 6 2012 3:30pm"
+description="The basic rules are 150cc karts and random courses. Also, no snaking. We frown highly upon snaking. Single elimination with the top 4 moving on to the final round. In the final round we do an actual grand prix."
+/>
+
+<Event
+name="
+Mario Kart DS, Finals" 
+kind="Contest"  
+location="Handheld Tourney"  
+datetime="Friday April 6 2012 4:30pm"
+end="Friday April 6 2012 5:30pm"
+description="The basic rules are 150cc karts and random courses. Also, no snaking. We frown highly upon snaking. Single elimination with the top 4 moving on to the final round. In the final round we do an actual grand prix."
+/>
+
+<Event
+name="Kid Icarus, Uprising" 
+kind="Contest"  
+location="Handheld Tourney"  
+datetime="Friday April 6 2012 6:00pm"
+end="Friday April 6 2012 6:30pm"
+description="Teams will be put together to play rounds of Light vs Dark BUT the highest score moves on, not the winning team. Assuming 72 participants, 12 will move on to the final round where everyone will play 3 rounds of Light vs Dark in random match ups. Those 3 scores will be added up to determine the overall tourney winner!
+Banned Powers
+-Libra Sponge
+-Pisces Heal
+-Trade Off
+Banned Weapons
+-Magnus Club
+Your friendly neighborhood HH Enforcers and Nintendo staff will be on hand to make sure everyone's power and weapons list is kosher. "
+/>
+
+<Event
+name="Mario Kart 7, Round 1a"
+kind="Contest"  
+location="Handheld Tourney" 
+datetime="Saturday April 7 2012 12:00pm"   
+end="Saturday April 7 2012 1:00pm"  
+description="Folks will be using their own Ghost Data. We will have a few to-borrow copies, and we'll do our best to get them up to speed by the tournament."
+/>
+
+<Event
+name="Mario Kart 7, Round 1b"
+kind="Contest"  
+location="Handheld Tourney" 
+datetime="Saturday April 7 2012 2:30pm"   
+end="Saturday April 7 2012 3:30pm"  
+description="Folks will be using their own Ghost Data. We will have a few to-borrow copies, and we'll do our best to get them up to speed by the tournament."
+/>
+
+<Event
+name="Mario Kart 7, Finals"
+kind="Contest"  
+location="Handheld Tourney" 
+datetime="Saturday April 7 2012 6:00pm"   
+end="Saturday April 7 2012 7:00pm"  
+description="Folks will be using their own Ghost Data. We will have a few to-borrow copies, and we'll do our best to get them up to speed by the tournament."
+/>
+
+<Event
+name="Tetris DS, Round 1a"
+kind="Contest"  
+location="Handheld Tourney" 
+datetime="Sunday April 8 2012 12:00pm"   
+end="Sunday April 8 2012 1:00pm" 
+description="It's tetris"
+/>
+
+<Event
+name="Tetris DS, Round 1b"
+kind="Contest"  
+location="Handheld Tourney" 
+datetime="Sunday April 8 2012 2:00pm"   
+end="Sunday April 8 2012 3:00pm" 
+description="It's tetris"
+/>
+
+<Event
+name="Tetris DS, Finals"
+kind="Contest"  
+location="Handheld Tourney" 
+datetime="Sunday April 8 2012 4:00pm"   
+end="Sunday April 8 2012 5:00pm" 
+description="It's tetris"
+/>
+
+
+<Event
+name="Perfect Dark"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 12:00pm"   
+end="Friday April 6 2012 1:00pm" 
+description="Room A, 64 Player Cap."
+/>
+
+
+<Event
+name="Lumines Live!"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 1:00pm"   
+end="Friday April 6 2012 3:00pm" 
+description="Room C, 32 Player Cap."
+/>
+
+
+<Event
+name="Blur"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 3:00pm"   
+end="Friday April 6 2012 5:00pm" 
+description="Room C, 64 Player Cap."
+/>
+
+
+<Event
+name="NBA Jam On Fire Edition"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 4:00pm"   
+end="Friday April 6 2012 6:00pm" 
+description="Room A, 32 Player Cap."
+/>
+
+
+<Event
+name="Puzzle Bobble"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 5:00pm"   
+end="Friday April 6 2012 7:00pm" 
+description="Room C, 32 Player Cap."
+/>
+
+
+<Event
+name="Geometry Wars 2"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 6:00pm"   
+end="Friday April 6 2012 8:00pm" 
+description="Room A, 64 Player Cap."
+/>
+
+
+<Event
+name="Super Smash Brothers Brawl"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 7:00pm"   
+end="Friday April 6 2012 9:00pm" 
+description="Room C, 128 Player Cap"
+/>
+
+
+<Event
+name="Super Street Fighters 2 Turbo HD Remix"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Friday April 6 2012 8:00pm"   
+end="Friday April 6 2012 10:00pm" 
+description="Room A, 32 Player Cap"
+/>
+
+
+<Event
+name="Doom"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 12:00pm"   
+end="Saturday April 7 2012 2:00pm" 
+description="Room A, 64 Player Cap."
+/>
+
+<Event
+name="Super Street Fighter 4: Arcade Edition"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 12:00pm"   
+end="Saturday April 7 2012 2:00pm" 
+description="Room C, 128 Player Cap."
+/>
+
+
+<Event
+name="Beautiful Katamari"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 2:00pm"   
+end="Saturday April 7 2012 4:00pm" 
+description="Room A, 32 Player Cap."
+/>
+
+
+<Event
+name="Tetris Attack"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 2:00pm"   
+end="Saturday April 7 2012 4:00pm" 
+description="Classic Console, 64 Player Cap."
+/>
+
+<Event
+name="Super Puzzle Fighter 2 Turbo HD Remix"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 4:00pm"   
+end="Saturday April 7 2012 6:00pm" 
+description="Room A, 32 Player Cap."
+/>
+
+<Event
+name="Pac-Man Championship Edition DX"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 6:00pm"   
+end="Saturday April 7 2012 8:00pm" 
+description="Room A, 32 Player Cap."
+/>
+
+<Event
+name="Halo Reach"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 7:00pm"   
+end="Saturday April 7 2012 11:00pm" 
+description="Room C, 128 Player Cap."
+/>
+
+<Event
+name="Catherine"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Saturday April 7 2012 8:00pm"   
+end="Saturday April 7 2012 10:00pm" 
+description="Room A, 32 Player Cap."
+/>
+
+
+<Event
+name="Tetris Splash"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Sunday April 8 2012 12:00pm"   
+end="Sunday April 8 2012 2:00pm" 
+description="Room A, 64 Player Cap."
+/>
+
+
+<Event
+name="Ultimate Marvel vs. Capcom 3"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Sunday April 8 2012 1:00pm"   
+end="Sunday April 8 2012 5:00pm" 
+description="Room C, 128 Player Cap."
+/>
+
+<Event
+name="Golden Eye"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Sunday April 8 2012 2:00pm"   
+end="Sunday April 8 2012 4:00pm" 
+description="Classic Console, 64 Player Cap."
+/>
+
+<Event
+name="Virtual On"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Sunday April 8 2012 2:00pm"   
+end="Sunday April 8 2012 4:00pm" 
+description="Room A, 32 Player Cap."
+/>
+
+<Event
+name="Toy Soldiers: Cold War"
+kind="Contest"  
+location="Console Tourney" 
+datetime="Sunday April 8 2012 4:00pm"   
+end="Sunday April 8 2012 6:00pm" 
+description="Room A, 32 Player Cap."
+/>
+
+
+<Event
+name="Warhammer Fantasy Battles"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Friday April 6 2012 11:00AM"
+end="Friday April 6 2012 10:30PM"
+description=""
+/>
+
+<Event
+name="League Block A"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Friday April 6 2012 12:00PM"
+end="Friday April 6 2012 4:00PM"
+description="Dominion, Carcassone, Puerto Rico, Innovation"
+/>
+
+
+<Event
+name="Puzzle Strike"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Friday April 6 2012 12:00PM"
+end="Friday April 6 2012 4:00PM"
+description=""
+/>
+
+
+<Event
+name="Munchkin Munchcathalon"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Friday April 6 2012 1:00PM"
+end="Friday April 6 2012 6:00PM"
+description=""
+/>
+
+
+<Event
+name="League Block B"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Friday April 6 2012 4:00PM"
+end="Friday April 6 2012 8:00PM"
+description="Ticket to Ride, Race for the Galaxy, Penny Arcade: The Game, Gloom"
+/>
+
+<Event
+name="Friday Night Fight Club (Featuring YOMI)"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Friday April 6 2012 5:30PM"
+end="Friday April 6 2012 10:00PM"
+description=""
+/>
+
+<Event
+name="League Block C"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Friday April 6 2012 8:00PM"
+end="Saturday April 7 2012 12:00AM"
+description="Quarriors, Smallworld, 7 Wonders, Ascension"
+/>
+
+<Event
+name="Warhammer / Hordes Steamroller Steamroller"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 11:00AM"
+end="Saturday April 7 2012 12:00PM"
+description=""
+/>
+
+
+<Event
+name="League Block B, part 2"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 12:00PM"
+end="Saturday April 7 2012 4:00PM"
+description="Ticket to Ride, Race for the Galaxy, Penny Arcade: The Game, Gloom"
+/>
+
+
+<Event
+name="Dominion"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 12:00PM"
+end="Saturday April 7 2012 4:00PM"
+description=""
+/>
+
+
+<Event
+name="Warhammer 40k Grand Tournament"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 12:00PM"
+end="Saturday April 7 2012 4:00PM"
+description=""
+/>
+
+
+<Event
+name="Dragon Dice - Novice Tournament"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 1:00PM"
+end="Saturday April 7 2012 6:00PM"
+description=""
+/>
+
+<Event
+name="RoboRally Gauntlet"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 1:00PM"
+end="Saturday April 7 2012 6:00PM"
+description=""
+/>
+
+
+<Event
+name="League Block C, part 2"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 4:00PM"
+end="Saturday April 7 2012 8:00PM"
+description=""
+/>
+
+<Event
+name="Fealty Tournament"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 6:00PM"
+end="Sunday April 8 2012 12:00AM"
+description=""
+/>
+
+<Event
+name="Dark Age"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 7:00PM"
+end="Sunday April 8 2012 12:00AM"
+description=""
+/>
+
+<Event
+name="Saturday Night Showdown"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 7:00PM"
+end="Sunday April 8 2012 12:00AM"
+description=""
+/>
+
+<Event
+name="League Block A, part 2"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Saturday April 7 2012 8:00PM"
+end="Sunday April 8 2012 12:00AM"
+description=""
+/>
+
+
+<Event
+name="League Block A Finals"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Sunday April 8 2012 10:30AM"
+end="Sunday April 8 2012 12:30PM"
+description=""
+/>
+
+<Event
+name="Ascension"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Sunday April 8 2012 12:00PM"
+end="Sunday April 8 2012 3:00PM"
+description=""
+/>
+
+
+<Event
+name="League Block B Finals"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Sunday April 8 2012 1:00PM"
+end="Sunday April 8 2012 3:00PM"
+description=""
+/>
+
+
+<Event
+name="Munchkin"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Sunday April 8 2012 3:00PM"
+end="Sunday April 8 2012 6:00PM"
+description=""
+/>
+
+
+<Event
+name="League Block C Finals"
+kind="Contest"
+location="Tabletop Tourney"
+datetime="Sunday April 8 2012 3:30PM"
+end="Sunday April 8 2012 6:00PM"
+description=""
+/>
+
+</Schedule>
+
+	</xs:schema>

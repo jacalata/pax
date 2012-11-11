@@ -1,0 +1,347 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:PAX7.View"
+    xmlns:l="clr-namespace:JumpListControl;assembly=JumpListControl"
+    xmlns:local="clr-namespace:PAX7" 
+    x:Class="PAX7.ImageViewer" 
+    xmlns:tilt="clr-namespace:ControlTiltEffect"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+
+    tilt:TiltEffect.IsTiltEnabled="True"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="worldmaps">
+
+<!-- no world maps for boston
+                <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Stretch"
+                        MaxHeight="200">
+                    <TextBlock Text="maps: " 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                    <Button Content="world" Click="Button_Click_world" />
+                    <Button Content="annex" Click="Button_Click_annex" />
+                    <Button Content="sheraton" Click="Button_Click_sheraton" />
+                </StackPanel>
+
+                <Image x:Name="worldmap_world" 
+                       Source="../Images/map_world.PNG" 
+                       RenderTransformOrigin="0.5, 0.5" 
+                       CacheMode="BitmapCache"
+                       Margin="20"
+                   Visibility="Visible">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transform_world" />
+                    </Image.RenderTransform>
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+                <Image x:Name="worldmap_annex" 
+                           Source="../Images/map_annex.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transform_annex" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+                <Image x:Name="worldmap_sheraton" 
+                           Source="../Images/map_sheraton.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transform_sheraton" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+-->        
+            </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="floormaps">
+
+                <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Stretch"
+                        MaxHeight="200">                
+                    <TextBlock Text="BCEC " 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                    <Button Content="lvl 0" Click="Button_Click_Level0" />
+                    <Button Content="lvl 1" Click="Button_Click_Level1" />
+                    <Button Content="lvl 2" Click="Button_Click_Level2" />
+                    <Button Content="lvl 3" Click="Button_Click_Level3" />
+                </StackPanel>
+            
+                <Image x:Name="levelImage0" 
+                       Source="../Images/Boston/bccLevel0.PNG" 
+                       RenderTransformOrigin="0.5, 0.5" 
+                       CacheMode="BitmapCache"
+                       Margin="20"
+                   Visibility="Visible">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transform0" />
+                    </Image.RenderTransform>
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+        
+                <Image x:Name="levelImage1" 
+                           Source="../Images/Boston/bccLevel1.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transform1" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+                <Image x:Name="levelImage2" 
+                           Source="../Images/Boston/bccLevel2.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transform2" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+                <Image x:Name="levelImage3" 
+                           Source="../Images/Boston/bccLevel3.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transform3" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+            </StackPanel>
+
+            <Image x:Name="cityMap" 
+                       Source="../Images/Boston/Boston.png" 
+                       RenderTransformOrigin="0.5, 0.5" 
+                       CacheMode="BitmapCache"
+                       Margin="20" 
+                        Visibility="Collapsed">
+                <Image.RenderTransform>
+                    <CompositeTransform x:Name="transformMap" />
+                </Image.RenderTransform>
+                <toolkit:GestureService.GestureListener>
+                    <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted" 
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                </toolkit:GestureService.GestureListener>
+            </Image>
+
+            <StackPanel Orientation="Vertical" x:Name="expoMaps">
+
+                <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Stretch"
+                        MaxHeight="200">
+                    <TextBlock Text="PAX" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                    <Button Content="0" Click="Button_Click_expoMap1" />
+                    <Button Content="1,2" Click="Button_Click_expoMap2" />
+                    <Button Content="3" Click="Button_Click_expoMap5" />
+                    <Button Content="expo" Click="Button_Click_expoMap3" />
+                    <Button Content="key" Click="Button_Click_expoMap4" />
+                </StackPanel>
+
+                <Image x:Name="expoMap1" 
+                       Source="../Images/Boston/expoLevel0.PNG" 
+                       RenderTransformOrigin="0.5, 0.5" 
+                       CacheMode="BitmapCache"
+                       Margin="20"
+                   Visibility="Visible">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transformExpoMap1" />
+                    </Image.RenderTransform>
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+                <Image x:Name="expoMap2" 
+                           Source="../Images/Boston/expoLevel1Level2.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transformExpoMap2" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+                <Image x:Name="expoMap5" 
+                           Source="../Images/Boston/expoLevel3.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transformExpoMap5" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+                <Image x:Name="expoMap3" 
+                           Source="../Images/Boston/ExpoMap.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transformExpo3" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+                <Image x:Name="expoMap4" 
+                           Source="../Images/Boston/ExpoMapKey.png"
+                           RenderTransformOrigin="0.5, 0.5" 
+                           CacheMode="BitmapCache"
+                            Margin="20"
+                        Visibility="Collapsed">
+                    <Image.RenderTransform>
+                        <CompositeTransform x:Name="transformExpo4" />
+                    </Image.RenderTransform>
+
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener 
+                            PinchStarted="OnPinchStarted"
+                            PinchDelta="OnPinchDelta" 
+                            DragCompleted="OnDragDelta" 
+                            DoubleTap="OnDoubleTap"
+                                             />
+                    </toolkit:GestureService.GestureListener>
+                </Image>
+
+            </StackPanel>
+        </StackPanel>
+<!--
+
+        <InkPresenter x:Name="imageLevel1" Visibility="Collapsed">
+            <InkPresenter.Background>
+                <ImageBrush ImageSource="../Images\bccLevel1.png"/>
+            </InkPresenter.Background>
+        </InkPresenter>    
+        -->
+        
+    </Grid>
+
+
+</phone:PhoneApplicationPage>
