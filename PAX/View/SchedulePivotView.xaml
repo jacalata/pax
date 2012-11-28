@@ -7,11 +7,7 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:jump="clr-namespace:Telerik.Windows.Controls.JumpList;assembly=Telerik.Windows.Controls.Data"
-    xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
-      xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
-
-
+    xmlns:telerikData="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data" 
     x:Class="PAX7.View.SchedulePivotView" 
     xmlns:local="clr-namespace:PAX7" 
 
@@ -37,11 +33,9 @@
             <TextBox Name="_searchText"  
                 KeyDown="SearchBox_KeyDown"/>
         </StackPanel>
+     
         
-        <StackPanel Name="searchExplanation">
-        </StackPanel>        
-        
-        <StackPanel Name="progressBar" Visibility="Visible">
+        <StackPanel Name="progressBar" Visibility="Collapsed">
             <TextBlock x:Name="loadingText"
                 Text="loading..." 
                 Foreground="{StaticResource PhoneForegroundBrush}"
@@ -55,27 +49,21 @@
         
         <!--Pivot Control-->
         <controls:Pivot x:Name="schedulePivot" 
-                        HeaderTemplate="{StaticResource pivotTitleTemplate}"
-                        ItemTemplate="{StaticResource pivotListTemplate}">
-                        
-        </controls:Pivot>
-            
+                HeaderTemplate="{StaticResource pivotTitleTemplate}"
+                ItemTemplate="{StaticResource pivotListTemplate}">
 
-        <TextBlock  Name="text_noSearchResults" Visibility="Collapsed"
+        </controls:Pivot>
+        <!--
+                <telerikData:RadJumpList x:Name="radJumpList" Width="300" Height="300"
+                         ItemsSource="{Binding events}">                    
+                </telerikData:RadJumpList>
+           -->
+
+        <TextBlock  Name="explanatoryText" Visibility="Collapsed"
             Text="No events matched your search term."
             TextWrapping="Wrap" 
             Margin="20,220,20,20" />
 
-        <TextBlock  Name="text_noMySchedule" Visibility="Collapsed"
-            Text="Browse the full schedule and select events to appear here in your filtered personal schedule."
-            TextWrapping="Wrap" 
-            Margin="20,220,20,20" />
-
-        <TextBlock Name="text_bacon" Visibility="Collapsed" 
-            Text="The bacon is a lie."
-            TextWrapping="Wrap" 
-            Margin="20,220,20,20" />
-        
     </Grid>
 
 

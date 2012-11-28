@@ -30,6 +30,7 @@ namespace PAX7.ViewModel
 
     public class ScheduleViewModel
     {
+        internal bool mocking = false; //if true, skip ui callbacks because we are running in a test
         private Schedule schedule;
         private SchedulePivotView view;
         private string pivot;
@@ -50,7 +51,7 @@ namespace PAX7.ViewModel
         /// <param name="view">hook to the view UI so we can make it display the events</param>
         /// <param name="pivotParameter">enum telling us which view the user has selected</param>
         /// <param name="searchQuery">optional parameter that only applies if we are in the search pivot</param>
-        public ScheduleViewModel(SchedulePivotView view, string pivotParameter, string searchQuery = null)
+        public ScheduleViewModel(SchedulePivotView view, string pivotParameter, string searchQuery = null, bool mock = false)
         {
             this.schedule = new Schedule();
             this.events = new ObservableCollection<Event>();
@@ -61,6 +62,7 @@ namespace PAX7.ViewModel
             pivot = pivotParameter;
             pivotTemplateName = "pivotJumplistTemplate";//default
             this.searchQuery = searchQuery;
+            this.mocking = mock;
         }
         #endregion
                 
@@ -92,17 +94,23 @@ namespace PAX7.ViewModel
             else if (pivot.Equals((PivotView.Search).ToString()))
                 filterEventsBySearch();
             else // default is by day (pivot.Equals(PivotView.Day.ToString())  )
-                filterEventsByDay();            
-            
-            // Fire Event on UI Thread
-            view.Dispatcher.BeginInvoke(() =>
+                filterEventsByDay();
+
+            if (mocking)
             {
-                view.OnLoadComplete();
-            });
-            // Fire event for test code to know we're all done
-            if (VM_ScheduleLoadingComplete != null)
+                // Fire event for test code to know we're all done
+                if (VM_ScheduleLoadingComplete != null)
+                {
+                    VM_ScheduleLoadingComplete(this, e);
+                }
+            }
+            else
             {
-                VM_ScheduleLoadingComplete(this, e);
+                // Fire Event on UI Thread
+                view.Dispatcher.BeginInvoke(() =>
+                {
+                    view.OnLoadComplete();
+                });
             }
         }
 

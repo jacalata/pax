@@ -63,7 +63,7 @@ namespace PAX7
 
                         EmailComposeTask email = new EmailComposeTask();
                         email.To = "jacalata@live.com";
-                        email.Subject = "YourAppName auto-generated problem report";
+                        email.Subject = "PAX Digital Assistant auto-generated problem report";
                         email.Body = contents;
                         SafeDeleteFile(IsolatedStorageFile.GetUserStoreForApplication()); // line added 1/15/2011
                         email.Show();

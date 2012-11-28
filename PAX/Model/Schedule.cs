@@ -144,7 +144,7 @@ namespace PAX7.Model
                     versionDoc = XDocument.Load(isolatedStorageFileStream);
                     var versionDate = versionDoc.Descendants("version").FirstOrDefault();
                     if (versionDate != null)
-                        serverLastUpdate = safeParse(versionDate.Attribute("lastupdated").Value);
+                        serverLastUpdate = safeParse(versionDate.Attribute("lastupdated").Value, "none", "xmlFileName");
                     isolatedStorageFileStream.Close();
                 }
                 catch(Exception exception)
@@ -309,7 +309,17 @@ namespace PAX7.Model
                     // for the first run only, we are getting the xml from the xap resources, not isolated storage
                     if (isFirstRun)
                     {
-                        dataDoc = XDocument.Load(filename);
+                        try
+                        {
+                            dataDoc = XDocument.Load(filename);
+                        }
+                        catch (XmlException e)
+                        {
+                            //this will catch actual malformed xml, not schema specific errors
+                            LittleWatson.ReportException(e, "malformed xml in file " + filename);
+                            //don't try and read the datadoc we didn't create, just continue to the next file
+                            continue;
+                        }
                     }
                     else
                     {
@@ -319,14 +329,14 @@ namespace PAX7.Model
                     }
            
                     var eventItems = from item in dataDoc.Descendants("Event")
-                                     let stamp = safeParse(item.Attribute("datetime").Value)
+                                     let stamp = safeParse(item.Attribute("datetime").Value, item.Attribute("name").Value, filename)
                                      orderby stamp ascending
                                      select new Event
                                      {
                                          Kind = item.Attribute("kind").Value,
                                          Name = item.Attribute("name").Value,
                                          Details = item.Attribute("description").Value,
-                                         EndTime = safeParse(item.Attribute("end").Value),
+                                         EndTime = safeParse(item.Attribute("end").Value, item.Attribute("name").Value, filename),
                                          StartTime = stamp,
                                          Location = item.Attribute("location").Value
                                      };
@@ -336,11 +346,11 @@ namespace PAX7.Model
                     }
 
                 }
-                catch (XmlException e)
+                catch (Exception e)
                 {
-                    // catch this exception to prevent a single bad file from crashing the app.
+                    // catch any exceptions to prevent a single bad file from crashing the app.
                     // also log it so I know it happened.
-                    LittleWatson.ReportException(e, filename);
+                    LittleWatson.ReportException(e, "exception reading schedule from "+filename);
                 }
             }
 
@@ -354,7 +364,7 @@ namespace PAX7.Model
         /// </summary>
         /// <param name="dateString">string representing a date</param>
         /// <returns>the parsed Datetime object</returns>
-        private DateTime safeParse(string dateString)
+        private DateTime safeParse(string dateString, string eventName, string filename)
         {
             DateTime parsedDate = new DateTime();
             try
@@ -364,7 +374,7 @@ namespace PAX7.Model
             catch (FormatException e)
             {
                 parsedDate = DateTime.Parse("1/1/2000 09:15:00 PM"); // make up a date I guess?
-                LittleWatson.ReportException(e, dateString);
+                LittleWatson.ReportException(e, "invalid dateString in event " + eventName + " in file " + filename);
             }
             return parsedDate;
         }

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+  <Event
+  name="Datetime 08272011 110000"
+  location="testLocation"
+  kind="Panel"
+  datetime="08272011 110000"
+  end="08/27/2011 21:00:00"
+  description="Datetime should not be parseable"
+  />
+
+    <Event
+    name="Datetime Friday 10 November"
+    location="testLocation"
+    kind="Panel"
+    datetime="Friday 10 November"
+    end="08/27/2011 21:00:00"
+    description="Datetime should not be parseable"
+/>
+
+
+  </Schedule>
+</xs:schema>

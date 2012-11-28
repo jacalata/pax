@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+<Event
+location="TableTop"
+kind="D&amp;D"
+datetime="08/27/2011 11:00:00"
+end="08/27/2011 21:00:00"
+name="names"
+/>
+
+
+</Schedule>
+</xs:schema>

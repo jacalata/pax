@@ -194,7 +194,6 @@
     <Resource Include="Images\Seattle\map_level4_6.png" />
     <Resource Include="Images\Seattle\map_sheraton.png" />
     <Resource Include="Images\Seattle\map_world.png" />
-    <Resource Include="Images\appbar.refresh.rest.png" />
     <Resource Include="Images\Boston\bccLevel0.PNG" />
     <Resource Include="Images\Boston\bccLevel1.PNG" />
     <Resource Include="Images\Boston\bccLevel2.PNG" />
@@ -208,7 +207,6 @@
     <Resource Include="Images\Boston\ExpoMapKey.PNG" />
     <Resource Include="Images\Boston\ExpoLevel0.png" />
     <Resource Include="Images\Boston\ExpoLevel3.png" />
-    <Content Include="Images\logoCross.png" />
     <Resource Include="Images\Seattle\SeattleMapDowntown.jpg" />
     <Resource Include="Toolkit.Content\ie.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
@@ -226,7 +224,6 @@
     <Content Include="XML\Sunday.xml" />
     <Content Include="XML\Tabletop.xml" />
     <Content Include="XML\XMLschema.xml" />
-    <Resource Include="Images\230px-PAX_qjpreviewth.jpg" />
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

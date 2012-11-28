@@ -10,8 +10,7 @@
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:vm="clr-namespace:PAX7.ViewModel"
-    xmlns:jump="clr-namespace:Telerik.Windows.Controls.JumpList;assembly=Telerik.Windows.Controls.Data"
-    xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
+    xmlns:telerikData="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data" 
     >
 
     <Application.Resources>
@@ -107,6 +106,7 @@
             <TextBlock Text="{Binding slicePageTitle}"></TextBlock>
         </DataTemplate>
         
+        <!-- non telerik -->
         <DataTemplate x:Key="pivotListTemplate">
             <ListBox 
                 ItemsSource="{Binding events}"
@@ -114,30 +114,25 @@
             </ListBox>
         </DataTemplate>
         
+
+        <!--
+        <DataTemplate x:Key="pivotListTemplate">
+            <telerikData:RadJumpList x:Name="radJumpList" Width="300" Height="300"
+                         ItemsSource="{Binding events}"
+            />
+        </DataTemplate>
+        -->
+        <!--need to create the eventTimes list then add these two attributes:
+        GroupPickerItemTap="radJumpList_GroupPickerItemTap" 
+        GroupPickerItemsSource="{Binding eventTimes}" -->
+
+        <!-- not sure if I need this after transitioning to Telerik jumplist
         <DataTemplate x:Key="JumpListGroupHeaderTemplate">
             <Grid Margin="0,0,0,22">
                 <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="{Binding StartTime}" FontWeight="Bold" Foreground="#461B0D" Margin="12,7,0,0"/>
             </Grid>
         </DataTemplate>
-
-        <Style x:Key="JumpListStyle" TargetType="telerikDataControls:RadJumpList">
-            <Setter Property="ItemTemplate" Value="{StaticResource eventTemplate}"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-            <Setter Property="Margin" Value="12,17,0,28"/>
-            </Style>
-
-            <!--    <jump: 
-                ScrollDuration="400"
-                ItemTemplate="{StaticResource eventTemplateByDay}"
-                ItemsSource="{Binding events}"
-                JumpButtonStyle="{StaticResource AccentColoredButtonStyle}">
-                <l:JumpList.CategoryProvider>
-                    <l:DistinctPropertyValueCategoryProvider PropertyName="StartTime"/>
-                </l:JumpList.CategoryProvider>
-            </l:JumpList>
-        </DataTemplate>
-        -->
-        
+        -->      
 
 
     </Application.Resources>

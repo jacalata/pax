@@ -34,3 +34,6 @@ using System.Resources;
 [assembly: AssemblyVersion("1.0.3.0")]
 [assembly: AssemblyFileVersion("0.0.3.0")]
 [assembly: NeutralResourcesLanguageAttribute("en")]
+
+[assembly: InternalsVisibleTo("PAX7.Tests")] //expose internal methods to the test project
+[assembly: InternalsVisibleTo("TestApp")] //expose internal methods to the test project

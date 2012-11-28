@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+  <Schedule>
+
+<Event
+  name="Name"
+location="TableTop"
+kind="D&amp;D"
+end="08/27/2011 21:00:00"
+description="Want to play a D&amp;D game without a DM? Like cooperative games? Come take the challenge of the D&amp;D Adventure Games. Pick Castle Ravenloft, Wrath of Ashardalon, or a special preview of Legend of Drizzt, and see if your team can get a high score! No play experience necessary.
+RUNS: Friday + Saturday 11 am, 1 pm, 3 pm, 5 pm, 7 pm, 9 pm; Sunday 11 am, 1 pm, 3 pm"
+/>
+
+
+</Schedule>
+</xs:schema>

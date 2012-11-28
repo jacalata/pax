@@ -23,7 +23,7 @@ using System.Collections.ObjectModel; //observablecollection
 namespace PAX7.Tests
 {
     [TestClass]
-    public class SearchTests : SilverlightTest
+    public class ScheduleTests : SilverlightTest
     {
         
         private Schedule _schedule = new Schedule();
@@ -31,14 +31,14 @@ namespace PAX7.Tests
         private Event _event;
         private bool _callbackDone = false;
 
-
+        
         [TestInitialize]
-        public void _createAndPopulateSchedule()
+        public void _createAndPopulateSchedule(string testDataFile)
         {
             // populate the isolated storage
             _schedule.NukeAllStorage();
             List<string> filenames = new List<string>();
-            filenames.Add("Tests\\Data\\GoodXML.xml");
+            filenames.Add(testDataFile);
             _schedule.GetXMLEvents(filenames, true); //isFirstRun
             Assert.IsNotNull(_schedule.Events, "event collection");
             var _emptyEvents = new ObservableCollection<Event>();
@@ -46,6 +46,33 @@ namespace PAX7.Tests
             _schedule.SaveEvents(); // to isolated storage
         }
 
-        // enter a search query, confirm that the results match what we expect
+        [TestCleanup]
+        public void _clearSchedule()
+        {
+            _schedule.Clear();
+        }
+
+        /*
+        [TestMethod]
+        [Tag("PostUpdate")]
+        [ExpectedException(typeof(AssertInconclusiveException))]
+        public void VerifyPersonalScheduleAfterUpdate()
+        {
+            //need to have stored a copy of the data before updating, then compare to it 
+            Assert.Inconclusive("not implemented yet");
+        }
+
+        [TestMethod]
+        [Tag("PreUpdate")]
+        [ExpectedException(typeof(AssertInconclusiveException))]
+        public void SavePersonalScheduleBeforeUpdate()
+        {
+            _schedule.SaveEvents();
+            Assert.Inconclusive("not implemented yet");
+            //validate isolated storage here
+        }
+         */
+
+
     }
 }
