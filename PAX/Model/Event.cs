@@ -75,7 +75,7 @@ namespace PAX7.Model
             set
             {
                 _usernotes = value;
-                RaisePropertyChanged("Usernotes");
+                RaisePropertyChanged("UserNotes");
             }
         }
 
@@ -168,7 +168,6 @@ namespace PAX7.Model
               */
         }
 
-
         // location
         private string _location;
         public string Location
@@ -184,6 +183,7 @@ namespace PAX7.Model
             }
         }
 
+        // has the user starred this event/put it in their schedule
         private bool _starred;  
         public bool Star
         {
