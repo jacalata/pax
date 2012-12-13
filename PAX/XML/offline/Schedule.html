@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<title>PAX Prime - Seattle, WA Aug 31-Sep 2, 2012</title>
+	
+	<link rel="stylesheet" media="screen" type="text/css" href="http://prime.paxsite.com//assets/css/index.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" media="screen" type="text/css" href="http://prime.paxsite.com//assets/css/ie.css" /><![endif]-->
+	<link rel="stylesheet" media="screen" type="text/css" href="http://prime.paxsite.com//assets/css/jquery.fancybox.css" />
+	<link rel="Shortcut Icon" type="image/png" href="http://prime.paxsite.com//assets/img/favicon.png" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.cycle.js"></script>	
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/twitter.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/paxprime.js"></script>
+	<script type="text/javascript" src="http://prime.paxsite.com//assets/js/jquery.fancybox.js"></script>
+	<script type="text/javascript">
+	
+	jQuery(function($){
+		$("#tweets").tweet({
+			username: "Official_PAX",
+			avatar_size: 0,
+			count: 1,
+			fetch: 20,
+			template: "{text}",
+			loading_text: "loading tweets...",
+			filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); }
+		});
+	});
+	
+	
+	
+	$(document).ready(function() {
+		$('.btnDropdown').click(function(event){
+			$(event.target).siblings('.dropdown').toggle();
+			return false;
+		});
+		$('.btnClose').click(function(event){
+			$(event.target).parents('.dropdown').toggle();
+			return false;
+		});
+		$('.dropdown ul a').click(function(event){$(event.target).parents('.dropdown').toggle();});
+	});
+	
+	// Every Page
+    $('#sponsorList').cycle({
+		fx: 'fade',
+		timeout: 5000
+	});
+	</script>
+
+	<script type='text/javascript'>
+	var googletag = googletag || {
+	};
+	googletag.cmd = googletag.cmd || [];
+	(function() {
+	var gads = document.createElement('script');
+	gads.async = true;
+	gads.type = 'text/javascript';
+	var useSSL = 'https:' == document.location.protocol;
+	gads.src = (useSSL ? 'https:' : 'http:') + 
+	'//www.googletagservices.com/tag/js/gpt.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(gads, node);
+	})();
+	</script>
+	
+	<script type='text/javascript'>
+	googletag.cmd.push(function() {
+	googletag.defineSlot('/1002971/PAXSite_Banner', [728, 90], 'div-gpt-ad-1331836661000-0').addService(googletag.pubads());
+	googletag.defineSlot('/1002971/PAXSite_Square', [300, 250], 'div-gpt-ad-1331836684339-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+	});
+	</script>
+
+	<script type="text/javascript">
+	// analytics
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-589570-10']);
+	_gaq.push(['_setDomainName', 'paxsite.com']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+</head>
+<body>
+	<div id="bb">
+		<div class="content">
+			<ul>
+				<li><a class="btnPA" href="http://penny-arcade.com/" title="Penny Arcade">Penny Arcade</a></li>
+				<li><a class="btnPAR" href="http://thepareport.com/" title="The PA Report">The PA Report</a></li>
+				<li><a class="btnPAX" href="http://paxsite.com/" title="PAX">PAX</a></li>
+				<li><a class="btnTrenches" href="http://trenchescomic.com/" title="The Trenches">The Trenches</a></li>
+				<li><a class="btnCP" href="http://childsplaycharity.org/" title="Child's Play">Child's Play</a></li>
+			</ul>
+		</div>
+	</div>
+	<hr />
+	<div id="container">
+		<div id="header">
+			<h1><a href="/" title="PAX Prime Home">PAX Prime</a></h1>
+			<div id="showsAndSocial">
+				<ul class="shows">
+					<li><a class="btn btnPrime" href="http://prime.paxsite.com/" title="PAX Prime: Seattle, WA"><strong>PAX Prime</strong> Seattle</a></li>
+					<li><a class="btn btnEast" href="http://east.paxsite.com/" title="PAX East: Boston, MA"><strong>PAX East</strong> Boston</a></li>
+					<li><a class="btn btnAus" href="http://aus.paxsite.com/" title="PAX Aus: Melbourne, VIC"><strong>PAX Aus</strong> Melbourne</a></li>
+					<li><a class="btn btnDev" href="http://dev.paxsite.com/" title="PAX Dev: Seattle, WA"><strong>PAX Dev</strong> Seattle</a></li>					
+				</ul>
+				<ul class="social">
+					<li><a class="btn btnRSS" href="http://prime.paxsite.com/feed" title="Subscribe via RSS">Subscribe via RSS</a></li>
+					<li><a class="btn btnTwt" href="http://twitter.com/#!/official_pax" title="Follow @Official_PAX on Twitter">Follow @Official_PAX on Twitter</a></li>
+					<li><a class="btn btnFb" href="http://www.facebook.com/pages/Penny-Arcade/19103799704" title="Fan Penny Arcade on Facebook">Fan Penny Arcade on Facebook</a></li>
+				</ul>
+			</div>
+			<div id="countdown">
+				
+				<h2><strong>Seattle, WA</strong> Aug 31-Sep 2, 2012</h2>
+				
+				<div id="countdown-date"><!--<h3><strong>43</strong> Days <strong>10</strong> Hrs <strong>59</strong> Mins <strong>04</strong> Secs</h3>--></div>
+			</div>
+			<ul class="nav">
+				<li><a class="navWhatIsPax" href="/what-is-pax" title="What is PAX?">What is PAX?</a></li>
+				<li><a class="navRegistration" href="/registration" title="Registration">Registration</a></li>
+				<li><a class="active navSchedule" href="/schedule" title="Schedule">Schedule</a></li>
+				<li><a class="navHotels" href="/hotels-and-travel" title="Hotels &amp; Travel">Hotels &amp; Travel</a></li>
+				<li><a class="navFAQ" href="/faq" title="FAQ">FAQ</a></li>
+				<li><a class="navGallery" href="/gallery" title="Gallery">Gallery</a></li>
+				<li><a class="navForums" href="http://forums.penny-arcade.com/categories/pax-prime" title="Forums">Forums</a></li>
+			</ul>
+		</div>
+		<hr />
+
+
+<div id="body">
+	<h2 class="title txt titleSchedule">Schedule</h2>
+	<div id="scheduleTools">
+				
+		<form id="search" action="http://prime.paxsite.com/schedule/results" method="post">			
+			<fieldset>
+				<label for="keywords">Search:</label>
+				<input class="text" id="keywords" name="keywords" type="text" value="" />
+				<input class="btn red" type="submit" value="Search" />
+			</fieldset>			
+		</form>
+				
+		<a class="btn red" href="http://prime.paxsite.com/schedule/print" title="Print Full Schedule">Print Full Schedule</a>
+			</div>
+	<ul id="schedule">
+								<li id="friday">
+	<div class="day">
+		<div id="fridayMenu" class="dropdown" style="display: none">
+	<a class="btnClose fridayToggle" href="#" title="Close">Close</a>
+		<ul>
+		<li><a href="#friday" title="Friday"><strong>Friday</strong> 8/31</a></li>
+		<li><a href="#saturday" title="Saturday"><strong>Saturday</strong> 9/1</a></li>
+		<li><a href="#sunday" title="Sunday"><strong>Sunday</strong> 9/2</a></li>
+	</ul>
+</div>
+		<a class="btnDropdown fridayToggle" href="#" title="Jump to another day">Jump to another day</a>
+		
+		<h2><strong>Friday</strong> 8/31</h2>
+		<h4><strong>Hours</strong> 10am-2am</h4>
+		
+	</div>
+	
+	<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:00</strong> am</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/hey-ash-whatcha-playin-season-four-fast-four-fourious' title='Hey Ash, Whatcha Playin&#8217;?: Season Four Fast Four Fourious'><strong>kra</strong> Hey Ash, Whatcha Playin&#8217;?: Season Four Fast Four Fourious</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-learn-to-play' title='Pokemon - Learn to Play'><strong>tt</strong> Pokemon - Learn to Play</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:30</strong> am</h3>
+<ul>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/idle-thumbs-podcast-live-rising' title='Idle Thumbs Podcast Live: Rising'><strong>peg</strong> Idle Thumbs Podcast Live: Rising</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/story-time-with-ted-price-aka-the-pax-prime-keynote' title='Story Time with Ted Price (aka the PAX Prime Keynote!)'><strong>main</strong> Story Time with Ted Price (aka the PAX Prime Keynote!)</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/want-to-break-into-rpgs-then-just-make-games' title='Want to break into RPGs? Then JUST MAKE GAMES!'><strong>rav</strong> Want to break into RPGs? Then JUST MAKE GAMES!</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/free-to-play-games-brilliant-evil-or-brilliantly-evil' title='Free-To-Play Games: Brilliant, Evil, or Brilliantly Evil?'><strong>ser</strong> Free-To-Play Games: Brilliant, Evil, or Brilliantly Evil?</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>11:00</strong> am</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-theme-deck-challenge' title='Pokemon - Theme Deck Challenge'><strong>tt</strong> Pokemon - Theme Deck Challenge</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/puzzle-strike-2nd-edition-tournament' title='Puzzle Strike (2nd Edition) Tournament'><strong>tt</strong> Puzzle Strike (2nd Edition) Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/small-world-tournament' title='Small World Tournament'><strong>tt</strong> Small World Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-structure-deck' title='Yu Gi Oh - Structure Deck'><strong>tt</strong> Yu Gi Oh - Structure Deck</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/chiptunes-from-the-square-wave-to-the-stage' title='Chiptunes! From the Square Wave to the Stage'><strong>uni</strong> Chiptunes! From the Square Wave to the Stage</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>11:30</strong> am</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/community-vs.-pr-the-squabbling-siblings' title='Community vs. PR: The Squabbling Siblings'><strong>kra</strong> Community vs. PR: The Squabbling Siblings</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/penny-arcade-qa' title='Penny Arcade Q&amp;A'><strong>main</strong> Penny Arcade Q&amp;A</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/ticket-to-ride-qualifier-block-a' title='Ticket To Ride - Qualifier Block A'><strong>tt</strong> Ticket To Ride - Qualifier Block A</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>12:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/dominion-qualifier-block-a' title='Dominion - Qualifier Block A'><strong>tt</strong> Dominion - Qualifier Block A</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/nik-dylan-crush-your-dreams-2-and-wil-wheaton-overflow' title='Nik &amp; Dylan Crush Your Dreams 2 (and Wil Wheaton Overflow).'><strong>ser</strong> Nik &amp; Dylan Crush Your Dreams 2 (and Wil Wheaton Overflow).</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/replay-transgender-industry-professionals.-new-lives-old-careers' title='Replay: Transgender Industry Professionals.&nbsp; New Lives, Old Careers'><strong>rav</strong> Replay: Transgender Industry Professionals.&nbsp; New Lives, Old Careers</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/the-runaway-guys-thrown-controllers' title='The Runaway Guys: Thrown Controllers'><strong>peg</strong> The Runaway Guys: Thrown Controllers</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/warmachine-hordes-intro-tournament' title='Warmachine / Hordes Intro Tournament'><strong>tt</strong> Warmachine / Hordes Intro Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/spouse-aggro-career-obligations-and-time-constraints-how-to-play-while-meet' title='Spouse Aggro, Career Obligations, and Time Constraints: How to play while meeting life&#8217;s demands'><strong>tt</strong> Spouse Aggro, Career Obligations, and Time Constraints: How to play while meeting life&#8217;s demands</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>12:30</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/destructoid-live-iii-how-to-run-a-successful-blog-and-not-get-sued' title='Destructoid Live III: How to run a successful blog (and not get sued)'><strong>uni</strong> Destructoid Live III: How to run a successful blog (and not get sued)</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/quarriors-tournament' title='Quarriors Tournament'><strong>tt</strong> Quarriors Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>1:00</strong> pm</h3>
+<ul>
+<li class='event hh'><a href='http://prime.paxsite.com/schedule/panel/lumines-tournament' title='Lumines Tournament'><strong>hh</strong> Lumines Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/puzzle-bobble-tournament' title='Puzzle Bobble Tournament'><strong>ct</strong> Puzzle Bobble Tournament</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/rooster-teeth' title='Rooster Teeth'><strong>main</strong> Rooster Teeth</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/the-double-fine-adventure-adventure' title='The Double Fine Adventure Adventure!'><strong>kra</strong> The Double Fine Adventure Adventure!</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>1:30</strong> pm</h3>
+<ul>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/design-an-rpg-in-an-hour' title='Design an RPG in an Hour'><strong>rav</strong> Design an RPG in an Hour</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/invisible-walls-live' title='Invisible Walls Live'><strong>ser</strong> Invisible Walls Live</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/retrogame-roadshow-are-your-old-games-actually-buried-treasure' title='Retrogame Roadshow: Are Your Old Games Actually Buried Treasure?'><strong>peg</strong> Retrogame Roadshow: Are Your Old Games Actually Buried Treasure?</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>2:00</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/just-one-more-game...-science-and-controversy-on-internet-and-gaming-addict' title='&#8220;Just One More Game&#8230;&#8221; - Science and Controversy on Internet and Gaming Addiction'><strong>uni</strong> &#8220;Just One More Game&#8230;&#8221; - Science and Controversy on Internet and Gaming Addiction</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/13th-age-dungeon-world-and-more-old-school-rpgs-with-modern-design' title='13th Age, Dungeon World and More: Old School RPGs With Modern Design'><strong>tt</strong> 13th Age, Dungeon World and More: Old School RPGs With Modern Design</a></li>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/omegathon-round-1-geometry-wars-2' title='Omegathon Round 1: Geometry Wars 2'><strong>wol</strong> Omegathon Round 1: Geometry Wars 2</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-unlimited-tournament' title='Pokemon - Unlimited Tournament'><strong>tt</strong> Pokemon - Unlimited Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-structure-deck1' title='Yu Gi Oh - Structure Deck'><strong>tt</strong> Yu Gi Oh - Structure Deck</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/super-street-fighter-4-tournament' title='Super Street Fighter 4 Tournament'><strong>ct</strong> Super Street Fighter 4 Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>2:30</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/pc-gamer-megapanel-the-incredible-uncertain-future-of-storytelling' title='PC GAMER MEGAPANEL: The Incredible, Uncertain Future of Storytelling'><strong>kra</strong> PC GAMER MEGAPANEL: The Incredible, Uncertain Future of Storytelling</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/settlers-of-catan-qualifier-block-a' title='Settlers of Catan - Qualifier Block A'><strong>tt</strong> Settlers of Catan - Qualifier Block A</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>3:00</strong> pm</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/bringing-new-life-to-classic-rpg-mechanics' title='Bringing New Life to Classic RPG Mechanics'><strong>ser</strong> Bringing New Life to Classic RPG Mechanics</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/nerdcore-hip-hop-past-present-and-future' title='Nerdcore Hip-Hop: Past, Present and Future'><strong>rav</strong> Nerdcore Hip-Hop: Past, Present and Future</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/razer-innovation-redefined' title='Razer | Innovation Redefined'><strong>peg</strong> Razer | Innovation Redefined</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/paint-the-line-the-rally-of-the-kings-tournament' title='Paint The Line - The Rally of the Kings Tournament'><strong>tt</strong> Paint The Line - The Rally of the Kings Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/goldeneye-tournament' title='Goldeneye Tournament'><strong>ct</strong> Goldeneye Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>3:30</strong> pm</h3>
+<ul>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/short-subjects-in-gaming' title='Short Subjects in Gaming'><strong>wol</strong> Short Subjects in Gaming</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/marvel-heroes-revolutionizing-the-free-to-play-mmo' title='Marvel Heroes – Revolutionizing the Free-to-Play MMO'><strong>uni</strong> Marvel Heroes – Revolutionizing the Free-to-Play MMO</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>4:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/eberron-and-beyond-world-design-with-keith-baker' title='Eberron and Beyond: World Design with Keith Baker'><strong>tt</strong> Eberron and Beyond: World Design with Keith Baker</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/race-for-the-galaxy-qualifier-block-a' title='Race for the Galaxy - Qualifier Block A'><strong>tt</strong> Race for the Galaxy - Qualifier Block A</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/trials-evolution-tournament' title='Trials Evolution Tournament'><strong>ct</strong> Trials Evolution Tournament</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/well-do-it-live-streaming-games-over-the-internet' title='We&#8217;ll Do It Live! Streaming Games Over the Internet'><strong>kra</strong> We&#8217;ll Do It Live! Streaming Games Over the Internet</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>4:30</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/7-wonders-qualifier-block-a' title='7 Wonders - Qualifier Block A'><strong>tt</strong> 7 Wonders - Qualifier Block A</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/an-afternoon-with-scott-and-kris' title='An Afternoon with Scott and Kris'><strong>peg</strong> An Afternoon with Scott and Kris</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/ask-the-dm' title='Ask the DM'><strong>rav</strong> Ask the DM</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/assassins-creed-iii-pax-prime-panel' title='Assassin&#8217;s Creed III® PAX Prime Panel'><strong>main</strong> Assassin&#8217;s Creed III® PAX Prime Panel</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/on-god-and-gaming' title='On God and Gaming&#8230;'><strong>ser</strong> On God and Gaming&#8230;</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>5:00</strong> pm</h3>
+<ul>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/hope-doubt-and-the-light-at-the-end-of-the-tunnel-the-struggles-of-indie-de' title='Hope, Doubt, and the Light at the End of the Tunnel: The Struggles of Indie Development'><strong>wol</strong> Hope, Doubt, and the Light at the End of the Tunnel: The Struggles of Indie Development</a></li>
+<li class='event pc'><a href='http://prime.paxsite.com/schedule/panel/magic-the-gathering-online-tournament' title='Magic The Gathering Online: Tournament'><strong>pc</strong> Magic The Gathering Online: Tournament</a></li>
+<li class='event hh'><a href='http://prime.paxsite.com/schedule/panel/mario-kart-ds-tournament' title='Mario Kart: DS Tournament'><strong>hh</strong> Mario Kart: DS Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/geometry-wars-2-tournament' title='Geometry Wars 2 Tournament'><strong>ct</strong> Geometry Wars 2 Tournament</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/god-of-war-ascension' title='God of War: Ascension'><strong>uni</strong> God of War: Ascension</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>5:30</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/harassment-and-bullying-in-online-games-technical-solutions-v1.0' title='Harassment and Bullying in Online Games: Technical Solutions v1.0'><strong>kra</strong> Harassment and Bullying in Online Games: Technical Solutions v1.0</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>6:00</strong> pm</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/lessons-from-the-world-of-outernauts' title='Lessons from the world of Outernauts'><strong>ser</strong> Lessons from the world of Outernauts</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/loving-the-alien-nonhumans-in-fiction-games' title='LOVING THE ALIEN: Nonhumans in Fiction &amp; Games'><strong>tt</strong> LOVING THE ALIEN: Nonhumans in Fiction &amp; Games</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/mage-wars-prime-tournament' title='Mage Wars Prime Tournament'><strong>tt</strong> Mage Wars Prime Tournament</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/mega64-panel-that-is-kind-of-like-a-nerd-thing' title='Mega64: Panel That Is Kind Of Like A Nerd Thing'><strong>peg</strong> Mega64: Panel That Is Kind Of Like A Nerd Thing</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/represent-gaymings-past-present-and-future' title='Represent! Gayming&#8217;s Past, Present and Future'><strong>rav</strong> Represent! Gayming&#8217;s Past, Present and Future</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/warhammer-40000-intro-tournament' title='Warhammer 40,000 Intro Tournament'><strong>tt</strong> Warhammer 40,000 Intro Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-traditional-deck-tournament' title='Yu Gi Oh - Traditional Deck Tournament'><strong>tt</strong> Yu Gi Oh - Traditional Deck Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/marvel-vs.-capcom-3-tournament' title='Marvel vs. Capcom 3 Tournament'><strong>ct</strong> Marvel vs. Capcom 3 Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-advanced-deck-tournament' title='Yu Gi Oh - Advanced Deck Tournament'><strong>tt</strong> Yu Gi Oh - Advanced Deck Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>6:30</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/telltale-games-the-walking-dead-presents-playing-dead-live' title='Telltale Games presents: ‘Playing Dead LIVE!’ – A discussion on The Walking Dead game series'><strong>uni</strong> Telltale Games presents: ‘Playing Dead LIVE!’ – A discussion on The Walking Dead game series</a></li>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/omegathon-round-2-kerplunk' title='Omegathon Round 2: Kerplunk'><strong>wol</strong> Omegathon Round 2: Kerplunk</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>7:00</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/game-show-night-blankety-blank' title='Game Show Night! Blankety Blank'><strong>kra</strong> Game Show Night! Blankety Blank</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/tetris-attack-tournament' title='Tetris Attack Tournament'><strong>ct</strong> Tetris Attack Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>7:30</strong> pm</h3>
+<ul>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/epic-games-presents-fortnite-revealed' title='Epic Games Presents: Fortnite Revealed'><strong>peg</strong> Epic Games Presents: Fortnite Revealed</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/no-the-monkey-should-have-a-chainsaw-design-choices-in-a-unique-moba' title='No, the Monkey Should Have a Chainsaw:&nbsp; Design Choices in a Unique MOBA'><strong>rav</strong> No, the Monkey Should Have a Chainsaw:&nbsp; Design Choices in a Unique MOBA</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/pax-10-panel-part-1' title='PAX 10 Panel - Part 1'><strong>ser</strong> PAX 10 Panel - Part 1</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>8:00</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/game-show-night-family-feud' title='Game Show Night! Family Feud'><strong>kra</strong> Game Show Night! Family Feud</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/love-at-first-bumper.-the-behind-the-scenes-story-of-how-pinball-united-zen' title='Love at first bumper. The behind the scenes story of how pinball united Zen Studios and PopCap Games'><strong>uni</strong> Love at first bumper. The behind the scenes story of how pinball united Zen Studios and PopCap Games</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/mystery-tournament' title='Mystery Tournament'><strong>ct</strong> Mystery Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>8:30</strong> pm</h3>
+<ul>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/friday-night-concerts' title='Friday Night Concerts'><strong>main</strong><span>&#9835;</span> Friday Night Concerts</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>9:00</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/game-show-night-super-password' title='Game Show Night: Super Password!'><strong>kra</strong> Game Show Night: Super Password!</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/giant-bombcast-live' title='Giant Bombcast Live!'><strong>peg</strong> Giant Bombcast Live!</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/the-improv-initiative' title='The Improv Initiative'><strong>ser</strong> The Improv Initiative</a></li>
+<li class='event pc'><a href='http://prime.paxsite.com/schedule/panel/smashmuck-champions-give-a-way-gauntlet' title='SmashMuck Champions Give-a-Way Gauntlet'><strong>pc</strong> SmashMuck Champions Give-a-Way Gauntlet</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/the-art-of-the-table-ii-return-to-the-table' title='The Art of the Table II: Return to the Table'><strong>rav</strong> The Art of the Table II: Return to the Table</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>9:30</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/get-into-games-without-being-in-the-industry' title='Get into Games without being &#8220;In&#8221; the Industry'><strong>uni</strong> Get into Games without being &#8220;In&#8221; the Industry</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:30</strong> pm</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/the-100-yen-arcade' title='The 100 Yen Arcade'><strong>ser</strong> The 100 Yen Arcade</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/the-escapist-movie-night' title='The Escapist Movie Night'><strong>uni</strong> The Escapist Movie Night</a></li>
+</ul>
+</div>
+</div>
+</li>
+		<li id="saturday">
+	<div class="day">
+		<div id="saturdayMenu" class="dropdown" style="display: none">
+	<a class="btnClose saturdayToggle" href="#" title="Close">Close</a>
+		<ul>
+		<li><a href="#friday" title="Friday"><strong>Friday</strong> 8/31</a></li>
+		<li><a href="#saturday" title="Saturday"><strong>Saturday</strong> 9/1</a></li>
+		<li><a href="#sunday" title="Sunday"><strong>Sunday</strong> 9/2</a></li>
+	</ul>
+</div>
+		<a class="btnDropdown saturdayToggle" href="#" title="Jump to another day">Jump to another day</a>
+		
+		<h2><strong>Saturday</strong> 9/1</h2>
+		<h4><strong>Hours</strong> 10am-2am</h4>
+		
+	</div>
+	
+	<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:00</strong> am</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/dd-and-live-streaming-its-as-close-to-playing-on-the-sidewalk-as-you-can-ge' title='D&amp;D and live streaming: it&#8217;s as close to playing on the sidewalk as you can get'><strong>tt</strong> D&amp;D and live streaming: it&#8217;s as close to playing on the sidewalk as you can get</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-learn-to-play1' title='Pokemon - Learn to Play'><strong>tt</strong> Pokemon - Learn to Play</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/kaijudo-from-tcg-to-tv-the-birth-of-bob' title='Kaijudo: From TCG to TV, The Birth of “BOB”'><strong>peg</strong> Kaijudo: From TCG to TV, The Birth of “BOB”</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/the-100-best-nes-games-of-all-time...maybe' title='The 100 Best NES Games Of All Time&#8230;Maybe?'><strong>rav</strong> The 100 Best NES Games Of All Time&#8230;Maybe?</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:30</strong> am</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/behind-the-music-of-blockbuster-video-games' title='Behind the Music of Blockbuster Video Games'><strong>kra</strong> Behind the Music of Blockbuster Video Games</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/penny-arcade-make-a-strip' title='Penny Arcade - Make a Strip!'><strong>main</strong> Penny Arcade - Make a Strip!</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/settlers-of-catan-qualifier-block-b' title='Settlers of Catan - Qualifier Block B'><strong>tt</strong> Settlers of Catan - Qualifier Block B</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/warmachine-hordes-intro-tournament1' title='Warmachine / Hordes Intro Tournament'><strong>tt</strong> Warmachine / Hordes Intro Tournament</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/twisted-tales-working-living-playing-together-while-making-awesome' title='Twisted Tales: Working, Living &amp; Playing Together While Making Awesome'><strong>ser</strong> Twisted Tales: Working, Living &amp; Playing Together While Making Awesome</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>11:00</strong> am</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/beyond-wheatons-law-being-excellent-to-each-other' title='Beyond Wheaton&#8217;s Law: Being Excellent to Each Other'><strong>uni</strong> Beyond Wheaton&#8217;s Law: Being Excellent to Each Other</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/flash-duel-tournament' title='Flash Duel Tournament'><strong>tt</strong> Flash Duel Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-unlimited-tournament1' title='Pokemon - Unlimited Tournament'><strong>tt</strong> Pokemon - Unlimited Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-structure-deck2' title='Yu Gi Oh - Structure Deck'><strong>tt</strong> Yu Gi Oh - Structure Deck</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>11:30</strong> am</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/race-for-the-galaxy-qualifier-block-b' title='Race for the Galaxy - Qualifier Block B'><strong>tt</strong> Race for the Galaxy - Qualifier Block B</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/gamer-unplugged-on-the-road-in-search-of-devs' title='Gamer Unplugged: On The Road In Search of Devs'><strong>rav</strong> Gamer Unplugged: On The Road In Search of Devs</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/mmorpg.com-future-of-online-games-panel' title='MMORPG.com - Future of Online Games Panel'><strong>peg</strong> MMORPG.com - Future of Online Games Panel</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>12:00</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/breaking-into-the-games-industry' title='Breaking Into the Games Industry'><strong>kra</strong> Breaking Into the Games Industry</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/munchkin-munchcathlon' title='Munchkin Munchcathlon'><strong>tt</strong> Munchkin Munchcathlon</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/parenting-and-video-games-the-psychiatric-perspective' title='Parenting and Video Games: The Psychiatric Perspective'><strong>ser</strong> Parenting and Video Games: The Psychiatric Perspective</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/gaming-grows-up-the-evolution-of-modern-gaming' title='Gaming Grows Up: The Evolution of Modern Gaming'><strong>tt</strong> Gaming Grows Up: The Evolution of Modern Gaming</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/soul-calibur-v-tournament' title='Soul Calibur V Tournament'><strong>ct</strong> Soul Calibur V Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>12:30</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/7-wonders-qualifier-block-b' title='7 Wonders - Qualifier Block B'><strong>tt</strong> 7 Wonders - Qualifier Block B</a></li>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/virtual-reality-bringing-video-games-to-life' title='Virtual Reality: Bringing video games to life'><strong>wol</strong> Virtual Reality: Bringing video games to life</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/gtx-changing-the-way-you-game...-again' title='GeForce GTX PC Gaming – Get Ready and Gear Up!'><strong>uni</strong> GeForce GTX PC Gaming – Get Ready and Gear Up!</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>1:00</strong> pm</h3>
+<ul>
+<li class='event hh'><a href='http://prime.paxsite.com/schedule/panel/mortal-kombat-vita-tournament' title='Mortal Kombat (Vita) Tournament'><strong>hh</strong> Mortal Kombat (Vita) Tournament</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/the-future-of-dd' title='The Future of D&amp;D'><strong>rav</strong> The Future of D&amp;D</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/hideo-kojima-introspective-past-present-and-the-future-of-metal-gear' title='Hideo Kojima Introspective: Past, Present, and the Future of METAL GEAR'><strong>main</strong> Hideo Kojima Introspective: Past, Present, and the Future of METAL GEAR</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/up-close-with-kickstarter-case-studies-in-game-development' title='Up Close with Kickstarter: Case Studies in Game Development'><strong>peg</strong> Up Close with Kickstarter: Case Studies in Game Development</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/super-puzzle-fighter-turbo-2-hdr-tournament' title='Super Puzzle Fighter Turbo 2 HDR Tournament'><strong>ct</strong> Super Puzzle Fighter Turbo 2 HDR Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>1:30</strong> pm</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/paint-the-line-tcg-making-the-game' title='Paint the Line TCG: Making the Game'><strong>ser</strong> Paint the Line TCG: Making the Game</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yomi-tournament' title='Yomi Tournament'><strong>tt</strong> Yomi Tournament</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/major-nelson-podcast' title='Major Nelson Podcast!'><strong>kra</strong> Major Nelson Podcast!</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>2:00</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/app-olympics-where-the-athletes-compete' title='App Olympics: Where The &#8220;Athletes&#8221; Compete'><strong>uni</strong> App Olympics: Where The &#8220;Athletes&#8221; Compete</a></li>
+<li class='event pc'><a href='http://prime.paxsite.com/schedule/panel/counterstrike-global-offensive-tournament' title='Counterstrike: Global Offensive Tournament'><strong>pc</strong> Counterstrike: Global Offensive Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/making-magic-work-designing-magic-systems-for-games-and-books' title='Making Magic Work: Designing Magic Systems for Games and Books'><strong>tt</strong> Making Magic Work: Designing Magic Systems for Games and Books</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-theme-deck-challenge1' title='Pokemon - Theme Deck Challenge'><strong>tt</strong> Pokemon - Theme Deck Challenge</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-structure-deck3' title='Yu Gi Oh - Structure Deck'><strong>tt</strong> Yu Gi Oh - Structure Deck</a></li>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/omegathon-round-3-tony-hawk-hd' title='Omegathon Round 3: Tony Hawk HD'><strong>wol</strong> Omegathon Round 3: Tony Hawk HD</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/halo-reach-tournament' title='Halo: Reach Tournament'><strong>ct</strong> Halo: Reach Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>2:30</strong> pm</h3>
+<ul>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/submitting-for-success-develop-an-illustration-career' title='Submitting For Success: Develop an Illustration Career'><strong>rav</strong> Submitting For Success: Develop an Illustration Career</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/xcom-enemy-unknown-a-thousand-stupid-ideas-on-the-road-to-glory' title='XCOM: Enemy Unknown - A Thousand Stupid Ideas on the Road to Glory'><strong>peg</strong> XCOM: Enemy Unknown - A Thousand Stupid Ideas on the Road to Glory</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>3:00</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/gametrailers.com-film-festival' title='GameTrailers.com Film Festival'><strong>kra</strong> GameTrailers.com Film Festival</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/infinity-intro-tournament' title='Infinity Intro Tournament'><strong>tt</strong> Infinity Intro Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/ticket-to-ride-qualifier-block-b' title='Ticket To Ride - Qualifier Block B'><strong>tt</strong> Ticket To Ride - Qualifier Block B</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/stuff-your-criticism-i-want-a-review-part-two' title='Stuff Your Criticism, I Want A Review! Part Two'><strong>ser</strong> Stuff Your Criticism, I Want A Review! Part Two</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>3:30</strong> pm</h3>
+<ul>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/acquisitions-incorporated-the-lost-episode' title='Acquisitions Incorporated: The Lost Episode'><strong>main</strong> Acquisitions Incorporated: The Lost Episode</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/queers-in-gaming' title='Queers in Gaming'><strong>uni</strong> Queers in Gaming</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>4:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/dominion-qualifier-block-b' title='Dominion - Qualifier Block B'><strong>tt</strong> Dominion - Qualifier Block B</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/how-not-to-write-a-game-review' title='How Not To Write A Game Review'><strong>rav</strong> How Not To Write A Game Review</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/setting-the-mood' title='Setting The Mood'><strong>tt</strong> Setting The Mood</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/nba-jam-tournament' title='NBA Jam Tournament'><strong>ct</strong> NBA Jam Tournament</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/20-questions-with-riot-games' title='20 Questions with Riot Games'><strong>peg</strong> 20 Questions with Riot Games</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>4:30</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/after-notch-the-new-minecraft-team' title='After Notch: The New Minecraft Team'><strong>kra</strong> After Notch: The New Minecraft Team</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/business-models-of-pc-games-then-now-and-looking-to-the-future' title='Business Models of PC Games: Then, Now, and Looking to the Future'><strong>ser</strong> Business Models of PC Games: Then, Now, and Looking to the Future</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>5:00</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/beyond-borders-global-game-controversies' title='Beyond Borders: Global Game Controversies'><strong>uni</strong> Beyond Borders: Global Game Controversies</a></li>
+<li class='event hh'><a href='http://prime.paxsite.com/schedule/panel/mario-kart-7-tournament' title='Mario Kart 7 Tournament'><strong>hh</strong> Mario Kart 7 Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/zombie-dice-tournament' title='Zombie Dice Tournament'><strong>tt</strong> Zombie Dice Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/mario-kart-double-dash-tournament' title='Mario Kart: Double Dash Tournament'><strong>ct</strong> Mario Kart: Double Dash Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>5:30</strong> pm</h3>
+<ul>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/for-the-love-of-making-geek-arts-and-crafts' title='For the Love of Making: Geek Arts and Crafts'><strong>rav</strong> For the Love of Making: Geek Arts and Crafts</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/halo-reborn' title='Halo Reborn'><strong>peg</strong> Halo Reborn</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>6:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/mage-wars-prime-tournament1' title='Mage Wars Prime Tournament'><strong>tt</strong> Mage Wars Prime Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/roleplaying-games-are-awesome' title='Roleplaying Games Are Awesome.'><strong>tt</strong> Roleplaying Games Are Awesome.</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-advanced-deck-tournament1' title='Yu Gi Oh - Advanced Deck Tournament'><strong>tt</strong> Yu Gi Oh - Advanced Deck Tournament</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/which-interactive-lie-did-i-tell-a-conversation-on-game-writing-with-chet-a' title='Which Interactive Lie Did I Tell: A conversation on game writing with Chet &amp; Erik of Valve Software'><strong>kra</strong> Which Interactive Lie Did I Tell: A conversation on game writing with Chet &amp; Erik of Valve Software</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/ign-presents-the-game-show' title='IGN Presents: The Game Show!'><strong>ser</strong> IGN Presents: The Game Show!</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-traditional-deck-tournament1' title='Yu Gi Oh - Traditional Deck Tournament'><strong>tt</strong> Yu Gi Oh - Traditional Deck Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/super-street-fighter-2-turbo-hdr-tournament' title='Super Street Fighter 2 Turbo HDR Tournament'><strong>ct</strong> Super Street Fighter 2 Turbo HDR Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>6:30</strong> pm</h3>
+<ul>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/your-careening-career-starting-small-and-making-it-big-in-the-gaming-indust' title='Your Careening Career: Starting Small and Making it BIG in the Gaming Industry'><strong>wol</strong> Your Careening Career: Starting Small and Making it BIG in the Gaming Industry</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/penny-arcade-does-journalism-the-penny-arcade-report-team-answers-your-ques' title='Penny Arcade does journalism: the Penny Arcade Report Team answers your questions'><strong>uni</strong> Penny Arcade does journalism: the Penny Arcade Report Team answers your questions</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>7:00</strong> pm</h3>
+<ul>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/super-smash-bros.-brawl-tournament-part-1' title='Super Smash Bros. Brawl Tournament: Part 1'><strong>ct</strong> Super Smash Bros. Brawl Tournament: Part 1</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/what-do-gamers-want-from-social-games' title='What do gamers want from social games?'><strong>rav</strong> What do gamers want from social games?</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>7:30</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/cancelled-prototype-game-fiestathon' title='Cancelled &amp; Prototype Game Fiestathon!'><strong>kra</strong> Cancelled &amp; Prototype Game Fiestathon!</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/pax-10-panel-part-2' title='PAX 10 Panel - Part 2'><strong>ser</strong> PAX 10 Panel - Part 2</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>8:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/how-to-craft-a-damn-good-fight-scene-for-games-and-books' title='How to Craft a Damn Good Fight Scene for Games and Books'><strong>tt</strong> How to Craft a Damn Good Fight Scene for Games and Books</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/warhammer-40000-intro-tournament1' title='Warhammer 40,000 Intro Tournament'><strong>tt</strong> Warhammer 40,000 Intro Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/mystery-tournament-2' title='Mystery Tournament 2'><strong>ct</strong> Mystery Tournament 2</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/omegathon-round-4-dance-central-3' title='Omegathon Round 4: Dance Central 3'><strong>main</strong> Omegathon Round 4: Dance Central 3</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/lets-talk-about-sex-in-games-dealing-with-sexuality-in-game-design-and-play' title='Let&#8217;s Talk About Sex in Games: Dealing With Sexuality in Game Design and Play'><strong>uni</strong> Let&#8217;s Talk About Sex in Games: Dealing With Sexuality in Game Design and Play</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/dragon-dice' title='Dragon Dice'><strong>tt</strong> Dragon Dice</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>8:30</strong> pm</h3>
+<ul>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/an-evening-with-scott-kurtz' title='An Evening with Scott Kurtz'><strong>peg</strong> An Evening with Scott Kurtz</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/unlock-your-creative-potential-7-steps-to-becoming-a-game-designer' title='Unlock your Creative Potential: 7 Steps to becoming a Game Designer'><strong>rav</strong> Unlock your Creative Potential: 7 Steps to becoming a Game Designer</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/saturday-night-concerts' title='Saturday Night Concerts'><strong>main</strong><span>&#9835;</span> Saturday Night Concerts</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>9:00</strong> pm</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/an-evening-with-loadingreadyrun' title='An Evening with LoadingReadyRun'><strong>ser</strong> An Evening with LoadingReadyRun</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/saturday-night-showdown' title='Saturday Night Showdown'><strong>tt</strong> Saturday Night Showdown</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/the-harmonix-game-show-extravaganza' title='The Harmonix Game Show Extravaganza'><strong>kra</strong> The Harmonix Game Show Extravaganza</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/super-smash-bros.-brawl-tournament-part-2' title='Super Smash Bros. Brawl Tournament: Part 2'><strong>ct</strong> Super Smash Bros. Brawl Tournament: Part 2</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>9:30</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/cards-against-humanity' title='Cards Against Humanity'><strong>uni</strong> Cards Against Humanity</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:00</strong> pm</h3>
+<ul>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/parsely-six-gun-showdown' title='Parsely: Six-Gun Showdown'><strong>rav</strong> Parsely: Six-Gun Showdown</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/project-nom-the-cookie-brigade-chronicles' title='Project Nom: The Cookie Brigade Chronicles'><strong>peg</strong> Project Nom: The Cookie Brigade Chronicles</a></li>
+<li class='event pc'><a href='http://prime.paxsite.com/schedule/panel/smashmuck-champions-give-a-way-gauntlet1' title='SmashMuck Champions Give-a-Way Gauntlet'><strong>pc</strong> SmashMuck Champions Give-a-Way Gauntlet</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:30</strong> pm</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/the-loadingreadyrun-screening-block' title='The LoadingReadyRun Screening Block'><strong>ser</strong> The LoadingReadyRun Screening Block</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>11:00</strong> pm</h3>
+<ul>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/going-cardboard-a-board-game-documentary' title='Going Cardboard: A Board Game Documentary'><strong>uni</strong> Going Cardboard: A Board Game Documentary</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/journeyquest-season-2-premiere' title='JourneyQuest Season 2 Premiere!'><strong>rav</strong> JourneyQuest Season 2 Premiere!</a></li>
+</ul>
+</div>
+</div>
+</li>
+		<li id="sunday">
+	<div class="day">
+		<div id="sundayMenu" class="dropdown" style="display: none">
+	<a class="btnClose sundayToggle" href="#" title="Close">Close</a>
+		<ul>
+		<li><a href="#friday" title="Friday"><strong>Friday</strong> 8/31</a></li>
+		<li><a href="#saturday" title="Saturday"><strong>Saturday</strong> 9/1</a></li>
+		<li><a href="#sunday" title="Sunday"><strong>Sunday</strong> 9/2</a></li>
+	</ul>
+</div>
+		<a class="btnDropdown sundayToggle" href="#" title="Jump to another day">Jump to another day</a>
+		
+		<h2><strong>Sunday</strong> 9/2</h2>
+		<h4><strong>Hours</strong> 10am-7pm</h4>
+		
+	</div>
+	
+	<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:00</strong> am</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-learn-to-play2' title='Pokemon - Learn to Play'><strong>tt</strong> Pokemon - Learn to Play</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/snark-cynicism-and-anonymity-how-community-managers-deal-with-trolls' title='Snark, Cynicism, and Anonymity: How Community Managers Deal With Trolls'><strong>peg</strong> Snark, Cynicism, and Anonymity: How Community Managers Deal With Trolls</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/steampunk-gaming' title='Steampunk Gaming'><strong>tt</strong> Steampunk Gaming</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>10:30</strong> am</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/1up-presents-retronauts-and-gaming-in-the-apocalypse' title='1UP Presents: Retronauts and Gaming in the Apocalypse'><strong>ser</strong> 1UP Presents: Retronauts and Gaming in the Apocalypse</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/carcassonne-tournament' title='Carcassonne Tournament'><strong>tt</strong> Carcassonne Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/malifaux-intro-tournament' title='Malifaux Intro Tournament'><strong>tt</strong> Malifaux Intro Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/robo-rally-cannonball-run' title='Robo Rally Cannonball Run'><strong>tt</strong> Robo Rally Cannonball Run</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/the-dd-you-never-knew' title='The D&amp;D You Never Knew'><strong>rav</strong> The D&amp;D You Never Knew</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/twisted-pixel-variety-hour' title='Twisted Pixel Variety Hour'><strong>uni</strong> Twisted Pixel Variety Hour</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/pitch-your-game-idea' title='Pitch Your Game Idea'><strong>kra</strong> Pitch Your Game Idea</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/khoo-and-a-2-khoo-harder' title='A Q&amp;A with Robert Khoo'><strong>main</strong> A Q&amp;A with Robert Khoo</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>11:00</strong> am</h3>
+<ul>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/omegathon-round-5-bananagrams' title='Omegathon Round 5: Bananagrams'><strong>wol</strong> Omegathon Round 5: Bananagrams</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-modifed-tournament' title='Pokemon - Modifed Tournament'><strong>tt</strong> Pokemon - Modifed Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/race-for-the-galaxy-finals' title='Race for the Galaxy - Finals'><strong>tt</strong> Race for the Galaxy - Finals</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-structure-deck4' title='Yu Gi Oh - Structure Deck'><strong>tt</strong> Yu Gi Oh - Structure Deck</a></li>
+<li class='event pc'><a href='http://prime.paxsite.com/schedule/panel/smashmuck-champions-give-a-way-gauntlet2' title='SmashMuck Champions Give-a-Way Gauntlet'><strong>pc</strong> SmashMuck Champions Give-a-Way Gauntlet</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>11:30</strong> am</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/ticket-to-ride-finals' title='Ticket To Ride - Finals'><strong>tt</strong> Ticket To Ride - Finals</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/the-awesome-hour' title='The Awesome Hour!'><strong>peg</strong> The Awesome Hour!</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>12:00</strong> pm</h3>
+<ul>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/how-to-snag-the-advertising-marketing-pr-or-script-writing-job-you-dream-ab' title='How to Snag the Advertising, Marketing, PR or Script Writing Job You Dream About'><strong>ser</strong> How to Snag the Advertising, Marketing, PR or Script Writing Job You Dream About</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/penny-arcade-the-series' title='Penny Arcade - The Series'><strong>uni</strong> Penny Arcade - The Series</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/plot-vs-play-the-duality-of-modern-game-design-the-sequel' title='Plot vs Play: The Duality of Modern Game Design -The Sequel!'><strong>kra</strong> Plot vs Play: The Duality of Modern Game Design -The Sequel!</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/press-xy-to-continue-transgender-issues-in-gaming' title='Press XY To Continue:&nbsp; Transgender Issues In Gaming'><strong>rav</strong> Press XY To Continue:&nbsp; Transgender Issues In Gaming</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/settlers-of-catan-finals' title='Settlers of Catan - Finals'><strong>tt</strong> Settlers of Catan - Finals</a></li>
+<li class='event pc'><a href='http://prime.paxsite.com/schedule/panel/shootmania-tournament' title='Shootmania Tournament'><strong>pc</strong> Shootmania Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/standard-action-the-webseries' title='Standard Action: The Webseries'><strong>tt</strong> Standard Action: The Webseries</a></li>
+<li class='event hh'><a href='http://prime.paxsite.com/schedule/panel/tetris-ds-tournament' title='Tetris DS Tournament'><strong>hh</strong> Tetris DS Tournament</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/virtual-on-ot-tournament' title='Virtual-On OT Tournament'><strong>ct</strong> Virtual-On OT Tournament</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>12:30</strong> pm</h3>
+<ul>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/thinking-tactically-the-new-strategy-games' title='Thinking Tactically: The New Strategy Games'><strong>wol</strong> Thinking Tactically: The New Strategy Games</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>1:00</strong> pm</h3>
+<ul>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/saturn-bomberman-tournament' title='Saturn Bomberman Tournament'><strong>ct</strong> Saturn Bomberman Tournament</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/ratchet-clank-10th-anniversary-celebration' title='Ratchet &amp; Clank 10th Anniversary Celebration'><strong>peg</strong> Ratchet &amp; Clank 10th Anniversary Celebration</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>1:30</strong> pm</h3>
+<ul>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/magic-the-gathering-world-building-panel' title='Magic: The Gathering World Building Panel'><strong>rav</strong> Magic: The Gathering World Building Panel</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/raising-the-next-generation-of-geeks' title='Raising the Next Generation of Geeks'><strong>kra</strong> Raising the Next Generation of Geeks</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/twitch-all-stars-presents-how-to-make-it-as-a-broadcaster' title='Twitch All-Stars Presents: How to Make it as a Broadcaster'><strong>ser</strong> Twitch All-Stars Presents: How to Make it as a Broadcaster</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/insider-insight-awesome-video-game-data-ii' title='Insider Insight: Awesome Video Game Data II'><strong>uni</strong> Insider Insight: Awesome Video Game Data II</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>2:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/dominion-finals' title='Dominion - Finals'><strong>tt</strong> Dominion - Finals</a></li>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/penny-arcades-new-rain-slick-precipice-game' title='Penny Arcade&#8217;s New Rain-Slick Precipice Game'><strong>wol</strong> Penny Arcade&#8217;s New Rain-Slick Precipice Game</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/yu-gi-oh-pegasus-challenge' title='Yu Gi Oh - Pegasus Challenge'><strong>tt</strong> Yu Gi Oh - Pegasus Challenge</a></li>
+<li class='event ct'><a href='http://prime.paxsite.com/schedule/panel/beautiful-katamari-tournament' title='Beautiful Katamari Tournament'><strong>ct</strong> Beautiful Katamari Tournament</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/i-am-self-publisher-and-so-can-you-america' title='I am Startup and So Can You, America: Designing and Publishing on a Ramen Budget'><strong>tt</strong> I am Startup and So Can You, America: Designing and Publishing on a Ramen Budget</a></li>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/nasas-got-game' title='NASA&#8217;s Got Game'><strong>main</strong> NASA&#8217;s Got Game</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>2:30</strong> pm</h3>
+<ul>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/extra-credits-panel' title='Extra Credits Panel'><strong>peg</strong> Extra Credits Panel</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>3:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/7-wonders-finals' title='7 Wonders - Finals'><strong>tt</strong> 7 Wonders - Finals</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/chiptune-music-revolution-shaping-the-seattle-scene' title='Chiptune Music Revolution: Shaping the Seattle Scene'><strong>rav</strong> Chiptune Music Revolution: Shaping the Seattle Scene</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/hitman-absolution-gameplay-demo' title='HITMAN: ABSOLUTION Gameplay Demo'><strong>uni</strong> HITMAN: ABSOLUTION Gameplay Demo</a></li>
+<li class='event ser'><a href='http://prime.paxsite.com/schedule/panel/open-development-for-indies-why-cooperative-trumps-competitive' title='Open Development for Indies: Why Cooperative Trumps Competitive'><strong>ser</strong> Open Development for Indies: Why Cooperative Trumps Competitive</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/pokemon-unlimited-8-player-pick-up' title='Pokemon - Unlimited 8-Player Pick Up'><strong>tt</strong> Pokemon - Unlimited 8-Player Pick Up</a></li>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/natural-selection-2-development-inside-out' title='Natural Selection 2: Development Inside-Out'><strong>kra</strong> Natural Selection 2: Development Inside-Out</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>3:30</strong> pm</h3>
+<ul>
+<li class='event wol'><a href='http://prime.paxsite.com/schedule/panel/is-the-way-you-pay-the-way-you-play' title='Is the Way You Pay the Way You Play?'><strong>wol</strong> Is the Way You Pay the Way You Play?</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>4:00</strong> pm</h3>
+<ul>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/sympathy-for-the-devil-creating-killer-villains-for-games-and-books' title='Sympathy for the Devil: Creating Killer Villains for Games and Books'><strong>tt</strong> Sympathy for the Devil: Creating Killer Villains for Games and Books</a></li>
+<li class='event tt'><a href='http://prime.paxsite.com/schedule/panel/tsuro-tournament' title='Tsuro Tournament'><strong>tt</strong> Tsuro Tournament</a></li>
+<li class='event peg'><a href='http://prime.paxsite.com/schedule/panel/inside-gearbox-software' title='Inside Gearbox Software'><strong>peg</strong> Inside Gearbox Software</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>4:30</strong> pm</h3>
+<ul>
+<li class='event kra'><a href='http://prime.paxsite.com/schedule/panel/concept-to-reality-how-new-games-are-made' title='Concept to Reality: How New Games Are Made'><strong>kra</strong> Concept to Reality: How New Games Are Made</a></li>
+<li class='event rav'><a href='http://prime.paxsite.com/schedule/panel/geeking-for-fun-and-profit-using-your-nerd-xp-to-level-up-irl' title='Geeking for Fun and Profit:&nbsp; Using your nerd XP to level-up IRL'><strong>rav</strong> Geeking for Fun and Profit:&nbsp; Using your nerd XP to level-up IRL</a></li>
+<li class='event uni'><a href='http://prime.paxsite.com/schedule/panel/it-only-hurts-when-you-laugh' title='It Only Hurts When You Laugh'><strong>uni</strong> It Only Hurts When You Laugh</a></li>
+</ul>
+</div>
+</div>
+<div class="timeBlock">
+<div class="btm">
+<h3 class="time"><strong>5:30</strong> pm</h3>
+<ul>
+<li class='event main'><a href='http://prime.paxsite.com/schedule/panel/omegathon-final-round' title='Omegathon Final Round'><strong>main</strong> Omegathon Final Round</a></li>
+</ul>
+</div>
+</div>
+</li>
+			</ul>
+</div>
+<hr />
+<div id="sidebar">
+	<div id="squareAd">
+		<div class="white">
+			<p>Advertisement</p>
+			
+			<!-- PAXSite_Square -->
+			<div id='div-gpt-ad-1331836684339-0' style='width:300px; height:250px;'>
+				<script type='text/javascript'>
+				googletag.cmd.push(function() {googletag.display('div-gpt-ad-1331836684339-0');});
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div id="legend">
+	<div class="grey">
+		<h4>Location Legend</h4>
+		<p>Select a location to filter the schedule.</p>
+	</div>
+	<div class="white">
+		<ul id="locations">
+			<li class="main"><a href="http://prime.paxsite.com/schedule/category/main-p" title="Filter Main Theatre"><strong>Main</strong> Main Theatre</a></li>
+			<li class="rav"><a href="http://prime.paxsite.com/schedule/category/rav-p" title="Filter Raven Theatre"><strong>Rav</strong> Raven Theatre</a></li>
+			<li class="peg"><a href="http://prime.paxsite.com/schedule/category/peg-p" title="Filter Pegasus Theatre"><strong>Peg</strong> Pegasus Theatre</a></li>
+			<li class="hh"><a href="http://prime.paxsite.com/schedule/category/hh-p" title="Filter Handheld Tourney"><strong>HH</strong> Handheld Tourney</a></li>
+			<li class="kra"><a href="http://prime.paxsite.com/schedule/category/kra-p" title="Filter Kraken Theatre"><strong>Kra</strong> Kraken Theatre</a></li>
+			<li class="pc"><a href="http://prime.paxsite.com/schedule/category/pc-p" title="Filter PC Tourney"><strong>PC</strong> PC Tourney</a></li>
+			<li class="uni"><a href="http://prime.paxsite.com/schedule/category/uni-p" title="Filter Unicorn Theatre"><strong>Uni</strong> Unicorn Theatre</a></li>
+			<li class="tt"><a href="http://prime.paxsite.com/schedule/category/tt-p" title="Filter Tabletop"><strong>TT</strong> Tabletop</a></li>
+			<li class="ser"><a href="http://prime.paxsite.com/schedule/category/ser-p" title="Filter Serpent Theatre"><strong>Ser</strong> Serpent Theatre</a></li>
+			<li class="ct"><a href="http://prime.paxsite.com/schedule/category/ct-p" title="Filter Console Tourney"><strong>CT</strong> Console Tourney</a></li>
+			<li class="wol"><a href="http://prime.paxsite.com/schedule/category/wol-p" title="Filter Wolfman Theatre"><strong>Wol</strong> Wolfman Theatre</a></li>
+			<li class="con"><a href="http://prime.paxsite.com/schedule/category/con-p" title="Filter &#9835; Concerts"><strong>&#9835;</strong> Concerts</a></li>
+		</ul>
+	</div>
+</div>
+	<div id="hours">
+	
+	<div class="white">
+		<h4>Show Hours</h4>
+		<ul>
+			<li><h5>Friday 8/31</h5> <strong>10 am - 2 am</strong></li>
+			<li><h5>Saturday 9/1</h5> <strong>10 am - 2 am</strong></li>
+			<li><h5>Sunday 9/2</h5> <strong>10 am - 7 pm</strong></li>
+		</ul>
+	</div>
+	<div class="grey">
+		<h4>Expo Hall Hours</h4>
+		<ul>
+			<li><h5>Friday 8/31</h5> <strong>10 am - 6 pm</strong></li>
+			<li><h5>Saturday 9/1</h5> <strong>10 am - 6 pm</strong></li>
+			<li><h5>Sunday 9/2</h5> <strong>10 am - 6 pm</strong></li>
+		</ul>
+	</div>
+	
+</div>
+
+	
+	
+		
+	
+		<div id="paxApp">
+		<div class="white">
+			<img src="http://prime.paxsite.com//assets/img/icon_guidebook.png" alt="Guidebook" />
+			<h4>Download Guidebook</h4>
+			<p>The official PAX app for smart phones!</p>
+			<ul>
+				<li><a class="btniPhone" href="http://itunes.apple.com/us/app/guidebook/id428713847?mt=8" title="Download app for iPhone">iPhone</a></li>
+				<li><a class="btnDroid" href="https://market.android.com/details?id=com.guidebook.android" title="Download app for Droid">Droid</a></li>
+				<li><a class="btnWP7" href="http://m.guidebook.com/" title="Mobile Site for WP7">WP7</a></li>
+				<li><a class="btnBlackberry" href="http://m.guidebook.com/" title="Mobile Site for Blackberry">Blackberry</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+<hr />
+
+<div id="sponsors">
+	<h3>Sponsors</h3>
+	<div id="sponsorList">
+		<table>
+<tbody>
+<tr>
+<td><a href='http://www.telltalegames.com/' title='Telltale'><img src='http://prime.paxsite.com//assets/img/sponsors/telltale.png' alt='Telltale' /></a></td>
+<td><a href='http://www.intel.com/gaming' title='Intel'><img src='http://prime.paxsite.com//assets/img/sponsors/intel.png' alt='Intel' /></a></td>
+<td><a href='http://www.sfr-inc.com/' title='Dragon Dice'><img src='http://prime.paxsite.com//assets/img/sponsors/dragondice.png' alt='Dragon Dice' /></a></td>
+<td><a href='http://www.digitalgamemuseum.org/' title='Digital Game Museum'><img src='http://prime.paxsite.com//assets/img/sponsors/digitalgamemuseum.png' alt='Digital Game Museum' /></a></td>
+<td><a href='http://www.creativelabs.com' title='Creative Labs'><img src='http://prime.paxsite.com//assets/img/sponsors/creative.jpg' alt='Creative Labs' /></a></td>
+<td><a href='http://www.atlasnetworks.us/' title='Atlas Networks'><img src='http://prime.paxsite.com//assets/img/sponsors/atlas.jpg' alt='Atlas Networks' /></a></td>
+<td><a href='http://www.unclesgames.com/' title='Uncles Games'><img src='http://prime.paxsite.com//assets/img/sponsors/unclesgames.jpg' alt='Uncles Games' /></a></td>
+<td><a href='http://www.pajaggle.com/' title='Pajaggle'><img src='http://prime.paxsite.com//assets/img/sponsors/pajaggle.jpg' alt='Pajaggle' /></a></td>
+<td><a href='http://www.pepwuper.com/' title='Studio Pepwuper'><img src='http://prime.paxsite.com//assets/img/sponsors/studiopepwuper.jpg' alt='Studio Pepwuper' /></a></td>
+<td><a href='http://www.kumobius.com/' title='Kumobius'><img src='http://prime.paxsite.com//assets/img/sponsors/kumobius.png' alt='Kumobius' /></a></td>
+<td><a href='http://www.looneylabs.com/' title='Looney Labs'><img src='http://prime.paxsite.com//assets/img/sponsors/looneylabs.jpg' alt='Looney Labs' /></a></td>
+<td><a href='http://www.games-workshop.com/gws/' title='Games Workshop'><img src='http://prime.paxsite.com//assets/img/sponsors/gamesworkshop.jpg' alt='Games Workshop' /></a></td>
+</tr>
+<tr>
+<td><a href='http://gamesalute.squarespace.com/' title='Game Salute'><img src='http://prime.paxsite.com//assets/img/sponsors/gamesalute.png' alt='Game Salute' /></a></td>
+<td><a href='http://www.forgeworld.co.uk/' title='Forgeworld'><img src='http://prime.paxsite.com//assets/img/sponsors/forgeworld.jpg' alt='Forgeworld' /></a></td>
+<td><a href='http://www.fangamer.net/' title='Fangamer'><img src='http://prime.paxsite.com//assets/img/sponsors/fangamer.png' alt='Fangamer' /></a></td>
+<td><a href='http://ctenophore.com/' title='Ctenophore'><img src='http://prime.paxsite.com//assets/img/sponsors/ctenophore.png' alt='Ctenophore' /></a></td>
+<td><a href='http://www.blacklibrary.com/' title='Black Library'><img src='http://prime.paxsite.com//assets/img/sponsors/blacklibrary.jpg' alt='Black Library' /></a></td>
+<td><a href='http://www.antichamber-game.com/' title='Antichamber'><img src='http://prime.paxsite.com//assets/img/sponsors/antichamber.jpg' alt='Antichamber' /></a></td>
+<td><a href='http://www.yobonja.com/' title='Yobonja'><img src='http://prime.paxsite.com//assets/img/sponsors/YobonjaLogo.png' alt='Yobonja' /></a></td>
+<td><a href='http://tinmangames.com.au/blog/' title='Tin Man Games'><img src='http://prime.paxsite.com//assets/img/sponsors/tinmangames.png' alt='Tin Man Games' /></a></td>
+<td><a href='http://www.ska-studios.com/' title='Ska Studios'><img src='http://prime.paxsite.com//assets/img/sponsors/SkaStudiosLogo.png' alt='Ska Studios' /></a></td>
+<td><a href='http://us.playstation.com/' title='Sony Playstation'><img src='http://prime.paxsite.com//assets/img/sponsors/playstation.jpg' alt='Sony Playstation' /></a></td>
+<td><a href='http://www.radialgames.com/' title='Radial Games'><img src='http://prime.paxsite.com//assets/img/sponsors/radialgames.png' alt='Radial Games' /></a></td>
+<td><a href='http://www.olympiccardsandcomics.com/' title='Olympic Cards and Comics'><img src='http://prime.paxsite.com//assets/img/sponsors/olympiccardsandcomics.jpg' alt='Olympic Cards and Comics' /></a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td><a href='http://www.gammaraygamestore.com/' title='Gamma Ray Games'><img src='http://prime.paxsite.com//assets/img/sponsors/gammaraygames.jpg' alt='Gamma Ray Games' /></a></td>
+<td><a href='http://www.fantasyflightgames.com/' title='Fantasy Flight Games'><img src='http://prime.paxsite.com//assets/img/sponsors/fantasyflight.jpg' alt='Fantasy Flight Games' /></a></td>
+<td><a href='http://www.drinkboxstudios.com/' title='Drinkbox'><img src='http://prime.paxsite.com//assets/img/sponsors/drinkbox.png' alt='Drinkbox' /></a></td>
+<td><a href='http://www.contagion-game.com/' title='Contagion'><img src='http://prime.paxsite.com//assets/img/sponsors/contagion.png' alt='Contagion' /></a></td>
+<td><a href='http://bitflipgames.com/' title='BitFlip Games'><img src='http://prime.paxsite.com//assets/img/sponsors/bitflipgames.com_logo.png' alt='BitFlip Games' /></a></td>
+<td><a href='http://alienware.com/' title='Alienware'><img src='http://prime.paxsite.com//assets/img/sponsors/alienware.jpg' alt='Alienware' /></a></td>
+<td><a href='http://www.futureus.com/' title='Future'><img src='http://prime.paxsite.com//assets/img/sponsors/future.png' alt='Future' /></a></td>
+<td><a href='http://www.zombie.com/' title='Zombie Studios'><img src='http://prime.paxsite.com//assets/img/sponsors/zombie_logo_black_large.png' alt='Zombie Studios' /></a></td>
+<td><a href='http://www.zotac.com/' title='Zotac'><img src='http://prime.paxsite.com//assets/img/sponsors/Zotac.jpg' alt='Zotac' /></a></td>
+<td><a href='http://twitch.tv' title='Twitch'><img src='http://prime.paxsite.com//assets/img/sponsors/twitch.png' alt='Twitch' /></a></td>
+<td><a href='http://www.octodadgame.com/' title='Young Horses'><img src='http://prime.paxsite.com//assets/img/sponsors/YoungHorses.png' alt='Young Horses' /></a></td>
+<td><a href='http://www.soe.com/' title='Sony Online'><img src='http://prime.paxsite.com//assets/img/sponsors/SonyOnline.png' alt='Sony Online' /></a></td>
+</tr>
+<tr>
+<td><a href='http://sanshee.com/' title='Sanshee'><img src='http://prime.paxsite.com//assets/img/sponsors/Sanshee.png' alt='Sanshee' /></a></td>
+<td><a href='https://www.sifteo.com/' title='Sifteo'><img src='http://prime.paxsite.com//assets/img/sponsors/Sifteo_logo.jpg' alt='Sifteo' /></a></td>
+<td><a href='http://roosterteeth.com/home.php' title='Rooster Teeth'><img src='http://prime.paxsite.com//assets/img/sponsors/roosterteeth.jpg' alt='Rooster Teeth' /></a></td>
+<td><a href='http://www.primordialcomputers.com/' title='Primordial'><img src='http://prime.paxsite.com//assets/img/sponsors/Primordial.jpg' alt='Primordial' /></a></td>
+<td><a href='http://pixelscopic.com/' title='Pixelscopic'><img src='http://prime.paxsite.com//assets/img/sponsors/Pixelscopic.jpg' alt='Pixelscopic' /></a></td>
+<td><a href='http://paizo.com/' title='Paizo'><img src='http://prime.paxsite.com//assets/img/sponsors/paizo.jpg' alt='Paizo' /></a></td>
+<td><a href='http://www.orcattack.com/' title='Orc Attack'><img src='http://prime.paxsite.com//assets/img/sponsors/orcattack.jpg' alt='Orc Attack' /></a></td>
+<td><a href='http://onthelevelgames.com/' title='On the Level'><img src='http://prime.paxsite.com//assets/img/sponsors/OnTheLevel.jpg' alt='On the Level' /></a></td>
+<td><a href='http://www.naturalselection2.com/' title='Natural Selection 2'><img src='http://prime.paxsite.com//assets/img/sponsors/NaturalSelection2.jpg' alt='Natural Selection 2' /></a></td>
+<td><a href='kingston.com' title='Kingston'><img src='http://prime.paxsite.com//assets/img/sponsors/Kingston.jpg' alt='Kingston' /></a></td>
+<td><a href='http://www.iadt.edu/' title='IADT'><img src='http://prime.paxsite.com//assets/img/sponsors/IADT.png' alt='IADT' /></a></td>
+<td><a href='http://halfbrick.com/' title='Halfbrick'><img src='http://prime.paxsite.com//assets/img/sponsors/Halfbrick.png' alt='Halfbrick' /></a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td><a href='http://www.huntgamestudios.com/' title='Hunt Game Studios'><img src='http://prime.paxsite.com//assets/img/sponsors/Hunt_Game_Studios_Logo.png' alt='Hunt Game Studios' /></a></td>
+<td><a href='http://www.g4tv.com/' title='G4'><img src='http://prime.paxsite.com//assets/img/sponsors/G4_Logo.jpg' alt='G4' /></a></td>
+<td><a href='http://www.ea.com/' title='EA'><img src='http://prime.paxsite.com//assets/img/sponsors/ea.jpg' alt='EA' /></a></td>
+<td><a href='http://www.firehosegames.com/' title='Fire Hose'><img src='http://prime.paxsite.com//assets/img/sponsors/FireHose.jpg' alt='Fire Hose' /></a></td>
+<td><a href='http://www.doublefine.com/' title='DoubleFine'><img src='http://prime.paxsite.com//assets/img/sponsors/DoubleFine2.png' alt='DoubleFine' /></a></td>
+<td><a href='http://www.dejobaan.com/' title='Dejobaan Games'><img src='http://prime.paxsite.com//assets/img/sponsors/DejobaanGames.png' alt='Dejobaan Games' /></a></td>
+<td><a href='http://www.deepsilver.com/' title='Deep Silver'><img src='http://prime.paxsite.com//assets/img/sponsors/DeepSilver.jpg' alt='Deep Silver' /></a></td>
+<td><a href='http://www.coolminiornot.com/' title='Cool Mini or Not'><img src='http://prime.paxsite.com//assets/img/sponsors/CoolMiniorNot.jpg' alt='Cool Mini or Not' /></a></td>
+<td><a href='http://www.corsair.com/' title='Corsair'><img src='http://prime.paxsite.com//assets/img/sponsors/Corsair.jpg' alt='Corsair' /></a></td>
+<td><a href='http://www.cavebananagames.com/' title='Cave Banana Games'><img src='http://prime.paxsite.com//assets/img/sponsors/cavebananagames.jpg' alt='Cave Banana Games' /></a></td>
+<td><a href='http://www.cardhunter.com/' title='Card Hunter'><img src='http://prime.paxsite.com//assets/img/sponsors/cardhunter.jpg' alt='Card Hunter' /></a></td>
+<td><a href='http://www.cardkingdom.com/' title='Card Kingdom'><img src='http://prime.paxsite.com//assets/img/sponsors/CardKingdom.png' alt='Card Kingdom' /></a></td>
+</tr>
+<tr>
+<td><a href='http://www.brawsome.com.au/' title='Brawsome'><img src='http://prime.paxsite.com//assets/img/sponsors/Brawsome_busy.jpg' alt='Brawsome' /></a></td>
+<td><a href='http://www.bootsnakegames.com/' title='BootSnake Games'><img src='http://prime.paxsite.com//assets/img/sponsors/BootSnakeLogo_Pax.jpg' alt='BootSnake Games' /></a></td>
+<td><a href='http://www.astrogaming.com/' title='Astro'><img src='http://prime.paxsite.com//assets/img/sponsors/ASTRO-Gaming-Logo-Black.jpg' alt='Astro' /></a></td>
+<td><a href='http://blendogames.com/' title='Blendo Games'><img src='http://prime.paxsite.com//assets/img/sponsors/Blendo_Games_LLC.jpg' alt='Blendo Games' /></a></td>
+<td><a href='http://www.adhesivegames.com/' title='Adhesive Games'><img src='http://prime.paxsite.com//assets/img/sponsors/adhesive.jpg' alt='Adhesive Games' /></a></td>
+<td><a href='http://17-bit.com/' title='17bit'><img src='http://prime.paxsite.com//assets/img/sponsors/17bit.jpg' alt='17bit' /></a></td>
+<td><a href='http://24caretgames.com/' title='24 Caret Games'><img src='http://prime.paxsite.com//assets/img/sponsors/24caret.jpg' alt='24 Caret Games' /></a></td>
+</tr>
+</tbody>
+</table>
+	</div>
+</div>
+<hr />
+		<div id="footer">
+			<div id="leaderboard">
+				
+				<!-- PAXSite_Banner -->
+				<div id='div-gpt-ad-1331836661000-0' style='width:728px; height:90px;'>
+					<script type='text/javascript'>
+					googletag.cmd.push(function() {googletag.display('div-gpt-ad-1331836661000-0');});
+					</script>
+				</div>
+			</div>
+			<div id="advertise">
+				<h3>Advertise on PAX Site</h3>
+				<a class="btn grey" href="mailto:paxsales@paxsite.com?subject=PAX%20Prime%202012%20Inquiry" title="Contact Us">Contact Us</a>
+			</div>
+			<ul class="nav">
+				<li><a class="navWhatIsPax" href="/what-is-pax" title="What is PAX?">What is PAX?</a></li>
+				<li><a class="navRegistration" href="/registration" title="Registration">Registration</a></li>
+				<li><a class="navSchedule" href="/schedule" title="Schedule">Schedule</a></li>
+				<li><a class="navHotels" href="/hotels-and-travel" title="Hotels &amp; Travel">Hotels &amp; Travel</a></li>
+				<li><a class="navFAQ" href="/faq" title="FAQ">FAQ</a></li>
+				<li><a class="navGallery" href="/gallery" title="Gallery">Gallery</a></li>
+				<li><a class="navForums" href="http://forums.penny-arcade.com/categories/pax-prime" title="Forums">Forums</a></li>			
+			</ul>
+			<ul class="shows">
+				<li><a class="btn btnPrime" href="http://prime.paxsite.com/" title="PAX Prime: Seattle, WA"><strong>PAX Prime</strong></a></li>
+				<li><a class="btn btnEast" href="http://east.paxsite.com/" title="PAX East: Boston, MA"><strong>PAX East</strong></a></li>
+				<li><a class="btn btnAus" href="http://aus.paxsite.com/" title="PAX Aus: Melbourne, VIC"><strong>PAX Aus</strong></a></li>
+				<li><a class="btn btnDev" href="http://dev.paxsite.com/" title="PAX Dev: Seattle, WA"><strong>PAX Dev</strong></a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

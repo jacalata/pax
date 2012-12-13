@@ -22,13 +22,13 @@ namespace PAX7
         public ObservableCollection<MenuOption> menuOptions;
         AboutPrompt aboutApp;
         public string twitterListURL = "http://twitter.com/jacalata/lists/pax-info";
-
         const bool runUnitTests = false;
-
+        private string conventionTitle;
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            conventionTitle = App.ConventionName[(int)App.Convention.PAXEAST];
                 
             MenuOption option1 = new MenuOption("events by day", "/View/SchedulePivotView.xaml?PivotOn=Day");
             MenuOption option2 = new MenuOption("events by location", "/View/SchedulePivotView.xaml?PivotOn=Location");

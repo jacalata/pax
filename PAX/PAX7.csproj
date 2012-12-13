@@ -119,7 +119,6 @@
     <Compile Include="Utilicode\Converter.cs" />
     <Compile Include="Utilicode\LittleWatson.cs" />
     <Compile Include="Utilicode\MetroGridHelper.cs" />
-    <Compile Include="Model\Tweet.cs" />
     <Compile Include="ViewModel\ScheduleDatabase.cs" />
     <Compile Include="ViewModel\ScheduleViewModel.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
@@ -218,6 +217,7 @@
     <Content Include="XML\contests.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="XML\ConventionData.xml" />
     <Content Include="XML\Friday.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\social.xml" />

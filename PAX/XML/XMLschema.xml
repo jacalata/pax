@@ -3,28 +3,12 @@
 
 
   <xs:simpleType name="eventLocation">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Main"/>
-      <xs:enumeration value="Naga"/>
-	    <xs:enumeration value="Arachnid"/>
-	    <xs:enumeration value="Manticore"/>
-  	  <xs:enumeration value="Cat"/>
-  	  <xs:enumeration value="Wyvern"/>
-  	  <xs:enumeration value="Merman" />
-    </xs:restriction>
+    <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
 
   <xs:simpleType name="eventKind">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Panel"/>
-      <xs:enumeration value="Omegathon"/>
-      <xs:enumeration value="Contest"/>
-      <xs:enumeration value="FreePlay"/>
-      <xs:enumeration value="Show"/>
-	    <xs:enumeration value="D&amp;D"/>
-	    <xs:enumeration value="Social"/>
-    </xs:restriction>
+    <xs:restriction base="xs:string" />
   </xs:simpleType>
 
 

@@ -63,7 +63,7 @@ namespace PAX7.Tests
             List<string> filenames = new List<string>();
             filenames.Add("Tests\\Data\\GoodXML.xml");
             var schedule = new Schedule();
-            schedule.GetXMLEvents(filenames, true); //isFirstRun
+            schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(schedule.Events, "event collection");
             var _emptyEvents = new ObservableCollection<Event>();
             Assert.AreNotEqual(_emptyEvents, schedule.Events);
@@ -79,7 +79,7 @@ namespace PAX7.Tests
             List<string> filenames = new List<string>();
             filenames.Add("Tests\\Data\\GoodXML.xml");
             var schedule = new Schedule();
-            schedule.GetXMLEvents(filenames, true); //isFirstRun
+            schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(schedule.Events, "event collection");
             var enumerator = schedule.Events.GetEnumerator();
             enumerator.MoveNext();
@@ -105,7 +105,7 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\BadXML_empty.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(filenames, true); //isFirstRun
+            schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(schedule.Events, "confirming event collection exists");
             // malformed events should not be added to the schedule
             Assert.Equals(_emptyEvents, schedule.Events);
@@ -127,10 +127,39 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\BadXML_missingEnd.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(filenames, true); //isFirstRun
+            schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(schedule.Events, "confirming event collection exists");
             // malformed events should not be added to the schedule
             Assert.Equals(_emptyEvents, schedule.Events);
+        }
+
+        /// <summary>
+        /// Call the GetFilenames method of the schedule and confirm that at least one filename is populated from 
+        /// the xap stored contents.xml file
+        /// </summary>
+        [TestMethod]
+        [TestProperty("TestCategory", "IO")]
+        public void VerifyParsingContentsFile()
+        {
+            List<string> filenames = new List<string>();
+            var schedule = new Schedule();
+            filenames = schedule.GetFilenames(true, "Tests\\Data\\contents.xml");
+            Assert.AreNotEqual(0, filenames.Count);
+        }
+
+        /// <summary>
+        /// Call the GetEventCategories method of the schedule and verifies it has loaded at least one day name
+        /// </summary>
+        [TestMethod]
+        [TestProperty("TestCategory", "IO")]
+        public void VerifyParsingConventionDataFile()
+        {
+            List<string> days = new List<string>();
+            var schedule = new Schedule();
+            days = schedule.GetEventCategories(true, "Tests\\Data\\ConventionData.xml");
+            // it just saves data to the isolated storage...how do I check the state of that?
+            Assert.AreNotEqual(0, days.Count);
+            Assert.IsTrue(days[0].Contains("day"));
         }
 
         /// <summary>
@@ -144,7 +173,7 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\GoodXML_malformedDate.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(filenames, true); //isFirstRun
+            schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(schedule.Events);
             //events with malformed dates should be added to the schedule with a fake date
             Assert.AreNotEqual(_emptyEvents, schedule.Events);
@@ -180,7 +209,7 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\BadXML_filedoesnotexist.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(filenames, true); //isFirstRun
+            schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(schedule.Events, "confirming event collection exists");
             //no file so no events should have been created
             Assert.Equals(_emptyEvents, schedule.Events);

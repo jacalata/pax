@@ -26,6 +26,10 @@ namespace PAX7
         private Point _mouseDownPosition;
         private DateTime _mouseDownTime;
         public enum GESTURE { DRAG, HOLD, TAP };
+        // get the title of a convention as ConventionName[Convention.PAXEAST]
+        public enum Convention {PAXEAST, PAXPRIME, PAXAUS};
+        public static string[] ConventionName = { "PAX East", "PAX Prime", "PAX Australia" };
+
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
@@ -37,6 +41,7 @@ namespace PAX7
         /// </summary>
         public App()
         {
+            
 //            dnp.Counter.EnableMemoryCounter = true; 
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;

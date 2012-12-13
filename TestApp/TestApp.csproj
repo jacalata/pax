@@ -122,10 +122,14 @@
     <Content Include="Tests\Data\BadXML_missingDatetime.xml" />
     <Content Include="Tests\Data\BadXML_missingDescription.xml" />
     <Content Include="Tests\Data\BadXML_missingEnd.xml" />
+    <Content Include="Tests\Data\contents.xml" />
+    <Content Include="Tests\Data\ConventionData.xml" />
     <Content Include="Tests\Data\GoodXML_malformedDate.xml" />
     <Content Include="Tests\Data\GoodXML.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="XML\contents.xml" />
+    <Content Include="XML\ConventionData.xml" />
     <Resource Include="Toolkit.Content\ie.png" />
   </ItemGroup>
   <ItemGroup>

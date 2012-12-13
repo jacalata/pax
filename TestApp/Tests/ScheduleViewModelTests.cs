@@ -37,7 +37,7 @@ namespace PAX7.Tests
             _schedule.NukeAllStorage();
             List<string> filenames = new List<string>();
             filenames.Add(testDataFile);
-            _schedule.GetXMLEvents(filenames, true); //isFirstRun
+            _schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(_schedule.Events, "event collection");
             var _emptyEvents = new ObservableCollection<Event>();
             Assert.AreNotEqual(_schedule.Events, _emptyEvents);
@@ -48,7 +48,6 @@ namespace PAX7.Tests
         public void _createAndPopulateSchedule()
         {
             MockViewModel = null;
-           // _createAndPopulateSchedule("Tests\\Data\\GoodXML.xml");
         }
 
         [TestCleanup]
@@ -95,6 +94,11 @@ namespace PAX7.Tests
         #endregion
          
         */
+
+        // I broke this by changing the code to load ConventionData.xml and contents.xml - options are
+        // 1. add these files in the TestData project in the same XML folder location
+        // 2. create a better mock schedule that feeds them files
+        // for now I've gone with 1
         [TestMethod]
         [Asynchronous]
         [Tag("search")]

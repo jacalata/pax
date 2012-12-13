@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+
+<EventData>
+    <Locations>
+      <location name="Main"/>
+      <location name="Naga"/>
+      <location name="Arachnid"/>
+      <location name="Manticore"/>
+      <location name="Cat"/>
+      <location name="Wyvern"/>
+      <location name="Merman" />
+    </Locations>
+
+
+  <Kinds>
+    <kind name="Panel"/>
+    <kind name="Omegathon"/>
+    <kind name="Contest"/>
+    <kind name="FreePlay"/>
+    <kind name="Show"/>
+    <kind name="D&amp;D"/>
+    <kind name="Social"/>
+  </Kinds>
+
+  <Days>
+    <day name="Friday" />
+    <day name="Saturday" />
+    <day name="Sunday" />    
+  </Days>
+
+</EventData>
+  

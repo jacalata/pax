@@ -39,7 +39,7 @@ namespace PAX7.Tests
             _schedule.NukeAllStorage();
             List<string> filenames = new List<string>();
             filenames.Add(testDataFile);
-            _schedule.GetXMLEvents(filenames, true); //isFirstRun
+            _schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(_schedule.Events, "event collection");
             var _emptyEvents = new ObservableCollection<Event>();
             Assert.AreNotEqual(_schedule.Events, _emptyEvents);

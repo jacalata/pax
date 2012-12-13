@@ -7,10 +7,13 @@ import datetime
 import sys
 import getopt
 import os
+import string #for clearing weird characters out of strings for filenames
 
 osPath = os.path.dirname(__file__)
 generated_on = str(datetime.datetime.now())
-year = "2013" #doesn't get specified, I guess they expect you to know what year it is
+year = "2012" #doesn't get specified, I guess they expect you to know what year it is
+paxEncoding = "utf-8" #is waht the pax site says they use
+
 
 # pull the metadata straight out of the schedule where possible
 Locations = []
@@ -24,6 +27,44 @@ def usage():
     print("s / --short: parse only the first event of each day, speed up test cycle")
     print("v / --verbose: spew verbose logs for debugging")
 
+import string
+
+class Del:
+  def __init__(self, keep=string.ascii_letters):
+    self.comp = dict((ord(c),c) for c in keep)
+  def __getitem__(self, k):
+    return self.comp.get(k)
+
+DD = Del()
+
+
+#extract file saving code, it gets used a lot in this
+#data is the (string) data to save in the file
+#filename is the filename to save it as
+#extension is usually either html or xml
+def saveStringAsFile(data, filename):
+    safeFilename = filename.translate(DD)
+    print(safeFilename)
+    fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
+    print(type(data))
+    fileWriter.write(data.read())
+    fileWriter.close()
+
+def saveBytesAsFile(data, filename):
+    safeFilename = filename.translate(DD)
+    print(safeFilename)
+    fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
+    print(type(data))
+    fileWriter.write(data.decode())
+    fileWriter.close()
+
+def saveTextIOAsFile(data, filename):
+    safeFilename = filename.translate(DD)
+    print(safeFilename)
+    fileWriter = open(safeFilename, 'w')
+    print(type(data))
+    fileWriter.write(data.read())
+    fileWriter.close()
 
 def main(argv):
     print ("Arguments")
@@ -31,17 +72,20 @@ def main(argv):
     print("---------------------------------------------------")
 
     # set defaults
-    TESTLOCALLY = True
-    SHORTMODE = True
+    TESTLOCALLY = False
+    SHORTMODE = False
     DEBUGMODE = False
     DEBUGPRINT = False
-    sampledatafolder = os.path.join(osPath,"sampledata") 
+    sampledatafolder = os.path.join(osPath,"sampledata")    
+    offlinefolder =  os.path.join(osPath, "offline")
+    print(sampledatafolder)
 
     try:                                
-        opts, args = getopt.getopt(argv, "dhlsv:", ["debug", "help", "local=", "short", "verbose"])
+        opts, args = getopt.getopt(argv, "dhlsv:", ["debug", "help", "local", "short", "verbose"])
     except getopt.GetoptError:          
         usage()                         
-        sys.exit(2)                     
+        sys.exit(2)
+        
     for opt, arg in opts:               
         if opt in ("-d", "--debug"):
             DEBUGMODE = True
@@ -49,8 +93,7 @@ def main(argv):
             usage()
             sys.exit()
         elif opt in ("-l", "--local"):
-            TESTLOCALLY = True
-            sampledatafolder = arg    
+            TESTLOCALLY = True    
         elif opt in ("-s", "--short"):
             SHORTMODE = True
         elif opt in ("-v", "--verbose"):
@@ -60,18 +103,20 @@ def main(argv):
     
     if (TESTLOCALLY):
         if (DEBUGMODE):
-            print("TestLocally")  
-        page = open(sampledatafolder+"\schedule.htm", encoding='utf-8')
+            print("TestLocally")
+        pageLocation = sampledatafolder+"\schedule.htm"
+        page = open(pageLocation, encoding='utf-8')
     else:
         url = "http://prime.paxsite.com/schedule"
         if (DEBUGMODE):
             print(url)
         sock = urlopen(url)
-        page = sock.read()
+        page = sock.read() #returns a bytes object
+        #save the page for offline work or debugging
+        saveBytesAsFile(page, offlinefolder+"\Schedule.html");
         sock.close()
 
     soup = BeautifulSoup(page)
-
     schedule = soup.find('ul', attrs={'id': 'schedule'}) 
     days = schedule.findAll('li', recursive=False) #list of 3 days 
     for day in days:
@@ -114,20 +159,20 @@ def main(argv):
                 if DEBUGPRINT:
                     print(eventInfo)
                 # to get more details, go through to the url
+                detailUrl = eventInfo.find('a')['href']
                 if (TESTLOCALLY):
                     if DEBUGMODE:
                         print("TestLocally")
-                    if 's' in dayName:
-                        detailUrl = sampledatafolder + "\eventDetail.htm"
-                    else:
-                        detailUrl = sampledatafolder + "\eventDetail2.htm"
-                    detailPage = open(detailUrl, encoding='utf-8')
+                    detailUrl = detailUrl.rsplit('/', 1)[1]
+                    detailUrl = os.path.join(offlinefolder, detailUrl + ".html")
+                    detailPage = open(detailUrl, encoding=paxEncoding)
                 else:
-                    detailUrl = eventInfo.find('a')['href']
-                    detailPage = urlopen(detailUrl)
+                    detailSock = urlopen(detailUrl)
+                    detailPage = detailSock.read()
                     if DEBUGPRINT:
                         print(detailUrl)
-                    
+                    saveBytesAsFile(detailPage,
+                                    os.path.join(offlinefolder, detailUrl+".html"))    
                 detailSoup = BeautifulSoup(detailPage)
                 eventDetail = detailSoup.find('div', 'white')
                 
@@ -179,10 +224,7 @@ def main(argv):
         if DEBUGMODE or DEBUGPRINT:
             print(xml_string)
 
-        filename = osPath + dayName + ".xml"
-        fileWriter = open(filename, 'w')
-        fileWriter.write(xml_string)
-        fileWriter.close()
+        saveAsFile(xml_string, osPath+"\\"+dayName+".xml")
 
     # print xml schema showing locations and kinds of events
     root = Element('xml')
@@ -203,13 +245,10 @@ def main(argv):
     if DEBUGMODE or DEBUGPRINT:
         print(xml_string)
 
-    filename = osPath + "ScheduleValues.xml"
-    fileWriter = open(filename, 'w')
-    fileWriter.write(xml_string)
-    fileWriter.close()
-
+    saveAsFile(xml_string, osPath+"\ScheduleValues.xml")
     print("done")
 
         
 if __name__ == "__main__":
     main(sys.argv[1:])
+
