@@ -90,7 +90,7 @@
                                 Source="\Images\logoCross.png" 
                                 Height="20" Width="20"
                                 Visibility="{Binding Star, Converter={StaticResource BooleanVisibility}}" />
-                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Name}" Style="{StaticResource PhoneTextAccentStyle}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
                     </StackPanel>
                     <TextBlock Text="{Binding friendlyStartTime}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
                     <StackPanel Orientation="Horizontal">

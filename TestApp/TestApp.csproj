@@ -124,12 +124,18 @@
     <Content Include="Tests\Data\BadXML_missingEnd.xml" />
     <Content Include="Tests\Data\contents.xml" />
     <Content Include="Tests\Data\ConventionData.xml" />
+    <Content Include="Tests\Data\BadContents_NoDate.xml" />
+    <Content Include="Tests\Data\GoodContents_RecentDate.xml" />
+    <Content Include="Tests\Data\GoodContents_OldDate.xml" />
     <Content Include="Tests\Data\GoodXML_malformedDate.xml" />
     <Content Include="Tests\Data\GoodXML.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="XML\contents.xml" />
     <Content Include="XML\ConventionData.xml" />
+    <Content Include="XML\Friday.xml" />
+    <Content Include="XML\Saturday.xml" />
+    <Content Include="XML\Sunday.xml" />
     <Resource Include="Toolkit.Content\ie.png" />
   </ItemGroup>
   <ItemGroup>

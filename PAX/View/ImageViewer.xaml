@@ -22,16 +22,19 @@
     shell:SystemTray.IsVisible="True"
 >
 
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <StackPanel>
+            <!-- no world maps for boston-->
             <StackPanel Orientation="Vertical" x:Name="worldmaps">
 
-<!-- no world maps for boston
+                <!--
                 <StackPanel Orientation="Horizontal" 
                         HorizontalAlignment="Stretch"
-                        MaxHeight="200">
-                    <TextBlock Text="maps: " 
+                        MaxHeight="200"
+                        Canvas.ZIndex="5">   
+                <TextBlock Text="maps: " 
                                HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
                                FontSize="{StaticResource PhoneFontSizeLarge}"/>
@@ -98,13 +101,15 @@
                     </toolkit:GestureService.GestureListener>
                 </Image>
 
--->        
+-->
             </StackPanel>
+
             <StackPanel Orientation="Vertical" x:Name="floormaps">
 
                 <StackPanel Orientation="Horizontal" 
                         HorizontalAlignment="Stretch"
-                        MaxHeight="200">                
+                        MaxHeight="200"
+                        Canvas.ZIndex="5">   <!--buttons above maps-->             
                     <TextBlock Text="BCEC " 
                                HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
@@ -219,16 +224,17 @@
 
                 <StackPanel Orientation="Horizontal" 
                         HorizontalAlignment="Stretch"
-                        MaxHeight="200">
+                        MaxHeight="200"
+                        Canvas.ZIndex="5"> <!--buttons above maps-->
                     <TextBlock Text="PAX" 
                                HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
                                FontSize="{StaticResource PhoneFontSizeLarge}"/>
-                    <Button Content="0" Click="Button_Click_expoMap1" />
-                    <Button Content="1,2" Click="Button_Click_expoMap2" />
-                    <Button Content="3" Click="Button_Click_expoMap5" />
-                    <Button Content="expo" Click="Button_Click_expoMap3" />
-                    <Button Content="key" Click="Button_Click_expoMap4" />
+                    <Button Name="expoBtn0" Content="0" Click="Button_Click_expoMap1" />
+                    <Button Name="expoBtn1" Content="1,2" Click="Button_Click_expoMap2" />
+                    <Button Name="expoBtn3" Content="3" Click="Button_Click_expoMap5" />
+                    <Button Name="expoBtnExpo" Content="expo" Click="Button_Click_expoMap3" />
+                    <Button Name="expoBtnKey" Content="key" Click="Button_Click_expoMap4" />
                 </StackPanel>
 
                 <Image x:Name="expoMap1" 
@@ -331,16 +337,8 @@
                 </Image>
 
             </StackPanel>
-        </StackPanel>
-<!--
 
-        <InkPresenter x:Name="imageLevel1" Visibility="Collapsed">
-            <InkPresenter.Background>
-                <ImageBrush ImageSource="../Images\bccLevel1.png"/>
-            </InkPresenter.Background>
-        </InkPresenter>    
-        -->
-        
+        </StackPanel>    
     </Grid>
 
 

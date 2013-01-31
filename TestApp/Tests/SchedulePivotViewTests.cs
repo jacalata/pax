@@ -25,22 +25,11 @@ namespace PAX7.Tests
     {
 
         private ScheduleViewModel MockViewModel;
-        private bool _callbackDone = false;
 
-        public void _createAndPopulateSchedule(string testDataFile)
-        {
-        }
-
-        [TestInitialize]
-        public void _createAndPopulateSchedule()
-        {
-            MockViewModel = null;
-        }
 
         [TestCleanup]
         public void _clearSchedule()
         {
-            _callbackDone = false;
             MockViewModel = null;
         }
 

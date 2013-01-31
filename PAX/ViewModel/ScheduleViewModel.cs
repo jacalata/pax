@@ -30,17 +30,17 @@ namespace PAX7.ViewModel
 
     public class ScheduleViewModel
     {
-        internal bool mocking = false; //if true, skip ui callbacks because we are running in a test
-        private Schedule schedule;
-        private SchedulePivotView view;
-        private string pivot;
-        private ObservableCollection<Event> events;
-
         public ObservableCollection<ScheduleSlice> EventSlices;
         public enum PivotView { Day, EventType, Location, Stars, Search }; 
         public enum SearchFields {Title, Description };
         public string pivotTemplateName; //choose between jumplist and listbox for different views of events
 
+        internal bool mocking = false; //if true, skip ui callbacks because we are running in a test
+        internal Schedule schedule;
+        
+        private SchedulePivotView view;
+        private string pivot;
+        private ObservableCollection<Event> events;
         private string searchQuery;
 
 
@@ -71,15 +71,19 @@ namespace PAX7.ViewModel
             schedule.GetEvents();
         }
 
+        /// <summary>
+        /// This is fired by the Schedule_ScheduleLoadingComplete method below
+        /// </summary>
         public event EventHandler<ScheduleLoadingEventArgs> VM_ScheduleLoadingComplete;
 
         /// <summary>
-        /// This method will be triggered by an event thrown when the Schedule instance finishes loading. 
+        /// This method is set in the constructor to be triggered by the ScheduleLoadingComplete event 
+        /// which is thrown when the Schedule member finishes loading. 
         /// It calls the relevant 'filter' method to create the event slices for viewing
         /// It will then call the UI dispatcher to display the events. s
         /// It will also throw its own event for non-UI tests to react to. 
         /// </summary>
-        public void Schedule_ScheduleLoadingComplete(object sender, ScheduleLoadingEventArgs e)
+        internal void Schedule_ScheduleLoadingComplete(object sender, ScheduleLoadingEventArgs e)
         {
             // Add the new Events            
             foreach (Event evt in e.Results)
@@ -187,7 +191,10 @@ namespace PAX7.ViewModel
              where Event.Kind == typeName
              select Event).ToList<Event>();
                eventTypeSlice = new ScheduleSlice(typeName, eventsVar);
-               EventSlices.Add(eventTypeSlice);
+               if (eventsVar.Count != 0)
+               {
+                   EventSlices.Add(eventTypeSlice);
+               }
            }
        }
 
@@ -208,7 +215,10 @@ namespace PAX7.ViewModel
              where Event.Location.Contains(location)
              select Event).ToList<Event>();
                eventLocationSlice = new ScheduleSlice(location, eventsVar);
-               EventSlices.Add(eventLocationSlice);
+               if (eventsVar.Count != 0)
+               {
+                   EventSlices.Add(eventLocationSlice);
+               }
            }
 
        }

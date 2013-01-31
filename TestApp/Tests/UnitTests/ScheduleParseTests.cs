@@ -1,22 +1,9 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-
-using WindowsPhoneEssentials.Testing;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PAX7.Model;
-using PAX7.ViewModel;
-
+﻿
 using System.Collections.Generic; //list<string>
 using System.Collections.ObjectModel; //observablecollection
+using System.IO.IsolatedStorage;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PAX7.Model;
 
 namespace PAX7.Tests
 {
@@ -27,6 +14,7 @@ namespace PAX7.Tests
         [TestInitialize] //note, this will run before every test: I can't just run it for particular ones
         public void TestInit()
         {
+            IsolatedStorageSettings.ApplicationSettings.Clear();
         }
         
         [TestMethod]
@@ -52,6 +40,15 @@ namespace PAX7.Tests
             Assert.IsNotNull(testSchedule);
             var emptyEvents = new ObservableCollection<Event>();
             Assert.Equals(emptyEvents.ToString(), testSchedule.Events.ToString()); //hack for not having an equals implemented on the generic collections
+            Assert.IsNotNull(testSchedule.uriScheduleZip);
+            Assert.AreNotEqual("", testSchedule.uriScheduleZip);
+            Assert.IsNotNull(testSchedule.uriVersionInfo);
+            Assert.AreNotEqual("", testSchedule.uriVersionInfo);
+
+            Assert.IsNotNull(testSchedule.IsoStoreLastUpdatedRecord);
+            Assert.AreNotEqual("", testSchedule.IsoStoreLastUpdatedRecord);
+            Assert.IsNotNull(testSchedule.IsoStoreHasUpdateAvailable);
+            Assert.AreNotEqual("", testSchedule.IsoStoreHasUpdateAvailable);
         }
 
 

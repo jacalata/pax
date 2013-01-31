@@ -19,11 +19,11 @@ namespace PAX7
 {
     public partial class ImageViewer : PhoneApplicationPage
     {
+        private Button lastSelectedButton = null;
 
         public ImageViewer()
         {
             InitializeComponent();
-
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -60,6 +60,14 @@ namespace PAX7
         //in case we want to save state when they leave this page
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
+        }
+
+        private void clearLastSelectedButton()
+        {
+            if (lastSelectedButton != null)
+            {
+                lastSelectedButton.Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneBackgroundColor"]);
+            }
         }
         
         #region gestures
@@ -118,7 +126,7 @@ namespace PAX7
             transform.TranslateY += e.VerticalChange;
         }
         #endregion
-
+        
         // TODO: make these a single method that actually uses the sender, e arguments
         #region floormaps
         private void Button_Click_Level0(object sender, RoutedEventArgs e)
@@ -126,6 +134,8 @@ namespace PAX7
             levelImage0.Visibility = System.Windows.Visibility.Visible;
             Center(levelImage0);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
 
             levelImage1.Visibility = System.Windows.Visibility.Collapsed;
             levelImage2.Visibility = System.Windows.Visibility.Collapsed;
@@ -137,6 +147,8 @@ namespace PAX7
             levelImage1.Visibility = System.Windows.Visibility.Visible;
             Center(levelImage1);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
 
             levelImage0.Visibility = System.Windows.Visibility.Collapsed;
             levelImage2.Visibility = System.Windows.Visibility.Collapsed;
@@ -148,6 +160,8 @@ namespace PAX7
             levelImage2.Visibility = System.Windows.Visibility.Visible;
             Center(levelImage2);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
 
             levelImage0.Visibility = System.Windows.Visibility.Collapsed;
             levelImage1.Visibility = System.Windows.Visibility.Collapsed;
@@ -159,6 +173,8 @@ namespace PAX7
             levelImage3.Visibility = System.Windows.Visibility.Visible;
             Center(levelImage3);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
 
             levelImage0.Visibility = System.Windows.Visibility.Collapsed;
             levelImage1.Visibility = System.Windows.Visibility.Collapsed;
@@ -172,6 +188,8 @@ namespace PAX7
             expoMap1.Visibility = System.Windows.Visibility.Visible;
             Center(expoMap1);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
             expoMap2.Visibility = System.Windows.Visibility.Collapsed;
             expoMap3.Visibility = System.Windows.Visibility.Collapsed;
             expoMap4.Visibility = System.Windows.Visibility.Collapsed;
@@ -183,6 +201,8 @@ namespace PAX7
             expoMap2.Visibility = System.Windows.Visibility.Visible;
             Center(expoMap2);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
             expoMap1.Visibility = System.Windows.Visibility.Collapsed;
             expoMap3.Visibility = System.Windows.Visibility.Collapsed;
             expoMap4.Visibility = System.Windows.Visibility.Collapsed;
@@ -194,6 +214,8 @@ namespace PAX7
             expoMap3.Visibility = System.Windows.Visibility.Visible;
             Center(expoMap3);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
             expoMap1.Visibility = System.Windows.Visibility.Collapsed;
             expoMap2.Visibility = System.Windows.Visibility.Collapsed;
             expoMap4.Visibility = System.Windows.Visibility.Collapsed;
@@ -205,6 +227,8 @@ namespace PAX7
             expoMap4.Visibility = System.Windows.Visibility.Visible;
             Center(expoMap4);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
             expoMap1.Visibility = System.Windows.Visibility.Collapsed;
             expoMap2.Visibility = System.Windows.Visibility.Collapsed;
             expoMap3.Visibility = System.Windows.Visibility.Collapsed;
@@ -216,6 +240,8 @@ namespace PAX7
             expoMap5.Visibility = System.Windows.Visibility.Visible;
             Center(expoMap5);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            clearLastSelectedButton();
+            lastSelectedButton = (Button)sender;
             expoMap1.Visibility = System.Windows.Visibility.Collapsed;
             expoMap2.Visibility = System.Windows.Visibility.Collapsed;
             expoMap3.Visibility = System.Windows.Visibility.Collapsed;
@@ -224,10 +250,6 @@ namespace PAX7
 
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         #region worldmaps
         /* no world map for boston
@@ -236,6 +258,8 @@ namespace PAX7
             worldmap_world.Visibility = System.Windows.Visibility.Visible;
             Center(worldmap_world);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            lastSelectedButton.Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneBackgroundColor"]);
+            lastSelectedButton = (Button)sender;
             worldmap_annex.Visibility = System.Windows.Visibility.Collapsed;
             worldmap_sheraton.Visibility = System.Windows.Visibility.Collapsed;
         }
@@ -246,6 +270,8 @@ namespace PAX7
             worldmap_annex.Visibility = System.Windows.Visibility.Visible;
             Center(worldmap_annex);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            lastSelectedButton.Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneBackgroundColor"]);
+            lastSelectedButton = (Button)sender;
             worldmap_world.Visibility = System.Windows.Visibility.Collapsed;
             worldmap_sheraton.Visibility = System.Windows.Visibility.Collapsed;
       
@@ -256,6 +282,8 @@ namespace PAX7
             worldmap_sheraton.Visibility = System.Windows.Visibility.Visible;
             Center(worldmap_sheraton);
             ((Button)sender).Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
+            lastSelectedButton.Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneBackgroundColor"]);
+            lastSelectedButton = (Button)sender;
             worldmap_world.Visibility = System.Windows.Visibility.Collapsed;
             worldmap_annex.Visibility = System.Windows.Visibility.Collapsed;
       
@@ -263,7 +291,7 @@ namespace PAX7
         }
          * */
         #endregion
-        
-        
+
+
     }
 }

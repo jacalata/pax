@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
 
-  <update date = "3/31/2012" />
-  
+  <update date = "3/31/2000" />
 <files> 
 <file type="xml" name="friday.xml"/>
 <file type="xml" name="saturday.xml"/>

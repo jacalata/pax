@@ -40,8 +40,18 @@ namespace PAX7
         /// Constructor for the Application object.
         /// </summary>
         public App()
-        {
-            
+        {     
+            //hard coding to PAX East here. Will be replaced by a choice page.
+            // save our value to the settings
+            if (IsolatedStorageSettings.ApplicationSettings.Contains("CurrentConvention") == true)
+            {
+                // key already exists, remove it  
+                IsolatedStorageSettings.ApplicationSettings.Remove("CurrentConvention");
+            }
+            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXEAST]);
+
+
+            IsolatedStorageSettings.ApplicationSettings.Save();
 //            dnp.Counter.EnableMemoryCounter = true; 
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
