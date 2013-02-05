@@ -30,7 +30,6 @@ namespace PAX7.Tests
         }
 
 
-
         /// <summary>
         /// Verify that checking for an updated schedule throws an event
         /// </summary>
@@ -49,10 +48,33 @@ namespace PAX7.Tests
             EnqueueTestComplete();
         }
 
+        /* commenting out while tracking down the test that runs forever
+        public void VerifyEventFromFailedCheckForUpdate()
+        {            
+            _schedule.evt_updateCheckComplete += delegate(object Sender, EventArgs e)
+            {
+                _callbackDone = true;
+            };
+            string 404uri = "http://paxwp7.nfshost.com/thiswillreturna404error.txt";
+            _schedule.checkForNewSchedule(404uri); // this will trigger webClient_VersionInfoCompleted which will raise the event evt_updateCheckComplete
+            // wait for our method to trigger on the event and set this to true
+            EnqueueConditional(() => _callbackDone);
+            EnqueueTestComplete();
+         }
+         
+        // now that we're reading the schedule locations from xml, we have to make sure
+        // that updated location lists in a schedule update get read
+        public void VerifyThatNewScheduleLocationsAreRecordedFromUpdatedSchedule()
+        {
+          //load with East Data
+         * // update to Prime data
+         * check eventLocations in Schedule.cs
+        }
+
         /// <summary>
         /// verify default values when we have no record of receiving an update
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Tag("schedule")]
         public void VerifyDefaultUpdateRecord()
         {
@@ -65,7 +87,7 @@ namespace PAX7.Tests
         /// <summary>
         /// verify successful response when we have never had an update and the server is newer
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("schedule")]
         public void VerifyResponseToSuccessfulCheckForUpdate()
@@ -83,11 +105,12 @@ namespace PAX7.Tests
             EnqueueCallback(() => Assert.IsTrue(VerifyUpdateAvailable())); 
             EnqueueTestComplete();
         }
+
        
         /// <summary>
         ///verify response when we have had an update before but the server is still newer
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("schedule")]
         public void VerifyResponseToCheckForUpdateWhenLocalIsOlder()
@@ -106,7 +129,7 @@ namespace PAX7.Tests
         /// <summary>
         /// verify response to check when there is a schedule available but we have a newer copy already 
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("schedule")]
         public void VerifyResponseToCheckForUpdateWhenLocalIsNewer()
@@ -125,7 +148,7 @@ namespace PAX7.Tests
         /// <summary>
         /// verify response when there is no update on the server
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("schedule")]
         public void VerifyResponseToCheckForUpdateNoVersionFileExists()
@@ -144,7 +167,7 @@ namespace PAX7.Tests
         /// <summary>
         /// verify recording the schedule creation date
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Tag("schedule")]
         public void VerifyRecordScheduleCreationDate()
         {
@@ -159,7 +182,7 @@ namespace PAX7.Tests
         /// <summary>
         /// verify recording the schedule creation date over another date
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Tag("schedule")]
         public void VerifyRecordScheduleCreationDateOverAnother()
         {
@@ -175,7 +198,7 @@ namespace PAX7.Tests
         /// <summary>
         /// verify nothing was saved and exception was thrown if there was no/bad date in contents.xml 
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Tag("schedule")]
         public void VerifyRecordScheduleCreationDateFailed()
         {
@@ -188,7 +211,7 @@ namespace PAX7.Tests
         /// <summary>
         /// Verify that downloading new schedule throws event
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("schedule")]
         public void VerifyEventFromDownloadingUpdate()
@@ -206,7 +229,7 @@ namespace PAX7.Tests
         /// <summary>
         /// verify that schedule is updated with data from downloaded file
         /// </summary>
-        //[TestMethod]
+        // [TestMethod]
         [Asynchronous]
         [Tag("schedule")]
         public void VerifyAddEventsToScheduleByUpdate()
@@ -229,7 +252,7 @@ namespace PAX7.Tests
         /// <summary>
         /// Verify that events are correctly saved to Isolated Storage by reading them back
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [Tag("schedule")]
         public void VerifyEventsSavedToIsolatedStorage()
         {
@@ -252,6 +275,9 @@ namespace PAX7.Tests
             Assert.IsNotNull(firstEvent);
             Assert.Equals(firstEvent.Name, "First Test Event");
         }
+
+         * */
+
 
         #region helpers
 
@@ -332,5 +358,6 @@ namespace PAX7.Tests
         }
 
         #endregion
+
     }
 }

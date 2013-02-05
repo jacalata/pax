@@ -111,6 +111,8 @@ namespace PAX7.Model
         public void checkForNewSchedule(string uri = null)
         {
             if (uri == null) uri = uriVersionInfo;
+            //hacky: append unique parameter to avoid webclient caching. Ok for now as we only check on demand?
+            uri = AppendUniqueParameter(uri);
             WebClient webClient = new WebClient();
             webClient.OpenReadCompleted += new OpenReadCompletedEventHandler(webClient_VersionInfoCompleted);
             webClient.OpenReadAsync(new Uri(uri));
@@ -150,8 +152,10 @@ namespace PAX7.Model
                     downloaded = true;
             }
             catch (Exception e)
-            {
+            { 
+                // any error downloading the file: eg no connection, 404, server 5xx
                 LittleWatson.ReportException(e, "downloading version info");
+                hasUpdateAvailable = false;
             }
 
             if (downloaded) //we gots a file!
@@ -192,6 +196,7 @@ namespace PAX7.Model
                 catch(Exception exception)
                 {
                     LittleWatson.ReportException(exception, "reading version info");
+                    hasUpdateAvailable = false;
                 }
 
                 if ( (false == IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreLastUpdatedRecord, out localLastUpdate)) 
@@ -216,11 +221,11 @@ namespace PAX7.Model
                 }
                 IsolatedStorageSettings.ApplicationSettings.Add(IsoStoreHasUpdateAvailable, hasUpdateAvailable);
                 IsolatedStorageSettings.ApplicationSettings.Save();
-                // trigger an event so the viewmodel knows we've got a new value
-                if (evt_updateCheckComplete != null)
-                {
-                    evt_updateCheckComplete(this, evtArgs);
-                }
+            }
+            // trigger an event so the viewmodel knows we've looked it up
+            if (evt_updateCheckComplete != null)
+            {
+                evt_updateCheckComplete(this, evtArgs);
             }
         }
 
@@ -232,6 +237,7 @@ namespace PAX7.Model
         public void DownloadNewEventFiles(string uri = null)
         {
             if (uri == null) uri = uriScheduleZip;
+            uri = AppendUniqueParameter(uri);
             WebClient webClient = new WebClient();
             //  webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
             webClient.OpenReadCompleted += new OpenReadCompletedEventHandler(webClient_OpenReadCompleted);
@@ -308,8 +314,11 @@ namespace PAX7.Model
                 if (!weAreTesting) MessageBox.Show("Something went wrong updating your schedule data. Try again later?");
                 LittleWatson.ReportException(ex, "attempted at " + DateTime.Now.ToString());
             }
-            evt_downloadScheduleComplete(this, new EventArgs());
-
+            //actually we don't have any viewmodel reaction to this yet. Plausible I'll want it in the future?
+            // if (evt_downloadScheduleComplete != null)
+            // {
+            //     evt_downloadScheduleComplete(this, new EventArgs());
+            // }
 
         }
 
@@ -453,6 +462,19 @@ namespace PAX7.Model
                  // currently it will fail out here
                  LittleWatson.ReportException(e, "(possible bad xml) exception reading from " + filename);
              }
+        }
+
+        /// <summary>
+        /// Hacky function to make uri unique each time, so that we don't cache the update check in webclient
+        /// http://stackoverflow.com/questions/9859137/should-i-disable-webclient-caching?rq=1
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
+        internal string AppendUniqueParameter(string uri)
+        {
+            uri += "?MakeRequestUnique=";
+            uri += Environment.TickCount;
+            return uri;
         }
 
 

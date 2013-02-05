@@ -25,16 +25,16 @@ namespace PAX7.Tests
         }
 
         
-        [TestMethod]
+         [TestMethod]
         // method to confirm the initialiser doesn't fail: if it does, all the tests will silently pass :O
         public void SmokeTest()
         {
             TestInit();
         }
 
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "Constructors")]
-        public void CreateNewSchedule()
+        public void VerifyCreateNewSchedule()
         {
             var testSchedule = new Schedule();
             Assert.IsNotNull(testSchedule);
@@ -53,7 +53,7 @@ namespace PAX7.Tests
 
 
         // creating schedule: read data from xml file and validate schedule Object is created
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingGoodXMLToSchedule()
         {
@@ -69,7 +69,7 @@ namespace PAX7.Tests
         /// <summary>
         ///  creating schedule: read data from xml file and validate the correct events were added to the schedule Object
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingGoodXMLToScheduleEvents()
         {
@@ -93,7 +93,7 @@ namespace PAX7.Tests
         /// <summary>
         ///  don't choke on bad xml file, make sure no exception made it out of the method
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingBadXMLToSchedule()
         {
@@ -111,7 +111,7 @@ namespace PAX7.Tests
         /// <summary>
         ///  don't choke on bad event definitions, make sure no exception made it out of the method
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingBadEventsToSchedule()
         {
@@ -134,7 +134,7 @@ namespace PAX7.Tests
         /// Call the GetFilenames method of the schedule and confirm that at least one filename is populated from 
         /// the xap stored contents.xml file
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingContentsFile()
         {
@@ -147,7 +147,7 @@ namespace PAX7.Tests
         /// <summary>
         /// Call the GetEventCategories method of the schedule and verifies it has loaded at least one day name
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingConventionDataFile()
         {
@@ -162,7 +162,7 @@ namespace PAX7.Tests
         /// <summary>
         ///  don't choke on bad date formats - events should be created with a fake date 
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingBadDatesToSchedule()
         {
@@ -198,7 +198,7 @@ namespace PAX7.Tests
         /// <summary>
         /// Referencing a missing xml file should not break the app - no exceptions thrown
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "IO")]
         public void VerifyParsingMissingXMLToSchedule()
         {
@@ -227,7 +227,7 @@ namespace PAX7.Tests
         /// <Summary>
         /// retrieve schedule from isolated storage - verify they match what I saved in, especially stars 
         /// </Summary> 
-        [TestMethod]
+         [TestMethod]
         public void ReadEventsFromStorage()
         {
             var testSchedule = new Schedule();

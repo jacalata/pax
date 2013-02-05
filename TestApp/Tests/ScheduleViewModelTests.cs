@@ -61,7 +61,7 @@ namespace PAX7.Tests
         }
 
         
-        //[TestMethod]
+        [TestMethod]
         [Tag("Constructors")]
         [Tag("ViewModel")]
         public void createScheduleViewModel()
@@ -72,21 +72,21 @@ namespace PAX7.Tests
         }
 
         /* NotYetImplemented
-        [TestMethod]
+         [TestMethod]
         [ExpectedException(typeof(AssertInconclusiveException))]
         public void ViewScheduleByDay()
         {
             Assert.Inconclusive("not implemented yet");
         }
 
-        [TestMethod]
+         [TestMethod]
         [ExpectedException(typeof(AssertInconclusiveException))]
         public void ViewScheduleByRoom()
         {
             Assert.Inconclusive("not implemented yet");
         }
 
-        [TestMethod]
+         [TestMethod]
         [ExpectedException(typeof(AssertInconclusiveException))]
         public void ViewScheduleByType()
         {
@@ -99,8 +99,7 @@ namespace PAX7.Tests
         /// <summary>
         ///  verify that the scheduleloading event is thrown to the viewmodel
         /// </summary>
-       // [TestMethod]
-        [Asynchronous]
+        [TestMethod]
         [Tag("ViewModel")]
         public void VerifyScheduleLoadingEvent()
         {
@@ -124,8 +123,7 @@ namespace PAX7.Tests
         /// <summary>
         ///  verify that the second viewmodel scheduleloading event is thrown once the filtering and slicing is complete
         /// </summary>
-       /// [TestMethod]
-        [Asynchronous]
+        [TestMethod]
         [Tag("ViewModel")]
         public void VerifyVMScheduleLoadingEvent()
         {
@@ -158,7 +156,7 @@ namespace PAX7.Tests
                 // 1. add these files in the TestData project in the same XML folder location
                 // 2. create a better mock schedule that feeds them files
                 // for now I've gone with 1
-                [TestMethod]
+                 [TestMethod]
                 [Asynchronous]
                 [Tag("search")]
                 [Tag("ViewModel")]
@@ -218,7 +216,7 @@ namespace PAX7.Tests
         // I had to add xml/friday.xml etc in the Test project because schedule.GetEvents is reading that
         // better would be to pass through a specific file from here, which requires updating the 
         // scheduleviewmodel class?
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("search")]
         [Tag("ViewModel")]
@@ -271,7 +269,7 @@ namespace PAX7.Tests
         }
 */
         /*
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("search")]
         [Tag("ViewModel")]

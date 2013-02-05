@@ -28,7 +28,7 @@ namespace PAX7.Tests
 
 
         // constructor
-        [TestMethod]
+         [TestMethod]
         [TestProperty("TestCategory", "Constructors")]
         public void CreateNewEvent()
         {
@@ -39,7 +39,7 @@ namespace PAX7.Tests
         /// <summary>
         /// assert that the property changed event was raised when each possible property was changed
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         public void ClassProperties_WhenSet_PropertyChangedEventFires()
         {
             var testEvent = new Event();
@@ -91,7 +91,7 @@ namespace PAX7.Tests
         /// test that all the friendly time methods return the correct value
         /// friendlystarttime, time, day, hoursduration
         /// </Summary>
-        [TestMethod]
+         [TestMethod]
         public void VerifyFriendlyStartTime()
         {
             var testEvent = new Event();
@@ -99,7 +99,7 @@ namespace PAX7.Tests
             Assert.AreEqual("Saturday 9:15 PM", testEvent.friendlyStartTime);
         }
 
-        [TestMethod]
+         [TestMethod]
         public void VerifyTime()
         {
             var testEvent = new Event();
@@ -107,7 +107,7 @@ namespace PAX7.Tests
             Assert.AreEqual("9:15 PM", testEvent.time);
         }
 
-        [TestMethod]
+         [TestMethod]
         public void VerifyDay()
         {
             var testEvent = new Event();
@@ -115,7 +115,7 @@ namespace PAX7.Tests
             Assert.AreEqual("Saturday", testEvent.day);
         }
 
-        [TestMethod]
+         [TestMethod]
         public void VerifyHoursDuration()
         {
             var testEvent = new Event();
@@ -127,7 +127,7 @@ namespace PAX7.Tests
         /// <summary>
         /// test that GetCopy really does have the same values as the event we just created
         /// </summary>
-        [TestMethod]
+         [TestMethod]
         public void VerifyGetCopy()
         {
             var testEvent = new Event();

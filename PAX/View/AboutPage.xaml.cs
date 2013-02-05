@@ -44,7 +44,7 @@ namespace PAX7.View
             Microsoft.Phone.Tasks.EmailComposeTask task =
                 new Microsoft.Phone.Tasks.EmailComposeTask();
             task.To = "jacalata@live.com";
-            task.Subject = "Feedback: PAX Digital Assistant, Pax East 12";
+            task.Subject = "Feedback: PAX Digital Assistant, Pax East 13";
             task.Show();
         }
 

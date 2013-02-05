@@ -34,7 +34,7 @@ namespace PAX7.Tests
         }
 
 
-        [TestMethod]
+          [TestMethod]
         [TestProperty("TestCategory", "Constructors")]
         public void createSchedulePivotView()
         {
@@ -46,7 +46,7 @@ namespace PAX7.Tests
         /*
        * These tests need the View itself, as the error messages are handled entirely by it. 
        * 
-      [TestMethod]
+       [TestMethod]
       [Asynchronous]
       [Tag("search")]
       public void VerifyEmptyResult()
@@ -54,7 +54,7 @@ namespace PAX7.Tests
           //read the explanatoryText and verify it says 'there were no results'
       }
       
-      [TestMethod]
+       [TestMethod]
       [Asynchronous]
       [Tag("search")]
        public void VerifyBaconTrickResult()
@@ -62,7 +62,7 @@ namespace PAX7.Tests
          // read the explanatoryText and verify it says something something bacon
        }
          
-        [TestMethod]
+         [TestMethod]
         [Asynchronous]
         [Tag("search")]
         public void VerifyEmptyMyScheduleText()
