@@ -233,6 +233,7 @@ namespace ControlTiltEffect
         {
             
             EndTiltEffect(currentTiltElement);
+            e.Handled = false; // make sure we go back to the button up event
         }
 
         #endregion
@@ -373,7 +374,7 @@ namespace ControlTiltEffect
             element.Projection = projection;
 
             element.ManipulationDelta += TiltEffect_ManipulationDelta;
-            element.ManipulationCompleted += TiltEffect_ManipulationCompleted;
+            element.ManipulationCompleted += TiltEffect_ManipulationCompleted; //this is set on the border element
 
             return true;
         }

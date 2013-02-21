@@ -39,16 +39,11 @@ namespace PAX7.Tests
             var testSchedule = new Schedule();
             Assert.IsNotNull(testSchedule);
             var emptyEvents = new ObservableCollection<Event>();
-            Assert.Equals(emptyEvents.ToString(), testSchedule.Events.ToString()); //hack for not having an equals implemented on the generic collections
             Assert.IsNotNull(testSchedule.uriScheduleZip);
             Assert.AreNotEqual("", testSchedule.uriScheduleZip);
             Assert.IsNotNull(testSchedule.uriVersionInfo);
             Assert.AreNotEqual("", testSchedule.uriVersionInfo);
 
-            Assert.IsNotNull(testSchedule.IsoStoreLastUpdatedRecord);
-            Assert.AreNotEqual("", testSchedule.IsoStoreLastUpdatedRecord);
-            Assert.IsNotNull(testSchedule.IsoStoreHasUpdateAvailable);
-            Assert.AreNotEqual("", testSchedule.IsoStoreHasUpdateAvailable);
         }
 
 
@@ -60,10 +55,10 @@ namespace PAX7.Tests
             List<string> filenames = new List<string>();
             filenames.Add("Tests\\Data\\GoodXML.xml");
             var schedule = new Schedule();
-            schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(schedule.Events, "event collection");
+            ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
+            Assert.IsNotNull(Events, "event collection");
             var _emptyEvents = new ObservableCollection<Event>();
-            Assert.AreNotEqual(_emptyEvents, schedule.Events);
+            Assert.AreNotEqual(_emptyEvents, Events);
         }
 
         /// <summary>
@@ -76,9 +71,9 @@ namespace PAX7.Tests
             List<string> filenames = new List<string>();
             filenames.Add("Tests\\Data\\GoodXML.xml");
             var schedule = new Schedule();
-            schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(schedule.Events, "event collection");
-            var enumerator = schedule.Events.GetEnumerator();
+            ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
+            Assert.IsNotNull(Events, "event collection");
+            var enumerator = Events.GetEnumerator();
             enumerator.MoveNext();
             var firstEvent = enumerator.Current;
             Assert.IsNotNull(firstEvent, "first event in collection");
@@ -102,10 +97,10 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\BadXML_empty.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(schedule.Events, "confirming event collection exists");
+            ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
+            Assert.IsNotNull(Events, "confirming event collection exists");
             // malformed events should not be added to the schedule
-            Assert.Equals(_emptyEvents, schedule.Events);
+            Assert.Equals(_emptyEvents, Events);
         }
 
         /// <summary>
@@ -124,10 +119,10 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\BadXML_missingEnd.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(schedule.Events, "confirming event collection exists");
+            ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
+            Assert.IsNotNull(Events, "confirming event collection exists");
             // malformed events should not be added to the schedule
-            Assert.Equals(_emptyEvents, schedule.Events);
+            Assert.Equals(_emptyEvents, Events);
         }
 
         /// <summary>
@@ -153,8 +148,10 @@ namespace PAX7.Tests
         {
             List<string> days = new List<string>();
             var schedule = new Schedule();
-            days = schedule.GetEventCategories(true, "Tests\\Data\\ConventionData.xml");
-            // it just saves data to the isolated storage...how do I check the state of that?
+             List<string> filenames = new List<string>();
+             filenames.Add("XML\\Friday.xml");
+             schedule.GetXMLEvents(true, filenames);
+             days = schedule.eventDays;
             Assert.AreNotEqual(0, days.Count);
             Assert.IsTrue(days[0].Contains("day"));
         }
@@ -170,12 +167,12 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\GoodXML_malformedDate.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(schedule.Events);
+            ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
+            Assert.IsNotNull(Events);
             //events with malformed dates should be added to the schedule with a fake date
-            Assert.AreNotEqual(_emptyEvents, schedule.Events);
-            Assert.IsNotNull(schedule.Events, "event collection");
-            var enumerator = schedule.Events.GetEnumerator();
+            Assert.AreNotEqual(_emptyEvents, Events);
+            Assert.IsNotNull(Events, "event collection");
+            var enumerator = Events.GetEnumerator();
             enumerator.MoveNext();
             var firstEvent = enumerator.Current;
             Assert.IsNotNull(firstEvent, "first event in collection");
@@ -206,10 +203,10 @@ namespace PAX7.Tests
             filenames.Add("Tests\\Data\\BadXML_filedoesnotexist.xml");
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
-            schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(schedule.Events, "confirming event collection exists");
+            ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
+            Assert.IsNotNull(Events, "confirming event collection exists");
             //no file so no events should have been created
-            Assert.Equals(_emptyEvents, schedule.Events);
+            Assert.Equals(_emptyEvents, Events);
         }
 
         #endregion error handling
@@ -231,8 +228,8 @@ namespace PAX7.Tests
         public void ReadEventsFromStorage()
         {
             var testSchedule = new Schedule();
-            testSchedule.SaveEvents();
-            testSchedule.GetSavedEvents();
+            //testSchedule.SaveEvents();
+            //testSchedule.GetSavedEvents();
         }
         
 

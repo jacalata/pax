@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 
 namespace PAX7
 {
+
+    //I don't even remember why this was created or if it's being used
     public class StateUtilities
     {
         private static Boolean isLaunching;

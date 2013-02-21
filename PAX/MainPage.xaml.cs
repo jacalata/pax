@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Net;
-using System.Xml;
-using System.Xml.Linq;
-using System.Windows;
+using System.IO.IsolatedStorage;
 using System.Windows.Controls;
-
-using Microsoft.Phone;
-using Microsoft.Phone.Controls;
-using Microsoft.Silverlight.Testing;
 using Coding4Fun.Phone.Controls;
-using PAX7.Model;
+using Microsoft.Phone.Controls;
+using PAX7.Utilicode; //menuOption
 
 
 namespace PAX7
@@ -19,24 +12,25 @@ namespace PAX7
 
     public partial class MainPage : PhoneApplicationPage
     {
-        public ObservableCollection<MenuOption> menuOptions;
+        private ObservableCollection<MenuOption> menuOptions;
         AboutPrompt aboutApp;
         public string twitterListURL = "http://twitter.com/jacalata/lists/pax-info";
         const bool runUnitTests = false;
-        private string conventionTitle;
+        private string conventionTitle = "convention"; 
+     
         // Constructor
         public MainPage()
         {
+            
             InitializeComponent();
-            conventionTitle = App.ConventionName[(int)App.Convention.PAXEAST];
                 
+            MainPanorama.Title = IsolatedStorageSettings.ApplicationSettings["CurrentConvention"];
             MenuOption option1 = new MenuOption("events by day", "/View/SchedulePivotView.xaml?PivotOn=Day");
             MenuOption option2 = new MenuOption("events by location", "/View/SchedulePivotView.xaml?PivotOn=Location");
             MenuOption option3 = new MenuOption("events by type", "/View/SchedulePivotView.xaml?PivotOn=EventType");
             MenuOption option4 = new MenuOption("my schedule", "/View/SchedulePivotView.xaml?PivotOn=Stars");
             MenuOption option5 = new MenuOption("search", "/View/SchedulePivotView.xaml?PivotOn=Search");
-            MenuOption option6 = new MenuOption("about+survey", "/View/AboutPage.xaml");
-            menuOptions = new ObservableCollection<MenuOption>{option1, option2, option3, option4, option5, option6};          
+            menuOptions = new ObservableCollection<MenuOption>{option1, option2, option3, option4, option5};          
             this.scheduleMenu.ItemsSource = menuOptions;
         }
             
@@ -51,7 +45,7 @@ namespace PAX7
         {
             aboutApp = new AboutPrompt();
             aboutApp.VersionNumber = "1.5";
-            aboutApp.Title = "PDA, PAX Prime 2011";
+            aboutApp.Title = "PDA: " + conventionTitle;
             ContentControl detailsBody = new ContentControl();
             detailsBody.DataContext = this;
             detailsBody.Template = App.Current.Resources["aboutApp"] as ControlTemplate;
@@ -61,12 +55,16 @@ namespace PAX7
   
         }
 
-        private void getTwitterButton_Click(object sender, RoutedEventArgs e)
+        private void AppBarSettings_Click(object sender, EventArgs e)
         {
-            Microsoft.Phone.Tasks.MarketplaceDetailTask twitterApp = new Microsoft.Phone.Tasks.MarketplaceDetailTask();
-            twitterApp.ContentIdentifier = "0b792c7c-14dc-df11-a844-00237de2db9e";
-            twitterApp.ContentType = Microsoft.Phone.Tasks.MarketplaceContentType.Applications;
-            twitterApp.Show();
+            string uri = "/View/SettingsPage.xaml";
+            App.NavigateTo(uri);
+        }
+
+        private void AppBarAbout_Click(object sender, EventArgs e)
+        {
+            string uri = "/View/AboutPage.xaml";
+            App.NavigateTo(uri);
         }
         
 

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Net;
-using System.Windows;
-using PAX7.Model;
-using PAX7.View;
-using System.Linq;
 using System.Collections.Generic; //IEnumerable
 using System.Collections.ObjectModel;
+using System.Linq;
+using PAX7.Model;
+using PAX7.View;
+using Telerik.Windows.Data;//?
 
 namespace PAX7.ViewModel
 {
@@ -14,6 +13,7 @@ namespace PAX7.ViewModel
     {
 
         public List<Event> events { get; set; }
+        public List<DataDescriptor> eventSortField { get; set; }
         public string slicePageTitle{ get; set; }
         // note that says how to sort events into this slice, to make all the pivot code more generic
         // haven't figured it out yet
@@ -22,8 +22,8 @@ namespace PAX7.ViewModel
         public ScheduleSlice(string title, List<Event> listEvents)
         {
             events = new List<Event>();
-            //is this copying the event? the 'starred' change to property is not being reflected back to the original
             events.AddRange(listEvents);
+            events.Sort();
             slicePageTitle = title;
         }
     }
@@ -99,7 +99,7 @@ namespace PAX7.ViewModel
                 filterEventsBySearch();
             else // default is by day (pivot.Equals(PivotView.Day.ToString())  )
                 filterEventsByDay();
-
+ 
             if (mocking)
             {
                 // Fire event for test code to know we're all done

@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
 
-
-using Microsoft.Phone.Controls;
-using PAX7.Model;
 using PAX7.ViewModel;
 
-using System.Windows.Threading;
 
 namespace PAX7.View
 {
@@ -39,12 +28,12 @@ namespace PAX7.View
         {
             this.pivotString = pivotString;
             LoadSchedule();
-        } 
+        }
 
         /// <summary>
         /// This page hosts the listing of events for search, personal schedule and generic schedule
         /// React to the navigation parameters we received as the page was opened to decide which view
-        ///  we are showing and generate the appropriate UI
+        /// we are showing and generate the appropriate UI
         /// </summary>
         /// <param name="e"></param>
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -57,6 +46,7 @@ namespace PAX7.View
             else 
                 this.pivotString = "Day";
 
+            base.OnNavigatedTo(e);
             if (this.pivotString == ScheduleViewModel.PivotView.Search.ToString())
             {
                 searchHeader.Visibility = Visibility.Visible;
@@ -71,7 +61,6 @@ namespace PAX7.View
                 searchHeader.Visibility = Visibility.Collapsed;
                 LoadSchedule();
             }
-            base.OnNavigatedTo(e);
         }
 
         /// <summary>
@@ -109,10 +98,12 @@ namespace PAX7.View
         /// </summary>
         public void OnLoadComplete()
         {
-            if (LayoutRoot == null) return; // hack to avoid UI stuff during test
+            if (LayoutRoot == null) 
+                return; // hack to avoid UI stuff during test
             stopProgressBar();
 
             schedulePivot.ItemsSource = vm.EventSlices; //this is slow: because I need to do the whole list load first?
+
 
             //check if there were any results, and which pivot header they are under 
             bool empty = true;
@@ -154,6 +145,7 @@ namespace PAX7.View
             }
 
         }
+
 
         /// <summary>
         /// React to user tapping the search button

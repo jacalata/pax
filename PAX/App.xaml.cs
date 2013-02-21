@@ -1,23 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+using System.IO.IsolatedStorage;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Navigation;//navigation service?
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Microsoft.Xna.Framework.Media; //screen capture bmp
-
-//navigation service?
-using PAX7.ViewModel;
-using PAX7.Model;
-using System.IO.IsolatedStorage;
+using PAX7.Utilicode; //settings
 
 namespace PAX7
 {
@@ -60,7 +48,7 @@ namespace PAX7
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 // Display the current frame rate counters.
-                Application.Current.Host.Settings.EnableFrameRateCounter = true;
+                //Application.Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Show the areas of the app that are being redrawn in each frame.
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;
@@ -82,13 +70,16 @@ namespace PAX7
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             StateUtilities.IsLaunching = true;
-            bool bShowNotice;
-            IsolatedStorageSettings.ApplicationSettings.TryGetValue<bool>("hasUpdateAvailable", out bShowNotice);
-            if (bShowNotice)
+            
+            PAX7.Model.Schedule schedule = new PAX7.Model.Schedule();
+            if (IsoStoreSettings.IsAllowedAutoCheckForUpdates())
             {
-                MessageBox.Show("There are schedule updates available. Go to the about page and click 'download schedule updates' to see them.", "schedule updates!", MessageBoxButton.OK);
-            }          
-   
+                schedule.checkForNewSchedule();
+            }
+            if (IsoStoreSettings.HasUpdateAvailable())
+            {
+                MessageBox.Show("Go to the settings page to download them now", "New schedule data available", MessageBoxButton.OK);
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)
@@ -165,15 +156,12 @@ namespace PAX7
         }
 
         #endregion
+        
 
-        private void expando_Click(object sender, RoutedEventArgs e)
-        {
-            PAX7.Model.Event selected = (PAX7.Model.Event)((Button)e.OriginalSource).DataContext;
-            selected.ShowEventDetails();
-        }
-
+        #region gesture handling code
         /// <summary>
         /// Implemented my own gesture recognition engine, took the code from some example online.
+        /// There must be a better way than doing this, the tap recognition on the menu is awful
         /// </summary>
         /// <param name="mouseUpPosition"></param>
         /// <param name="mouseUpTime"></param>
@@ -204,36 +192,39 @@ namespace PAX7
             _mouseDownTime = DateTime.Now;
         }
 
-        private void onMouseUp_MenuItem(object sender, System.Windows.Input.MouseButtonEventArgs args)
+        private void onMouseLeftButtonUp_MenuItem(object sender, System.Windows.Input.MouseButtonEventArgs args)
         {
-
-            string destination = ((MenuOption)((TextBlock)args.OriginalSource).DataContext).Destination.ToString();
-            PhoneApplicationFrame root = (PhoneApplicationFrame)(Application.Current.RootVisual);
             if (manipulationType(args.GetPosition(null), DateTime.Now) == GESTURE.TAP)
             {
-                root.Navigate(new Uri(destination, UriKind.Relative));
-                  
+                string destination = ((MenuOption)((TextBlock)args.OriginalSource).DataContext).Destination.ToString();
+                NavigateTo(destination);
             }
-
         }
 
-        private void ContextMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+#endregion 
+        
+        
+        /// <summary>
+        /// Open the event details view. 
+        /// Query to self: why did I put this in app.xaml.cs and not scheduleviewmodel.cs where it clearly belongs?
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void expando_Click(object sender, RoutedEventArgs e)
         {
-//            string a = "b";
+            PAX7.Model.Event selected = (PAX7.Model.Event)((Button)e.OriginalSource).DataContext;
+            selected.ShowEventDetails();
         }
 
-        /*
-        private void btnCaptureScreen_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// helper method to navigate within the app
+        /// </summary>
+        /// <param name="destination"></param>
+        public static void NavigateTo(string destination)
         {
-            
-            WriteableBitmap wb = new WriteableBitmap(LayoutRoot, null);
-            MemoryStream stream = new MemoryStream((int)LayoutRoot.ActualHeight * (int)LayoutRoot.ActualWidth * 4);
-            wb.SaveJpeg(stream, (int)LayoutRoot.ActualWidth, (int)LayoutRoot.ActualHeight, 0, 100);
-            stream.Seek(0, 0);
-            MediaLibrary ml = new MediaLibrary();
-            ml.SavePicture("CaptureFileName", stream); 
-
+            PhoneApplicationFrame root = (PhoneApplicationFrame)(Application.Current.RootVisual);
+            root.Navigate(new Uri(destination, UriKind.Relative));
         }
-        */
+
     }
 }

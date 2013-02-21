@@ -45,19 +45,12 @@
              />
             <toolkit:PerformanceProgressBar x:Name="LoadingProgressBar" />
         </StackPanel>
-        
-        
+
         <!--Pivot Control-->
         <controls:Pivot x:Name="schedulePivot" 
                 HeaderTemplate="{StaticResource pivotTitleTemplate}"
                 ItemTemplate="{StaticResource pivotListTemplate}">
-
         </controls:Pivot>
-        <!--
-                <telerikData:RadJumpList x:Name="radJumpList" Width="300" Height="300"
-                         ItemsSource="{Binding events}">                    
-                </telerikData:RadJumpList>
-           -->
 
         <TextBlock  Name="explanatoryText" Visibility="Collapsed"
             Text="No events matched your search term."

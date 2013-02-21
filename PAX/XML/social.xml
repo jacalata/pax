@@ -4,113 +4,13 @@
 
 	<Event
 		name="PAX Girls brunch"
-		datetime ="Sunday April 8 2012 10am"
-		end="Sunday April 8 2012 1pm"
+		datetime ="2/24/2013 10:00:00"
+		end="2/24/2013 11:00:00"
 		kind="Social"
 		location="somewhere with brunch"
 		description="The one girls-only event that the PAX Community does that involves booze and brunch. ~$20 for breakfast, mimosas bloody marys and other beverages available. To join see http://forums.penny-arcade.com/discussion/153789/east-girls-meetup/p1"
 		/>
 
-		<Event
-			name="Harmonix and The Brattle - Scott Pilgrim vs The World"
-		kind="Social"
-			datetime="Thursday April 5 2012 6:00 pm"
-			end="Thursday April 5 2012 9:00 pm"
-			location="The Brattle Theatre, 40 Brattle St., Cambridge MA 02138)"
-			description="tickets $6.75–$9.75. A combo ticket for ROCK BAND NIGHT &amp; SCOTT PILGRIM together is $15 gen pub / $13 members and students. http://brattlefilm.org/2012/04/05/scott-pilgrim-vs-the-world-8/"
-			/>
-
-
-		<Event
-			name="Harmonix and The Brattle - Rock Band Night"
-		kind="Social"
-			datetime="Thursday April 5 2012 9:00 pm"
-			end="Thursday April 5 2012 11:59 pm"
-			location="The Brattle Theatre, 40 Brattle St., Cambridge MA 02138)"
-			description="A combo ticket for ROCK BAND NIGHT &amp; SCOTT PILGRIM together is $15 gen pub / $13 members and students. Admission to RBN only $7. No passes. http://brattlefilm.org/2012/04/05/scott-pilgrim-vs-the-world-8/"
-			/>
-		
-		<Event
-		name="BOSTON8BIT! Day 1"
-		kind="Show"
-			datetime="Friday April 6 2012 11:00 am"
-			end="Friday April 6 2012 2:00 pm"
-			location="Jamspace"
-		description="It's another year of chiptune madness at PAX East 2012! BOSTON8BIT and friends have assembled afternoon concert events on Friday and Saturday, and humbly request your presence for dancing time. Friday's festivities in Jamspace include performances by Danimal Cannon, Br1ght Pr1mate, Neil Voss, misfitchris and Disasterpeace, accompanied by visual artists invaderbacca, xc3n and VJ Beyonder. Come one, come all, and come party!"
-		/>
-		
-		
-		<Event
-		name="BOSTON8BIT! Day 2"
-		kind="Show"
-			datetime="Saturday April 7 2012 11:00 am"
-			end="Saturday April 7 2012 2:00 pm"
-			location="Jamspace"
-		description="Chiptune madness at PAX East continues with the second day of performances brought to you by BOSTON8BIT! Saturday's event in Jamspace includes performances by Active Knowledge, Kris Keyser, xc3n, and robotsexmusic, accompanied by visual artists invaderbacca, xc3n and VJ Beyonder. Bring a good mood and some good friends for a good time! For Saturday only - Boston 8bit resident DJ Radio Scotvoid will be spinning in between acts!"
-		/>
-		
-		
-		<Event
-		name="Jamspace Friday Concert Block"
-		kind="Show"
-			datetime="Friday April 6 2012 3:00 pm"
-			end="Friday April 6 2012 7:00 pm"
-			location="Jamspace"
-		description="Keith Apicary
-The World is Square
-Mega Ran
-BrentalFloss"
-		/>
-
-		
-		<Event
-		name="Jamspace Saturday Concert Block"
-		kind="Show"
-			datetime="Saturday April 7 2012 3:00 pm"
-			end="Saturday April 7 2012 7:00 pm"
-			location="Jamspace"
-		description="Those Who Fight
-Battlecake
-Armcannon
-Powerglove"
-		/>
-		
-
-		<Event
-	name="Gamers Gone Wild (21+)"
-	kind="Social"
-	datetime="Friday April 6 2012 8:00 pm"
-	end="Saturday April 7 2012 2:00 am"
-	location="Felt, 533 Washington St, Boston"
-	description="Cover: $5 with PAX badge, $15 without PAX badge. http://forums.penny-arcade.com/discussion/155355/east-gamers-gone-wild-12-is-a-go"
-/>
-		
-		<Event
-		name="GLBTQA Gamer Meetup (all ages!)"
-		kind="Social"
-		datetime="Friday April 6 2012 6:00 pm"
-		end ="Friday April 6 2012 9:00 pm"
-		location="Bocoup, 355 Congress Street, Boston, MA 02210"
-		description="Not just a PAX event: http://therandomfangirl.wordpress.com/2012-boston-glbtqa-gamer-meetup/. Please register in advance: http://glbtgamers.eventbrite.com/ "
-/>
-		
-		<Event
-name="XMG Ghostbusters Party (21+)"
-		kind="Social"
-datetime="Saturday April 7 2012 9:30 pm"
-end="Sunday April 8 2012 1:30 am"
-location="MJ O'Connor's, 27 Columbus Ave., Boston, MA"
-description="Swing by our booth (#134) and grab a wrist-band to get in since there’s a limited space."
-/>
-
-	<EventPAX
-name="East 2012 Cosplay Meet-up"
-		kind="Social"
- datetime="Saturday April 7 2012 10am"
-end ="Saturday April 7 2012 10pm"
-location="secret"
-description="Wear your Bioshock- or Bioshock: Infinite-themed costume on the floor on Saturday and hope that someone from Irrational thinks you look awesome to get an invite! (www.irrationalgames.com/insider/pax-east-2012-cosplay-meet-up)"
-/>
 	</Schedule>
 </xs:schema>
 

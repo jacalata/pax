@@ -13,7 +13,6 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
 
 
-    tilt:TiltEffect.IsTiltEnabled="True"
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeLarge}"
@@ -24,7 +23,7 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <controls:Panorama Title="PAX East 2012">
+        <controls:Panorama Name="MainPanorama">
             
             
             <!--Panorama item one-->
@@ -230,6 +229,14 @@
         </controls:Panorama>
 
     </Grid>
+    <!--Panorama-based applications should not show an ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
 
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/feature.settings.png" Text="settings" Click="AppBarSettings_Click" />
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/questionmark.png" Text="about" Click="AppBarAbout_Click" />
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

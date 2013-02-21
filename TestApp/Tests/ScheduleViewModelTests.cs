@@ -35,11 +35,9 @@ namespace PAX7.Tests
             _schedule.NukeAllStorage();
             List<string> filenames = new List<string>();
             filenames.Add(testDataFile);
-            _schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(_schedule.Events, "standalone event collection");
-            var _emptyEvents = new ObservableCollection<Event>();
-            Assert.AreNotEqual(_schedule.Events, _emptyEvents);
-            _schedule.SaveEvents(); // to isolated storage
+            var _Events = new ObservableCollection<Event>();
+            _Events = _schedule.GetXMLEvents(true, filenames); //read from xap
+            _schedule.SaveEvents(_Events); // to isolated storage
             Assert.IsNotNull(MockViewModel.schedule, "schedule member of viewmodel");
         }
 
@@ -212,7 +210,6 @@ namespace PAX7.Tests
                 }
                 */
 
-        /*
         // I had to add xml/friday.xml etc in the Test project because schedule.GetEvents is reading that
         // better would be to pass through a specific file from here, which requires updating the 
         // scheduleviewmodel class?
@@ -265,10 +262,10 @@ namespace PAX7.Tests
              *
 
             _callbackDone = false;
+             * */
             EnqueueTestComplete();
         }
-*/
-        /*
+
          [TestMethod]
         [Asynchronous]
         [Tag("search")]
@@ -309,7 +306,6 @@ namespace PAX7.Tests
             EnqueueTestComplete();
 
         }
-         * */
 
 
 

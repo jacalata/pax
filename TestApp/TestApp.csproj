@@ -114,25 +114,40 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SplashScreenImage.jpg" />
-    <Content Include="Tests\Data\BadXML_ampersand.xml" />
-    <Content Include="Tests\Data\BadXML_missingKind.xml" />
-    <Content Include="Tests\Data\BadXML_missingName.xml" />
+    <Content Include="Tests\Data\BadXML_ampersand.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tests\Data\BadXML_missingKind.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tests\Data\BadXML_missingName.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Tests\Data\BadXML_empty.xml" />
-    <Content Include="Tests\Data\BadXML_missingLocation.xml" />
-    <Content Include="Tests\Data\BadXML_missingDatetime.xml" />
-    <Content Include="Tests\Data\BadXML_missingDescription.xml" />
-    <Content Include="Tests\Data\BadXML_missingEnd.xml" />
+    <Content Include="Tests\Data\BadXML_missingLocation.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tests\Data\BadXML_missingDatetime.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tests\Data\BadXML_missingDescription.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Tests\Data\BadXML_missingEnd.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Tests\Data\contents.xml" />
     <Content Include="Tests\Data\ConventionData.xml" />
     <Content Include="Tests\Data\BadContents_NoDate.xml" />
     <Content Include="Tests\Data\GoodContents_RecentDate.xml" />
     <Content Include="Tests\Data\GoodContents_OldDate.xml" />
-    <Content Include="Tests\Data\GoodXML_malformedDate.xml" />
+    <Content Include="Tests\Data\GoodXML_malformedDate.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Tests\Data\GoodXML.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="XML\contents.xml" />
-    <Content Include="XML\ConventionData.xml" />
     <Content Include="XML\Friday.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\Sunday.xml" />
