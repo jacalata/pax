@@ -213,9 +213,11 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Images\Icons\feature.search.png" />
     <Content Include="Images\Icons\feature.settings.png" />
     <Content Include="Images\Icons\logoCrossTransparent.png" />
     <Content Include="Images\Icons\questionmark.png" />
+    <Content Include="Images\Icons\share.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="XML\contents.xml" />
     <Content Include="XML\Friday.xml" />

@@ -233,9 +233,10 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
 
-            <shell:ApplicationBarIconButton IconUri="/Images/Icons/feature.settings.png" Text="settings" Click="AppBarSettings_Click" />
+            <!--settings page data binding doesn't work
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/feature.settings.png" Text="settings" Click="AppBarSettings_Click" /> -->
             <shell:ApplicationBarIconButton IconUri="/Images/Icons/questionmark.png" Text="about" Click="AppBarAbout_Click" />
-
+          
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
