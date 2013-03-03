@@ -178,6 +178,7 @@ namespace PAX7.Model
                             eventDays.Add(day);
                     }
                     RecordScheduleCreationDate(readFromXap);
+                    
 
                 }
                 catch (Exception e)
@@ -292,7 +293,9 @@ namespace PAX7.Model
             { 
                 // any error downloading the file: eg no connection, 404, server 5xx
                 LittleWatson.ReportException(e, "downloading version info");
-                hasUpdateAvailable = false;
+                MessageBox.Show("Couldn't check for updates right now - try again later", "Update check failed", MessageBoxButton.OK);
+                // fail out
+                return;
             }
 
             if (downloaded) //we gots a file!
@@ -532,7 +535,7 @@ namespace PAX7.Model
                 if (updateDetails.Count<NamedItem>() > 0)
                 {
                     DateTime updateDate = DateTime.Parse(updateDetails.First<NamedItem>().name);
-                    IsoStoreSettings.SaveToSettings<DateTime>(IsoStoreSettings.IsoStoreLastUpdatedRecord, updateDate);
+                    IsoStoreSettings.SaveToSettings<DateTime>(IsoStoreSettings.IsoStoreScheduleCreationDate, updateDate);
                 }
                 else
                 {

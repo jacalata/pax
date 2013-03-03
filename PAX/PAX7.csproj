@@ -116,6 +116,7 @@
     </Compile>
     <Compile Include="Utilicode\IsoStoreSettings.cs" />
     <Compile Include="Utilicode\MenuOption.cs" />
+    <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\ISchedulePivotView.cs" />
     <Compile Include="Utilicode\Converter.cs" />
     <Compile Include="Utilicode\LittleWatson.cs" />
@@ -124,6 +125,15 @@
     <Compile Include="ViewModel\ScheduleViewModel.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImageCarousel.xaml.cs">
+      <DependentUpon>ImageCarousel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TelerikImageViewer.xaml.cs">
+      <DependentUpon>TelerikImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -143,6 +153,8 @@
     <Compile Include="Utilicode\StateUtilities.cs" />
     <Compile Include="Utilicode\TiltEffect.cs" />
     <Compile Include="Model\Schedule.cs" />
+    <Compile Include="View\ViewModels\DataItemViewModel.cs" />
+    <Compile Include="View\ViewModels\MainDataViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -150,6 +162,22 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="View\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImageCarousel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SampleData\MainDataViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\TelerikImageViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Page1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,12 +241,17 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Images\Icons\download.png" />
     <Content Include="Images\Icons\feature.search.png" />
     <Content Include="Images\Icons\feature.settings.png" />
     <Content Include="Images\Icons\logoCrossTransparent.png" />
     <Content Include="Images\Icons\questionmark.png" />
     <Content Include="Images\Icons\share.png" />
     <Content Include="README_FIRST.txt" />
+    <Content Include="Images\Telerik\Frame.png" />
+    <Content Include="Images\Telerik\FrameThumbnail.png" />
+    <Content Include="View\Images\Frame.png" />
+    <Content Include="View\Images\FrameThumbnail.png" />
     <Content Include="XML\contents.xml" />
     <Content Include="XML\Friday.xml" />
     <Content Include="XML\latestVersionInfo.xml" />
@@ -226,7 +259,9 @@
     <Content Include="XML\social.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="XML\Sunday.xml" />
+    <Content Include="XML\Sunday.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="XML\XMLschema.xml" />
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -66,7 +66,13 @@ namespace PAX7
             string uri = "/View/AboutPage.xaml";
             App.NavigateTo(uri);
         }
-        
+
+        private void AppBarUpdate_Click(object sender, EventArgs e)
+        {
+            string uri = "/View/SettingsPage.xaml";
+            App.NavigateTo(uri);
+
+        }
 
     }
 

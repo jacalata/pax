@@ -42,9 +42,23 @@ namespace PAX7.View
         public SettingsPage()
         {
             InitializeComponent();
+            Loaded += PageLoaded;
+        }
+
+        
+        /// <summary>
+        /// set the data context of the page 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void PageLoaded(object sender, RoutedEventArgs e)
+        {
             _allowUpdate = IsoStoreSettings.IsAllowedAutoCheckForUpdates();
             _setReminders =  IsoStoreSettings.IsAllowedSetReminders();
-            settingsOptions.DataContext = this;
+            string lastScheduleUpdate = IsoStoreSettings.GetLastUpdatedTime();
+            TextBlock_scheduleUpdateTime.Text = lastScheduleUpdate;
+            string scheduleCreationTime = IsoStoreSettings.GetScheduleCreationTime();
+            TextBlock_scheduleCreationTime.Text = scheduleCreationTime;
             schedule = new Schedule();
             schedule.evt_updateCheckComplete +=
                 new EventHandler(askUserToUpdate);

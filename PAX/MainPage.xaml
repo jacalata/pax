@@ -94,7 +94,7 @@
 
                     <!-- floor maps-->
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
-                                     NavigateUri="/View/ImageViewer.xaml?Image=map_level"
+                                     NavigateUri="/View/ImageCarousel.xaml?Image=map_level"
                                          Width="170">
                             <HyperlinkButton.Background>
                             <ImageBrush ImageSource="Images\Boston\bcclevel0.png"/>
@@ -104,7 +104,7 @@
 
                         <!-- expo maps --> <!-- using East 2011 for now-->
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
-                                     NavigateUri="/View/ImageViewer.xaml?Image=map_expo"
+                                     NavigateUri="/View/ImageCarousel.xaml?Image=map_expo"
                                          Width="170">
                             <HyperlinkButton.Background>
                                 <ImageBrush ImageSource="Images\Boston\expoLevel1Level2.png"/>
@@ -114,22 +114,13 @@
 
                         <!-- city map-->
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}"
-                                     NavigateUri="/View/ImageViewer.xaml?Image=map_city"
+                                     NavigateUri="/View/ImageCarousel.xaml?Image=map_city"
                                          Width="170">
                             <HyperlinkButton.Background>
                                 <ImageBrush ImageSource="Images\Boston\Boston.png"/>
                                 <!-- seattle = seattle/seattleMapDowntown.jpg-->
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
-
-                        <!-- hg pax east
-                        <HyperlinkButton Style="{StaticResource imageButtonStyle}"
-                                     NavigateUri="/Page1.xaml"
-                                    Width="170">
-                            <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\hgpax.png"/>
-                            </HyperlinkButton.Background>
-                        </HyperlinkButton  >-->
 
 
                     </toolkit:WrapPanel>
@@ -229,14 +220,13 @@
         </controls:Panorama>
 
     </Grid>
-    <!--Panorama-based applications should not show an ApplicationBar-->
+    
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
 
-            <!--settings page data binding doesn't work
-            <shell:ApplicationBarIconButton IconUri="/Images/Icons/feature.settings.png" Text="settings" Click="AppBarSettings_Click" /> -->
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/feature.settings.png" Text="settings" Click="AppBarUpdate_Click" />
             <shell:ApplicationBarIconButton IconUri="/Images/Icons/questionmark.png" Text="about" Click="AppBarAbout_Click" />
-          
+            
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

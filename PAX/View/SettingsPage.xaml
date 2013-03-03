@@ -22,12 +22,14 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="updates" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel x:Name="settingsOptions">
+            <StackPanel x:Name="settingsOptions" Margin="20">
+              
+                <!--
                 <TextBlock Text="schedule updates" Style="{StaticResource PhoneTextTitle2Style}" />
                 <CheckBox VerticalAlignment="Top" 
                           IsChecked="{Binding AllowAutoUpdate, Mode=TwoWay}">
@@ -35,12 +37,25 @@
                                TextWrapping="Wrap"
                                Style="{StaticResource PhoneTextNormalStyle}"/>
                 </CheckBox>
+                -->
+                
+                <TextBlock Text="current schedule data created at:" />
+                <TextBlock Name ="TextBlock_scheduleCreationTime" Text="{Binding}" />
+                <TextBlock Text=" " Margin="0" />
+
+                <TextBlock Text="last update downloaded at: " />
+                <TextBlock Name="TextBlock_scheduleUpdateTime" Text="{Binding}" />
+
+                <TextBlock Text=" " Margin="0" />
+
                 <Button  x:Name="refreshScheduleButton"
                          HorizontalAlignment="Left"
                          Click="refreshScheduleButton_Click" >
-                    <TextBlock Text="check now"
+                    <TextBlock Text="check for updates now"
                           Style="{StaticResource PhoneTextNormalStyle}" />                    
                 </Button>
+                
+                <!-- 
                 <TextBlock Text=" " Margin="0,0,50,50" />
                 <TextBlock Text="event Reminders" 
                            Style="{StaticResource PhoneTextTitle2Style}" />
@@ -52,7 +67,7 @@
                 <TextBlock Text="reminders will be set for one hour before the event start time" 
                            TextWrapping="Wrap"
                           Style="{StaticResource PhoneTextSubtleStyle}" />
-                    
+                    -->
             </StackPanel>
         </Grid>
     </Grid>

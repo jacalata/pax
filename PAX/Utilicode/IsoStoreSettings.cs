@@ -10,6 +10,7 @@ namespace PAX7.Utilicode
     {
 
         internal static string IsoStoreLastUpdatedRecord = "lastUpdated"; // the name for the value we look at to check the last schedule update date
+        internal static string IsoStoreScheduleCreationDate = "scheduleCreationDate"; // the name for the value we look at to check the creation date of the current info
         internal static string IsoStoreHasUpdateAvailable = "hasUpdateAvailable";// the name for the value we look at to check if a new update is available
         internal static string IsoStoreAllowAutoUpdateCheck = "allowAutoUpdating"; // the name for the value to look at to see if we should check for updates 
         internal static string IsoStoreAllowSetReminders = "allowSetReminders"; // the key for the value of whether the user wants reminders
@@ -53,6 +54,30 @@ namespace PAX7.Utilicode
         }
 
         /// <summary>
+        /// return a string showing the time we last updated the schedule
+        /// </summary>
+        /// <returns></returns>
+        public static string GetLastUpdatedTime()
+        {
+            DateTime time = new DateTime(0);
+            bool hasChecked = IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreLastUpdatedRecord, out time);
+            return (time != new DateTime(0)) ? time.ToShortDateString() : "unknown";
+        }
+
+        /// <summary>
+        /// return a string showing when the schedule we have now was created
+        /// </summary>
+        /// <returns></returns>
+        public static string GetScheduleCreationTime()
+        {
+            DateTime time = new DateTime(0);
+            bool hasChecked = IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreScheduleCreationDate, out time);
+            return (time != new DateTime(0)) ? time.ToShortDateString() : "unknown";
+        }
+
+
+
+        /// <summary>
         /// check if the user has reminders on. If no value found, return true 
         /// </summary>
         /// <returns></returns>
@@ -60,8 +85,8 @@ namespace PAX7.Utilicode
         {
             //read from iso store
             bool bAllowReminders = true;
-            if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreAllowSetReminders, out bAllowReminders))
-                return true;
+            //if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreAllowSetReminders, out bAllowReminders))
+            //    return true;
             return bAllowReminders;
         }
 

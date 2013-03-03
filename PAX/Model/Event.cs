@@ -94,7 +94,7 @@ namespace PAX7.Model
         {
             get
             {
-                return day +" " + time;
+                return friendlyDate + " " + time;
             }
         }
 
@@ -107,12 +107,22 @@ namespace PAX7.Model
             }
         }
 
-        // convenience method to return the day in a readable string
+        //convenience method to return the day of week
         public string day
         {
             get
             {
                 return StartTime.DayOfWeek.ToString();
+            }
+        }
+
+
+        // convenience method to return the day and date in a readable string
+        public string friendlyDate
+        {
+            get
+            {
+                return StartTime.DayOfWeek.ToString() + " " + StartTime.Date.ToString("d");
             }
         }
 
@@ -182,6 +192,7 @@ namespace PAX7.Model
             }
         }
 
+        #region reminders
         // guid for the reminder name used internally in the scheduler
         private string _reminderName = null;
 
@@ -233,7 +244,7 @@ namespace PAX7.Model
 
             // NOTE: another difference from alerts
             // you can set a navigation uri that is passed to the application when it is launched from the reminder
-            reminder.NavigationUri = new Uri("/View/SchedulePivotView.xaml?PivotOn=Stars");
+            //reminder.NavigationUri = new Uri("/View/SchedulePivotView.xaml?PivotOn=Stars");
             if (ScheduledActionService.Find(_reminderName) != null)
                 ScheduledActionService.Remove(_reminderName);
             ScheduledActionService.Add(reminder);
@@ -250,7 +261,7 @@ namespace PAX7.Model
             _reminderName = null;
         }
 
-
+        #endregion reminders
 
         public event PropertyChangedEventHandler PropertyChanged;
 

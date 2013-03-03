@@ -8,7 +8,7 @@
   location="testLocation"
   kind="Panel"
   datetime="08272011 110000"
-  end="8/25/2012 21:00:00"
+  end="3/2/2013 21:00:00"
   description="Datetime should not be parseable"
   />
 
@@ -17,7 +17,7 @@
     location="testLocation"
     kind="Panel"
     datetime="Friday 10 November"
-    end="8/25/2012 21:00:00"
+    end="3/2/2013 21:00:00"
     description="Datetime should not be parseable"
 />
 
