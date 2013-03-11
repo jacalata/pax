@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<title>PAX East - Boston, MA March 22-24, 2013</title>
+	
+	<link rel="stylesheet" media="screen" type="text/css" href="http://east.paxsite.com//assets/css/index.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" media="screen" type="text/css" href="http://east.paxsite.com//assets/css/ie.css" /><![endif]-->
+	<link rel="stylesheet" media="screen" type="text/css" href="http://east.paxsite.com//assets/css/jquery.fancybox.css" />
+	<link rel="Shortcut Icon" type="image/png" href="http://east.paxsite.com//assets/img/favicon.png" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://east.paxsite.com/feed" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://east.paxsite.com//assets/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="http://east.paxsite.com//assets/js/jquery.cycle.js"></script>	
+	<script type="text/javascript" src="http://east.paxsite.com//assets/js/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="http://east.paxsite.com//assets/js/twitter.js"></script>
+	<script type="text/javascript" src="http://east.paxsite.com//assets/js/paxeast.js"></script>
+	<script type="text/javascript" src="http://east.paxsite.com//assets/js/jquery.fancybox.js"></script>
+	<script type="text/javascript">
+	
+	jQuery(function($){
+		$("#tweets").tweet({
+			username: "Official_PAX",
+			avatar_size: 0,
+			count: 1,
+			fetch: 20,
+			template: "{text}",
+			loading_text: "loading tweets...",
+			filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); }
+		});
+	});
+	
+	
+	
+	$(document).ready(function() {
+		$('.btnDropdown').click(function(event){
+			$(event.target).siblings('.dropdown').toggle();
+			return false;
+		});
+		$('.btnClose').click(function(event){
+			$(event.target).parents('.dropdown').toggle();
+			return false;
+		});
+		$('.dropdown ul a').click(function(event){$(event.target).parents('.dropdown').toggle();});
+	});
+	
+	// Every Page
+    $('#sponsorList').cycle({
+		fx: 'fade',
+		timeout: 5000
+	});
+	</script>
+	<script type='text/javascript'>
+	var googletag = googletag || {
+	};
+	googletag.cmd = googletag.cmd || [];
+	(function() {
+	var gads = document.createElement('script');
+	gads.async = true;
+	gads.type = 'text/javascript';
+	var useSSL = 'https:' == document.location.protocol;
+	gads.src = (useSSL ? 'https:' : 'http:') + 
+	'//www.googletagservices.com/tag/js/gpt.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(gads, node);
+	})();
+	</script>
+	
+	<script type='text/javascript'>
+	googletag.cmd.push(function() {
+	googletag.defineSlot('/1002971/PAXSite_Banner', [728, 90], 'div-gpt-ad-1331836661000-0').addService(googletag.pubads());
+	googletag.defineSlot('/1002971/PAXSite_Square', [300, 250], 'div-gpt-ad-1331836684339-0').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.enableServices();
+	});
+	</script>
+
+	<script type="text/javascript">
+	// analytics
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-589570-10']);
+	_gaq.push(['_setDomainName', 'paxsite.com']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+</head>
+<body>
+	<div id="bb">
+		<div class="content">
+			<ul>
+				<li><a class="btnPA" href="http://penny-arcade.com/" title="Penny Arcade">Penny Arcade</a></li>
+				<li><a class="btnPAR" href="http://thepareport.com/" title="The PA Report">The PA Report</a></li>
+				<li><a class="btnPAX" href="http://paxsite.com/" title="PAX">PAX</a></li>
+				<li><a class="btnTrenches" href="http://trenchescomic.com/" title="The Trenches">The Trenches</a></li>
+				<li><a class="btnCP" href="http://childsplaycharity.org/" title="Child's Play">Child's Play</a></li>
+			</ul>
+		</div>
+	</div>
+	<hr />
+	<div id="container">
+		<div id="header">
+			<h1><a href="/" title="PAX East Home">PAX East</a></h1>
+			<div id="showsAndSocial">
+				<ul class="shows">
+					<li><a class="btn btnPrime" href="http://prime.paxsite.com/" title="PAX Prime: Seattle, WA"><strong>PAX Prime</strong> Seattle</a></li>
+					<li><a class="btn btnEast" href="http://east.paxsite.com/" title="PAX East: Boston, MA"><strong>PAX East</strong> Boston</a></li>
+					<li><a class="btn btnAus" href="http://aus.paxsite.com/" title="PAX Aus: Melbourne, VIC"><strong>PAX Aus</strong> Melbourne</a></li>
+					<li><a class="btn btnDev" href="http://dev.paxsite.com/" title="PAX Dev: Seattle, WA"><strong>PAX Dev</strong> Seattle</a></li>					
+				</ul>
+				<ul class="social">
+					<li><a class="btn btnRSS" href="http://east.paxsite.com/feed" title="Subscribe via RSS">Subscribe via RSS</a></li>
+					<li><a class="btn btnTwt" href="http://twitter.com/#!/official_pax" title="Follow @Official_PAX on Twitter">Follow @Official_PAX on Twitter</a></li>
+					<li><a class="btn btnFb" href="http://www.facebook.com/pages/Penny-Arcade/19103799704" title="Fan Penny Arcade on Facebook">Fan Penny Arcade on Facebook</a></li>
+				</ul>
+			</div>
+			<div id="countdown">
+				
+				<h2><strong>Boston, MA</strong> March 22-24, 2013</h2>
+				
+				<div id="countdown-date"><!--<h3><strong>43</strong> Days <strong>10</strong> Hrs <strong>59</strong> Mins <strong>04</strong> Secs</h3>--></div>
+			</div>
+			<ul class="nav">
+				<li><a class="navWhatIsPax" href="/what-is-pax" title="What is PAX?">What is PAX?</a></li>
+				<li><a class="navRegistration" href="/registration" title="Registration">Registration</a></li>
+				<li><a class="active navSchedule" href="/schedule" title="Schedule">Schedule</a></li>
+				<li><a class="navHotels" href="/hotels-and-travel" title="Hotels &amp; Travel">Hotels &amp; Travel</a></li>
+				<li><a class="navFAQ" href="/faq" title="FAQ">FAQ</a></li>
+				<li><a class="navGallery" href="/gallery" title="Gallery">Gallery</a></li>
+				<li><a class="navForums" href="http://forums.penny-arcade.com/categories/pax-east" title="Forums">Forums</a></li>
+			</ul>
+		</div>
+		<hr />
+<div id="body">
+	<h2 class="title txt titleSchedule">Schedule</h2>
+	<div id="scheduleTools" class="event">
+		<a class="btn red" href="/schedule" title="Back to Full Schedule">Back to Full Schedule</a>
+	</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	<div class="full event">
+		<div class="white">
+			<h2>Friday Night Concerts</h2>
+			<p>Come one, come all!&nbsp; It&#8217;s time for the PAX EAST 2013 CONCERT LINEUP! Friday night it&#8217;s VGO, Those Who Fight and Protomen!</p>			
+						<h4>Panelists:</h4>
+			<p>PAX East Musical Guests</p>
+						<ul class="meta">
+				<li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Main Theatre">Main Theatre</a></li><li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Concerts">Concerts</a></li>
+				<li class="date">Friday 3/22 <strong>8:30PM - 1:30AM</strong></li>
+			</ul>
+		</div>
+		<div class="grey">
+			<h4>Other events at the same time as this one</h4>
+			<div class="timeBlock">
+				<ul>
+				<li class='event ttt'><a href='http://east.paxsite.com/schedule/panel/warmachine-hordes-iron-arena-tournament' title='Warmachine/Hordes Iron Arena Friday Tournament'><strong>ttt</strong> Warmachine/Hordes Iron Arena Friday Tournament</a></li>
+<li class='event ttt'><a href='http://east.paxsite.com/schedule/panel/dd-board-game-open-play' title='D&amp;D Board Game Open Play'><strong>ttt</strong> D&amp;D Board Game Open Play</a></li>
+<li class='event ttt'><a href='http://east.paxsite.com/schedule/panel/puerto-rico-tournament' title='Puerto Rico Tournament'><strong>ttt</strong> Puerto Rico Tournament</a></li>
+<li class='event ttt'><a href='http://east.paxsite.com/schedule/panel/dd-next-dms-challenge-mines-of-madness' title='D&amp;D Next DM&#8217;s Challenge: Mines of Madness'><strong>ttt</strong> D&amp;D Next DM&#8217;s Challenge: Mines of Madness</a></li>
+<li class='event ttt'><a href='http://east.paxsite.com/schedule/panel/magic-the-gathering-foil-fest' title='Magic: The Gathering Foil Fest'><strong>ttt</strong> Magic: The Gathering Foil Fest</a></li>
+<li class='event ct'><a href='http://east.paxsite.com/schedule/panel/super-smash-bros.-brawl-tournament-group-a' title='Super Smash Bros. Brawl Tournament: Group A'><strong>ct</strong> Super Smash Bros. Brawl Tournament: Group A</a></li>
+<li class='event pc'><a href='http://east.paxsite.com/schedule/panel/minecraft-tournament' title='Minecraft Tournament'><strong>pc</strong> Minecraft Tournament</a></li>
+<li class='event ct'><a href='http://east.paxsite.com/schedule/panel/nba-jam-tournament' title='NBA Jam Tournament'><strong>ct</strong> NBA Jam Tournament</a></li>
+<li class='event wyv'><a href='http://east.paxsite.com/schedule/panel/pax-east-indie-showcase' title='PAX East Indie Showcase'><strong>wyv</strong> PAX East Indie Showcase</a></li>
+<li class='event tt'><a href='http://east.paxsite.com/schedule/panel/audience-participation-murderous-ghosts-a-role-playing-game-with-ghosts-and' title='Audience Participation Murderous Ghosts - a role-playing game with ghosts and murder'><strong>tt</strong> Audience Participation Murderous Ghosts - a role-playing game with ghosts and murder</a></li>
+<li class='event nag'><a href='http://east.paxsite.com/schedule/panel/blankety-blank' title='Blankety Blank!'><strong>nag</strong> Blankety Blank!</a></li>
+<li class='event sph'><a href='http://east.paxsite.com/schedule/panel/dungeon-world-make-stuff' title='Dungeon World: Make Stuff'><strong>sph</strong> Dungeon World: Make Stuff</a></li>
+<li class='event mer'><a href='http://east.paxsite.com/schedule/panel/introduction-to-curing-chemicals-and-special-effects-costuming' title='Introduction to Curing Chemicals and Special Effects Costuming'><strong>mer</strong> Introduction to Curing Chemicals and Special Effects Costuming</a></li>
+<li class='event ara'><a href='http://east.paxsite.com/schedule/panel/no-the-monkey-should-have-a-chainsaw-design-choices-in-an-indie' title='No, the Monkey Should have a chainsaw:&nbsp; Design Choices in an Indie MOBA'><strong>ara</strong> No, the Monkey Should have a chainsaw:&nbsp; Design Choices in an Indie MOBA</a></li>
+				</ul>
+				<!--
+				<ul>
+					<li class="event main"><a href="#" title=""><strong>Main</strong> Keynote: Jane McGonigal</a></li>
+					<li class="event wyv"><a href="#" title=""><strong>Wyv</strong> Video Game Comics: Lifting the Curse</a></li>
+					<li class="event nag"><a href="#" title=""><strong>Nag</strong> Grifball Evolved</a></li>
+				</ul>
+				-->
+			</div>
+		</div>
+	</div>
+	
+</div>
+<hr />
+<div id="sidebar">
+	<div id="squareAd">
+		<div class="white">
+			<p>Advertisement</p>
+			
+			<!-- PAXSite_Square -->
+			<div id='div-gpt-ad-1331836684339-0' style='width:300px; height:250px;'>
+				<script type='text/javascript'>
+				googletag.cmd.push(function() {googletag.display('div-gpt-ad-1331836684339-0');});
+				</script>
+			</div>
+		</div>
+	</div>
+	
+	<div id="legend">
+	<div class="grey">
+		<h4>Location Legend</h4>
+		<p>Select a location to filter the schedule.</p>
+	</div>
+	<div class="white">
+		<ul id="locations">
+			<li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Filter Main Theatre"><strong>Main</strong> Main Theatre</a></li>
+			<li class="jam"><a href="http://east.paxsite.com/schedule/category/jam" title="Filter Jamspace"><strong>Jam</strong> Jamspace</a></li>
+			<li class="mer"><a href="http://east.paxsite.com/schedule/category/mer" title="Filter Merman Theatre"><strong>Mer</strong> Merman Theatre</a></li>
+			<li class="pc"><a href="http://east.paxsite.com/schedule/category/pc" title="Filter PC Tourney"><strong>PC</strong> PC Tourney</a></li>
+			<li class="cor"><a href="http://east.paxsite.com/schedule/category/cor" title="Filter Corgi Theatre"><strong>Cor</strong> Corgi Theatre</a></li>
+			<li class="tt"><a href="http://east.paxsite.com/schedule/category/tt" title="Filter Tabletop"><strong>TT</strong> Tabletop</a></li>
+			<li class="pho"><a href="http://east.paxsite.com/schedule/category/pho" title="Filter Phoenix Theatre"><strong>Pho</strong> Phoenix Theatre</a></li>
+			<li class="ttt"><a href="http://east.paxsite.com/schedule/category/ttt" title="Filter Tabletop Tourney"><strong>TTT</strong> Tabletop Tourney</a></li>
+			<li class="sph"><a href="http://east.paxsite.com/schedule/category/sph" title="Filter Sphinx"><strong>Sph</strong> Sphinx</a></li>
+			<li class="wyv"><a href="http://east.paxsite.com/schedule/category/wyv" title="Filter Wyvern Theatre"><strong>Wyv</strong> Wyvern Theatre</a></li>
+			<li class="hh"><a href="http://east.paxsite.com/schedule/category/hh" title="Filter Handheld Tourney"><strong>HH</strong> Handheld Tourney</a></li>
+			<li class="nag"><a href="http://east.paxsite.com/schedule/category/nag" title="Filter Naga Theatre"><strong>Nag</strong> Naga Theatre</a></li>
+			<li class="cfp"><a href="http://east.paxsite.com/schedule/category/cfp" title="Filter Console Freeplay"><strong>CFP</strong> Console Freeplay</a></li>
+			<li class="ara"><a href="http://east.paxsite.com/schedule/category/ara" title="Filter Arachnid Theatre"><strong>Ara</strong> Arachnid Theatre</a></li>
+			<li class="ct"><a href="http://east.paxsite.com/schedule/category/ct" title="Filter Console Tourney"><strong>CT</strong> Console Tourney</a></li>
+			<li class="que"><a href="http://east.paxsite.com/schedule/category/que" title="Filter Queue Room"><strong>QUE</strong> Queue Room</a></li>
+			<li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Filter &#9835; Concerts"><strong>&#9835;</strong> Concerts</a></li>
+		</ul>
+	</div>
+</div>
+	<div id="hours">
+	
+	<div class="white">
+		<h4>Show Hours</h4>
+		<ul>
+			<li><h5>Friday 3/22</h5> <strong>10 am - 2 am</strong></li>
+			<li><h5>Saturday 3/23</h5> <strong>10 am - 2 am</strong></li>
+			<li><h5>Sunday 3/24</h5> <strong>10 am - 7 pm</strong></li>
+		</ul>
+	</div>
+	<div class="grey">
+		<h4>Expo Hall Hours</h4>
+		<ul>
+			<li><h5>Friday 3/22</h5> <strong>10 am - 6 pm</strong></li>
+			<li><h5>Saturday 3/23</h5> <strong>10 am - 6 pm</strong></li>
+			<li><h5>Sunday 3/24</h5> <strong>10 am - 6 pm</strong></li>
+		</ul>
+	</div>
+	
+</div>
+
+	
+	
+		
+	
+		<div id="paxApp">
+		<div class="white">
+			<img src="http://east.paxsite.com//assets/img/icon_guidebook.png" alt="Guidebook" />
+			<h4>Download Guidebook</h4>
+			<p>The official PAX app for smart phones!</p>
+			<ul>
+				<li><a class="btniPhone" href="http://guidebook.com/getit/iphone/" title="Download app for iPhone">iPhone</a></li>
+				<li><a class="btnDroid" href="http://guidebook.com/getit/android/" title="Download app for Droid">Droid</a></li>
+				<li><a class="btnWP7" href="http://guidebook.com/getit/wp7/" title="Mobile Site for WP7">WP7</a></li>
+				<li><a class="btnBlackberry" href="http://guidebook.com/getit/blackberry/" title="Mobile Site for Blackberry">Blackberry</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+<hr />
+
+		<div id="footer">
+			<div id="leaderboard">
+				<div id='div-gpt-ad-1331836661000-0' style='width:728px; height:90px;'>
+					<script type='text/javascript'>
+					googletag.cmd.push(function() {googletag.display('div-gpt-ad-1331836661000-0');});
+					</script>
+				</div>
+			</div>
+			<div id="advertise">
+				<h3>Advertise on PAX Site</h3>
+				<a class="btn grey" href="mailto:paxsales@paxsite.com?subject=PAX%20East%20Inquiry" title="Contact Us">Contact Us</a>
+			</div>
+			<ul class="nav">
+				<li><a class="navWhatIsPax" href="/what-is-pax" title="What is PAX?">What is PAX?</a></li>
+				<li><a class="navRegistration" href="/registration" title="Registration">Registration</a></li>
+				<li><a class="navSchedule" href="/schedule" title="Schedule">Schedule</a></li>
+				<li><a class="navHotels" href="/hotels-and-travel" title="Hotels &amp; Travel">Hotels &amp; Travel</a></li>
+				<li><a class="navFAQ" href="/faq" title="FAQ">FAQ</a></li>
+				<li><a class="navGallery" href="/gallery" title="Gallery">Gallery</a></li>
+				<li><a class="navForums" href="http://forums.penny-arcade.com/categories/pax-east" title="Forums">Forums</a></li>			
+			</ul>
+			<ul class="shows">
+				<li><a class="btn btnPrime" href="http://prime.paxsite.com/" title="PAX Prime: Seattle, WA"><strong>PAX Prime</strong></a></li>
+				<li><a class="btn btnEast" href="http://east.paxsite.com/" title="PAX East: Boston, MA"><strong>PAX East</strong></a></li>
+				<li><a class="btn btnAus" href="http://aus.paxsite.com/" title="PAX Aus: Melbourne, VIC"><strong>PAX Aus</strong></a></li>
+				<li><a class="btn btnDev" href="http://dev.paxsite.com/" title="PAX Dev: Seattle, WA"><strong>PAX Dev</strong></a></li>
+			</ul>
+		</div>
+	</div>
+<!-- BEGIN Quantcast Tag -->
+<script type="text/javascript">
+	var _qevents = _qevents || [];
+	(function() {
+		var elem = document.createElement('script');
+		elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+		elem.async = true;
+		elem.type = "text/javascript";
+		var scpt = document.getElementsByTagName('script')[0];
+		scpt.parentNode.insertBefore(elem, scpt);
+	})();
+	_qevents.push({qacct:"p-7aMlAhcqainl6"});
+</script>
+<noscript>
+	<div style="display:none;"><img src="//pixel.quantserve.com/pixel/p-7aMlAhcqainl6.gif" border="0" height="1" width="1" alt="Quantcast"/></div>
+</noscript>
+<!-- END Quantcast tag -->
+
+<!-- BEGIN Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript">
+	(function () {
+		var d = new Image(1, 1);
+		d.onerror = d.onload = function () {
+			d.onerror = d.onload = null;
+		};
+    	d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-105791h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+	})();
+</script>
+<noscript>
+	<div><img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-105791h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" /></div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 -->
+
+<!-- BEGIN Compete XL Code for penny-arcade.com -->
+<script type="text/javascript">
+	__compete_code = '7068d7e9358a648ffebc11d328f1691b';
+	/* Set control variables below this line. */ 
+</script>
+<script type="text/javascript" src="//c.compete.com/bootstrap/s/7068d7e9358a648ffebc11d328f1691b/penny-arcade-com/bootstrap.js"></script>
+<noscript>
+	<img width="1" height="1" src="https://ssl-penny-arcade-com-7068d7.c-col.com"/>
+</noscript>
+<!-- END Compete XL Code for penny-arcade.com -->
+
+<!-- BEGIN comScore Tag -->
+<script>
+	var _comscore = _comscore || [];
+	_comscore.push({ 
+		c1: "2", c2: "13395694" 
+	});
+	(function() {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+		s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+		el.parentNode.insertBefore(s, el);
+	})();
+</script>
+<noscript>
+	<img src="http://b.scorecardresearch.com/p?c1=2&c2=13395694&cv=2.0&cj=1" />
+</noscript>
+<!-- END comScore Tag -->
+</body>
+</html>

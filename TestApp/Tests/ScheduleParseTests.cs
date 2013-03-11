@@ -4,6 +4,8 @@ using System.Collections.ObjectModel; //observablecollection
 using System.IO.IsolatedStorage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PAX7.Model;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace PAX7.Tests
 {
@@ -134,8 +136,10 @@ namespace PAX7.Tests
         public void VerifyParsingContentsFile()
         {
             List<string> filenames = new List<string>();
+            bool readFromXap = true;
             var schedule = new Schedule();
-            filenames = schedule.GetFilenames(true, "Tests\\Data\\contents.xml");
+            XDocument xdoc = schedule.GetXDocFromFilename(readFromXap, "Tests\\Data\\contents.xml");
+            filenames = schedule.ReadFilenamesFromXdoc(readFromXap, xdoc);
             Assert.AreNotEqual(0, filenames.Count);
         }
 

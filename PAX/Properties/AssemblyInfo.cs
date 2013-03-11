@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("PAX7")]
-[assembly: AssemblyCopyright("Copyright © Jac Fitzgerald 2011")]
+[assembly: AssemblyCopyright("Copyright © Jac Fitzgerald 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 // Setting ComVisible to false makes the types in this assembly not visible 

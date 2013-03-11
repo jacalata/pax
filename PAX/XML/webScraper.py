@@ -8,10 +8,11 @@ import sys
 import getopt
 import os
 import string #for clearing weird characters out of strings for filenames
+import time #sleep between requests
 
 osPath = os.path.dirname(__file__)
 generated_on = str(datetime.datetime.now())
-year = "2012" #doesn't get specified, I guess they expect you to know what year it is
+year = "2013" #doesn't get specified, I guess they expect you to know what year it is
 paxEncoding = "utf-8" #is waht the pax site says they use
 
 
@@ -30,7 +31,7 @@ def usage():
 import string
 
 class Del:
-  def __init__(self, keep=string.ascii_letters):
+  def __init__(self, keep=string.ascii_letters+'\\'):
     self.comp = dict((ord(c),c) for c in keep)
   def __getitem__(self, k):
     return self.comp.get(k)
@@ -42,27 +43,30 @@ DD = Del()
 #data is the (string) data to save in the file
 #filename is the filename to save it as
 #extension is usually either html or xml
-def saveStringAsFile(data, filename):
-    safeFilename = filename.translate(DD)
+def saveStringAsFile(data, filename, DEBUGMODE):
+    safeFilename = filename#.translate(DD)
     print(safeFilename)
     fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
-    print(type(data))
-    fileWriter.write(data.read())
+    if DEBUGMODE:
+        print(type(data))
+    fileWriter.write(data)
     fileWriter.close()
 
-def saveBytesAsFile(data, filename):
-    safeFilename = filename.translate(DD)
+def saveBytesAsFile(data, filename, DEBUGMODE):
+    safeFilename = filename#.translate(DD)
     print(safeFilename)
     fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
-    print(type(data))
+    if DEBUGMODE:
+        print(type(data))
     fileWriter.write(data.decode())
     fileWriter.close()
 
-def saveTextIOAsFile(data, filename):
+def saveTextIOAsFile(data, filename, DEBUGMODE):
     safeFilename = filename.translate(DD)
     print(safeFilename)
     fileWriter = open(safeFilename, 'w')
-    print(type(data))
+    if DEBUGMODE:
+        print(type(data))
     fileWriter.write(data.read())
     fileWriter.close()
 
@@ -74,14 +78,16 @@ def main(argv):
     # set defaults
     TESTLOCALLY = False
     SHORTMODE = False
-    DEBUGMODE = False
+    DEBUGMODE = True
     DEBUGPRINT = False
+    DOWNLOAD = False
+
     sampledatafolder = os.path.join(osPath,"sampledata")    
     offlinefolder =  os.path.join(osPath, "offline")
     print(sampledatafolder)
 
     try:                                
-        opts, args = getopt.getopt(argv, "dhlsv:", ["debug", "help", "local", "short", "verbose"])
+        opts, args = getopt.getopt(argv, "dhlsvz:", ["debug", "help", "local", "short", "verbose", "zdownload"])
     except getopt.GetoptError:          
         usage()                         
         sys.exit(2)
@@ -98,6 +104,8 @@ def main(argv):
             SHORTMODE = True
         elif opt in ("-v", "--verbose"):
             DEBUGPRINT = True
+        elif opt in ("-z", "--zdownload"):
+            DOWNLOAD = True
     print ("Debug, Local, Short, Verbose = ", DEBUGMODE, TESTLOCALLY, SHORTMODE, DEBUGPRINT)               
 
     
@@ -107,13 +115,14 @@ def main(argv):
         pageLocation = sampledatafolder+"\schedule.htm"
         page = open(pageLocation, encoding='utf-8')
     else:
-        url = "http://prime.paxsite.com/schedule"
+        url = "http://east.paxsite.com/schedule"
         if (DEBUGMODE):
             print(url)
         sock = urlopen(url)
         page = sock.read() #returns a bytes object
         #save the page for offline work or debugging
-        saveBytesAsFile(page, offlinefolder+"\Schedule.html");
+        if DOWNLOAD:
+            saveBytesAsFile(page, offlinefolder+"\schedule.html", DEBUGMODE);
         sock.close()
 
     soup = BeautifulSoup(page)
@@ -130,17 +139,17 @@ def main(argv):
         
         dayName = day['id']
         dayDate = day.find('h2', recursive=True).text 
-        if (DEBUGMODE):
+        if (True):
             print("############"+dayName)
         
         timeblocks=day.findAll('div', 'timeBlock')
-        if DEBUGMODE:
+        if SHORTMODE:
             timeblocks = [timeblocks[0]]
             
         for timeblock in timeblocks:
             
             events = timeblock.findAll('li',  recursive=True)
-            if DEBUGMODE:
+            if SHORTMODE:
                 events = [events[0]]
 
             if (DEBUGPRINT):
@@ -148,6 +157,7 @@ def main(argv):
             
             # for each event, define name,kind,location,datetime,end,description
             for eventInfo in events:
+                time.sleep(2)
                 # time format is Sunday 9/2/2013 10:00 am
                 eventTime = dayDate + "/" + year + " " + timeblock.find('h3', 'time').text
                 if DEBUGPRINT:
@@ -171,10 +181,22 @@ def main(argv):
                     detailPage = detailSock.read()
                     if DEBUGPRINT:
                         print(detailUrl)
-                    saveBytesAsFile(detailPage,
-                                    os.path.join(offlinefolder, detailUrl+".html"))    
+                    if DOWNLOAD:
+                        saveBytesAsFile(detailPage,
+                                    os.path.join(offlinefolder, detailUrl+".html"),
+                                    DEBUGMODE)    
                 detailSoup = BeautifulSoup(detailPage)
                 eventDetail = detailSoup.find('div', 'white')
+            #   <div class="white">
+    		#	    <h2>Friday Night Concerts</h2>
+    		#	    <p>Come one, come all!&nbsp; It&#8217;s time for the PAX EAST 2013 CONCERT LINEUP! Friday night it&#8217;s VGO, Those Who Fight and Protomen!</p>			
+    		#		<h4>Panelists:</h4>
+    		#	    <p>PAX East Musical Guests</p>
+    		#		<ul class="meta">
+    		#	       	<li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Main Theatre">Main Theatre</a></li><li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Concerts">Concerts</a></li>
+    		#	    	<li class="date">Friday 3/22 <strong>8:30PM - 1:30AM</strong></li>
+    		#	    </ul>
+    		#   </div>
                 
                 eventName=eventDetail.find('h2').text
                 if DEBUGPRINT:
@@ -191,9 +213,31 @@ def main(argv):
                 if DEBUGPRINT:
                     print("description = " + eventDescription)
                 event.set('description', eventDescription)
-                
+
                 options = eventDetail.find('ul', 'meta')
-                eventEnd = dayDate + "/" + year + " " + options.findAll('li', recursive=True)[1].text.split()[4] #eeewwww
+            #   <ul class="meta">
+		    #       <li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Main Theatre">Main Theatre</a></li>
+		    #       <li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Concerts">Concerts</a></li> <--optional 
+		    #	    <li class="date">Friday 3/22 <strong>8:30PM - 1:30AM</strong></li>
+            #   </ul>          
+                if DEBUGPRINT:
+                    print("details = " + options.text)
+                if (options.find('li', 'con')):
+                    endTimeIndex = 2 # concert info gets shoehorned in front of the datetime info
+                    print("CON")
+                else:
+                    endTimeIndex = 1
+                endTimeText = options.findAll('li', recursive=True)[endTimeIndex].text#eeewwww 
+                if DEBUGMODE:
+                    print(endTimeText)
+                endTime = endTimeText.split()[4]
+                if DEBUGMODE:
+                    print(endTime)
+                # need to go from 1:30AM to 1.30 AM
+                endTime = endTime.replace("AM", " AM")
+                endTime = endTime.replace("PM", " PM")
+
+                eventEnd = dayDate + "/" + year + " " + endTime 
                 if DEBUGPRINT:
                     print("end = " + eventEnd)
                 event.set('end', eventEnd)
@@ -224,7 +268,7 @@ def main(argv):
         if DEBUGMODE or DEBUGPRINT:
             print(xml_string)
 
-        saveAsFile(xml_string, osPath+"\\"+dayName+".xml")
+        saveStringAsFile(xml_string, osPath+"\\"+dayName+".xml", DEBUGMODE)
 
     # print xml schema showing locations and kinds of events
     root = Element('xml')
@@ -245,7 +289,7 @@ def main(argv):
     if DEBUGMODE or DEBUGPRINT:
         print(xml_string)
 
-    saveAsFile(xml_string, osPath+"\ScheduleValues.xml")
+    saveStringAsFile(xml_string, osPath+"\ScheduleValues.xml", DEBUGMODE)
     print("done")
 
         

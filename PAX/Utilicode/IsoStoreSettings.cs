@@ -13,7 +13,9 @@ namespace PAX7.Utilicode
         internal static string IsoStoreScheduleCreationDate = "scheduleCreationDate"; // the name for the value we look at to check the creation date of the current info
         internal static string IsoStoreHasUpdateAvailable = "hasUpdateAvailable";// the name for the value we look at to check if a new update is available
         internal static string IsoStoreAllowAutoUpdateCheck = "allowAutoUpdating"; // the name for the value to look at to see if we should check for updates 
+        internal static string IsoStoreUpdateCheckFailed = "updateCheckFailed"; // the name for the value to look at to see if the update check failed 
         internal static string IsoStoreAllowSetReminders = "allowSetReminders"; // the key for the value of whether the user wants reminders
+        internal static string IsoStoreScheduleVersionNumber = "scheduleVersionNumber"; //key for storing the version number of our current schedule
 
 
         /// <summary>
@@ -54,6 +56,18 @@ namespace PAX7.Utilicode
         }
 
         /// <summary>
+        /// refers to the updateCheckFailed flag to see if a new schedule was found on our last check
+        /// used by AboutPage
+        /// </summary>
+        /// <returns>bool true if a new schedule is available</returns>
+        public static bool UpdateCheckFailed()
+        {
+            bool succeeded = false;
+            bool hasChecked = IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreUpdateCheckFailed, out succeeded);
+            return succeeded;
+        }
+
+        /// <summary>
         /// return a string showing the time we last updated the schedule
         /// </summary>
         /// <returns></returns>
@@ -75,6 +89,16 @@ namespace PAX7.Utilicode
             return (time != new DateTime(0)) ? time.ToShortDateString() : "unknown";
         }
 
+        /// <summary>
+        /// return an int showing the version of the schedule we have now 
+        /// </summary>
+        /// <returns></returns>
+        public static int GetScheduleVersion()
+        {
+            int version = 0;
+            bool hasChecked = IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreScheduleVersionNumber, out version);
+            return version;
+        }
 
 
         /// <summary>

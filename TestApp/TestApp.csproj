@@ -67,6 +67,7 @@
     <Reference Include="System.Net" />
     <Reference Include="System.Xml" />
     <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsPhoneEssentials">
       <HintPath>..\packages\WindowsPhoneEssentials.0.7.2.88\lib\SL4-WindowsPhone71\WindowsPhoneEssentials.dll</HintPath>
     </Reference>
@@ -86,9 +87,9 @@
     <Compile Include="Tests\ScheduleViewModelTests.cs" />
     <Compile Include="Tests\Fakes\FakeObjects.cs" />
     <Compile Include="Tests\Fakes\FakeSchedulePivotView.cs" />
-    <Compile Include="Tests\ScheduleTests.cs" />
+    <Compile Include="Tests\UnitTests\ScheduleTests.cs" />
     <Compile Include="Tests\UnitTests\EventUnitTests.cs" />
-    <Compile Include="Tests\UnitTests\ScheduleParseTests.cs" />
+    <Compile Include="Tests\ScheduleParseTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

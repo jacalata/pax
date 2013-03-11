@@ -57,8 +57,8 @@ namespace PAX7.View
             _setReminders =  IsoStoreSettings.IsAllowedSetReminders();
             string lastScheduleUpdate = IsoStoreSettings.GetLastUpdatedTime();
             TextBlock_scheduleUpdateTime.Text = lastScheduleUpdate;
-            string scheduleCreationTime = IsoStoreSettings.GetScheduleCreationTime();
-            TextBlock_scheduleCreationTime.Text = scheduleCreationTime;
+            int scheduleVersion = IsoStoreSettings.GetScheduleVersion();
+            TextBlock_scheduleVersion.Text = scheduleVersion.ToString();
             schedule = new Schedule();
             schedule.evt_updateCheckComplete +=
                 new EventHandler(askUserToUpdate);
@@ -76,12 +76,15 @@ namespace PAX7.View
             MessageBoxResult messageResult;
             // check the version available on the websites 
             // put up a message box telling them what I'm going to do
-            if (false == IsoStoreSettings.HasUpdateAvailable())
+            if (true == IsoStoreSettings.UpdateCheckFailed())
+            {
+                MessageBox.Show("Couldn't check for updates right now - try again later", "Update check failed", MessageBoxButton.OK);
+            }
+            else if (false == IsoStoreSettings.HasUpdateAvailable())
             {
                 messageResult = MessageBox.Show("There's no new data for you right now",
                     "You're up to date!",
                     MessageBoxButton.OK);
-                return;
             }
             else
             {

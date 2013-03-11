@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PAX7.Utilicode
 {
-    class MenuOption
+    public class MenuOption
     {
             public MenuOption(string title, string URI)
             {

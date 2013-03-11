@@ -12,7 +12,7 @@ namespace PAX7
 
     public partial class MainPage : PhoneApplicationPage
     {
-        private ObservableCollection<MenuOption> menuOptions;
+        public ObservableCollection<MenuOption> menuOptions;
         AboutPrompt aboutApp;
         public string twitterListURL = "http://twitter.com/jacalata/lists/pax-info";
         const bool runUnitTests = false;

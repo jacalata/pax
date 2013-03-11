@@ -223,6 +223,11 @@ namespace PAX7.Model
 
                 //NOTE: the value of BeginTime must be after the current time
                 //set the BeginTime time property in order to specify when the reminder should be shown
+                if (this.StartTime == new DateTime(0))
+                {
+                    //the event time is set to the start of time, don't want/can't set a reminder for that. 
+                    return;
+                }
                 reminderStartTime = this.StartTime.Subtract(new TimeSpan(1, 0, 0));//start time minus one hour
                 if (reminderStartTime < DateTime.Now)
                 {

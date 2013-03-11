@@ -61,6 +61,7 @@
     <Reference Include="Coding4Fun.Phone.Net">
       <HintPath>..\packages\Coding4Fun.Phone.Net.1.6.1\lib\sl4-windowsphone71\Coding4Fun.Phone.Net.dll</HintPath>
     </Reference>
+    <Reference Include="IsolatedStorageExplorer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
@@ -241,6 +242,7 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Background.png" />
     <Content Include="Images\Icons\download.png" />
     <Content Include="Images\Icons\feature.search.png" />
     <Content Include="Images\Icons\feature.settings.png" />
@@ -252,9 +254,10 @@
     <Content Include="Images\Telerik\FrameThumbnail.png" />
     <Content Include="View\Images\Frame.png" />
     <Content Include="View\Images\FrameThumbnail.png" />
-    <Content Include="XML\contents.xml" />
+    <Content Include="XML\contents.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="XML\Friday.xml" />
-    <Content Include="XML\latestVersionInfo.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\social.xml">
       <SubType>Designer</SubType>
@@ -264,9 +267,6 @@
     </Content>
     <Content Include="XML\XMLschema.xml" />
     <Content Include="ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SplashScreenImage.jpg" />

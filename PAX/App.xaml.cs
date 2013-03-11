@@ -70,7 +70,8 @@ namespace PAX7
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             StateUtilities.IsLaunching = true;
-            
+            //IsolatedStorageExplorer.Explorer.Start("jac-zula"); causes deployment failure
+            LittleWatson.CheckForPreviousException();
             PAX7.Model.Schedule schedule = new PAX7.Model.Schedule();
             if (IsoStoreSettings.IsAllowedAutoCheckForUpdates())
             {
@@ -87,6 +88,7 @@ namespace PAX7
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
             StateUtilities.IsLaunching = false;
+            //IsolatedStorageExplorer.Explorer.RestoreFromTombstone();probably breaks something
         }
 
         // Code to execute when the application is deactivated (sent to background)
@@ -104,6 +106,7 @@ namespace PAX7
         // Code to execute if a navigation fails
         private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
+            LittleWatson.ReportException(e.Exception);
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 // A navigation has failed; break into the debugger
@@ -114,6 +117,7 @@ namespace PAX7
         // Code to execute on Unhandled Exceptions
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
+            LittleWatson.ReportException(e.ExceptionObject);
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 // An unhandled exception has occurred; break into the debugger

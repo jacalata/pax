@@ -18,7 +18,7 @@ namespace PAX7
 
         const string filename = "LittleWatson.txt";
 
-        internal static void ReportException(Exception ex, string extra)
+        internal static void ReportException(Exception ex, string extra="no extra info included")
         {
             try
             {

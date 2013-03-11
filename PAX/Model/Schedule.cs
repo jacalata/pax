@@ -24,9 +24,9 @@ namespace PAX7.Model
 
         internal bool hasUpdateAvailable = false;
 
-        internal string currentAppVersion = "update3.1";
-        internal string uriScheduleZip = @"http://paxwp7.nfshost.com/East/2012/schedule.zip"; //gets updated from the version file
-        internal string uriVersionInfo = @"http://paxwp7.nfshost.com/latestversion.txt";
+        internal string currentAppVersion = "update4.0";
+        internal string uriScheduleZip = "";
+        internal string uriVersionInfo = "";
 
         //global vars for web download
         private IsolatedStorageFileStream isolatedStorageFileStream;
@@ -59,7 +59,7 @@ namespace PAX7.Model
 
         /// <summary>
         /// Populate the events collection. 
-        /// if we are launching for the first time after an update 
+        /// if we are launching for the first time after an updated xap
         /// then we need to get it from the new event xml files and also save the data into isolated storage.
         /// then populate the static Events variable from the current data in isolated storage
         /// // seems inefficient but is fast enough so far, can optimize later if necessary.
@@ -68,7 +68,11 @@ namespace PAX7.Model
         {
             if (!IsolatedStorageSettings.ApplicationSettings.Contains(currentAppVersion))
             {
-                ReadXMLEventsIntoStorage(true);
+                ObservableCollection<Event> events = GetXMLEvents(true);
+                if (events != null) // could be null if the events were older than our locally updated schedule, or xml parsing failed. 
+                {
+                    SaveEvents(events);
+                }
                 IsolatedStorageSettings.ApplicationSettings.Add(currentAppVersion, null);
             }
             ObservableCollection<Event> Events = GetSavedEvents();
@@ -82,12 +86,6 @@ namespace PAX7.Model
         }
 
 
-        internal void ReadXMLEventsIntoStorage(bool readFromXap)
-        {
-            ObservableCollection<Event> events = GetXMLEvents(readFromXap);
-            SaveEvents(events);
-        }
-
         /// <summary>
         /// takes a list of filenames, loads these files from XML and parses into events, populates the Events var
         /// </summary>
@@ -97,155 +95,29 @@ namespace PAX7.Model
         {
             ObservableCollection<Event> events = new ObservableCollection<Event>();
 
+            string contentsFile = readFromXap ? "XML\\contents.xml" : "contents.xml";
+            // check if these files are a newer schedule version than what we have
+            XDocument versionXDoc = GetXDocFromFilename(readFromXap, contentsFile);
             if (filenames == null)
             {
-                filenames = GetFilenames(readFromXap);
+                filenames = ReadFilenamesFromXdoc(readFromXap, versionXDoc);
             }
-            // the schema file contains the days and locations and kinds of events
-            // maybe more efficient to just read these from the events list themselves? 
-            // removes worries about being in sync!
-            // GetEventCategories(readFromXap); 
-
-            foreach (string filename in filenames)
+            ScheduleVersionData scheduleData = new ScheduleVersionData(contentsFile);
+            parseXDocToScheduleVersionData(versionXDoc, scheduleData);
+            if (scheduleData.versionNumber > IsoStoreSettings.GetScheduleVersion())
             {
-                try
+                foreach (string filename in filenames)
                 {
-                    XDocument dataDoc;
-                    // for the first run only, we are getting the xml from the xap resources, not isolated storage
-                    if (readFromXap)
-                    {
-                        try
-                        {
-                            dataDoc = XDocument.Load(filename);
-                        }
-                        catch (XmlException e)
-                        {
-                            //this will catch actual malformed xml, not schema specific errors
-                            LittleWatson.ReportException(e, "malformed xml in file " + filename);
-                            //don't try and read the datadoc we didn't create, just continue to the next file
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
-                        Stream filestream = new IsolatedStorageFileStream(filename, System.IO.FileMode.Open, store);
-                        dataDoc = XDocument.Load(filestream);
-                    }
-
-                    var eventItems = from item in dataDoc.Descendants("Event")
-                                     let stamp = safeParse(item.Attribute("datetime").Value, item.Attribute("name").Value, filename)
-                                     orderby stamp ascending
-                                     select new Event
-                                     {
-                                         Kind = item.Attribute("kind").Value,
-                                         Name = item.Attribute("name").Value,
-                                         Details = item.Attribute("description").Value,
-                                         EndTime = safeParse(item.Attribute("end").Value, item.Attribute("name").Value, filename),
-                                         StartTime = stamp,
-                                         Location = item.Attribute("location").Value
-                                     };
-
-                    foreach (Event eventItem in eventItems)
-                    {
-                        events.Add(eventItem);
-                    }
-
-                    // now build the category lists - days, rooms and kinds
-                    var readEventLocations = (from item in eventItems
-                                              where item.Kind != "Social"
-                                              select item.Location).Distinct();
-                    foreach (var loc in readEventLocations)
-                    {
-                        string strippedLoc = stripCommonWords(loc.ToString());
-                        if (!eventLocations.Contains(strippedLoc))
-                            eventLocations.Add(strippedLoc);
-                    }
-
-                    var readEventTypes = (from item in eventItems
-                                          select item.Kind).Distinct();
-                    foreach (var type in readEventTypes)
-                    {
-                        if (!eventTypes.Contains(type))
-                            eventTypes.Add(type);
-                    }
-                    var readEventDays = (from item in eventItems
-                                         select item.StartTime).Distinct();
-                    foreach (var datetime in readEventDays)
-                    {
-                        var day = datetime.DayOfWeek.ToString();
-                        if (!eventDays.Contains(day))
-                            eventDays.Add(day);
-                    }
-                    RecordScheduleCreationDate(readFromXap);
-                    
-
-                }
-                catch (Exception e)
-                {
-                    // catch any exceptions to prevent a single bad file from crashing the app.
-                    // also log it so I know it happened.
-                    LittleWatson.ReportException(e, "exception reading schedule from " + filename);
+                    XDocument dataDoc = GetXDocFromFilename(readFromXap, filename);
+                    ParseXDocToEvents(dataDoc, events, filename);
                 }
             }
-
+            else
+            {
+                events = null;
+            }
+            SaveScheduleVersionDataToIsoStore(scheduleData);
             return events;
-
-        }
-
-
-        /// <summary>
-        /// retrieve all events from isolated storage
-        /// also populates global variables locations, days and types
-        /// </summary>
-        internal ObservableCollection<Event> GetSavedEvents()
-        {
-            ObservableCollection<Event> events = new ObservableCollection<Event>();
-            foreach (Object o in IsolatedStorageSettings.ApplicationSettings.Values)
-            {
-                if (o is Event)
-                    events.Add((Event)o);
-            }
-
-            // get config data
-            IsolatedStorageSettings.ApplicationSettings.TryGetValue("eventLocations", out this.eventLocations);
-            IsolatedStorageSettings.ApplicationSettings.TryGetValue("eventDays", out this.eventDays);
-            IsolatedStorageSettings.ApplicationSettings.TryGetValue("eventTypes", out this.eventTypes);
-
-            return events;
-        }
-
-        /// <summary>
-        /// Will be called the first time we have loaded new events from xml files, 
-        /// saves all the events back to IsolatedStorage. Checks the existing events in Storage
-        /// to avoid losing any stars, but clears all of them before saving the new ones.
-        /// </summary>
-        internal void SaveEvents(ObservableCollection<Event> events)
-        {
-            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-            // in case we are updating over the same set of events, copy over any that have been starred
-            foreach (Event e in events)
-            {
-                if (settings.Contains(e.Name))
-                {
-                    Event original = new Event();
-                    settings.TryGetValue<Event>(e.Name, out original);
-                    if (original.Star)
-                        e.Star = original.Star;
-                    settings.Remove(original.Name);
-                }
-                settings.Add(e.Name, e.GetCopy());
-            }
-
-            // clear and then save config data
-            settings.Remove("eventLocations");
-            settings.Remove("eventTypes");
-            settings.Remove("eventDays");
-            settings.Add("eventLocations", eventLocations);
-            settings.Add("eventTypes", eventTypes);
-            settings.Add("eventDays", eventDays);
-
-            settings.Save();
         }
 
 
@@ -280,6 +152,8 @@ namespace PAX7.Model
         /// <param name="evtArgs"></param>
         void webClient_VersionInfoCompleted(object sender, OpenReadCompletedEventArgs evtArgs)
         {
+            //clear any old failure marker
+            IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, false);
             // save to isostore for posterity records? would it b better to save as appsettings values?
             string xmlFileName = "latestVersionInfo.xml"+DateTime.Now.Ticks;
             bool downloaded = false;
@@ -292,10 +166,12 @@ namespace PAX7.Model
             catch (Exception e)
             { 
                 // any error downloading the file: eg no connection, 404, server 5xx
-                LittleWatson.ReportException(e, "downloading version info");
-                MessageBox.Show("Couldn't check for updates right now - try again later", "Update check failed", MessageBoxButton.OK);
-                // fail out
-                return;
+                // cutting the little watson because it is usually not going to be a reason I care about 
+                //LittleWatson.ReportException(e, "downloading version info");
+                // if the check was made from the ui, the method that catches our 'finished checking' event will 
+                // look at this value and let the user know.
+                IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, true);
+                downloaded = false;
             }
 
             if (downloaded) //we gots a file!
@@ -311,59 +187,50 @@ namespace PAX7.Model
                     isolatedStorageFileStream.Close();
                     #endregion
                 }
-                catch (Exception exception)
+                catch (Exception exception) //file exceptions
                 {
                     LittleWatson.ReportException(exception, "copying downloaded version info to isostore");
+                    IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, true);
                 }
 
                 // read back from isostore. 
                 XDocument versionDoc = new XDocument();
-                DateTime serverLastUpdate = new DateTime();
-                DateTime localLastUpdate;
-                string fileDownloadLocation = null;
+                ScheduleVersionData scheduleData = new ScheduleVersionData(xmlFileName);
                 try
                 {
                     isolatedStorageFileStream = new IsolatedStorageFileStream(xmlFileName, FileMode.Open, store);
                     versionDoc = XDocument.Load(isolatedStorageFileStream);
-                    var versionDate = versionDoc.Descendants("version").FirstOrDefault();
-                    if (versionDate != null)
-                    {
-                        string date = versionDate.Attribute("lastupdated").Value;
-                        // null ref exception, serverLastUpdate got default date. hmm. 
-                        serverLastUpdate = safeParse(date, "none", xmlFileName);
-                        fileDownloadLocation = versionDate.Attribute("fileLocation").Value;
-                    }
-                    isolatedStorageFileStream.Close();
+                    parseXDocToScheduleVersionData(versionDoc, scheduleData);
                 }
-                catch(Exception exception)
+                catch(Exception exception) //file IO exceptions
                 {
-                    LittleWatson.ReportException(exception, "reading version info");
+                    LittleWatson.ReportException(exception, "reading version info file");
+                    IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, true);
                     hasUpdateAvailable = false;
                 }
 
-                if ((false == IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreLastUpdatedRecord, out localLastUpdate)) 
-                     || (serverLastUpdate.CompareTo(localLastUpdate) > 0) )
+                if (scheduleData.versionNumber > IsoStoreSettings.GetScheduleVersion())
                 {
-                    //we have no recorded local update time, assume the server is newer
-                    //or, server time is later than local time, server is def. newer
+                    // server is newer
                     hasUpdateAvailable = true;
-                    this.uriScheduleZip = fileDownloadLocation;
+                    this.uriScheduleZip = scheduleData.fileDownloadLocation;
                 }
-                else
+                else 
                 {
-                    // we found a local update time and it's more recent or equally as old as the server
+                    // we found a local version and it's more recent or equally as old as the server
                     hasUpdateAvailable = false;
                 }
 
             }
+            // save our value to the settings
+            IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreHasUpdateAvailable, hasUpdateAvailable);
             // trigger an event so the viewmodel knows we've looked it up
             if (evt_updateCheckComplete != null)
             {
                 evt_updateCheckComplete(this, evtArgs);
             }
-            // save our value to the settings
-            IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreHasUpdateAvailable, hasUpdateAvailable);
         }
+
 
         /// <summary>
         /// get refreshed schedule files from the website
@@ -410,33 +277,37 @@ namespace PAX7.Model
                     isolatedStorageFileStream.Close();
                     */
                     #endregion
+
                     #region extract files from zip
                     Uri part = new Uri(Convert.ToString(e.UserState), UriKind.Relative); 
                     // Read manifest from zip file 
                     StreamResourceInfo zipRI = new StreamResourceInfo(e.Result, null);
-                    StreamResourceInfo manifestInfo = App.GetResourceStream(zipRI, part);
-                    StreamReader reader = new StreamReader(manifestInfo.Stream); 
-                    XDocument document = XDocument.Load(reader);
+                    StreamResourceInfo contentsInfo = App.GetResourceStream(zipRI, part);
+                    StreamReader contentsReader = new StreamReader(contentsInfo.Stream);
+                    XDocument contentsDocument = XDocument.Load(contentsReader);
+                    List<string> files = ReadFilenamesFromXdoc(false, contentsDocument);
 
-                    var blah = document.Descendants(); 
-                    string me = blah.ToString();
-                    var files = from item in document.Descendants("file")
-                                select new NamedItem
-                                {
-                                    name = item.Attribute("name").Value
-                                };
+                    ObservableCollection<Event> events = new ObservableCollection<Event>();
                     foreach (var file in files)
                     {
-                        string filename = file.name;
-                        filenames.Add(filename);
-                        StreamResourceInfo fileInfo = Application.GetResourceStream(zipRI, (new Uri(filename, UriKind.Relative)));
+                        // save each file to storage, then we'll call a method to parse the files into events
+                        filenames.Add(file);
+                        StreamResourceInfo fileInfo = Application.GetResourceStream(zipRI, (new Uri(file, UriKind.Relative)));
                         StreamReader fileReader = new StreamReader(fileInfo.Stream);
+                        XDocument xdoc = XDocument.Load(fileReader);
+                        ParseXDocToEvents(xdoc, events, file);
+                            /*save file to isolated storage for possible debugging*/
                         string fileRead = fileReader.ReadToEnd();
-                        StreamWriter fileWriter = new StreamWriter(new IsolatedStorageFileStream(filename, FileMode.OpenOrCreate, store));
+                        StreamWriter fileWriter = new StreamWriter(new IsolatedStorageFileStream(file, FileMode.OpenOrCreate, store));
                         fileWriter.Write(fileRead);
                         fileWriter.Close();
+                             /* */
                         fileReader.Close();
                     }
+                    SaveEvents(events);
+                    ScheduleVersionData scheduleData = new ScheduleVersionData(part.ToString());
+                    parseXDocToScheduleVersionData(contentsDocument, scheduleData);
+                    SaveScheduleVersionDataToIsoStore(scheduleData);
                     #endregion
                 }
 
@@ -446,6 +317,7 @@ namespace PAX7.Model
             }
             catch (Exception ex)
             {
+                // message boxes should only be launched from ui code, should move this out to the view. 
                 if (!weAreTesting) MessageBox.Show("Something went wrong updating your schedule data. Try again later?");
                 LittleWatson.ReportException(ex, "attempted at " + DateTime.Now.ToString());
             }
@@ -455,9 +327,286 @@ namespace PAX7.Model
 
         #endregion
 
+        #region saving objects to isostore 
+
+        /// <summary>
+        /// retrieve all events from isolated storage
+        /// also populates global variables locations, days and types
+        /// </summary>
+        internal ObservableCollection<Event> GetSavedEvents()
+        {
+            ObservableCollection<Event> events = new ObservableCollection<Event>();
+            foreach (Object o in IsolatedStorageSettings.ApplicationSettings.Values)
+            {
+                if (o is Event)
+                    events.Add((Event)o);
+            }
+
+            // get config data
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("eventLocations", out this.eventLocations);
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("eventDays", out this.eventDays);
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("eventTypes", out this.eventTypes);
+
+            return events;
+        }
+
+        /// <summary>
+        /// Will be called the first time we have loaded new events from xml files, 
+        /// saves all the events back to IsolatedStorage. Checks the existing events in Storage
+        /// to avoid losing any stars, but clears all of them before saving the new ones.
+        /// but it doesn't actually delete them...
+        /// </summary>
+        internal void SaveEvents(ObservableCollection<Event> events)
+        {
+            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+
+            // read the current set of events in storage. Store the name of any starred items
+            // then delete all the events
+            List<String> starredEvents = new List<string>();
+            List<Event> oldEvents = new List<Event>();
+            foreach (Object o in IsolatedStorageSettings.ApplicationSettings.Values)
+                {
+                    if (o is Event)
+                    {
+                        if (((Event)o).Star == true)
+                            starredEvents.Add(((Event)o).Name);
+                        oldEvents.Add((Event)o);
+                    }
+                }
+            //inefficient but safe
+            foreach (Event e in oldEvents)
+            {
+                settings.Remove(e.Name); //collection may not be modified while enumerating over it
+            }
+            oldEvents.Clear();
+
+
+            // add each new event to storage. Set the Starred property for any that are in the list created above.
+            foreach (Event e in events)
+            {
+                if (starredEvents.Contains(e.Name))
+                {
+                    e.Star = true;
+                }
+                while (settings.Contains(e.Name))
+                {
+                    e.Name = e.Name + "*";
+                }
+                settings.Add(e.Name, e.GetCopy());
+            }
+
+            // clear and then save config data with the new days/rooms
+            settings.Remove("eventLocations");
+            settings.Remove("eventTypes");
+            settings.Remove("eventDays");
+            settings.Add("eventLocations", eventLocations);
+            settings.Add("eventTypes", eventTypes);
+            settings.Add("eventDays", eventDays);
+
+            settings.Save();
+        }
+
+
+        /// <summary>
+        /// given a populated scheduleData object, save the relevant details to IsoStore
+        /// </summary>
+        /// <param name="scheduleData"></param>
+        internal void SaveScheduleVersionDataToIsoStore(ScheduleVersionData scheduleData)
+        {
+            IsoStoreSettings.SaveToSettings<DateTime>(IsoStoreSettings.IsoStoreScheduleCreationDate, scheduleData.creationDate);
+            IsoStoreSettings.SaveToSettings<int>(IsoStoreSettings.IsoStoreScheduleVersionNumber, scheduleData.versionNumber);
+        }
+
+        #endregion
+
+        #region Xdoc->Object methods
+
+        /// <summary>
+        /// given a populated xdocument, pull out the events and populate the collection that was passed in
+        /// </summary>
+        /// <param name="XDocument">the loaded xdocument to parse</param>
+        /// <param name="events">the collection to save back to</param>
+        /// <param name="filename">for error logging</param>
+        internal void ParseXDocToEvents(XDocument dataDoc, ObservableCollection<Event> events, string filename)
+        {
+
+            try
+            {
+                var eventItems = from item in dataDoc.Descendants("Event")
+                                 let stamp = safeParse(item.Attribute("datetime").Value, item.Attribute("name").Value, filename)
+                                 orderby stamp ascending
+                                 select new Event
+                                 {
+                                     Kind = item.Attribute("kind").Value,
+                                     Name = item.Attribute("name").Value,
+                                     Details = item.Attribute("description").Value,
+                                     EndTime = safeParse(item.Attribute("end").Value, item.Attribute("name").Value, filename),
+                                     StartTime = stamp,
+                                     Location = item.Attribute("location").Value
+                                 };
+
+                foreach (Event eventItem in eventItems)
+                {
+                    events.Add(eventItem);
+                }
+
+                // now build the category lists - days, rooms and kinds
+                var readEventLocations = (from item in eventItems
+                                          where item.Kind != "Social"
+                                          select item.Location).Distinct();
+                foreach (var loc in readEventLocations)
+                {
+                    string strippedLoc = stripCommonWords(loc.ToString());
+                    if (!eventLocations.Contains(strippedLoc))
+                        eventLocations.Add(strippedLoc);
+                }
+
+                var readEventTypes = (from item in eventItems
+                                      select item.Kind).Distinct();
+                foreach (var type in readEventTypes)
+                {
+                    if (!eventTypes.Contains(type))
+                        eventTypes.Add(type);
+                }
+                var readEventDays = (from item in eventItems
+                                     select item.StartTime).Distinct();
+                foreach (var datetime in readEventDays)
+                {
+                    var day = datetime.DayOfWeek.ToString();
+                    if (!eventDays.Contains(day))
+                        eventDays.Add(day);
+                }
+
+            }
+            catch (Exception e)
+            {
+                // catch any exceptions to prevent a single bad file from crashing the app.
+                LittleWatson.ReportException(e, "exception reading schedule from " + filename);
+            }
+
+        }       
+
+        /// <summary>
+        /// internal class for passing around version number/data/filename set of info.
+        /// </summary>
+        internal class ScheduleVersionData
+        {
+            public string filename;
+            public DateTime creationDate;
+            public int versionNumber;
+            public string fileDownloadLocation;
+
+            public ScheduleVersionData()
+            {
+            }
+
+            public ScheduleVersionData(string filename)
+            {
+                this.filename = filename;
+            }
+
+        }
+
+
+        /// <summary>
+        /// parse out the data from a version or contents file into a scheduleData object for easy use
+        /// </summary>
+        /// <param name="versionDoc">the XDocument created from a version file</param>
+        /// <param name="scheduleData">the class to store all the data in</param>
+        internal void parseXDocToScheduleVersionData(XDocument versionDoc, ScheduleVersionData scheduleData)
+        {
+            // <version date = "3/9/2013" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="2"/>
+            var versionData = versionDoc.Descendants("version").FirstOrDefault();
+            if (versionData != null)
+            {
+                string date = versionData.Attribute("date").Value;
+                scheduleData.creationDate = safeParse(date, "none", scheduleData.filename);
+                Int32.TryParse(versionData.Attribute("number").Value, out scheduleData.versionNumber);
+                scheduleData.fileDownloadLocation = versionData.Attribute("fileLocation").Value;
+            }
+            if (scheduleData.versionNumber == 0)    // bad version number? 
+            {
+                LittleWatson.ReportException(new Exception("file " + scheduleData.filename + " says version = 0"), versionDoc.ToString());
+            }
+        }
+
+
+        /// <summary>
+        /// given an xdoc of a contents.xml file, return a list of filename strings found in it
+        /// </summary>
+        /// <param name="readFromXap">tells if we need to modify the filenames to read them from xap storage</param>
+        /// <param name="document"></param>
+        /// <returns></returns>
+        internal List<String> ReadFilenamesFromXdoc(bool readFromXap, XDocument document)
+        {
+            List<String> filenames = new List<string>();
+            var files = from item in document.Descendants("file")
+                    select new NamedItem
+                    {
+                        name = item.Attribute("name").Value
+                    };
+        
+            foreach (var file in files)
+            {
+                string name = readFromXap ? "XML\\" + file.name : file.name;
+                filenames.Add(name);
+            }
+            return filenames;
+        }
+
+        #endregion
+
+        #region filename->xdoc parsing
+        /// <summary>
+        /// Open contents.xml to read the date that this schedule was created, so we know whether the server copy is more recent
+        /// </summary>
+        /// <param name="readFromXap"></param>
+        /// <param name="filename"></param>
+        /// <returns>Xdocument, may be null</returns>
+        internal XDocument GetXDocFromFilename(bool readFromXap, string filename = null)
+        {
+            XDocument dataDoc = null;
+            if (filename == null)
+            {
+                filename = "XML\\contents.xml";
+            }
+            try
+            {
+                if (readFromXap)
+                {
+                    dataDoc = XDocument.Load(filename);
+                }
+                else
+                {
+                    IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
+                    Stream filestream = new IsolatedStorageFileStream(filename, System.IO.FileMode.Open, store);
+                    dataDoc = XDocument.Load(filestream);
+                    filestream.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                LittleWatson.ReportException(e, "(possible bad xml) exception reading from " + filename);
+            }
+            return dataDoc;
+        }
+        
+        /// <summary>
+        /// internal class for retrieving strings from xml docs using linq
+        /// </summary>
+        private class NamedItem
+        {
+            public string name;
+            public NamedItem(string name)
+            {
+                this.name = name;
+            }
+            public NamedItem() { }
+        };
+
+        #endregion
 
         #region helper methods: internal to be exposed for testing
-
 
         /// <summary>
         /// helper method to clean a string before inserting it into our url
@@ -501,58 +650,6 @@ namespace PAX7.Model
             return output;
         }
 
-        /// <summary>
-        /// Record from contents.xml the date that this schedule was created, so we know whether the server copy is more recent
-        /// </summary>
-        /// <param name="readFromXap"></param>
-        /// <param name="filename"></param>
-        internal void RecordScheduleCreationDate(bool readFromXap, string filename = null)
-        {
-            if (filename == null)
-            {
-                filename = "XML\\contents.xml";
-            }
-            try
-            {
-                XDocument dataDoc;
-                if (readFromXap)
-                {
-                    dataDoc = XDocument.Load(filename);
-                }
-                else
-                {
-                    IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
-                    Stream filestream = new IsolatedStorageFileStream(filename, System.IO.FileMode.Open, store);
-                    dataDoc = XDocument.Load(filestream);
-                }
-                // read the date that this schedule was created and make a note of it in isostore
-                var updateDetails = from item in dataDoc.Descendants("update")
-                                    select new NamedItem
-                                    {
-                                        name = item.Attribute("date").Value
-                                    };
-
-                if (updateDetails.Count<NamedItem>() > 0)
-                {
-                    DateTime updateDate = DateTime.Parse(updateDetails.First<NamedItem>().name);
-                    IsoStoreSettings.SaveToSettings<DateTime>(IsoStoreSettings.IsoStoreScheduleCreationDate, updateDate);
-                }
-                else
-                {
-                    LittleWatson.ReportException(new Exception(),
-                        "contents.xml file with no last updated date - " + (readFromXap ? "from xap" : "from update"));
-                }
-            }
-            catch (Exception e)
-            {
-                // catch any exceptions to prevent a single bad file from crashing the app.
-                // also log it so I know it happened.
-                // this will catch actual malformed xml, but not schema specific errors
-                // TODO: what should I actually do if we couldn't read the contents? pass back a default list and hope that works? 
-                // currently it will fail out here
-                LittleWatson.ReportException(e, "(possible bad xml) exception reading from " + filename);
-            }
-        }
 
         /// <summary>
         /// Hacky function to make uri unique each time, so that we don't cache the update check in webclient
@@ -567,72 +664,6 @@ namespace PAX7.Model
             return uri;
         }
 
-
-        /// <summary>
-        ///  read contents.xml to find out which files to read events from
-        /// </summary>
-        /// <param name="readFromXap">bool: if this is an update or first run,
-        /// then we are getting the xml from the xap resources, not isolated storage</param>
-        /// <param name="filename">Optional: for test purposes, allow passing in an arbitrary file</param>
-        /// <returns>a list of filenames</returns>
-        internal List<String> GetFilenames(bool readFromXap, string filename = null)
-        {
-            List<String> filenames = new List<string>();
-            if (filename == null)
-            {
-                filename = "XML\\contents.xml";
-            }
-            try
-            {
-                XDocument dataDoc;
-                if (readFromXap)
-                {
-                    dataDoc = XDocument.Load(filename);
-                }
-                else
-                {
-                    IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
-                    Stream filestream = new IsolatedStorageFileStream(filename, System.IO.FileMode.Open, store);
-                    dataDoc = XDocument.Load(filestream);
-                }
-
-                var files = from item in dataDoc.Descendants("file")
-                            select new NamedItem
-                            {
-                                name = item.Attribute("name").Value
-                            };
-                foreach (var file in files)
-                {
-                    string name = file.name;
-                    filenames.Add("XML\\" + name);
-                }
-
-
-            }
-            catch (Exception e)
-            {
-                // catch any exceptions to prevent a single bad file from crashing the app.
-                // also log it so I know it happened.
-                // this will catch actual malformed xml, but not schema specific errors
-                // TODO: what should I actually do if we couldn't read the contents? pass back a default list and hope that works?
-                LittleWatson.ReportException(e, "(possible bad xml) exception reading from " + filename);
-            }
-            return filenames;
-        }
-
-
-        /// <summary>
-        /// wrapper class for retrieving strings from xml docs using linq
-        /// </summary>
-        private class NamedItem
-        {
-            public string name;
-            public NamedItem(string name)
-            {
-                this.name = name;
-            }
-            public NamedItem() { }
-        };
 
         /// <summary>
         /// extract my date parsing method. All dates are expected to be in USA format, and if one fails, I will insert a 

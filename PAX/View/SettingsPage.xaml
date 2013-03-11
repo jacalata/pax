@@ -39,8 +39,8 @@
                 </CheckBox>
                 -->
                 
-                <TextBlock Text="current schedule data created at:" />
-                <TextBlock Name ="TextBlock_scheduleCreationTime" Text="{Binding}" />
+                <TextBlock Text="current schedule version:" />
+                <TextBlock Name ="TextBlock_scheduleVersion" Text="{Binding}" />
                 <TextBlock Text=" " Margin="0" />
 
                 <TextBlock Text="last update downloaded at: " />
