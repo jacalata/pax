@@ -27,10 +27,9 @@ namespace PAX7
             MainPanorama.Title = IsolatedStorageSettings.ApplicationSettings["CurrentConvention"];
             MenuOption option1 = new MenuOption("events by day", "/View/SchedulePivotView.xaml?PivotOn=Day");
             MenuOption option2 = new MenuOption("events by location", "/View/SchedulePivotView.xaml?PivotOn=Location");
-            MenuOption option3 = new MenuOption("events by type", "/View/SchedulePivotView.xaml?PivotOn=EventType");
             MenuOption option4 = new MenuOption("my schedule", "/View/SchedulePivotView.xaml?PivotOn=Stars");
             MenuOption option5 = new MenuOption("search", "/View/SchedulePivotView.xaml?PivotOn=Search");
-            menuOptions = new ObservableCollection<MenuOption>{option1, option2, option3, option4, option5};          
+            menuOptions = new ObservableCollection<MenuOption>{option1, option2, option4, option5};          
             this.scheduleMenu.ItemsSource = menuOptions;
         }
             

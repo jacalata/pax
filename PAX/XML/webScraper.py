@@ -157,7 +157,7 @@ def main(argv):
             
             # for each event, define name,kind,location,datetime,end,description
             for eventInfo in events:
-                time.sleep(2)
+                time.sleep(3)
                 # time format is Sunday 9/2/2013 10:00 am
                 eventTime = dayDate + "/" + year + " " + timeblock.find('h3', 'time').text
                 if DEBUGPRINT:

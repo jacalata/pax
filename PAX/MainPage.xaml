@@ -97,7 +97,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_level"
                                          Width="170">
                             <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\Boston\bcclevel0.png"/>
+                            <ImageBrush ImageSource="Images\Boston\floorplanOverlays\levelTile.png"/>
                             <!-- seattle map_level1_2_3.png-->
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
@@ -107,7 +107,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_expo"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\expoLevel1Level2.png"/>
+                                <ImageBrush ImageSource="Images\Boston\2013official\levelTile.png"/>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                        
@@ -117,7 +117,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_city"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\Boston.png"/>
+                                <ImageBrush ImageSource="Images\Boston\BostonTile.jpg"/>
                                 <!-- seattle = seattle/seattleMapDowntown.jpg-->
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
@@ -134,16 +134,32 @@
                 <StackPanel>
                   
                     <TextBlock Text="genuine PAX stuff"
-                               Margin="20 20"/>
+                               Margin="20 18"/>
 
                     <!-- twitter link-->
                     <HyperlinkButton 
-                        NavigateUri="http://twitter.com/#!/search/%23pax"
+                        NavigateUri="https://twitter.com/Official_PAX"
                         TargetName="_blank" 
-                        Content="- #pax on twitter"
+                        Content="- twitter: @Official_PAX"
                         HorizontalAlignment="Left"
                         Margin="2 2"/>
-                        
+
+                    <!-- twitter link-->
+                    <HyperlinkButton 
+                        NavigateUri="https://twitter.com/PAX_Lines"
+                        TargetName="_blank" 
+                        Content="- twitter: @PAX_Lines"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>
+
+                    <!-- twitter link-->
+                    <HyperlinkButton 
+                        NavigateUri="https://twitter.com/PAX_Tourney"
+                        TargetName="_blank" 
+                        Content="- twitter: @PAX_Tourney"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>
+
                     <!-- official site-->
                     <HyperlinkButton
                         TargetName="_blank"
@@ -156,20 +172,12 @@
                     <HyperlinkButton 
                         NavigateUri="http://www.penny-arcade.com"
                         TargetName="_blank" 
-                        Content="- Penny Arcade! where it all began" 
+                        Content="- Penny Arcade!" 
                          HorizontalAlignment="Left"
-                        Margin="2 2"/>
-                       
-                    <!-- penny arcade forums-->
-                    <HyperlinkButton 
-                        NavigateUri="http://forums.penny-arcade.com/forumdisplay.php?f=26"
-                                    TargetName="_blank"
-                        Content="- Penny Arcade forums"
-                        HorizontalAlignment="Left"
                         Margin="2 2"/>
 
                     <TextBlock Text="useful local info"
-                               Margin="20 20"/>
+                               Margin="20 18"/>
 
                     <!-- Lost In Seattle 
                     <HyperlinkButton 
@@ -180,11 +188,10 @@
                         Margin="2 2"/> -->
 
                     <!-- eat24-->
-                    <!-- for Prime, change zip code-->
                     <HyperlinkButton 
                         NavigateUri="http://seattle.eat24hours.com/"
                         TargetName="_blank"
-                        Content="- eat24 food delivery (BCEC zip:02210)"
+                        Content="- eat24 food delivery"
                         HorizontalAlignment="Left" 
                         Margin="2 2"/>
                     

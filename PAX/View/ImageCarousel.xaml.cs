@@ -76,9 +76,11 @@ namespace PAX7.View
         private void createImageSetBoston()
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
-            _images.Add(new ViewModel.ImageFile("boston", "..\\Images\\Boston\\boston.png"));
-            _images.Add(new ViewModel.ImageFile("bcec", "..\\Images\\Boston\\bcecimage.png"));
-            _images.Add(new ViewModel.ImageFile("waterfront", "..\\Images\\Boston\\bostonwaterfront.png"));
+            _images.Add(new ViewModel.ImageFile("boston", "..\\Images\\Boston\\boston.jpg"));
+            _images.Add(new ViewModel.ImageFile("BCEC parking", "..\\Images\\Boston\\bcecParking.jpg"));
+            _images.Add(new ViewModel.ImageFile("nearby parking", "..\\Images\\Boston\\bcecSurroundingParking.jpg"));
+            _images.Add(new ViewModel.ImageFile("local streets", "..\\Images\\Boston\\bcecSurroundingStreets.jpg"));
+            _images.Add(new ViewModel.ImageFile("MBTA Subway map", "..\\Images\\Boston\\BostonMBTAMap.jpg"));
             _imageset = new MapViewModel("Boston", _images);
 
         }
@@ -101,21 +103,22 @@ namespace PAX7.View
         private void createImageSetFloorMaps()
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
-            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\bccLevel0.PNG"));
-            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\bccLevel1.png"));
-            _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\bccLevel2.png"));
-            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\bccLevel3.png"));
+            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel0.png"));
+            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel1.png"));
+            _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel2.png"));
+            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel3.png"));
             _imageset = new MapViewModel("BCEC", _images);
         }
 
         private void createImageSetExpoMaps()
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
-            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\expoLevel0.PNG"));
-            _images.Add(new ViewModel.ImageFile("level 1 and 2", "..\\Images\\Boston\\expoLevel1Level2.png"));
-            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\expoLevel3.png"));
-            _images.Add(new ViewModel.ImageFile("exhibitors", "..\\Images\\Boston\\ExpoMap.png"));
-            _images.Add(new ViewModel.ImageFile("exhibitor key", "..\\Images\\Boston\\ExpoMapKey.png"));
+            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\2013official\\Level0.png"));
+            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\2013official\\Level1.png"));
+            _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\2013official\\Level2.png"));
+            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\2013official\\Level3.png"));
+            _images.Add(new ViewModel.ImageFile("exhibitors", "..\\Images\\Boston\\2013official\\exhibitor_hall.png"));
+            _images.Add(new ViewModel.ImageFile("exhibitor key", "..\\Images\\Boston\\2013official\\exhibitor_directory.png"));
             _imageset = new MapViewModel("PAX layout", _images);
         }
     }

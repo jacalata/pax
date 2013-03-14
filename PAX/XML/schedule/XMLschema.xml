@@ -1,0 +1,56 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <xs:simpleType name="eventLocation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Main"/>
+      <xs:enumeration value="Pegasus"/>
+      <xs:enumeration value="Kraken"/>
+      <xs:enumeration value="Unicorn"/>
+      <xs:enumeration value="Serpent"/>
+	  <xs:enumeration value="Wolfman" />
+	  <xs:enumeration value="Raven" />
+	  <xs:enumeration value="Exhibition Hall" />
+	  <xs:enumeration value="Jamspace" />
+	  <xs:enumeration value="Halo Fest"/>
+	  <xs:enumeration value="NCSoft"
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="eventKind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Panel"/>
+      <xs:enumeration value="Omegathon"/>
+      <xs:enumeration value="Contest"/>
+      <xs:enumeration value="FreePlay"/>
+      <xs:enumeration value="Show"/>
+	  <xs:enumeration value="D&amp;D"/>
+	  <xs:enumaration value="Social"/>
+
+    </xs:restriction>
+  </xs:simpleType>
+
+
+    <xs:complexType name="Event">
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="kind" type="eventKind" maxOccurs="unbounded" minOccurs="1"/>
+        <xs:element name="location" type="eventLocation"/>
+        <xs:element name="starttime" type="xs:dateTime"/>
+        <xs:element name="endtime" type="xs:dateTime"/>
+        <xs:element name="details" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+
+  <xs:element name="Schedule">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element name="Event" type="xs:string"
+      maxOccurs="unbounded" minOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

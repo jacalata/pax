@@ -130,20 +130,11 @@
     <Compile Include="View\ImageCarousel.xaml.cs">
       <DependentUpon>ImageCarousel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TelerikImageViewer.xaml.cs">
-      <DependentUpon>TelerikImageViewer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SchedulePivotView.xaml.cs">
       <DependentUpon>SchedulePivotView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ImageViewer.xaml.cs">
-      <DependentUpon>ImageViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilicode\RelativeAnimatingContentControl.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -174,23 +165,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\TelerikImageViewer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SchedulePivotView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ImageViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -223,19 +202,6 @@
     <Resource Include="Images\Seattle\map_level4_6.png" />
     <Resource Include="Images\Seattle\map_sheraton.png" />
     <Resource Include="Images\Seattle\map_world.png" />
-    <Resource Include="Images\Boston\bccLevel0.PNG" />
-    <Resource Include="Images\Boston\bccLevel1.PNG" />
-    <Resource Include="Images\Boston\bccLevel2.PNG" />
-    <Resource Include="Images\Boston\bccLevel3.PNG" />
-    <Resource Include="Images\Boston\bcecimage.png" />
-    <Resource Include="Images\Boston\boston.PNG" />
-    <Resource Include="Images\Boston\bostonconventioncenter.PNG" />
-    <Resource Include="Images\Boston\bostonwaterfront.PNG" />
-    <Resource Include="Images\Boston\expoLevel1Level2.PNG" />
-    <Resource Include="Images\Boston\ExpoMap.PNG" />
-    <Resource Include="Images\Boston\ExpoMapKey.PNG" />
-    <Resource Include="Images\Boston\ExpoLevel0.png" />
-    <Resource Include="Images\Boston\ExpoLevel3.png" />
     <Resource Include="Images\Seattle\SeattleMapDowntown.jpg" />
     <Resource Include="Toolkit.Content\ie.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
@@ -243,6 +209,24 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Background.png" />
+    <Content Include="Images\Boston\2013official\levelTile.png" />
+    <Content Include="Images\Boston\2013official\exhibitor_directory.png" />
+    <Content Include="Images\Boston\2013official\exhibitor_hall.png" />
+    <Content Include="Images\Boston\2013official\Level0.png" />
+    <Content Include="Images\Boston\2013official\Level1.png" />
+    <Content Include="Images\Boston\2013official\Level2.png" />
+    <Content Include="Images\Boston\2013official\Level3.png" />
+    <Content Include="Images\Boston\bcecParking.jpg" />
+    <Content Include="Images\Boston\bcecSurroundingParking.jpg" />
+    <Content Include="Images\Boston\bcecSurroundingStreets.jpg" />
+    <Content Include="Images\Boston\boston.jpg" />
+    <Content Include="Images\Boston\BostonMBTAMap.jpg" />
+    <Content Include="Images\Boston\bostonTile.jpg" />
+    <Content Include="Images\Boston\floorplanOverlays\bcecLevel0.png" />
+    <Content Include="Images\Boston\floorplanOverlays\bcecLevel1.png" />
+    <Content Include="Images\Boston\floorplanOverlays\bcecLevel2.png" />
+    <Content Include="Images\Boston\floorplanOverlays\bcecLevel3.png" />
+    <Content Include="Images\Boston\floorplanOverlays\levelTile.png" />
     <Content Include="Images\Icons\download.png" />
     <Content Include="Images\Icons\feature.search.png" />
     <Content Include="Images\Icons\feature.settings.png" />
@@ -258,7 +242,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="XML\Friday.xml" />
-    <Content Include="XML\Saturday.xml" />
+    <Content Include="XML\Saturday.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="XML\social.xml">
       <SubType>Designer</SubType>
     </Content>
