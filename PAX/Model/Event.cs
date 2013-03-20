@@ -45,7 +45,7 @@ namespace PAX7.Model
 
         // user editable notes on the event. 
         private string _usernotes;
-        public string UserNotes
+        internal string UserNotes
         {
             get
             {
@@ -99,7 +99,7 @@ namespace PAX7.Model
         }
 
         // convenience method to return the start time in a readable string
-        public string time
+        internal string time
         {
             get
             {
@@ -118,7 +118,7 @@ namespace PAX7.Model
 
 
         // convenience method to return the day and date in a readable string
-        public string friendlyDate
+        internal string friendlyDate
         {
             get
             {
@@ -142,7 +142,7 @@ namespace PAX7.Model
         }
 
         // convenience method to return the duration of the event
-        public float hoursDuration
+        internal float hoursDuration
         {
             get
             {
@@ -277,6 +277,7 @@ namespace PAX7.Model
         }
 
         //Display the details of this event in a message box and expose the option to add/remove from starred group
+        //TODO this should be in view code somewhere
         public void ShowEventDetails()
         {
 
@@ -315,6 +316,20 @@ namespace PAX7.Model
                 return this.StartTime.CompareTo(otherEvent.StartTime);
         }
 
+
+        /// <summary>
+        /// test method to generate fake events
+        /// </summary>
+        internal void populate()
+        {
+            Name = "fakeName";
+            Details = "this is a fake event";
+            Kind = "Panel";
+            StartTime = new DateTime(2000, 2, 2, 10, 0, 0);
+            EndTime = new DateTime(2000, 2, 2, 11, 0, 0);
+            Location = "Room1";
+            Star = false;
+        }
     }
 
 

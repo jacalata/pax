@@ -1,22 +1,11 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Microsoft.Silverlight.Testing;
-using Microsoft.Silverlight.Testing.UnitTesting;
+﻿using Microsoft.Silverlight.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using PAX7.View;
 using PAX7.ViewModel;
 
-using System.Collections.Generic; //list<string>
-using System.Collections.ObjectModel; //observablecollection
+//list<string>
+//observablecollection
 
 namespace PAX7.Tests
 {
@@ -39,7 +28,8 @@ namespace PAX7.Tests
         public void createSchedulePivotView()
         {
             string pivotType = "byDay";
-            SchedulePivotView pivotView = new SchedulePivotView(pivotType);
+            Fakes.FakeSchedule fakeSchedule = new Fakes.FakeSchedule(false);
+            SchedulePivotView pivotView = new SchedulePivotView(pivotType, fakeSchedule);
             Assert.IsNotNull(pivotView);
         }
 

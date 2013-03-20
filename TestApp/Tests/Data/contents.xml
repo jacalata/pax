@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
 
-  <update date = "3/31/2012" />
+
+<version date = "3/14/2013" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="6"/>
+
+  
 <files> 
 <file type="xml" name="friday.xml"/>
 <file type="xml" name="saturday.xml"/>

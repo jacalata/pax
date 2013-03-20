@@ -19,15 +19,15 @@ namespace PAX7.View
         public SchedulePivotView() { } //empty constructor 
 
         /// <summary>
-        /// This constructor is only called in test code - pass in a pivotString. 
+        /// This constructor is only called in test code - pass in a pivotString and a fake schedule
         /// Regular code will call the empty constructor and then OnNavigatedTo, which will
         /// generate the UI features. This will only get you the actual schedule data.
         /// </summary>
         /// <param name="pivotString"></param>
-        internal SchedulePivotView(string pivotString)
+        internal SchedulePivotView(string pivotString, object fakeSchedule)
         {
             this.pivotString = pivotString;
-            LoadSchedule();
+            LoadSchedule(null, fakeSchedule);
         }
 
         /// <summary>
@@ -68,14 +68,14 @@ namespace PAX7.View
         /// If it's a search, this will kick off the database search
         /// </summary>
         /// <param name="inputString">If populated, search the schedule for this string</param>
-        internal void LoadSchedule(string inputString=null)
+        internal void LoadSchedule(string inputString=null, object FakeSchedule=null)
         {
             if ((inputString == null) && (this.pivotString == ScheduleViewModel.PivotView.Search.ToString()))
             {
                 // this could be caused by the test constructor?
                 return;
             }
-            vm = new ScheduleViewModel(this, this.pivotString, inputString);
+            vm = new ScheduleViewModel(this, this.pivotString, inputString, true, FakeSchedule);
             vm.LoadSchedule();
         }
 

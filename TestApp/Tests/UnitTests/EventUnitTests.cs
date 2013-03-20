@@ -96,7 +96,7 @@ namespace PAX7.Tests
         {
             var testEvent = new Event();
             testEvent.StartTime = DateTime.Parse("1/1/2000 09:15:00 PM");
-            Assert.AreEqual("Saturday 9:15 PM", testEvent.friendlyStartTime);
+            Assert.AreEqual("Saturday 1/1/2000 9:15 PM", testEvent.friendlyStartTime);
         }
 
          [TestMethod]

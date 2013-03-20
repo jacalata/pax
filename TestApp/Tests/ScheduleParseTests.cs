@@ -2,10 +2,10 @@
 using System.Collections.Generic; //list<string>
 using System.Collections.ObjectModel; //observablecollection
 using System.IO.IsolatedStorage;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PAX7.Model;
 using System.Xml;
 using System.Xml.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PAX7.Model;
 
 namespace PAX7.Tests
 {
@@ -84,6 +84,15 @@ namespace PAX7.Tests
             Assert.AreEqual(false, firstEvent.Star);
         }
 
+
+        //test parse file to xdoc
+
+        // test xdoc to scheduledata object returns true and a vlaid scheduledata object
+        // or that it returns false and null if no version line
+        // or that it returns false and null if version number == 0
+
+        // test s
+
         #region error handling
         //TODO: all these failures should log different error messages, and the tests should confirm this
 
@@ -122,10 +131,11 @@ namespace PAX7.Tests
             var schedule = new Schedule();
             var _emptyEvents = new ObservableCollection<Event>();
             ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
-            Assert.IsNotNull(Events, "confirming event collection exists");
-            // malformed events should not be added to the schedule
+            Assert.IsNotNull(Events, "confirming event collection was  created");
             Assert.Equals(_emptyEvents, Events);
         }
+
+        // test that a malformed event will be skipped but good events in the same file will be added?
 
         /// <summary>
         /// Call the GetFilenames method of the schedule and confirm that at least one filename is populated from 
@@ -183,14 +193,14 @@ namespace PAX7.Tests
             Assert.AreEqual("Panel", firstEvent.Kind);
             Assert.AreEqual("Datetime 08272011 110000", firstEvent.Name);
             Assert.IsNotNull(firstEvent.StartTime, "datetime");
-            Assert.AreEqual("Saturday 9:15 PM", firstEvent.friendlyStartTime);
+            Assert.AreEqual(Data.ReferenceData.DefaultFriendlyDate, firstEvent.friendlyStartTime);
             Assert.AreEqual(false, firstEvent.Star);
             enumerator.MoveNext();
             var secondEvent = enumerator.Current;
             Assert.IsNotNull(secondEvent, "first event in collection");
             Assert.AreEqual("Panel", secondEvent.Kind);
             Assert.IsNotNull(secondEvent.StartTime, "datetime");
-            Assert.AreEqual("Saturday 9:15 PM", secondEvent.friendlyStartTime);
+            Assert.AreEqual(Data.ReferenceData.DefaultFriendlyDate, secondEvent.friendlyStartTime);
             Assert.AreEqual("Datetime Friday 10 November", secondEvent.Name);
             Assert.AreEqual(false, secondEvent.Star);
             //check for little watson file in isolated storage?

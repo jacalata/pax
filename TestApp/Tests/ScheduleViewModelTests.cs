@@ -123,19 +123,19 @@ namespace PAX7.Tests
         /// </summary>
         [TestMethod]
         [Tag("ViewModel")]
+        [Tag("fail")]
         public void VerifyVMScheduleLoadingEvent()
         {
             string pivotType = "byDay";
-            MockViewModel = new ScheduleViewModel(null, pivotType, null, true);
+            Fakes.FakeSchedule fakeSchedule = new Fakes.FakeSchedule(false);
+            MockViewModel = new ScheduleViewModel(null, pivotType, null, true, fakeSchedule);
             Assert.IsTrue(true);
-        }
-        /* comment out: validate that it is this event stuff which is causing the tests to hang
             MockViewModel.schedule.ScheduleLoadingComplete += delegate(object Sender, PAX7.Model.ScheduleLoadingEventArgs e)
             {
                 _callbackDone = true;
             };
             EnqueueConditional(() => _callbackDone == true);
-            Assert.IsTrue(_callbackDone);
+            EnqueueCallback(() => Assert.IsTrue(_callbackDone));
             _callbackDone = false;
             MockViewModel.LoadSchedule();
             MockViewModel.VM_ScheduleLoadingComplete += delegate(object Sender, PAX7.Model.ScheduleLoadingEventArgs e)
@@ -143,10 +143,9 @@ namespace PAX7.Tests
                 _callbackDone = true;
             };
             EnqueueConditional(() => _callbackDone == true);
-            Assert.IsTrue(_callbackDone);
+            EnqueueCallback( () => Assert.IsTrue(_callbackDone));
             EnqueueTestComplete();
         }
-        */
 
         //these tests never complete, I think my event waiting is fucked up
         /*
@@ -217,16 +216,16 @@ namespace PAX7.Tests
         [Asynchronous]
         [Tag("search")]
         [Tag("ViewModel")]
+        [Tag("fail")]
         public void VerifySimpleSearch()
         {
-            // this uses the data in the files /xml/friday.xml, etc. 
-            // We will search for 'lumines' which is currently in friday.xml.
-            // Should update the method instead as mentioned in the test comment above
+             // searches for the default fake Event created in FakeSchedule
 
             string pivotType = ScheduleViewModel.PivotView.Search.ToString();
-            string searchValue = "Lumines";
+            string searchValue = "fakeName";
+            Fakes.FakeSchedule fakeSchedule = new Fakes.FakeSchedule(false);
             //create viewmodel that will contain the schedule search results
-            MockViewModel = new ScheduleViewModel(null, pivotType, searchValue, true);
+            MockViewModel = new ScheduleViewModel(null, pivotType, searchValue, true, fakeSchedule);
             Assert.IsNotNull(MockViewModel);
 
             // set up to wait for the ScheduleLoadingComplete to happen       
@@ -240,6 +239,7 @@ namespace PAX7.Tests
 
             //read the returned scheduleslice and verify it matches the event we expected
             Assert.IsNotNull(MockViewModel.EventSlices);
+            Assert.AreNotEqual(0, MockViewModel.EventSlices.Count, "no event slices were found in the scheduleViewModel");
             foreach (var slice in MockViewModel.EventSlices)
             {
                 Assert.IsNotNull(slice);
@@ -269,14 +269,16 @@ namespace PAX7.Tests
          [TestMethod]
         [Asynchronous]
         [Tag("search")]
-        [Tag("ViewModel")]
+         [Tag("ViewModel")]
+         [Tag("fail")]
         public void VerifyEmptySearchResult()
         {
            // _createAndPopulateSchedule("\\Tests\\Data\\GoodXML.xml");
             string pivotType = ScheduleViewModel.PivotView.Search.ToString();
             string searchValue = "aslkdfhahsg"; //no results for this
+            Fakes.FakeSchedule fakeSchedule = new Fakes.FakeSchedule(false);
             //create viewmodel that will contain the schedule search results
-            MockViewModel = new ScheduleViewModel(null, pivotType, searchValue, true);
+            MockViewModel = new ScheduleViewModel(null, pivotType, searchValue, true, fakeSchedule);
             Assert.IsNotNull(MockViewModel);
 
             // set up to wait for the ScheduleLoadingComplete to happen       
@@ -285,24 +287,28 @@ namespace PAX7.Tests
                 _callbackDone = true;
             };
             // wait for our method to trigger on the event and set this to true
-            EnqueueConditional(() => _callbackDone);
-            MockViewModel.LoadSchedule();
+            EnqueueConditional(() => _callbackDone); // <---- this never happens? 
 
             //read the returned scheduleslice and verify it matches the event we expected
-            Assert.IsNotNull(MockViewModel.EventSlices);
-            foreach (var slice in MockViewModel.EventSlices)
-            {
-                Assert.IsNotNull(slice);
-            }
-            var sliceEnumerator = MockViewModel.EventSlices.GetEnumerator();// returns a set of event slices
-            sliceEnumerator.MoveNext(); //our target event is on search by title, the first slice
-            var eventSlices = sliceEnumerator.Current;
-            var resultEvents = eventSlices.events.GetEnumerator(); // returns a set of events
-            resultEvents.MoveNext();
-            var resultEvent = resultEvents.Current;
-            //actually should be doing this for both slices, in search
+            EnqueueCallback( ()=>
+                {
+                    MockViewModel.LoadSchedule();
+                    Assert.IsNotNull(MockViewModel.EventSlices);
+                    Assert.AreNotEqual(0, MockViewModel.EventSlices.Count, "no slices found in the ScheduleViewModel");
+                    foreach (var slice in MockViewModel.EventSlices)
+                    {
+                        Assert.IsNotNull(slice);
+                    }
+                    var sliceEnumerator = MockViewModel.EventSlices.GetEnumerator();// returns a set of event slices
+                    sliceEnumerator.MoveNext(); //our target event is on search by title, the first slice
+                    var eventSlices = sliceEnumerator.Current;
+                    var resultEvents = eventSlices.events.GetEnumerator(); // returns a set of events
+                    resultEvents.MoveNext();
+                    var resultEvent = resultEvents.Current;
+                    //actually should be doing this for both slices, in search
 
-            Assert.IsNull(resultEvent);
+                    Assert.IsNull(resultEvent);
+                });
             EnqueueTestComplete();
 
         }

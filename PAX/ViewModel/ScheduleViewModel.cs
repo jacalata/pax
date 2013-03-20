@@ -36,7 +36,7 @@ namespace PAX7.ViewModel
         public string pivotTemplateName; //choose between jumplist and listbox for different views of events
 
         internal bool mocking = false; //if true, skip ui callbacks because we are running in a test
-        internal Schedule schedule;
+        internal iSchedule schedule;
         
         private SchedulePivotView view;
         private string pivot;
@@ -51,16 +51,25 @@ namespace PAX7.ViewModel
         /// <param name="view">hook to the view UI so we can make it display the events</param>
         /// <param name="pivotParameter">enum telling us which view the user has selected</param>
         /// <param name="searchQuery">optional parameter that only applies if we are in the search pivot</param>
-        public ScheduleViewModel(SchedulePivotView view, string pivotParameter, string searchQuery = null, bool mock = false)
+        /// <param name="mock">boolean telling us if we are running in a test and should use a fake schedule</param>
+        public ScheduleViewModel(SchedulePivotView view, string pivotParameter, string searchQuery = null, bool mock = false, object fakeSchedule=null)
         {
-            this.schedule = new Schedule();
+            if (mock)
+            {
+                this.schedule = (iSchedule)fakeSchedule;
+            }
+            else
+            {
+                this.schedule = new Schedule();
+            }
+            this.schedule.ScheduleLoadingComplete +=
+            new EventHandler<ScheduleLoadingEventArgs>(Schedule_ScheduleLoadingComplete);
             this.events = new ObservableCollection<Event>();
             this.EventSlices = new ObservableCollection<ScheduleSlice>();
             this.view = view;
-            this.schedule.ScheduleLoadingComplete +=
-                new EventHandler<ScheduleLoadingEventArgs>(Schedule_ScheduleLoadingComplete);
+  
             pivot = pivotParameter;
-            pivotTemplateName = "pivotJumplistTemplate";//default
+            pivotTemplateName = "pivotListTemplate";//default
             this.searchQuery = searchQuery;
             this.mocking = mock;
         }

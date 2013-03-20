@@ -8,6 +8,7 @@ using PAX7.Model;
 using PAX7.Utilicode; //iso store settings
 using System.Xml;
 using System.Xml.Linq;
+using System.IO; //streams
 
 namespace PAX7.Tests
 {
@@ -89,9 +90,7 @@ namespace PAX7.Tests
         [Tag("schedule")]
         public void VerifyDefaultUpdateRecord()
         {
-           // bool localLastUpdate = true;
-          //  IsolatedStorageSettings.ApplicationSettings.TryGetValue(_schedule.IsoStoreLastUpdatedRecord, out localLastUpdate);
-            //Assert.AreEqual("false", localLastUpdate);
+            _schedule.NukeAllStorage();
             Assert.IsFalse(VerifyUpdateAvailable());
         }
 
@@ -99,23 +98,18 @@ namespace PAX7.Tests
         /// verify successful response when we have never had an update and the server is newer
         /// </summary>
          [TestMethod]
-        [Asynchronous]
          [Tag("schedule")]
-         [Tag("async")]
+         [Tag("fail")]
         public void VerifyResponseToSuccessfulCheckForUpdate()
         {
             bool localLastUpdate = true;
             IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreLastUpdatedRecord, out localLastUpdate);
             Assert.IsFalse(localLastUpdate);
-            _schedule.evt_updateCheckComplete += delegate(object Sender, EventArgs e)
-            {
-                _callbackDone = true;
-            };
-            _schedule.checkForNewSchedule(); // this will trigger webClient_VersionInfoCompleted which will raise the event evt_updateCheckComplete
-            // wait for our method to trigger on the event and set this to true
-            EnqueueConditional(() => _callbackDone);
-            EnqueueCallback(() => Assert.IsTrue(VerifyUpdateAvailable())); 
-            EnqueueTestComplete();
+            string xapFileName = "Tests\\Data\\GoodContents_RecentDate.xml";
+            string xmlFileName = "RecentDate.xml";
+            _schedule.CopyXapFileToIsoStore(xapFileName, xmlFileName);
+            _schedule.checkIfUpdateIsNewer(xmlFileName);
+            Assert.IsTrue(VerifyUpdateAvailable());
         }
 
        
@@ -123,48 +117,39 @@ namespace PAX7.Tests
         ///verify response when we have had an update before but the server is still newer
         /// </summary>
          [TestMethod]
-        [Asynchronous]
          [Tag("schedule")]
-         [Tag("async")]
-        public void VerifyResponseToCheckForUpdateWhenLocalIsOlder()
+        [Tag("fail")]
+        public void VerifyAcceptingUpdateWhenLocalIsOlder()
         {
              bool readFromXap = true;
-             XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "\\Tests\\Data\\GoodContents_OldDate.xml"); //3-31-2000
+             XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "Tests\\Data\\GoodContents_OldDate.xml"); //3-31-2000
              PAX7.Model.Schedule.ScheduleVersionData scheduleData = new PAX7.Model.Schedule.ScheduleVersionData();
              _schedule.parseXDocToScheduleVersionData(xdoc, scheduleData);
              _schedule.SaveScheduleVersionDataToIsoStore(scheduleData);
-            _schedule.evt_updateCheckComplete += delegate(object Sender, EventArgs e)
-            {
-                _callbackDone = true;
-            };
-            _schedule.checkForNewSchedule(@"http://paxwp7.nfshost.com/test/veryNewSchedule.txt"); 
-            EnqueueConditional(() => _callbackDone);
-            EnqueueCallback(() => Assert.IsTrue(VerifyUpdateAvailable()));
-            EnqueueTestComplete();
+             string xapFileName= "Tests\\Data\\GoodContents_RecentDate.xml";
+             string xmlFileName = "RecentDate.xml";
+             _schedule.CopyXapFileToIsoStore(xapFileName, xmlFileName);
+             _schedule.checkIfUpdateIsNewer(xmlFileName);
+             Assert.IsTrue(VerifyUpdateAvailable());
         }
 
          /// <summary>
          /// verify response to check when there is a schedule available but we have a newer copy already 
          /// </summary>
           [TestMethod]
-         [Asynchronous]
          [Tag("schedule")]
-         [Tag("async")]
-         public void VerifyResponseToCheckForUpdateWhenLocalIsNewer()
+         public void VerifyRefusingUpdateWhenLocalIsNewer()
          {
              bool readFromXap = true;
-             XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "\\Tests\\Data\\GoodContents_RecentDate.xml"); //11-31-2012
+             XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "Tests\\Data\\GoodContents_RecentDate.xml"); //3-14-2013
              PAX7.Model.Schedule.ScheduleVersionData scheduleData = new PAX7.Model.Schedule.ScheduleVersionData();
              _schedule.parseXDocToScheduleVersionData(xdoc, scheduleData);
              _schedule.SaveScheduleVersionDataToIsoStore(scheduleData);
-             _schedule.evt_updateCheckComplete += delegate(object Sender, EventArgs e)
-             {
-                 _callbackDone = true;
-             };
-             _schedule.checkForNewSchedule(@"http://paxwp7.nfshost.com/test/reallyOldSchedule.txt");
-             EnqueueConditional(() => _callbackDone);
-             EnqueueCallback(() => Assert.IsTrue(VerifyUpdateAvailable()));
-             EnqueueTestComplete();
+             string xapFileName = "Tests\\Data\\GoodContents_OldDate.xml";
+             string xmlFileName = "OldDate.xml";
+             _schedule.CopyXapFileToIsoStore(xapFileName, xmlFileName);
+             _schedule.checkIfUpdateIsNewer(xmlFileName);
+              Assert.IsFalse(VerifyUpdateAvailable());
          }
 
          /// <summary>
@@ -177,7 +162,7 @@ namespace PAX7.Tests
          public void VerifyResponseToCheckForUpdateVersionFileIsNewerButScheduleNotFound()
          {              
              bool readFromXap = true;
-             XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "\\Tests\\Data\\GoodContents_RecentDate.xml"); //11-31-2012
+             XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "Tests\\Data\\GoodContents_RecentDate.xml"); //11-31-2012
              PAX7.Model.Schedule.ScheduleVersionData scheduleData = new PAX7.Model.Schedule.ScheduleVersionData();
              _schedule.parseXDocToScheduleVersionData(xdoc, scheduleData);
              _schedule.SaveScheduleVersionDataToIsoStore(scheduleData);
@@ -200,15 +185,20 @@ namespace PAX7.Tests
           public void VerifyReadContentsXMLForCreationDate()
           {
               bool readFromXap = true;
-              XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "\\Tests\\Data\\contents.xml");
+              XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "Tests\\Data\\contents.xml");
               PAX7.Model.Schedule.ScheduleVersionData scheduleData = new PAX7.Model.Schedule.ScheduleVersionData();
               _schedule.parseXDocToScheduleVersionData(xdoc, scheduleData);
               _schedule.SaveScheduleVersionDataToIsoStore(scheduleData);
-              Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Contains(IsoStoreSettings.IsoStoreLastUpdatedRecord));
+              Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Contains(IsoStoreSettings.IsoStoreScheduleCreationDate));
+              Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Contains(IsoStoreSettings.IsoStoreScheduleVersionNumber));
               DateTime parsedDate;
-              IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreLastUpdatedRecord, out parsedDate);
+              int versionNumber;
+              IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreScheduleCreationDate, out parsedDate);
+              IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreScheduleVersionNumber, out versionNumber);
+              // check these values against the contents file if they fail.
               Assert.IsInstanceOfType(parsedDate, typeof(DateTime));
-              Assert.Equals(parsedDate, DateTime.Parse("3/31/2012"));
+              Assert.Equals(parsedDate, DateTime.Parse("3/14/2013"));
+              Assert.Equals(versionNumber, 6);
           }
 
           /// <summary>
@@ -218,15 +208,15 @@ namespace PAX7.Tests
           [Tag("schedule")]
           public void VerifyRecordScheduleCreationDateOverAnother()
           {
-              IsolatedStorageSettings.ApplicationSettings.Add(IsoStoreSettings.IsoStoreLastUpdatedRecord, DateTime.Parse("1/1/2000"));
+              IsolatedStorageSettings.ApplicationSettings.Add(IsoStoreSettings.IsoStoreScheduleCreationDate, DateTime.Parse("1/1/2000"));
               bool readFromXap = true;
-              XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "\\Tests\\Data\\contents.xml");
+              XDocument xdoc = _schedule.GetXDocFromFilename(readFromXap, "Tests\\Data\\contents.xml");
               PAX7.Model.Schedule.ScheduleVersionData scheduleData = new PAX7.Model.Schedule.ScheduleVersionData();
               _schedule.parseXDocToScheduleVersionData(xdoc, scheduleData);
               _schedule.SaveScheduleVersionDataToIsoStore(scheduleData);
-              Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Contains(IsoStoreSettings.IsoStoreLastUpdatedRecord));
+              Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Contains(IsoStoreSettings.IsoStoreScheduleCreationDate));
               DateTime parsedDate;
-              IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreLastUpdatedRecord, out parsedDate);
+              IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreScheduleCreationDate, out parsedDate);
               Assert.IsInstanceOfType(parsedDate, typeof(DateTime));
               Assert.Equals(parsedDate, DateTime.Parse("3/31/2012"));
           }
@@ -245,7 +235,12 @@ namespace PAX7.Tests
               PAX7.Model.Schedule.ScheduleVersionData scheduleData = new PAX7.Model.Schedule.ScheduleVersionData();
               _schedule.parseXDocToScheduleVersionData(xdoc, scheduleData);
               _schedule.SaveScheduleVersionDataToIsoStore(scheduleData);
-              Assert.IsFalse(IsolatedStorageSettings.ApplicationSettings.Contains(IsoStoreSettings.IsoStoreLastUpdatedRecord));
+              Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Contains(IsoStoreSettings.IsoStoreScheduleCreationDate));
+               // should have saved a default date
+              DateTime parsedDate;
+              IsolatedStorageSettings.ApplicationSettings.TryGetValue(IsoStoreSettings.IsoStoreScheduleCreationDate, out parsedDate);
+              Assert.IsInstanceOfType(parsedDate, typeof(DateTime));
+              Assert.Equals(parsedDate, DateTime.Parse("1/1/0001"));
           }
 
 
@@ -347,7 +342,7 @@ namespace PAX7.Tests
                     return false;
                 }
             }
-            catch (Exception e) // will this ever throw an exception? 
+            catch (Exception) // will this ever throw an exception? 
             {
                 return false;
             }

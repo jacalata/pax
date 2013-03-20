@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic; //IEnumerable, list<string>
 using System.Collections.ObjectModel; //observablecollection
-using System.IO;
+using System.IO; //streams
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Net;
@@ -16,11 +16,8 @@ using PAX7.Utilicode; //isolated storage settings
 namespace PAX7.Model
 {
     
-    public class Schedule
+    public class Schedule : iSchedule
     {
-        public List<string> eventLocations;
-        public List<string> eventTypes;
-        public List<string> eventDays;
 
         internal bool hasUpdateAvailable = false;
 
@@ -52,10 +49,6 @@ namespace PAX7.Model
                    
         }
 
-        /// <summary>
-        /// thrown at the end of GetEvents for the ViewModel
-        /// </summary>
-        public event EventHandler<ScheduleLoadingEventArgs> ScheduleLoadingComplete;
 
         /// <summary>
         /// Populate the events collection. 
@@ -64,25 +57,28 @@ namespace PAX7.Model
         /// then populate the static Events variable from the current data in isolated storage
         /// // seems inefficient but is fast enough so far, can optimize later if necessary.
         /// </summary>
-        public void GetEvents()
+        public override void GetEvents()
         {
             if (!IsolatedStorageSettings.ApplicationSettings.Contains(currentAppVersion))
             {
                 ObservableCollection<Event> events = GetXMLEvents(true);
-                if (events != null) // could be null if the events were older than our locally updated schedule, or xml parsing failed. 
+                if ((events != null) &&  (events.Count > 0) ) // could be empty if the events were older than our locally updated schedule, or xml parsing failed. 
                 {
                     SaveEvents(events);
                 }
                 IsolatedStorageSettings.ApplicationSettings.Add(currentAppVersion, null);
             }
             ObservableCollection<Event> Events = GetSavedEvents();
+
+            RaiseScheduleLoadingEvent(Events);
                 
             // throw an event for finished loading, the viewmodel will trigger off it
-            if (ScheduleLoadingComplete != null)
+           /* if (ScheduleLoadingComplete != null)
             {
                 ScheduleLoadingComplete(this,
                   new ScheduleLoadingEventArgs(Events));
-            }
+            }*/
+
         }
 
 
@@ -91,6 +87,7 @@ namespace PAX7.Model
         /// </summary>
         /// <param name="readFromXap">if first run, read from xap, else from IsolatedStorage</param>
         /// <param name="filenames">list of files to read events from: if null, read the included contents.xml file to find it</param>
+        /// <returns>an empty collection if reading the contents file or events listings fails</returns>
         internal ObservableCollection<Event> GetXMLEvents(bool readFromXap, List<String> filenames = null)
         {
             ObservableCollection<Event> events = new ObservableCollection<Event>();
@@ -103,7 +100,10 @@ namespace PAX7.Model
                 filenames = ReadFilenamesFromXdoc(readFromXap, versionXDoc);
             }
             ScheduleVersionData scheduleData = new ScheduleVersionData(contentsFile);
-            parseXDocToScheduleVersionData(versionXDoc, scheduleData);
+            if (!parseXDocToScheduleVersionData(versionXDoc, scheduleData))
+            {
+                return events; // an empty collection - contents file reading failed
+            }
             if (scheduleData.versionNumber > IsoStoreSettings.GetScheduleVersion())
             {
                 foreach (string filename in filenames)
@@ -111,10 +111,6 @@ namespace PAX7.Model
                     XDocument dataDoc = GetXDocFromFilename(readFromXap, filename);
                     ParseXDocToEvents(dataDoc, events, filename);
                 }
-            }
-            else
-            {
-                events = null;
             }
             SaveScheduleVersionDataToIsoStore(scheduleData);
             return events;
@@ -128,7 +124,7 @@ namespace PAX7.Model
         /// kick off a web request for the version info on the server, to see if there is new schedule data available
         /// </summary>
         /// <param name="uri">optional: url to download the new schedule data from (for tests)</param>
-        public void checkForNewSchedule(string uri = null)
+        public override void checkForNewSchedule(string uri = null)
         {
             if (uri == null) uri = uriVersionInfo;
             //hacky: append unique parameter to avoid webclient caching. Ok for now as we only check on demand?
@@ -140,17 +136,12 @@ namespace PAX7.Model
 
 
         /// <summary>
-        /// event triggered during webClient_VersionInfoCompleted, waited on by the ViewModel
-        /// </summary>
-        public EventHandler evt_updateCheckComplete;
-
-        /// <summary>
         /// completed downloading latest version info, now we can check the values and set the updateAvailable flag
         /// this method is triggered by checkForNewSchedule
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="evtArgs"></param>
-        void webClient_VersionInfoCompleted(object sender, OpenReadCompletedEventArgs evtArgs)
+        private void webClient_VersionInfoCompleted(object sender, OpenReadCompletedEventArgs evtArgs)
         {
             //clear any old failure marker
             IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, false);
@@ -163,7 +154,7 @@ namespace PAX7.Model
                 if ((evtArgs.Result) != null)
                     downloaded = true;
             }
-            catch (Exception e)
+            catch (Exception)
             { 
                 // any error downloading the file: eg no connection, 404, server 5xx
                 // cutting the little watson because it is usually not going to be a reason I care about 
@@ -178,14 +169,10 @@ namespace PAX7.Model
             {
                 try
                 {
-                    #region Isolated Storage Copy Code
-                    IsolatedStorageFileStream isolatedStorageFileStream = store.CreateFile(xmlFileName);
+                    Stream fileStream = (Stream)evtArgs.Result;
                     long fileLength = (long)evtArgs.Result.Length;
-                    byte[] byteImage = new byte[fileLength];
-                    evtArgs.Result.Read(byteImage, 0, byteImage.Length);
-                    isolatedStorageFileStream.Write(byteImage, 0, byteImage.Length);
-                    isolatedStorageFileStream.Close();
-                    #endregion
+                    CopyFileStreamToIsoStore(xmlFileName, fileStream, fileLength);
+                    fileStream.Close();
                 }
                 catch (Exception exception) //file exceptions
                 {
@@ -193,37 +180,8 @@ namespace PAX7.Model
                     IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, true);
                 }
 
-                // read back from isostore. 
-                XDocument versionDoc = new XDocument();
-                ScheduleVersionData scheduleData = new ScheduleVersionData(xmlFileName);
-                try
-                {
-                    isolatedStorageFileStream = new IsolatedStorageFileStream(xmlFileName, FileMode.Open, store);
-                    versionDoc = XDocument.Load(isolatedStorageFileStream);
-                    parseXDocToScheduleVersionData(versionDoc, scheduleData);
-                }
-                catch(Exception exception) //file IO exceptions
-                {
-                    LittleWatson.ReportException(exception, "reading version info file");
-                    IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, true);
-                    hasUpdateAvailable = false;
-                }
-
-                if (scheduleData.versionNumber > IsoStoreSettings.GetScheduleVersion())
-                {
-                    // server is newer
-                    hasUpdateAvailable = true;
-                    this.uriScheduleZip = scheduleData.fileDownloadLocation;
-                }
-                else 
-                {
-                    // we found a local version and it's more recent or equally as old as the server
-                    hasUpdateAvailable = false;
-                }
-
+                checkIfUpdateIsNewer(xmlFileName);
             }
-            // save our value to the settings
-            IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreHasUpdateAvailable, hasUpdateAvailable);
             // trigger an event so the viewmodel knows we've looked it up
             if (evt_updateCheckComplete != null)
             {
@@ -231,13 +189,85 @@ namespace PAX7.Model
             }
         }
 
+        /// <summary>
+        /// extracting the code to copy a fileStream to isolated storage. Passes any exceptions back up to the caller.
+        /// </summary>
+        /// <param name="xmlFileName">name to save it under</param>
+        /// <param name="fileStream">Stream object to read</param>
+        /// <param name="fileLength">length of the Stream object</param>
+        internal void CopyFileStreamToIsoStore(string xmlFileName, Stream fileStream, long fileLength)
+        {
+            IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
+            using (IsolatedStorageFileStream isolatedStorageFileStream = store.CreateFile(xmlFileName))
+            {
+                byte[] byteImage = new byte[fileLength];
+                fileStream.Read(byteImage, 0, byteImage.Length);
+                isolatedStorageFileStream.Write(byteImage, 0, byteImage.Length);
+            }
+        }
+
+        internal void CopyXapFileToIsoStore(string xapFileName, string isoStoreFileName)
+        {
+            XDocument updateDoc = XDocument.Load(xapFileName);
+            IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
+            using (IsolatedStorageFileStream isolatedStorageFileStream = store.OpenFile(isoStoreFileName, FileMode.OpenOrCreate))
+            {
+                using (StreamWriter writer = new StreamWriter(isolatedStorageFileStream))
+                {
+                    writer.Write(updateDoc.ToString());
+                }
+            }
+        }
+
+        /// <summary>
+        /// extracting the logic to read the newly downloaded schedule Metadata and compare it to
+        /// what we have locally
+        /// </summary>
+        /// <param name="xmlFileName">the filename where we can find the saved versionInfo file</param>
+        /// <returns>true if we should take the update</returns>
+        internal bool checkIfUpdateIsNewer(string xmlFileName)
+        {
+            // read back from isostore. 
+            IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
+            XDocument versionDoc = new XDocument();
+            ScheduleVersionData scheduleData = new ScheduleVersionData(xmlFileName);
+            try
+            {
+                isolatedStorageFileStream = new IsolatedStorageFileStream(xmlFileName, FileMode.Open, store);
+                versionDoc = XDocument.Load(isolatedStorageFileStream);
+                parseXDocToScheduleVersionData(versionDoc, scheduleData);
+            }
+            catch (Exception exception) //file IO exceptions
+            {
+                LittleWatson.ReportException(exception, "reading version info file");
+                IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, true);
+                hasUpdateAvailable = false;
+            }
+
+            if (scheduleData.versionNumber > IsoStoreSettings.GetScheduleVersion())
+            {
+                // server is newer
+                hasUpdateAvailable = true;
+                this.uriScheduleZip = scheduleData.fileDownloadLocation;
+            }
+            else
+            {
+                // we found a local version and it's more recent or equally as old as the server
+                hasUpdateAvailable = false;
+            }
+
+            // save our value to the settings
+            IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreHasUpdateAvailable, hasUpdateAvailable);
+            return hasUpdateAvailable;
+            
+        }
 
         /// <summary>
         /// get refreshed schedule files from the website
         /// this code taken wholesale from http://www.dotnetcurry.com/ShowArticle.aspx?ID=586
         /// </summary>
         /// <param name="uri">optional: url to download the new schedule data from (for tests)</param>
-        public void DownloadNewEventFiles(string uri = null)
+        public override void DownloadNewEventFiles(string uri = null)
         {
             if (uri == null) uri = uriScheduleZip;
             uri = AppendUniqueParameter(uri);
@@ -248,11 +278,6 @@ namespace PAX7.Model
             // check how much iso space we have left
             // might need to request extra isolated storage space to store the file? 
         }
-
-        /// <summary>
-        /// event triggered by webClient_OpenReadCompleted for the viewmodel
-        /// </summary>
-        public EventHandler evt_downloadScheduleComplete;
 
         /// <summary>
         /// completed downloading and opening new event files
@@ -513,21 +538,30 @@ namespace PAX7.Model
         /// </summary>
         /// <param name="versionDoc">the XDocument created from a version file</param>
         /// <param name="scheduleData">the class to store all the data in</param>
-        internal void parseXDocToScheduleVersionData(XDocument versionDoc, ScheduleVersionData scheduleData)
+        internal bool parseXDocToScheduleVersionData(XDocument versionDoc, ScheduleVersionData scheduleData)
         {
             // <version date = "3/9/2013" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="2"/>
             var versionData = versionDoc.Descendants("version").FirstOrDefault();
-            if (versionData != null)
+            
+            if (versionData == null)
             {
-                string date = versionData.Attribute("date").Value;
-                scheduleData.creationDate = safeParse(date, "none", scheduleData.filename);
-                Int32.TryParse(versionData.Attribute("number").Value, out scheduleData.versionNumber);
-                scheduleData.fileDownloadLocation = versionData.Attribute("fileLocation").Value;
+                LittleWatson.ReportException(new Exception("could not parse version info out of file" + versionDoc));
+                scheduleData = null;
+                return false;
             }
+
+            string date = versionData.Attribute("date").Value;
+            scheduleData.creationDate = safeParse(date, "none", scheduleData.filename);
+            Int32.TryParse(versionData.Attribute("number").Value, out scheduleData.versionNumber);
+            scheduleData.fileDownloadLocation = versionData.Attribute("fileLocation").Value;
+
             if (scheduleData.versionNumber == 0)    // bad version number? 
             {
                 LittleWatson.ReportException(new Exception("file " + scheduleData.filename + " says version = 0"), versionDoc.ToString());
+                scheduleData = null;
+                return false;
             }
+            return true;
         }
 
 
