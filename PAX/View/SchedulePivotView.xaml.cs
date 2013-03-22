@@ -75,7 +75,10 @@ namespace PAX7.View
                 // this could be caused by the test constructor?
                 return;
             }
-            vm = new ScheduleViewModel(this, this.pivotString, inputString, true, FakeSchedule);
+            bool mock = false;
+            if (null != FakeSchedule)
+                mock = true;
+            vm = new ScheduleViewModel(this, this.pivotString, inputString, mock, FakeSchedule);
             vm.LoadSchedule();
         }
 
