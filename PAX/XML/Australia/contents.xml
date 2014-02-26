@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
+
+<version date = "7/13/2013" fileLocation = "http://paxwp7.nfshost.com/PAXAustralia/schedule.zip" number ="9"/>
+
+<files> 
+  <file type="xml" name="friday.xml"/>
+  <file type="xml" name="saturday.xml"/>
+  <file type="xml" name="sunday.xml"/>
+</files>
+</xs:schema>

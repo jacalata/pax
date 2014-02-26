@@ -33,7 +33,7 @@
 
                     <!-- twitter link-->
                   
-                    <TextBlock Text="This app was created to make your experience at PAX simpler and more enjoyable. I will be updating it for each PAX and improving it over time. Any feedback is welcome!  -- Jac" Margin="20 20 0 0"
+                    <TextBlock Text="This app was created to make your experience at PAX simpler and more enjoyable. I will be updating it for each PAX and improving it over time. Any feedback is welcome (especially if you have new links or maps for a city!)  -- Jac" Margin="20 20 0 0"
                                TextWrapping="Wrap"
                               />   
                     <Button x:Name="rateButton" 
@@ -50,7 +50,7 @@
                             HorizontalAlignment="Left"                       
                             Content="take a user survey"/>
                     <TextBlock 
-                        Text="version - 4.0" Margin="20 20 0 0"
+                        Text="version - 5.0" Margin="20 20 0 0"
                                TextWrapping="Wrap"
                             /> 
                 </StackPanel>

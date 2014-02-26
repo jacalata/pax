@@ -67,7 +67,19 @@
                 <TextBlock Text="reminders will be set for one hour before the event start time" 
                            TextWrapping="Wrap"
                           Style="{StaticResource PhoneTextSubtleStyle}" />
-                    -->
+                
+                -->
+                <!-- 
+                leave this out for Australia, needs more testing
+                <Button x:Name="changeConventionChoiceButton"
+                        HorizontalAlignment="Left"
+                        Margin="0,50,0,0"
+                        Click="changeConventionChoiceButton_Click" >
+                <TextBlock Text="change default convention"
+                          Style="{StaticResource PhoneTextNormalStyle}" />
+                </Button>
+                -->
+
             </StackPanel>
         </Grid>
     </Grid>

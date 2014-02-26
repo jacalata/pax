@@ -26,6 +26,17 @@ namespace PAX7.ViewModel
             events.Sort();
             slicePageTitle = title;
         }
+
+        public override string ToString()
+        {
+            string text = "";
+            foreach (Event e in events)
+            {
+                text +=  e.friendlyStartTime + " -- " + e.Location + " (" + e.hoursDuration + " hour[s]): " + e.Name + Environment.NewLine;
+            }
+            return text;
+        }
+
     }
 
     public class ScheduleViewModel
@@ -63,7 +74,7 @@ namespace PAX7.ViewModel
                 this.schedule = new Schedule();
             }
             this.schedule.ScheduleLoadingComplete +=
-            new EventHandler<ScheduleLoadingEventArgs>(Schedule_ScheduleLoadingComplete);
+                new EventHandler<ScheduleLoadingEventArgs>(Schedule_ScheduleLoadingComplete);
             this.events = new ObservableCollection<Event>();
             this.EventSlices = new ObservableCollection<ScheduleSlice>();
             this.view = view;
@@ -79,6 +90,13 @@ namespace PAX7.ViewModel
         {
             schedule.GetEvents();
         }
+            
+        // save any changes to the events
+        public void SaveSchedule()
+        {
+            schedule.SaveEvents(this.events);
+        }
+
 
         /// <summary>
         /// This is fired by the Schedule_ScheduleLoadingComplete method below
@@ -127,6 +145,18 @@ namespace PAX7.ViewModel
             }
         }
 
+        // handle failures in reading schedule data
+        private void ScheduleNotReady()
+        {
+            schedule.ReloadEvents();
+            // Fire Event on UI Thread
+            view.Dispatcher.BeginInvoke(() =>
+            {
+                view.OnLoadFailed();
+            });
+        }
+            
+
 
         /// <summary>
         /// create the slices, retrieving events that contain the given search term in either title or description,
@@ -161,6 +191,8 @@ namespace PAX7.ViewModel
         /// <returns></returns>
        private static bool isContainedIn(string searchField, string searchTerm)
         {
+            if (searchField == null || searchTerm == null)
+                return false;
             return searchField.ToUpperInvariant().Contains(searchTerm.ToUpperInvariant()); 
         }
 
@@ -170,6 +202,11 @@ namespace PAX7.ViewModel
        void filterEventsByDay()
         {
             List<string> eventDays = schedule.eventDays;
+            if (eventDays == null)
+            {
+                ScheduleNotReady();
+                return;
+            }
             ScheduleSlice daySlice;
             var eventsVar = (List<Event>)null;
             foreach (string dayName in eventDays)
@@ -236,20 +273,33 @@ namespace PAX7.ViewModel
        /// create the slices, selecting only starred events and dividing them based on the event day
         /// </summary>
        void filterEventsByStars()
-       {  
-           
-            List<string> eventDays = schedule.eventDays;
-            ScheduleSlice starSlice;
-            var eventsVar = (List<Event>)null;
-            foreach (string dayName in eventDays)
-            {
-                eventsVar =
-           (from Event in events
-            where Event.day.Equals(dayName) && (Event.Star == true)
-            select Event).ToList<Event>();
-                starSlice = new ScheduleSlice(dayName, eventsVar);
-                EventSlices.Add(starSlice);
-            }
+       {
+
+           List<string> eventDays = schedule.eventDays;
+           ScheduleSlice starSlice;
+           var eventsVar = (List<Event>)null;
+           foreach (string dayName in eventDays)
+           {
+               eventsVar =
+          (from Event in events
+           where Event.day.Equals(dayName) && (Event.Star == true)
+           select Event).ToList<Event>();
+               starSlice = new ScheduleSlice(dayName, eventsVar);
+               EventSlices.Add(starSlice);
+           }
+       }
+
+       public ScheduleSlice GetStarredSlice()
+       {
+           ScheduleSlice starSlice;
+           var eventsVar = (List<Event>)null;
+           eventsVar =
+              (from Event in events
+               where (Event.Star == true)
+               select Event).ToList<Event>();
+           starSlice = new ScheduleSlice("plans", eventsVar);
+           EventSlices.Add(starSlice);
+           return starSlice;
        }
 
         

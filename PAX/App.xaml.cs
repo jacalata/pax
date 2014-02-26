@@ -1,22 +1,23 @@
 ﻿using System;
-using System.IO.IsolatedStorage;
+using System.Collections.Generic; // dictionary
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;//navigation service?
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PAX7.Utilicode; //settings
+using PAX7.ViewModel; // show event
 
 namespace PAX7
 {
+
     public partial class App : Application
     {
         private Point _mouseDownPosition;
         private DateTime _mouseDownTime;
         public enum GESTURE { DRAG, HOLD, TAP };
-        // get the title of a convention as ConventionName[Convention.PAXEAST]
-        public enum Convention {PAXEAST, PAXPRIME, PAXAUS};
-        public static string[] ConventionName = { "PAX East", "PAX Prime", "PAX Australia" };
+
+        public LocalyticsSession appSession;
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -28,19 +29,12 @@ namespace PAX7
         /// Constructor for the Application object.
         /// </summary>
         public App()
-        {     
-            //hard coding to PAX East here. Will be replaced by a choice page.
-            // save our value to the settings
-            if (IsolatedStorageSettings.ApplicationSettings.Contains("CurrentConvention") == true)
-            {
-                // key already exists, remove it  
-                IsolatedStorageSettings.ApplicationSettings.Remove("CurrentConvention");
-            }
-            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXEAST]);
+        {
+            // TODO remove hardcode when I put in the 'choose' page
+            int con = 1;
+            IsoStoreSettings.SaveDefaultConvention(con);
 
-
-            IsolatedStorageSettings.ApplicationSettings.Save();
-//            dnp.Counter.EnableMemoryCounter = true; 
+            // dnp.Counter.EnableMemoryCounter = true; 
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
@@ -63,6 +57,44 @@ namespace PAX7
 
             // Phone-specific initialization
             InitializePhoneApplication();
+            
+            // handle redirecting to launch choice page if needed
+            RootFrame.Navigating += new NavigatingCancelEventHandler(RootFrame_Navigating);
+
+        }
+
+        
+        // http://blogs.msdn.com/b/ptorr/archive/2010/08/28/redirecting-an-initial-navigation.aspx?wa=wsignin1.0
+        /// <summary>
+        /// interrupt launch of mainpage to launch interstitial convention choice page if necessary
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RootFrame_Navigating(object sender, NavigatingCancelEventArgs e)
+        {/*
+            // TODO: we only want to do this on first launch each time. Move to launch method?
+            // Only care about intercepting the MainPage if we haven't chosen an account yet
+            if (e.Uri.ToString().Contains("/MainPage.xaml")  &&  IsoStoreSettings.IsAskEveryTime()
+                && !e.Uri.ToString().Contains("Choice") ) 
+            {
+                // Cancel current navigation and schedule the real navigation for the next tick
+                // (we can't navigate immediately as that will fail; no overlapping navigations
+                // are allowed)
+                
+                
+                e.Cancel = true;
+                RootFrame.Dispatcher.BeginInvoke(delegate
+                {
+                     string uri = "/View/LaunchPage.xaml";
+                     RootFrame.Navigate(new Uri(uri, UriKind.Relative));
+                });
+            }
+            else
+            {
+                return;
+            }
+                 * */
+
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -70,8 +102,12 @@ namespace PAX7
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             StateUtilities.IsLaunching = true;
-            //IsolatedStorageExplorer.Explorer.Start("jac-zula"); causes deployment failure
             LittleWatson.CheckForPreviousException();
+            appSession = new LocalyticsSession("6fbc7a37fd93bb6135581e6-eecdd2f8-7f4d-11e3-9861-009c5fda0a25");
+            appSession.open();
+            appSession.upload();
+
+            // why am I doing this schedule setting here? looks like leftover code from something
             PAX7.Model.Schedule schedule = new PAX7.Model.Schedule();
             if (IsoStoreSettings.IsAllowedAutoCheckForUpdates())
             {
@@ -88,19 +124,23 @@ namespace PAX7
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
             StateUtilities.IsLaunching = false;
-            //IsolatedStorageExplorer.Explorer.RestoreFromTombstone();probably breaks something
+            appSession = new LocalyticsSession("6fbc7a37fd93bb6135581e6-eecdd2f8-7f4d-11e3-9861-009c5fda0a25");
+            appSession.open();
+            appSession.upload();
         }
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
+            appSession.close();
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
+            appSession.close();
         }
 
         // Code to execute if a navigation fails
@@ -117,6 +157,9 @@ namespace PAX7
         // Code to execute on Unhandled Exceptions
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
+            Dictionary<String, String> attributes = new Dictionary<string, string>();
+            attributes.Add("exception", e.ExceptionObject.Message);
+            appSession.tagEvent("App crash", attributes);
             LittleWatson.ReportException(e.ExceptionObject);
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -217,7 +260,7 @@ namespace PAX7
         private void expando_Click(object sender, RoutedEventArgs e)
         {
             PAX7.Model.Event selected = (PAX7.Model.Event)((Button)e.OriginalSource).DataContext;
-            selected.ShowEventDetails();
+            EventView.ShowEventDetails(selected);
         }
 
         /// <summary>
@@ -228,6 +271,27 @@ namespace PAX7
         {
             PhoneApplicationFrame root = (PhoneApplicationFrame)(Application.Current.RootVisual);
             root.Navigate(new Uri(destination, UriKind.Relative));
+        }
+
+        /// <summary>
+        /// radio button method for datatemplate used in LaunchPage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            // how do I find out the index of the radio button from itself? look up the name?
+            RadioButton rb = (RadioButton)e.OriginalSource;
+            foreach (string con in IsoStoreSettings.ConventionNames)
+            {
+                if (rb.Content.Equals(con))
+                {
+                    int conventionId = IsoStoreSettings.ConventionNames.IndexOf(con);
+                    IsoStoreSettings.SaveDefaultConvention(conventionId);
+                    break;
+                }
+            }
+
         }
 
     }

@@ -14,7 +14,7 @@
 	  <xs:enumeration value="Exhibition Hall" />
 	  <xs:enumeration value="Jamspace" />
 	  <xs:enumeration value="Halo Fest"/>
-	  <xs:enumeration value="NCSoft"
+      <xs:enumeration value="NCSoft" />
     </xs:restriction>
   </xs:simpleType>
 
@@ -26,8 +26,8 @@
       <xs:enumeration value="Contest"/>
       <xs:enumeration value="FreePlay"/>
       <xs:enumeration value="Show"/>
+	  <xs:enumeration value="Social"/>
 	  <xs:enumeration value="D&amp;D"/>
-	  <xs:enumaration value="Social"/>
 
     </xs:restriction>
   </xs:simpleType>

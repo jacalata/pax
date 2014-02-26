@@ -8,6 +8,7 @@ namespace PAX7.View
     {
         public AboutPage()
         {
+            ((App)Application.Current).appSession.tagEvent("AboutPage");
             InitializeComponent();
         }
 

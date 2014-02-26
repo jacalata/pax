@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Input;
-
+using Microsoft.Phone.Tasks;
 using PAX7.ViewModel;
 
 
@@ -46,6 +48,9 @@ namespace PAX7.View
             else 
                 this.pivotString = "Day";
 
+            Dictionary<String, String> attributes = new Dictionary<string, string>();
+            attributes.Add("pivotOn", this.pivotString);
+            ((App)Application.Current).appSession.tagEvent("LoadSchedule", attributes);
             base.OnNavigatedTo(e);
             if (this.pivotString == ScheduleViewModel.PivotView.Search.ToString())
             {
@@ -61,6 +66,16 @@ namespace PAX7.View
                 searchHeader.Visibility = Visibility.Collapsed;
                 LoadSchedule();
             }
+        }
+
+            /// <summary>
+        /// Make sure any changed events are saved to storage
+        /// Not sure why I suddenly need this after changing to sql storage
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            vm.SaveSchedule();
         }
 
         /// <summary>
@@ -88,6 +103,7 @@ namespace PAX7.View
         /// </summary>
         private void search()
         {
+            ((App)Application.Current).appSession.tagEvent("search");
             // instant ui reaction
             startProgressBar();
             // now begin actual search
@@ -138,6 +154,7 @@ namespace PAX7.View
                 else if (pivotString == ScheduleViewModel.PivotView.Stars.ToString())
                 {
                     explanatoryText.Text = emptyPersonalScheduleResults;
+                    goToScheduleLink.Visibility = Visibility.Visible;
                 }
                 explanatoryText.Visibility = Visibility.Visible;
             }
@@ -147,6 +164,17 @@ namespace PAX7.View
                 schedulePivot.SelectedIndex = firstResult;
             }
 
+        }
+        
+        /// <summary>
+        /// something went wrong loading the schedule. Show the user a message and back out.
+        /// </summary>
+        public void OnLoadFailed()
+        {
+            ((App)Application.Current).appSession.tagEvent("LoadScheduleFailed");
+            MessageBox.Show("something went wrong loading the schedule. If this keeps happening, you may need to reinstall the app to clear some bad data",
+                "Schedule not available", MessageBoxButton.OK);
+            NavigationService.GoBack();
         }
 
 
@@ -202,5 +230,40 @@ namespace PAX7.View
             LoadingProgressBar.Visibility = Visibility.Collapsed;
         }
         #endregion
+
+        private void AppBarEmail_Click(object sender, System.EventArgs e)
+        {
+            ((App)Application.Current).appSession.tagEvent("EmailToFriend");
+            EmailComposeTask emailTask = new EmailComposeTask();
+            ScheduleSlice stars = vm.GetStarredSlice();
+            emailTask.Subject = "My PAX schedule";
+            if (stars.events.Count == 0)
+            {
+                MessageBox.Show("You haven't added any items to your schedule yet!", "Empty schedule", MessageBoxButton.OK);
+            }
+            else
+            {
+                string text = stars.ToString();
+                emailTask.Body = text;
+                emailTask.Show();
+            }
+        }
+
+        /// <summary>
+        /// share a link to a single event detail
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AppBarShare_Click(object sender, System.EventArgs e)
+        {
+            ShareLinkTask shareLinkTask = new ShareLinkTask();
+
+            shareLinkTask.Title = "Code Samples";
+            shareLinkTask.LinkUri = new System.Uri("http://code.msdn.com/wpapps", System.UriKind.Absolute);
+            shareLinkTask.Message = "Here are some great code samples for Windows Phone.";
+
+            shareLinkTask.Show();
+
+        }
     }
 }

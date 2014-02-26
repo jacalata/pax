@@ -28,6 +28,15 @@ namespace PAX7.Tests.Fakes
             events.Add(fakeEvent);
         }
 
+        public override void SaveEvents(ObservableCollection<Event> events)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ReloadEvents()
+        {
+            throw new NotImplementedException();
+        }
         // can I literally just leave these empty?
         public override void checkForNewSchedule(string uri)
         {

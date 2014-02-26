@@ -25,6 +25,7 @@ namespace PAX7.Tests
 
           [TestMethod]
         [TestProperty("TestCategory", "Constructors")]
+        [Tag("pivot")]
         public void createSchedulePivotView()
         {
             string pivotType = "byDay";

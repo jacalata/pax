@@ -53,6 +53,13 @@
                                MouseLeftButtonUp="onMouseLeftButtonUp_MenuItem" 
                                Padding="50 15 0 15"/>
         </DataTemplate>
+        
+        <DataTemplate x:Key="conventionChoiceTemplate">
+          <RadioButton Content="{Binding}" Padding="50 15 0 15" GroupName="rbGroupConventions" 
+                       Checked="RadioButton_Checked"/>
+          <!--    <TextBlock Text = "{Binding}" />
+                         ="{StaticResource PhoneTextTitle2Style}"/> -->
+        </DataTemplate>
 
         <local:BoolToVisibilityConverter x:Key="BooleanVisibility" TrueValue="Visible" FalseValue="Collapsed" />
 
@@ -99,8 +106,8 @@
                     </StackPanel>
                     <TextBlock Text="{Binding friendlyStartTime}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Kind}"        Style="{StaticResource detailTextStyle}"/>
-                        <TextBlock Text=" - "                   Style="{StaticResource detailTextStyle}"/>
+                  <!--      <TextBlock Text="{Binding Kind}"        Style="{StaticResource detailTextStyle}"/>
+                        <TextBlock Text=" - "                   Style="{StaticResource detailTextStyle}"/> -->
                         <TextBlock Text="{Binding Location}"    Style="{StaticResource detailTextStyle}" />
                     </StackPanel>
                 </StackPanel>
@@ -111,16 +118,7 @@
             <TextBlock Text="{Binding slicePageTitle}"></TextBlock>
         </DataTemplate>
         
-        <!-- non telerik 
-        <DataTemplate x:Key="pivotListTemplate">
-            <ListBox 
-                ItemsSource="{Binding events}"
-                ItemTemplate="{StaticResource eventTemplate}">
-            </ListBox>
-        </DataTemplate
-        -->
-        
-        <!--telerik control-->
+        <!--telerik jumplist-->
         <DataTemplate x:Key="pivotListTemplate">
             <telerikControlsData:RadJumpList x:Name="radJumpList"
                          ItemsSource="{Binding events}"

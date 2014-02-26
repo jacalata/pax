@@ -76,6 +76,9 @@
       <HintPath>..\packages\WindowsPhoneEssentials.Testing.0.7.2.88\lib\SL4-WindowsPhone\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="RateMyApp">
+      <HintPath>..\packages\RateMyApp.1.0.2\lib\sl4-wp71\RateMyApp.dll</HintPath>
+    </Reference>
     <Reference Include="SilverlightSerializer.WP7">
       <HintPath>..\packages\WindowsPhoneEssentials.0.7.2.88\lib\SL4-WindowsPhone\SilverlightSerializer.WP7.dll</HintPath>
     </Reference>
@@ -130,15 +133,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\iSchedule.cs" />
-    <Compile Include="Utilicode\IsoStoreSettings.cs" />
+    <Compile Include="Utilicode\Converter.cs" />
     <Compile Include="Utilicode\MenuOption.cs" />
+    <Compile Include="Utilicode\MetroGridHelper.cs" />
     <Compile Include="Utilicode\MobileService.cs" />
+    <Compile Include="Utilicode\RelativeAnimatingContentControl.cs" />
+    <Compile Include="Utilicode\StateUtilities.cs" />
+    <Compile Include="Utilicode\TiltEffect.cs" />
+    <Compile Include="ViewModel\EventView.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\ISchedulePivotView.cs" />
-    <Compile Include="Utilicode\Converter.cs" />
-    <Compile Include="Utilicode\LittleWatson.cs" />
-    <Compile Include="Utilicode\MetroGridHelper.cs" />
     <Compile Include="ViewModel\ScheduleDatabase.cs" />
     <Compile Include="ViewModel\ScheduleViewModel.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
@@ -147,23 +151,19 @@
     <Compile Include="View\ImageCarousel.xaml.cs">
       <DependentUpon>ImageCarousel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\LaunchPage.xaml.cs">
+      <DependentUpon>LaunchPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SchedulePivotView.xaml.cs">
       <DependentUpon>SchedulePivotView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utilicode\RelativeAnimatingContentControl.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Event.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilicode\StateUtilities.cs" />
-    <Compile Include="Utilicode\TiltEffect.cs" />
-    <Compile Include="Model\Schedule.cs" />
-    <Compile Include="View\ViewModels\DataItemViewModel.cs" />
-    <Compile Include="View\ViewModels\MainDataViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -178,9 +178,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SampleData\MainDataViewModelSampleData.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\LaunchPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SettingsPage.xaml">
       <SubType>Designer</SubType>
@@ -196,10 +196,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Images\Seattle\AccessibleMetro.PDF" />
-    <None Include="Images\Seattle\SeattleConventionCentre.PDF" />
-    <None Include="Images\Seattle\SeattleMap.PDF" />
+    <None Include="Resources\Events.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="XML\East\app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -211,20 +211,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Seattle\map_annex.png" />
-    <Resource Include="Images\Seattle\map_expo_4_a.PNG" />
-    <Resource Include="Images\Seattle\map_expo_4_b.PNG" />
-    <Resource Include="Images\Seattle\map_expo_6.PNG" />
-    <Resource Include="Images\Seattle\map_level1_2_3.png" />
-    <Resource Include="Images\Seattle\map_level4_6.png" />
-    <Resource Include="Images\Seattle\map_sheraton.png" />
-    <Resource Include="Images\Seattle\map_world.png" />
     <Resource Include="Images\Seattle\SeattleMapDowntown.jpg" />
-    <Resource Include="Toolkit.Content\ie.png" />
-    <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
-    <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
-    <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
-    <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Background.png" />
     <Content Include="Images\Boston\2013official\levelTile.png" />
     <Content Include="Images\Boston\2013official\exhibitor_directory.png" />
@@ -233,10 +220,11 @@
     <Content Include="Images\Boston\2013official\Level1.png" />
     <Content Include="Images\Boston\2013official\Level2.png" />
     <Content Include="Images\Boston\2013official\Level3.png" />
-    <Content Include="Images\Boston\bcecParking.jpg" />
-    <Content Include="Images\Boston\bcecSurroundingParking.jpg" />
-    <Content Include="Images\Boston\bcecSurroundingStreets.jpg" />
-    <Content Include="Images\Boston\boston.jpg" />
+    <Content Include="Images\Boston\bcecimage.png" />
+    <Content Include="Images\Boston\bcecParking.png" />
+    <Content Include="Images\Boston\bcecSurroundingParking.png" />
+    <Content Include="Images\Boston\bcecSurroundingStreets.png" />
+    <Content Include="Images\Boston\boston.PNG" />
     <Content Include="Images\Boston\BostonMBTAMap.jpg" />
     <Content Include="Images\Boston\bostonTile.jpg" />
     <Content Include="Images\Boston\floorplanOverlays\bcecLevel0.png" />
@@ -245,36 +233,90 @@
     <Content Include="Images\Boston\floorplanOverlays\bcecLevel3.png" />
     <Content Include="Images\Boston\floorplanOverlays\levelTile.png" />
     <Content Include="Images\Icons\download.png" />
+    <Content Include="Images\Icons\feature.email.png" />
     <Content Include="Images\Icons\feature.search.png" />
     <Content Include="Images\Icons\feature.settings.png" />
     <Content Include="Images\Icons\logoCrossTransparent.png" />
     <Content Include="Images\Icons\questionmark.png" />
     <Content Include="Images\Icons\share.png" />
-    <Content Include="README_FIRST.txt" />
-    <Content Include="Images\Telerik\Frame.png" />
-    <Content Include="Images\Telerik\FrameThumbnail.png" />
-    <Content Include="View\Images\Frame.png" />
-    <Content Include="View\Images\FrameThumbnail.png" />
-    <Content Include="XML\contents.xml">
+    <Content Include="Images\Icons\mediumTileBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\wideTileBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Melbourne\2013official\EXPO_HALL.png" />
+    <Content Include="Images\Melbourne\2013official\MAPS_1.png" />
+    <Content Include="Images\Melbourne\2013official\MAPS_2.jpg" />
+    <Content Include="Images\Melbourne\2013official\WorldMap.png" />
+    <Content Include="Images\Melbourne\cityToShowgrounds.png" />
+    <Content Include="Images\Melbourne\GreaterMelbTile.png" />
+    <Content Include="Images\Melbourne\InnerMelbourne.png" />
+    <Content Include="Images\Melbourne\melbTile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Melbourne\Showgrounds.png" />
+    <Content Include="Images\Melbourne\showgroundsSurrounds.png" />
+    <Content Include="Images\Melbourne\trains.png" />
+    <Content Include="Images\Seattle\2013_legend.png" />
+    <Content Include="Images\Seattle\2013_level2_level3.png" />
+    <Content Include="Images\Seattle\2013_lvl4_lvl6.png" />
+    <Content Include="Images\Seattle\annex_map_2013.png" />
+    <Content Include="Images\Seattle\area_map_2013.png" />
+    <Content Include="Images\Seattle\expo_2013_lvl6.png" />
+    <Content Include="Images\Seattle\expo_2013_level4pt2.png" />
+    <Content Include="Images\Seattle\expo_2013_Lvl4_part1.png" />
+    <Content Include="Images\Seattle\world_map_2013.png" />
+    <Content Include="XML\Australia\contents.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="XML\Friday.xml" />
-    <Content Include="XML\Saturday.xml">
+    <Content Include="XML\Australia\friday.xml" />
+    <Content Include="XML\Australia\saturday.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="XML\social.xml">
+    <Content Include="XML\Australia\Sunday.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="XML\Sunday.xml">
+    <Content Include="XML\East\contents.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\East\Friday.xml" />
+    <Content Include="XML\East\Saturday.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\East\Sunday.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\Prime\contents.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\Prime\friday.xml" />
+    <Content Include="XML\Prime\monday.xml" />
+    <Content Include="XML\Prime\saturday.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\Prime\Sunday.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="XML\XMLschema.xml" />
     <Content Include="ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj">
+      <Project>{1A879C54-50B2-4CAD-B2B7-E24BEF40B2EF}</Project>
+      <Name>SharedLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TileUpdater\TileUpdater.csproj">
+      <Project>{591F07E8-D5D6-4B62-BC0A-9A6206EF4961}</Project>
+      <Name>TileUpdater</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Tiles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

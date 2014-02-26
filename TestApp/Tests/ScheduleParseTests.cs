@@ -4,6 +4,7 @@ using System.Collections.ObjectModel; //observablecollection
 using System.IO.IsolatedStorage;
 using System.Xml;
 using System.Xml.Linq;
+using Microsoft.Silverlight.Testing; //Tags
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PAX7.Model;
 
@@ -28,6 +29,7 @@ namespace PAX7.Tests
 
         
          [TestMethod]
+        [Tag("smoke")]
         // method to confirm the initialiser doesn't fail: if it does, all the tests will silently pass :O
         public void SmokeTest()
         {
@@ -35,7 +37,8 @@ namespace PAX7.Tests
         }
 
          [TestMethod]
-        [TestProperty("TestCategory", "Constructors")]
+         [TestProperty("TestCategory", "Constructors")]
+         [Tag("parse")]
         public void VerifyCreateNewSchedule()
         {
             var testSchedule = new Schedule();
@@ -51,7 +54,8 @@ namespace PAX7.Tests
 
         // creating schedule: read data from xml file and validate schedule Object is created
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("parse")]
         public void VerifyParsingGoodXMLToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -67,7 +71,8 @@ namespace PAX7.Tests
         ///  creating schedule: read data from xml file and validate the correct events were added to the schedule Object
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("parse")]
         public void VerifyParsingGoodXMLToScheduleEvents()
         {
             List<string> filenames = new List<string>();
@@ -100,7 +105,8 @@ namespace PAX7.Tests
         ///  don't choke on bad xml file, make sure no exception made it out of the method
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("parse")]
         public void VerifyParsingBadXMLToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -118,7 +124,8 @@ namespace PAX7.Tests
         ///  don't choke on bad event definitions, make sure no exception made it out of the method
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("parse")]
         public void VerifyParsingBadEventsToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -132,17 +139,19 @@ namespace PAX7.Tests
             var _emptyEvents = new ObservableCollection<Event>();
             ObservableCollection<Event> Events = schedule.GetXMLEvents(true, filenames); //read from xap
             Assert.IsNotNull(Events, "confirming event collection was  created");
-            Assert.Equals(_emptyEvents, Events);
+            Assert.AreNotEqual(_emptyEvents, Events); // events should have been created with "unknown" fields. 
+            Assert.AreNotEqual(0, Events.Count);
         }
 
-        // test that a malformed event will be skipped but good events in the same file will be added?
+        // test that a malformed event will be created with the "unknown" setting - one for each of the relevant BadXML files
 
         /// <summary>
         /// Call the GetFilenames method of the schedule and confirm that at least one filename is populated from 
         /// the xap stored contents.xml file
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("parse")]
         public void VerifyParsingContentsFile()
         {
             List<string> filenames = new List<string>();
@@ -157,7 +166,8 @@ namespace PAX7.Tests
         /// Call the GetEventCategories method of the schedule and verifies it has loaded at least one day name
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("parse")]
         public void VerifyParsingConventionDataFile()
         {
             List<string> days = new List<string>();
@@ -174,7 +184,8 @@ namespace PAX7.Tests
         ///  don't choke on bad date formats - events should be created with a fake date 
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("smoke")]
         public void VerifyParsingBadDatesToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -210,7 +221,8 @@ namespace PAX7.Tests
         /// Referencing a missing xml file should not break the app - no exceptions thrown
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [Tag("parse")]
         public void VerifyParsingMissingXMLToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -239,6 +251,7 @@ namespace PAX7.Tests
         /// retrieve schedule from isolated storage - verify they match what I saved in, especially stars 
         /// </Summary> 
          [TestMethod]
+         [Tag("parse")]
         public void ReadEventsFromStorage()
         {
             var testSchedule = new Schedule();

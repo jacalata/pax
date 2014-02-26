@@ -152,15 +152,21 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="XML\contents.xml" />
+    <Content Include="XML\East\contents.xml" />
     <Content Include="XML\Friday.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\Sunday.xml" />
+    <Content Include="XML\Test\contents.xml" />
     <Resource Include="Toolkit.Content\ie.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PAX\PAX7.csproj">
       <Project>{25366183-F213-4B3E-A5E6-2D6B67453678}</Project>
       <Name>PAX7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj">
+      <Project>{1A879C54-50B2-4CAD-B2B7-E24BEF40B2EF}</Project>
+      <Name>SharedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

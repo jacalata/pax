@@ -56,8 +56,22 @@
             Text="No events matched your search term."
             TextWrapping="Wrap" 
             Margin="20,220,20,20" />
+        
+        <HyperlinkButton Name="goToScheduleLink" Visibility="Collapsed"
+            Content="Add events to your schedule"
+            NavigateUri="/View/SchedulePivotView.xaml?PivotOn=Day"
+            />
+
 
     </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
+
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/feature.email.png" Text="share my schedule" Click="AppBarEmail_Click" />
+     
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 
 </phone:PhoneApplicationPage>

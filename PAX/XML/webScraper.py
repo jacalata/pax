@@ -10,11 +10,13 @@ import os
 import string #for clearing weird characters out of strings for filenames
 import time #sleep between requests
 
+import zipfile #create zip package
+
 osPath = os.path.dirname(__file__)
 generated_on = str(datetime.datetime.now())
 year = "2013" #doesn't get specified, I guess they expect you to know what year it is
 paxEncoding = "utf-8" #is waht the pax site says they use
-
+conName = "Prime" # East, Aus
 
 # pull the metadata straight out of the schedule where possible
 Locations = []
@@ -31,10 +33,10 @@ def usage():
 import string
 
 class Del:
-  def __init__(self, keep=string.ascii_letters+'\\'):
-    self.comp = dict((ord(c),c) for c in keep)
-  def __getitem__(self, k):
-    return self.comp.get(k)
+    def __init__(self, keep=string.ascii_letters+'\\'):
+        self.comp = dict((ord(c),c) for c in keep)
+    def __getitem__(self, k):
+        return self.comp.get(k)
 
 DD = Del()
 
@@ -84,6 +86,7 @@ def main(argv):
 
     sampledatafolder = os.path.join(osPath,"sampledata")    
     offlinefolder =  os.path.join(osPath, "offline")
+    savePath = os.path.join(osPath, conName)
     print(sampledatafolder)
 
     try:                                
@@ -108,7 +111,7 @@ def main(argv):
             DOWNLOAD = True
     print ("Debug, Local, Short, Verbose = ", DEBUGMODE, TESTLOCALLY, SHORTMODE, DEBUGPRINT)               
 
-    fileListing = open(ospath + "fileListing.xml")
+   # fileListing = open(osPath + "fileListing.xml")
 
     if (TESTLOCALLY):
         if (DEBUGMODE):
@@ -116,7 +119,7 @@ def main(argv):
         pageLocation = sampledatafolder+"\schedule.htm"
         page = open(pageLocation, encoding='utf-8')
     else:
-        url = "http://east.paxsite.com/schedule"
+        url = "http://" + conName + ".paxsite.com/schedule"
         if (DEBUGMODE):
             print(url)
         sock = urlopen(url)
@@ -128,7 +131,7 @@ def main(argv):
 
     soup = BeautifulSoup(page)
     schedule = soup.find('ul', attrs={'id': 'schedule'}) 
-    days = schedule.findAll('li', recursive=False) #list of 3 days 
+    days = schedule.findAll('li', recursive=False) #list of 3 days OR FOUR DAYS!!!!
     for day in days:
 
 
@@ -141,10 +144,6 @@ def main(argv):
         dayDate = day.find('h2', recursive=True).text 
         if (True):
             print("############"+dayName)
-
-        if (dayName == "friday"):
-            print ("$$$$")
-            continue
         
         timeblocks=day.findAll('div', 'timeBlock')
         if SHORTMODE:
@@ -161,7 +160,7 @@ def main(argv):
             
             # for each event, define name,kind,location,datetime,end,description
             for eventInfo in events:
-                time.sleep(2)
+                time.sleep(5) # delay a sec so they don't kick us off the site
                 # time format is Sunday 9/2/2013 10:00 am
                 eventTime = dayDate + "/" + year + " " + timeblock.find('h3', 'time').text
                 if DEBUGPRINT:
@@ -199,15 +198,15 @@ def main(argv):
                 detailSoup = BeautifulSoup(detailPage)
                 eventDetail = detailSoup.find('div', 'white')
             #   <div class="white">
-    		#	    <h2>Friday Night Concerts</h2>
-    		#	    <p>Come one, come all!&nbsp; It&#8217;s time for the PAX EAST 2013 CONCERT LINEUP! Friday night it&#8217;s VGO, Those Who Fight and Protomen!</p>			
-    		#		<h4>Panelists:</h4>
-    		#	    <p>PAX East Musical Guests</p>
-    		#		<ul class="meta">
-    		#	       	<li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Main Theatre">Main Theatre</a></li><li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Concerts">Concerts</a></li>
-    		#	    	<li class="date">Friday 3/22 <strong>8:30PM - 1:30AM</strong></li>
-    		#	    </ul>
-    		#   </div>
+            #       <h2>Friday Night Concerts</h2>
+            #       <p>Come one, come all!&nbsp; It&#8217;s time for the PAX EAST 2013 CONCERT LINEUP! Friday night it&#8217;s VGO, Those Who Fight and Protomen!</p>           
+            #       <h4>Panelists:</h4>
+            #       <p>PAX East Musical Guests</p>
+            #       <ul class="meta">
+            #           <li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Main Theatre">Main Theatre</a></li><li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Concerts">Concerts</a></li>
+            #           <li class="date">Friday 3/22 <strong>8:30PM - 1:30AM</strong></li>
+            #       </ul>
+            #   </div>
                 
                 eventName=eventDetail.find('h2').text
                 if DEBUGPRINT:
@@ -227,9 +226,9 @@ def main(argv):
 
                 options = eventDetail.find('ul', 'meta')
             #   <ul class="meta">
-		    #       <li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Main Theatre">Main Theatre</a></li>
-		    #       <li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Concerts">Concerts</a></li> <--optional 
-		    #	    <li class="date">Friday 3/22 <strong>8:30PM - 1:30AM</strong></li>
+            #       <li class="main"><a href="http://east.paxsite.com/schedule/category/main" title="Main Theatre">Main Theatre</a></li>
+            #       <li class="con"><a href="http://east.paxsite.com/schedule/category/con" title="Concerts">Concerts</a></li> <--optional 
+            #       <li class="date">Friday 3/22 <strong>8:30PM - 1:30AM</strong></li>
             #   </ul>          
                 if DEBUGPRINT:
                     print("details = " + options.text)
@@ -279,14 +278,54 @@ def main(argv):
         xml_string = tostring(root).decode('utf-8')
         if DEBUGMODE or DEBUGPRINT:
             print(xml_string)
-        filename = osPath+"\\"+dayName+".xml"
+        filename = savePath+"\\"+dayName+".xml"
         saveStringAsFile(xml_string, filename, DEBUGMODE)
-        print >> fileListing, filename
+       # print >> fileListing, filename
 
-    fileListing.close()
-
-
+    # print contents.xml file
+    root = Element('xml')
+    root.set('version', '1.0')
+    root.append(Comment('Generated by ElementTree in webScraper.py at ' + generated_on))
         
+    versionInfo = SubElement(root, 'version')
+    now = datetime.datetime.now()
+    dateString = str(now.year) + "/" + str(now.month).zfill(2) + "/" + str(now.day).zfill(2)
+    fileLocation = "http://paxwp7.nfshost.com/" + conName + "/schedule.zip"
+    numberString = str(now.year) + str(now.month).zfill(2) + str(now.day).zfill(2) + str(now.hour).zfill(2)
+
+    versionInfo.set('date', dateString)
+    versionInfo.set('fileLocation', fileLocation) 
+    versionInfo.set('number', numberString)
+
+    files = SubElement(root, 'files')
+    for day in days:
+        fileElement = SubElement(files, 'file')
+        fileElement.set('type', 'xml')
+        dayName = day['id']
+        fileElement.set('name', dayName + ".xml")
+
+    print("saving as contents.xml")
+    xml_string = tostring(root).decode('utf-8')
+    if DEBUGMODE or DEBUGPRINT:
+        print(xml_string)
+    filename = savePath+"\\contents.xml"
+    saveStringAsFile(xml_string, filename, DEBUGMODE)
+
+    print("now zip all files into schedule.zip in the same directory")
+    target_dir = savePath
+    zip = zipfile.ZipFile(savePath + '\\schedule.zip', 'w', zipfile.ZIP_DEFLATED)
+    rootlen = len(target_dir) + 1
+    for base, dirs, files in os.walk(target_dir):
+       for file in files:
+            if (file != "schedule.zip" and file != "latestVersion.txt"):
+              fn = os.path.join(base, file)
+              zip.write(fn, fn[rootlen:])
+
+    # and now save it again as latestVersion.txt
+    print("saving as latestVersion.txt")
+    filename = savePath+"\\latestVersion.txt"
+    saveStringAsFile(xml_string, filename, DEBUGMODE)
+
+# main function to run as a module
 if __name__ == "__main__":
     main(sys.argv[1:])
-
