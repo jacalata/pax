@@ -11,8 +11,9 @@ import string #for clearing weird characters out of strings for filenames
 import time #sleep between requests
 
 osPath = os.path.dirname(__file__)
-generated_on = str(datetime.datetime.now())
-year = "2013" #doesn't get specified, I guess they expect you to know what year it is
+now = datetime.datetime.now()
+generated_on = str(now)
+year = now.year #doesn't get specified, I guess they expect you to know what year it is
 paxEncoding = "utf-8" #is waht the pax site says they use
 
 

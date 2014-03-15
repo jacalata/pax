@@ -251,22 +251,13 @@
     <Content Include="README_FIRST.txt" />
     <Content Include="Images\Telerik\Frame.png" />
     <Content Include="Images\Telerik\FrameThumbnail.png" />
+    <Content Include="XML\contents.xml" />
+    <Content Include="XML\Friday.xml" />
+    <Content Include="XML\Saturday.xml" />
+    <Content Include="XML\Sunday.xml" />
+    <Content Include="XML\XMLschema.xml" />
     <Content Include="View\Images\Frame.png" />
     <Content Include="View\Images\FrameThumbnail.png" />
-    <Content Include="XML\contents.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="XML\Friday.xml" />
-    <Content Include="XML\Saturday.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="XML\social.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="XML\Sunday.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="XML\XMLschema.xml" />
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
