@@ -97,7 +97,10 @@ DocProject/Help/html
 publish
 
 # Others
-[Bb]in
+[Bb]in/*
+![Bb]in/Release
+[Bb]in/Release/*
+![Bb]in/Release/*.xap
 [Oo]bj
 sql
 TestResults
@@ -106,7 +109,8 @@ ClientBin
 stylecop.*
 ~$*
 *.dbmdl
-Generated_Code #added for RIA/Silverlight projects
+
+# Generated_Code #added for RIA/Silverlight projects
 
 # Backup & report files from converting an old project file to a newer
 # Visual Studio version. Backup files are not needed, because we have git ;-)

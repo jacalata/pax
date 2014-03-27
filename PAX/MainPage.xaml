@@ -102,12 +102,12 @@
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
 
-                        <!-- expo maps --> <!-- using East 2011 for now-->
+                        <!-- expo maps --> 
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_expo"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\2013official\levelTile.png"/>
+                                <ImageBrush ImageSource="Images\Boston\2014official\levelTile.jpg"/>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                        
@@ -121,9 +121,18 @@
                                 <!-- seattle = seattle/seattleMapDowntown.jpg-->
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
+                        
+                        <!-- shuttle printout -->
 
+                    <HyperlinkButton Style="{StaticResource imageButtonStyle}"
+                                     NavigateUri="/View/ImageCarousel.xaml?Image=shuttle"
+                                         Width="170">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="Images\Boston\2014official\shuttleTile.JPG"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton  >
 
-                    </toolkit:WrapPanel>
+                </toolkit:WrapPanel>
             </controls:PanoramaItem>
            
             
@@ -168,13 +177,6 @@
                          HorizontalAlignment="Left"
                         Margin="2 2"/>
 
-                    <!-- penny arcade-->
-                    <HyperlinkButton 
-                        NavigateUri="http://www.penny-arcade.com"
-                        TargetName="_blank" 
-                        Content="- Penny Arcade!" 
-                         HorizontalAlignment="Left"
-                        Margin="2 2"/>
 
                     <TextBlock Text="useful local info"
                                Margin="20 18"/>
@@ -218,6 +220,13 @@
                         Content="- official Boston taxi info"
                         HorizontalAlignment="Left"   
                         Margin="2 2"/>
+                    
+                    <HyperlinkButton
+                        NavigateUri="http://app.trackwhatmatters.com:81/ridetrac/mainmenu"
+                        TargetName="_blank"
+                        Content=" - PAX hotel shuttles"
+                        HorizontalAlignment="Left"
+                        Margin="2 2" />
                     
 
                 </StackPanel>

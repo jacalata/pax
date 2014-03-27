@@ -52,6 +52,10 @@ namespace PAX7.View
             {
                 createImageSetFloorMaps();
             }
+            else if (newparameter.Equals("shuttle")) //boston only
+            {
+                createImageSetShuttle();
+            }
             else //city map
             {
                 createImageSetBoston();
@@ -113,13 +117,22 @@ namespace PAX7.View
         private void createImageSetExpoMaps()
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
-            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\2013official\\Level0.png"));
-            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\2013official\\Level1.png"));
-            _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\2013official\\Level2.png"));
-            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\2013official\\Level3.png"));
-            _images.Add(new ViewModel.ImageFile("exhibitors", "..\\Images\\Boston\\2013official\\exhibitor_hall.png"));
-            _images.Add(new ViewModel.ImageFile("exhibitor key", "..\\Images\\Boston\\2013official\\exhibitor_directory.png"));
+            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\2014official\\Level0.png"));
+            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\2014official\\Level1.png"));
+            _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\2014official\\Level2.png"));
+            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\2014official\\Level3.png"));
+            _images.Add(new ViewModel.ImageFile("expo hall", "..\\Images\\Boston\\2014official\\expo.png"));
+            _images.Add(new ViewModel.ImageFile("indie megabooth", "..\\Images\\Boston\\2014official\\indieMegaBooth.png"));
+           // _images.Add(new ViewModel.ImageFile("exhibitor key", "..\\Images\\Boston\\2014official\\exhibitor_directory.png"));
             _imageset = new MapViewModel("PAX layout", _images);
         }
+
+        private void createImageSetShuttle()
+        {
+            List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
+            _images.Add(new ViewModel.ImageFile("shuttle info", "..\\Images\\Boston\\2014official\\shuttleInfo.png"));
+            _imageset = new MapViewModel("Shuttles", _images);
+        }
+          
     }
 }

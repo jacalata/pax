@@ -160,7 +160,7 @@ def main(argv):
             for eventInfo in events:
                 time.sleep(3)
                 # time format is Sunday 9/2/2013 10:00 am
-                eventTime = dayDate + "/" + year + " " + timeblock.find('h3', 'time').text
+                eventTime = dayDate + "/" + str(year) + " " + timeblock.find('h3', 'time').text
                 if DEBUGPRINT:
                     print(eventTime)
                 
@@ -238,7 +238,7 @@ def main(argv):
                 endTime = endTime.replace("AM", " AM")
                 endTime = endTime.replace("PM", " PM")
 
-                eventEnd = dayDate + "/" + year + " " + endTime 
+                eventEnd = str(dayDate) + "/" + str(year) + " " + str(endTime)
                 if DEBUGPRINT:
                     print("end = " + eventEnd)
                 event.set('end', eventEnd)

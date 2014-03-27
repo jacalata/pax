@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://dl.dropbox.com/u/1378014/pax/XMLschema.xml">
-<version date = "3/13/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140313"/>
+<version date = "3/26/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140326"/>
 </xs:schema>

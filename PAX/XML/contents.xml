@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
 
-<version date = "3/12/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140312"/>
+<version date = "3/25/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140325"/>
 
 <files> 
   <file type="xml" name="friday.xml"/>
   <file type="xml" name="saturday.xml"/>
   <file type="xml" name="sunday.xml"/>
+  <file type="xml" name="exhibitors.xml" />
 </files>
 </xs:schema>
