@@ -164,3 +164,6 @@ pip-log.txt
 
 # mercurial cruft
 .hg/
+PAX/XML/ECCC/56
+PAX/XML/ECCC/51
+PAX/XML/ECCC/45
