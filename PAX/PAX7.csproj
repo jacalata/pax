@@ -195,9 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Images\Seattle\AccessibleMetro.PDF" />
-    <None Include="Images\Seattle\SeattleConventionCentre.PDF" />
-    <None Include="Images\Seattle\SeattleMap.PDF" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -209,15 +206,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Seattle\map_annex.png" />
-    <Resource Include="Images\Seattle\map_expo_4_a.PNG" />
-    <Resource Include="Images\Seattle\map_expo_4_b.PNG" />
-    <Resource Include="Images\Seattle\map_expo_6.PNG" />
-    <Resource Include="Images\Seattle\map_level1_2_3.png" />
-    <Resource Include="Images\Seattle\map_level4_6.png" />
-    <Resource Include="Images\Seattle\map_sheraton.png" />
-    <Resource Include="Images\Seattle\map_world.png" />
-    <Resource Include="Images\Seattle\SeattleMapDowntown.jpg" />
     <Resource Include="Toolkit.Content\ie.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Select.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Delete.png" />
@@ -240,11 +228,12 @@
     <Content Include="Images\Boston\boston.jpg" />
     <Content Include="Images\Boston\BostonMBTAMap.jpg" />
     <Content Include="Images\Boston\bostonTile.jpg" />
-    <Content Include="Images\Boston\floorplanOverlays\bcecLevel0.png" />
-    <Content Include="Images\Boston\floorplanOverlays\bcecLevel1.png" />
-    <Content Include="Images\Boston\floorplanOverlays\bcecLevel2.png" />
-    <Content Include="Images\Boston\floorplanOverlays\bcecLevel3.png" />
-    <Content Include="Images\Boston\floorplanOverlays\levelTile.png" />
+    <Content Include="Images\Boston\dyamaps\bcecLevel0.png" />
+    <Content Include="Images\Boston\dyamaps\bcecLevel1.png" />
+    <Content Include="Images\Boston\dyamaps\bcecLevel2.png" />
+    <Content Include="Images\Boston\dyamaps\bcecLevel3.png" />
+    <Content Include="Images\Boston\dyamaps\expo.png" />
+    <Content Include="Images\Boston\dyamaps\levelTile.png" />
     <Content Include="Images\Icons\download.png" />
     <Content Include="Images\Icons\feature.search.png" />
     <Content Include="Images\Icons\feature.settings.png" />

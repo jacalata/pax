@@ -97,7 +97,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_level"
                                          Width="170">
                             <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\Boston\floorplanOverlays\levelTile.png"/>
+                            <ImageBrush ImageSource="Images\Boston\dyamaps\levelTile.png"/>
                             <!-- seattle map_level1_2_3.png-->
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >

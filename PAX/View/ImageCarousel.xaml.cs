@@ -107,10 +107,10 @@ namespace PAX7.View
         private void createImageSetFloorMaps()
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
-            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel0.png"));
-            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel1.png"));
-            _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel2.png"));
-            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\floorplanOverlays\\bcecLevel3.png"));
+            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\dyamaps\\bcecLevel0.png"));
+            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\dyamaps\\bcecLevel1.png"));
+            _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\dyamaps\\bcecLevel2.png"));
+            _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\dyamaps\\bcecLevel3.png"));
             _imageset = new MapViewModel("BCEC", _images);
         }
 
