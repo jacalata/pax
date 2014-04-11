@@ -12,7 +12,7 @@ import time #sleep between requests
 
 osPath = os.path.dirname(__file__)
 generated_on = str(datetime.datetime.now())
-year = "2013" #doesn't get specified, I guess they expect you to know what year it is
+year = datetime.datetime.now().year #doesn't get specified, I guess they expect you to know what year it is
 paxEncoding = "utf-8" #is waht the pax site says they use
 
 
@@ -251,11 +251,11 @@ def main(argv):
                     Locations.append(eventLocation)
                 
                 eventKind="Panel" #default assumption. Special cases:
-                if 'concerts' in eventName:
+                if 'Concerts' in eventName:
                     eventKind = "Show"
-                elif 'tourney' in eventLocation:
+                elif ('Tournament' in eventLocation) || ('Tournament' in eventName):
                     eventKind = "Contest"
-                elif 'omegathon' in eventName:
+                elif 'Omegathon' in eventName:
                     eventKind = "Omegathon"
                 if DEBUGPRINT:
                     print("kind = " + eventKind)

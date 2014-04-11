@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/1378014/pax/XMLschema.xml">
+<version date = "4/9/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140409"/>
+</xs:schema>

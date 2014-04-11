@@ -45,25 +45,25 @@ DD = Del()
 #extension is usually either html or xml
 def saveStringAsFile(data, filename):
     safeFilename = filename.translate(DD)
-    print(safeFilename)
-    fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
-    print(type(data))
+    #print(safeFilename)
+    fileWriter = open(filename, 'w', encoding=paxEncoding)
+    #print(type(data))
     fileWriter.write(data)
     fileWriter.close()
 
 def saveBytesAsFile(data, filename):
     safeFilename = filename.translate(DD)
-    print(safeFilename)
-    fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
-    print(type(data))
+    #print(safeFilename)
+    fileWriter = open(filename, 'w', encoding=paxEncoding)
+    #print(type(data))
     fileWriter.write(data.decode())
     fileWriter.close()
 
 def saveTextIOAsFile(data, filename):
     safeFilename = filename.translate(DD)
-    print(safeFilename)
-    fileWriter = open(safeFilename, 'w')
-    print(type(data))
+    #print(safeFilename)
+    fileWriter = open(filename, 'w')
+    #print(type(data))
     fileWriter.write(data.read())
     fileWriter.close()
 
@@ -118,7 +118,6 @@ def main(argv):
 
     soup = BeautifulSoup(page)
     schedule = soup.findAll('h2', 'tac green b_mar_twenty')
-    print(len(schedule))
 
     for day in schedule:
         print(day.text)
@@ -141,10 +140,10 @@ def main(argv):
                 
         events = eventDiv.findAll('a', 'pop programming_event')
     #set of events
-        if True: #DEBUGMODE:
+        if  DEBUGMODE:
             events = [events[0]]
 
-        if True: #(DEBUGPRINT):
+        if (DEBUGPRINT):
             print(events)
             
         # the shitty broken html they have with <span><em></span></em>
@@ -173,8 +172,9 @@ def main(argv):
                 detailPage = detailSock.read()
                 if DEBUGPRINT:
                     print(detailUrl)
+                detailUrlToSave=detailUrl.split('=')[2]
                 saveBytesAsFile(detailPage,
-                                os.path.join(offlinefolder, detailUrl+".html"))    
+                                os.path.join(offlinefolder, detailUrlToSave))    
 
             #read details from the small standalone page
             detailSoup = BeautifulSoup(detailPage)
@@ -218,7 +218,6 @@ def main(argv):
 
         saveStringAsFile(xml_string, osPath+"\\"+dayName+".xml")
 
-def printing():
     # print xml schema showing locations and kinds of events
     root = Element('xml')
     root.set('version', '1.0')
