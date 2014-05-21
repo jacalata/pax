@@ -111,16 +111,16 @@
             <TextBlock Text="{Binding slicePageTitle}"></TextBlock>
         </DataTemplate>
         
-        <!-- non telerik 
+        <!-- non telerik -->
         <DataTemplate x:Key="pivotListTemplate">
             <ListBox 
                 ItemsSource="{Binding events}"
                 ItemTemplate="{StaticResource eventTemplate}">
             </ListBox>
-        </DataTemplate
-        -->
+        </DataTemplate>
         
-        <!--telerik control-->
+        
+        <!--telerik control
         <DataTemplate x:Key="pivotListTemplate">
             <telerikControlsData:RadJumpList x:Name="radJumpList"
                          ItemsSource="{Binding events}"
@@ -130,7 +130,7 @@
                          EmptyContent=""
                                      />
         </DataTemplate>
-
+-->
 
         <Style x:Key="telerikJumpListStyle" TargetType="telerikControlsData:RadJumpList" >
             <Setter Property="ItemTemplate" Value="{StaticResource eventTemplate}"/>
