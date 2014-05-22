@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
 
-<version date = "4/10/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140410"/>
+<version date = "3/25/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140325"/>
 
 <files> 
   <file type="xml" name="friday.xml"/>

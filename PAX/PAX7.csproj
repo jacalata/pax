@@ -240,9 +240,11 @@
     <Content Include="Images\Icons\logoCrossTransparent.png" />
     <Content Include="Images\Icons\questionmark.png" />
     <Content Include="Images\Icons\share.png" />
+    <Content Include="README_FIRST.txt" />
     <Content Include="Images\Telerik\Frame.png" />
     <Content Include="Images\Telerik\FrameThumbnail.png" />
     <Content Include="XML\contents.xml" />
+    <Content Include="XML\exhibitors.xml" />
     <Content Include="XML\Friday.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\Sunday.xml" />

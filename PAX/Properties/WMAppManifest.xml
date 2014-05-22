@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
-  <DefaultLanguage xmlns="" code="" />
-  <App xmlns="" ProductID="{6e56d005-983a-e011-854c-00237de2db9e}" Title="PAX Digital Assistant" RuntimeType="Silverlight" Version="4.0.0.0" Genre="apps.normal" Author="Jac Fitzgerald" Description="Unofficially packaged schedule and map info for PAX (paxsite.com)" Publisher="Jac Fitzgerald" PublisherID="{456ec67e-ee48-4ec8-a9f6-2e492b49dd79}">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{6e56d005-983a-e011-854c-00237de2db9e}" Title="PAX Digital Assistant" RuntimeType="Silverlight" Version="4.0.0.0" Genre="apps.normal" Author="Jac Fitzgerald" Description="Unofficially packaged schedule and map info for PAX (paxsite.com)" Publisher="Jac Fitzgerald">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -11,23 +10,12 @@
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="PDA" TaskName="_default">
-        <TemplateFlip>
-          <SmallImageURI IsResource="false" IsRelative="true">Background.png</SmallImageURI>
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsResource="false" IsRelative="true">Background.png</BackgroundImageURI>
           <Title>PAX Digital Assistant</Title>
-          <BackContent></BackContent>
-          <BackBackgroundImageURI></BackBackgroundImageURI>
-          <BackTitle></BackTitle>
-          <DeviceLockImageURI></DeviceLockImageURI>
-          <HasLarge>false</HasLarge>
-        </TemplateFlip>
+        </TemplateType5>
       </PrimaryToken>
     </Tokens>
-    <ScreenResolutions>
-      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
-      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
-      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
-    </ScreenResolutions>
   </App>
 </Deployment>
