@@ -29,14 +29,14 @@ namespace PAX7
         /// </summary>
         public App()
         {     
-            //hard coding to PAX East here. Will be replaced by a choice page.
+            //hard coding to PAX East here. Will be replaced by a choice page l
             // save our value to the settings
             if (IsolatedStorageSettings.ApplicationSettings.Contains("CurrentConvention") == true)
             {
                 // key already exists, remove it  
                 IsolatedStorageSettings.ApplicationSettings.Remove("CurrentConvention");
             }
-            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXEAST]);
+            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXPRIME]);
 
 
             IsolatedStorageSettings.ApplicationSettings.Save();
@@ -65,12 +65,15 @@ namespace PAX7
             InitializePhoneApplication();
         }
 
+
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
             StateUtilities.IsLaunching = true;
             //IsolatedStorageExplorer.Explorer.Start("jac-zula"); causes deployment failure
+
+
             LittleWatson.CheckForPreviousException();
             PAX7.Model.Schedule schedule = new PAX7.Model.Schedule();
             if (IsoStoreSettings.IsAllowedAutoCheckForUpdates())
@@ -79,7 +82,11 @@ namespace PAX7
             }
             if (IsoStoreSettings.HasUpdateAvailable())
             {
-                MessageBox.Show("Go to the settings page to download them now", "New schedule data available", MessageBoxButton.OK);
+                var result = MessageBox.Show("Go to the settings page to download now?", "New schedule data available!", MessageBoxButton.OKCancel);
+                if (result == MessageBoxResult.OK)
+                {
+                    NavigateTo("/View/SettingsPage.xaml");
+                }
             }
         }
 

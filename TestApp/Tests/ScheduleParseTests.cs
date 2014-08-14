@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PAX7.Model;
 using System.Xml;
 using System.Xml.Linq;
+using PaxTesting;
 
 namespace PAX7.Tests
 {
@@ -91,7 +92,8 @@ namespace PAX7.Tests
         ///  don't choke on bad xml file, make sure no exception made it out of the method
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "IO")]
+         [TestProperty("TestCategory", "now")]
         public void VerifyParsingBadXMLToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -183,14 +185,14 @@ namespace PAX7.Tests
             Assert.AreEqual("Panel", firstEvent.Kind);
             Assert.AreEqual("Datetime 08272011 110000", firstEvent.Name);
             Assert.IsNotNull(firstEvent.StartTime, "datetime");
-            Assert.AreEqual("Saturday 9:15 PM", firstEvent.friendlyStartTime);
+            Assert.AreEqual(TestValues.FriendlyTime, firstEvent.friendlyStartTime);
             Assert.AreEqual(false, firstEvent.Star);
             enumerator.MoveNext();
             var secondEvent = enumerator.Current;
             Assert.IsNotNull(secondEvent, "first event in collection");
             Assert.AreEqual("Panel", secondEvent.Kind);
             Assert.IsNotNull(secondEvent.StartTime, "datetime");
-            Assert.AreEqual("Saturday 9:15 PM", secondEvent.friendlyStartTime);
+            Assert.AreEqual(TestValues.FriendlyTime, secondEvent.friendlyStartTime);
             Assert.AreEqual("Datetime Friday 10 November", secondEvent.Name);
             Assert.AreEqual(false, secondEvent.Star);
             //check for little watson file in isolated storage?
@@ -220,22 +222,6 @@ namespace PAX7.Tests
         /// </summary>
 
 
-        ///<summary>
-        /// Save events to isolated storage
-        /// </summary>
-
-
-        /// <Summary>
-        /// retrieve schedule from isolated storage - verify they match what I saved in, especially stars 
-        /// </Summary> 
-         [TestMethod]
-        public void ReadEventsFromStorage()
-        {
-            var testSchedule = new Schedule();
-            //testSchedule.SaveEvents();
-            //testSchedule.GetSavedEvents();
-        }
-        
 
     }
 }

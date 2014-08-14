@@ -90,6 +90,7 @@
     <Compile Include="Tests\UnitTests\ScheduleTests.cs" />
     <Compile Include="Tests\UnitTests\EventUnitTests.cs" />
     <Compile Include="Tests\ScheduleParseTests.cs" />
+    <Compile Include="TestValues.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -137,7 +138,9 @@
     <Content Include="Tests\Data\BadXML_missingEnd.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Tests\Data\contents.xml" />
+    <Content Include="Tests\Data\contents.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Tests\Data\ConventionData.xml" />
     <Content Include="Tests\Data\BadContents_NoDate.xml" />
     <Content Include="Tests\Data\GoodContents_RecentDate.xml" />

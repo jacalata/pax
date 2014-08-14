@@ -116,7 +116,7 @@ def main(argv):
         pageLocation = sampledatafolder+"\schedule.htm"
         page = open(pageLocation, encoding='utf-8')
     else:
-        url = "http://east.paxsite.com/schedule"
+        url = "http://prime.paxsite.com/schedule"
         if (DEBUGMODE):
             print(url)
         sock = urlopen(url)

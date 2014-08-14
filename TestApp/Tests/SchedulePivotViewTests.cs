@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.IsolatedStorage;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,10 +28,12 @@ namespace PAX7.Tests
         private ScheduleViewModel MockViewModel;
 
 
+        [TestInitialize]
         [TestCleanup]
         public void _clearSchedule()
         {
             MockViewModel = null;
+            IsolatedStorageSettings.ApplicationSettings.Clear();
         }
 
 
@@ -39,6 +42,7 @@ namespace PAX7.Tests
         public void createSchedulePivotView()
         {
             string pivotType = "byDay";
+            Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Count == 0);
             SchedulePivotView pivotView = new SchedulePivotView(pivotType);
             Assert.IsNotNull(pivotView);
         }

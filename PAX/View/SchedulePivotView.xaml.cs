@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-
+using Microsoft.Phone.Tasks;
+using PAX7.Model;
 using PAX7.ViewModel;
 
 
@@ -15,6 +16,8 @@ namespace PAX7.View
         private string emptySearchResults = "No events matched your search term.";
         private string baconResults = "The bacon is a lie.";
         #endregion
+
+        public bool isStarView { get; set; }
 
         public SchedulePivotView() { } //empty constructor 
 
@@ -45,8 +48,11 @@ namespace PAX7.View
                 this.pivotString = this.NavigationContext.QueryString["PivotOn"];
             else 
                 this.pivotString = "Day";
-
+            
             base.OnNavigatedTo(e);
+            isStarView = (this.pivotString == ScheduleViewModel.PivotView.Stars.ToString());
+            ApplicationBar.IsVisible = isStarView;
+
             if (this.pivotString == ScheduleViewModel.PivotView.Search.ToString())
             {
                 searchHeader.Visibility = Visibility.Visible;
@@ -169,8 +175,33 @@ namespace PAX7.View
                 search();
             }
         }
-        #endregion
 
+        private void ScheduleEmail_Click(object sender, System.EventArgs e)
+        {
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+            emailComposeTask.Subject = "My PAX Schedule";
+            emailComposeTask.Body = "Here's a list of the PAX events I've picked out to see this year!\n\n";
+
+
+            foreach (ScheduleSlice slice in vm.EventSlices)
+            {
+                if (slice.events.Count > 0)
+                {
+                    emailComposeTask.Body += slice.slicePageTitle + "\n";
+                    foreach (Event evt in slice.events)
+                    {
+                        emailComposeTask.Body += evt.friendlyStartTime + ", " + evt.Location + ": " +
+                                                 evt.Name + "\n";
+                    }
+                    emailComposeTask.Body += "\n";
+                }
+                
+            }
+            emailComposeTask.Body +=
+                "\ncreated with PAX Digital Assistant: http://www.windowsphone.com/en-us/store/app/pax-digital-assistant/6e56d005-983a-e011-854c-00237de2db9e";
+            emailComposeTask.Show();
+        }
+        #endregion
 
         #region UI management
         /// <summary>
@@ -199,5 +230,7 @@ namespace PAX7.View
             LoadingProgressBar.Visibility = Visibility.Collapsed;
         }
         #endregion
+
+    
     }
 }

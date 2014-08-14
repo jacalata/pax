@@ -14,6 +14,7 @@ using PAX7.Model;
 using Microsoft.Silverlight.Testing;
 using WindowsPhoneEssentials.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PaxTesting;
 
 namespace PAX7.Tests
 {
@@ -92,22 +93,27 @@ namespace PAX7.Tests
         /// friendlystarttime, time, day, hoursduration
         /// </Summary>
          [TestMethod]
+         [TestProperty("TestCategory", "datetime")]
         public void VerifyFriendlyStartTime()
         {
             var testEvent = new Event();
             testEvent.StartTime = DateTime.Parse("1/1/2000 09:15:00 PM");
-            Assert.AreEqual("Saturday 9:15 PM", testEvent.friendlyStartTime);
+             // hmm that's because my phone is on 24 hours time. Should make it pass on either.
+             // Do I really want the date in the friendly time? 
+            Assert.AreEqual(TestValues.FriendlyTime, testEvent.friendlyStartTime);
         }
 
          [TestMethod]
+         [TestProperty("TestCategory", "datetime")]
         public void VerifyTime()
         {
             var testEvent = new Event();
             testEvent.StartTime = DateTime.Parse("1/1/2000 09:15:00 PM");
-            Assert.AreEqual("9:15 PM", testEvent.time);
+            Assert.AreEqual(TestValues.StartTime, testEvent.time);
         }
 
          [TestMethod]
+         [TestProperty("TestCategory", "datetime")]
         public void VerifyDay()
         {
             var testEvent = new Event();
@@ -116,6 +122,7 @@ namespace PAX7.Tests
         }
 
          [TestMethod]
+         [TestProperty("TestCategory", "datetime")]
         public void VerifyHoursDuration()
         {
             var testEvent = new Event();
@@ -149,10 +156,7 @@ namespace PAX7.Tests
             Assert.AreEqual(DateTime.Parse("1/1/2000 10:15:00 PM"), copyEvent.EndTime);
             Assert.AreEqual("test details", copyEvent.Details);
             Assert.AreEqual("test user notes", copyEvent.UserNotes);
-
         }
-
-
 
     }
 }

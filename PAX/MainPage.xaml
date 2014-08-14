@@ -82,22 +82,22 @@
                         Orientation="Vertical"  
                         Name="localResources">
                     <!-- area maps: no good equivalent for boston? -->
-                        <!--
+                        
                     <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
-                                     NavigateUri="/View/ImageViewer.xaml?Image=map_world"
+                                     NavigateUri="/View/ImageCarousel.xaml?Image=map_world"
                                          Width="170">
                         <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\map_world.png"/>
+                            <ImageBrush ImageSource="Images\Seattle\map_world.png"/>
                         </HyperlinkButton.Background>
                     </HyperlinkButton  >
-                            -->
+                            
 
                     <!-- floor maps-->
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_level"
                                          Width="170">
                             <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\Boston\dyamaps\levelTile.png"/>
+                            <ImageBrush ImageSource="Images\Icons\Coming_Soon_Maps_173x173.png"/>
                             <!-- seattle map_level1_2_3.png-->
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
@@ -107,7 +107,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_expo"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\2014official\levelTile.jpg"/>
+                                <ImageBrush ImageSource="Images\Icons\Coming_Soon_Maps_173x173.png"/>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                        
@@ -117,20 +117,20 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_city"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\BostonTile.jpg"/>
+                                <ImageBrush ImageSource="Images\Seattle\SeattleMapDowntown.jpg"/>
                                 <!-- seattle = seattle/seattleMapDowntown.jpg-->
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                         
                         <!-- shuttle printout -->
-
+<!-- 
                     <HyperlinkButton Style="{StaticResource imageButtonStyle}"
                                      NavigateUri="/View/ImageCarousel.xaml?Image=shuttle"
                                          Width="170">
                         <HyperlinkButton.Background>
                             <ImageBrush ImageSource="Images\Boston\2014official\shuttleTile.JPG"/>
                         </HyperlinkButton.Background>
-                    </HyperlinkButton  >
+                    </HyperlinkButton  >-->
 
                 </toolkit:WrapPanel>
             </controls:PanoramaItem>
@@ -181,13 +181,13 @@
                     <TextBlock Text="useful local info"
                                Margin="20 18"/>
 
-                    <!-- Lost In Seattle 
+                    <!-- Lost In Seattle -->
                     <HyperlinkButton 
                         NavigateUri="http://lostinseattle.com/"
                         TargetName="_blank"
                         Content="- Seattle businesses + opening hours"
                         HorizontalAlignment="Left"
-                        Margin="2 2"/> -->
+                        Margin="2 2"/> 
 
                     <!-- eat24-->
                     <HyperlinkButton 
@@ -197,36 +197,46 @@
                         HorizontalAlignment="Left" 
                         Margin="2 2"/>
                     
-                    <!-- OnebusAway
+                    <!-- OnebusAway-->
                     <HyperlinkButton 
                         NavigateUri="http://onebusaway.org/"
                         TargetName="_blank"
                         Content="- one bus away: seattle bus info"
                         HorizontalAlignment="Left"   
-                        Margin="2 2"/> -->
-                    
-                    <!--MBTA web app -->
+                        Margin="2 2"/>
+
+                    <!-- prime 2014 party list-->
+                    <HyperlinkButton 
+                        NavigateUri="http://www.sidequesting.com/2014/07/the-big-pax-prime-2014-party-list-the-guide-to-events-parties-and-more/"
+                        TargetName="_blank"
+                        Content="- unofficial prime party list"
+                        HorizontalAlignment="Left"   
+                        Margin="2 2"/>
+
+                     <!-- BOSTON -->
+                    <!--MBTA web app 
                     <HyperlinkButton
                         NavigateUri="http://www.mbtainfo.com/"
                         TargetName="_blank"
                         Content="- transit info web app"
                         HorizontalAlignment="Left"   
-                        Margin="2 2"/>
+                        Margin="2 2"/>-->
 
-                    <!--list of Boston taxi numbers -->
+                    <!--list of Boston taxi numbers 
                     <HyperlinkButton
                         NavigateUri="http://www.bostoncitylinks.com/boston_taxi_cabs.html"
                         TargetName="_blank"
                         Content="- official Boston taxi info"
                         HorizontalAlignment="Left"   
-                        Margin="2 2"/>
+                        Margin="2 2"/>-->
                     
+                    <!-- Boston shuttle info
                     <HyperlinkButton
                         NavigateUri="http://app.trackwhatmatters.com:81/ridetrac/mainmenu"
                         TargetName="_blank"
                         Content=" - PAX hotel shuttles"
                         HorizontalAlignment="Left"
-                        Margin="2 2" />
+                        Margin="2 2" />-->
                     
 
                 </StackPanel>

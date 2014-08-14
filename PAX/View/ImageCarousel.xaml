@@ -22,13 +22,14 @@
         <Grid.Resources>
 
             <DataTemplate x:Key="SlideViewItemTemplate">
-                <telerikSlideView:PanAndZoomImage 
-                    ZoomMode="Free" Zoom="1,1" MaximumZoom="10,10" Stretch="Uniform" Source="{Binding filename}">
-                    <telerikSlideView:PanAndZoomImage.BusyIndicatorStyle>
+           <telerikSlideView:PanAndZoomImage Source="{Binding filename}"
+              ZoomMode="Free" >
+                     <!--   Stretch="Uniform"   Zoom="1,1"  MaximumZoom="10,10"   -->
+                   <telerikSlideView:PanAndZoomImage.BusyIndicatorStyle>
                         <Style TargetType="telerikPrimitives:RadBusyIndicator">
                             <Setter Property="AnimationStyle" Value="AnimationStyle9"/>
                         </Style>
-                    </telerikSlideView:PanAndZoomImage.BusyIndicatorStyle>
+                    </telerikSlideView:PanAndZoomImage.BusyIndicatorStyle> 
                 </telerikSlideView:PanAndZoomImage>
             </DataTemplate>
 
@@ -64,19 +65,19 @@
                        Margin="9,0,12,26" 
                        Style="{StaticResource PhoneTextTitle1Style}"/>
 
-            <telerikPrimitives:RadSlideView Grid.Row="1" 
+               <telerikPrimitives:RadSlideView Grid.Row="1" 
                                             x:Name="slideView" 
                                             ItemsSource="{Binding images}" 
                                             ItemTemplate="{StaticResource SlideViewItemTemplate}"/>
-
-            <telerikPrimitives:RadPaginationControl Margin="-12,-12,-12,0" 
+   
+       <telerikPrimitives:RadPaginationControl Margin="-12,-12,-12,0" 
                                                     DisplayMode="Thumbnails" 
                                                     Grid.Row="2" 
                                                     ScrollViewer.HorizontalScrollBarVisibility="Visible"
                                                     PageProvider="{Binding ElementName=slideView}" 
                                                     ItemTemplate="{StaticResource PaginationControlItemTemplate}" 
                                                     CurrentItemTemplate="{StaticResource PaginationControlCurrentItemTemplate}"/>
-            
+      
         </Grid>
     </Grid>
 

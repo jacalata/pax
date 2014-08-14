@@ -60,8 +60,21 @@ namespace PAX7.View
             int scheduleVersion = IsoStoreSettings.GetScheduleVersion();
             TextBlock_scheduleVersion.Text = scheduleVersion.ToString();
             schedule = new Schedule();
-            schedule.evt_updateCheckComplete +=
-                new EventHandler(askUserToUpdate);
+            schedule.evt_updateCheckComplete += askUserToUpdate;
+            schedule.evt_downloadScheduleComplete +=  notifyUserScheduleUpdated;
+        }
+
+
+        private void notifyUserScheduleUpdated(object sender, ScheduleDownloadEventArgs e)
+        {
+            if (e.Success)
+            {
+                MessageBox.Show("Schedule Updated!"); 
+            }
+            else
+            {
+                MessageBox.Show("Sorry, something went wrong updating your schedule data. It might be temporary, so try again later.");
+            }
         }
 
 

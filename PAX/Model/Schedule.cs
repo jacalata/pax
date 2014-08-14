@@ -142,7 +142,7 @@ namespace PAX7.Model
         /// <summary>
         /// event triggered during webClient_VersionInfoCompleted, waited on by the ViewModel
         /// </summary>
-        public EventHandler evt_updateCheckComplete;
+        public event EventHandler evt_updateCheckComplete;
 
         /// <summary>
         /// completed downloading latest version info, now we can check the values and set the updateAvailable flag
@@ -155,7 +155,7 @@ namespace PAX7.Model
             //clear any old failure marker
             IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreUpdateCheckFailed, false);
             // save to isostore for posterity records? would it b better to save as appsettings values?
-            string xmlFileName = "latestVersionInfo.xml"+DateTime.Now.Ticks;
+            string xmlFileName = "latestVersionInfo.txt"+DateTime.Now.Ticks;
             bool downloaded = false;
             IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication();
             try
@@ -250,9 +250,10 @@ namespace PAX7.Model
         }
 
         /// <summary>
-        /// event triggered by webClient_OpenReadCompleted for the viewmodel
+        /// event triggered by webClient_OpenReadCompleted for the test framework
         /// </summary>
-        public EventHandler evt_downloadScheduleComplete;
+        public EventHandler<ScheduleDownloadEventArgs> evt_downloadScheduleComplete;
+
 
         /// <summary>
         /// completed downloading and opening new event files
@@ -262,6 +263,7 @@ namespace PAX7.Model
         private void webClient_OpenReadCompleted(object sender, OpenReadCompletedEventArgs e)
         {
             List<string> filenames = new List<string>();
+            bool updateSucceeded = false;
             try
             {
                 if (e.Result != null)
@@ -310,19 +312,23 @@ namespace PAX7.Model
                     SaveScheduleVersionDataToIsoStore(scheduleData);
                     #endregion
                 }
-
-                if (!weAreTesting)  MessageBox.Show("Schedule Updated!"); // should move this out to the view and trigger an event for it
+                updateSucceeded = true;
                 IsoStoreSettings.SaveToSettings<DateTime>(IsoStoreSettings.IsoStoreLastUpdatedRecord, DateTime.Now);
 
             }
             catch (Exception ex)
             {
-                // message boxes should only be launched from ui code, should move this out to the view. 
-                if (!weAreTesting) MessageBox.Show("Something went wrong updating your schedule data. Try again later?");
+                updateSucceeded = false;
                 LittleWatson.ReportException(ex, "attempted at " + DateTime.Now.ToString());
             }
             IsoStoreSettings.SaveToSettings<bool>(IsoStoreSettings.IsoStoreHasUpdateAvailable, false);
 
+            // trigger an event to show the user
+            if (evt_downloadScheduleComplete != null)
+            {
+                var args = new ScheduleDownloadEventArgs(updateSucceeded);
+                evt_downloadScheduleComplete(this, args);
+            }
         }
 
         #endregion
@@ -701,5 +707,15 @@ namespace PAX7.Model
             Results = results;
         }
     }
+    public class ScheduleDownloadEventArgs : EventArgs
+    {
+        public bool Success { get; set; }
+
+        public ScheduleDownloadEventArgs(bool status)
+        {
+            Success = status;
+        }
+    }
+
 
 }

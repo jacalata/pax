@@ -195,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Images\Seattle\AccessibleMetro.PDF" />
+    <None Include="Images\Seattle\SeattleConventionCentre.PDF" />
+    <None Include="Images\Seattle\SeattleMap.PDF" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -212,40 +215,29 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Background.png" />
-    <Content Include="Images\Boston\2014official\expo.png" />
-    <Content Include="Images\Boston\2014official\indieMegaBooth.PNG" />
-    <Content Include="Images\Boston\2014official\Level0.PNG" />
-    <Content Include="Images\Boston\2014official\level1.PNG" />
-    <Content Include="Images\Boston\2014official\level2.PNG" />
-    <Content Include="Images\Boston\2014official\level3.PNG" />
-    <Content Include="Images\Boston\2014official\levelTile.jpg" />
-    <Content Include="Images\Boston\2014official\levelTile.png" />
-    <Content Include="Images\Boston\2014official\shuttleInfo.PNG" />
-    <Content Include="Images\Boston\2014official\shuttleTile.JPG" />
-    <Content Include="Images\Boston\bcecParking.jpg" />
-    <Content Include="Images\Boston\bcecSurroundingParking.jpg" />
-    <Content Include="Images\Boston\bcecSurroundingStreets.jpg" />
-    <Content Include="Images\Boston\boston.jpg" />
-    <Content Include="Images\Boston\BostonMBTAMap.jpg" />
-    <Content Include="Images\Boston\bostonTile.jpg" />
-    <Content Include="Images\Boston\dyamaps\bcecLevel0.png" />
-    <Content Include="Images\Boston\dyamaps\bcecLevel1.png" />
-    <Content Include="Images\Boston\dyamaps\bcecLevel2.png" />
-    <Content Include="Images\Boston\dyamaps\bcecLevel3.png" />
-    <Content Include="Images\Boston\dyamaps\expo.png" />
-    <Content Include="Images\Boston\dyamaps\levelTile.png" />
+    <Content Include="Images\Icons\Coming_Soon_Maps_173x173.png" />
     <Content Include="Images\Icons\download.png" />
     <Content Include="Images\Icons\feature.search.png" />
     <Content Include="Images\Icons\feature.settings.png" />
     <Content Include="Images\Icons\logoCrossTransparent.png" />
     <Content Include="Images\Icons\questionmark.png" />
     <Content Include="Images\Icons\share.png" />
+    <Content Include="Images\Seattle\map_annex.png" />
+    <Content Include="Images\Seattle\map_expo_4_a.PNG" />
+    <Content Include="Images\Seattle\map_expo_4_b.PNG" />
+    <Content Include="Images\Seattle\map_expo_6.PNG" />
+    <Content Include="Images\Seattle\map_level1_2_3.png" />
+    <Content Include="Images\Seattle\map_level4_6.png" />
+    <Content Include="Images\Seattle\map_sheraton.png" />
+    <Content Include="Images\Seattle\map_world.png" />
+    <Content Include="Images\Seattle\SeattleMapDowntown.jpg" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Images\Telerik\Frame.png" />
     <Content Include="Images\Telerik\FrameThumbnail.png" />
     <Content Include="XML\contents.xml" />
     <Content Include="XML\exhibitors.xml" />
     <Content Include="XML\Friday.xml" />
+    <Content Include="XML\monday.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\Sunday.xml" />
     <Content Include="XML\XMLschema.xml" />
