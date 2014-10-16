@@ -15,8 +15,8 @@ namespace PAX7
         private DateTime _mouseDownTime;
         public enum GESTURE { DRAG, HOLD, TAP };
         // get the title of a convention as ConventionName[Convention.PAXEAST]
-        public enum Convention {PAXEAST, PAXPRIME, PAXAUS};
-        public static string[] ConventionName = { "PAX East", "PAX Prime", "PAX Australia" };
+        public enum Convention {PAXEAST, PAXPRIME, PAXAUS, PAXSOUTH};
+        public static string[] ConventionName = { "PAX East", "PAX Prime", "PAX Australia", "PAX South" };
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -36,7 +36,7 @@ namespace PAX7
                 // key already exists, remove it  
                 IsolatedStorageSettings.ApplicationSettings.Remove("CurrentConvention");
             }
-            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXPRIME]);
+            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXAUS]);
 
 
             IsolatedStorageSettings.ApplicationSettings.Save();
@@ -73,7 +73,7 @@ namespace PAX7
             StateUtilities.IsLaunching = true;
             //IsolatedStorageExplorer.Explorer.Start("jac-zula"); causes deployment failure
 
-
+            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.applaunch]);
             LittleWatson.CheckForPreviousException();
             PAX7.Model.Schedule schedule = new PAX7.Model.Schedule();
             if (IsoStoreSettings.IsAllowedAutoCheckForUpdates())
@@ -217,7 +217,8 @@ namespace PAX7
         
         /// <summary>
         /// Open the event details view. 
-        /// Query to self: why did I put this in app.xaml.cs and not scheduleviewmodel.cs where it clearly belongs?
+        /// Query to self: why did I put this in app.xaml.cs and not scheduleviewmodel.cs where it clearly belongs? 
+        /// I think bc ShowEventDetails is in App.xaml?
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -233,8 +234,16 @@ namespace PAX7
         /// <param name="destination"></param>
         public static void NavigateTo(string destination)
         {
-            PhoneApplicationFrame root = (PhoneApplicationFrame)(Application.Current.RootVisual);
-            root.Navigate(new Uri(destination, UriKind.Relative));
+            if (Current == null)
+            { 
+                //BUG opened app and received notification of new schedule data. App crashed after I clicked OK.
+                return; // ok, no crash, but why does this happen? 
+            }
+            PhoneApplicationFrame root = (PhoneApplicationFrame) (Current.RootVisual);
+            if (root != null)
+            {
+                root.Navigate(new Uri(destination, UriKind.Relative));
+            }
         }
 
     }

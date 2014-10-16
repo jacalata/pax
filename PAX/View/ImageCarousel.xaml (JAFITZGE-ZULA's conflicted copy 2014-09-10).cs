@@ -9,11 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Google.WebAnalytics;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Logging;
-using Microsoft.Silverlight.Testing.Harness;
-using PAX7.Utilicode;
 using PAX7.ViewModel;
 
 namespace PAX7.View
@@ -44,7 +40,6 @@ namespace PAX7.View
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             string newparameter = this.NavigationContext.QueryString["Image"];
-            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.mapview] + newparameter);
             if (newparameter.Equals("map_world"))
             {
                 createImageSetWorldMaps();
@@ -63,7 +58,7 @@ namespace PAX7.View
             }
             else //city map
             {
-                createImageSetAus();
+                createImageSetSeattle();
             }
         }
 
@@ -94,27 +89,17 @@ namespace PAX7.View
         }
 
         /// <summary>
-        /// Add all seattle maps to an imageset and give it a name
+        /// Add all boston maps to an imageset and give it a name
         /// </summary>
         private void createImageSetSeattle()
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
             _images.Add(new ViewModel.ImageFile("seattle", "..\\Images\\Seattle\\SeattleMapDowntown.jpg"));
-            _imageset = new MapViewModel("Seattle", _images);
+            _imageset = new MapViewModel("Downtown", _images);
 
         }
 
-        private void createImageSetAus()
-        {
-            List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
-            _images.Add(new ViewModel.ImageFile("melbourne", "..\\Images\\Melbourne\\downtown.jpg"));
-            _imageset = new MapViewModel("Melbourne", _images);
-            
-        }
-
-  
-
-    /// <summary>
+        /// <summary>
         /// world maps are a kind of birds eye view of all buildings used in the con
         /// there are no world maps for boston because it's entirely contained in the bcec
         /// </summary>
@@ -122,13 +107,9 @@ namespace PAX7.View
         {
             //seattle world map files
                List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
-            /*
-            _images.Add(new ViewModel.ImageFile("world","..\\Images\\Seattle\\map_world.png"));
-            _images.Add(new ViewModel.ImageFile("annex","..\\Images\\Seattle\\map_annex.png"));
-           _images.Add(new ViewModel.ImageFile("sheraton","..\\Images\\Seattle\\map_sheraton.png"));
-             * */
-
-               _images.Add(new ViewModel.ImageFile("world", "..\\Images\\Melbourne\\world.jpg"));
+            _images.Add(new ViewModel.ImageFile("world","..\\Images\\Seattle\\2014 Guidebook\\world_map_2014.jpg"));
+            _images.Add(new ViewModel.ImageFile("annex", "..\\Images\\Seattle\\2014 Guidebook\\map_annex.png"));
+            _images.Add(new ViewModel.ImageFile("sheraton/hyatt", "..\\Images\\Seattle\\2014 Guidebook\\map_area_map.png"));
            _imageset = new MapViewModel("World Maps", _images);
         }
 
@@ -143,13 +124,9 @@ namespace PAX7.View
             _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\dyamaps\\bcecLevel3.png"));
             _imageset = new MapViewModel("BCEC", _images);
              * */
-           // _images.Add(new ViewModel.ImageFile("expo 4a", "..\\Images\\Seattle\\map_expo_4_a.PNG"));
-            
-            _images.Add(new ViewModel.ImageFile("level 0-1", "..\\Images\\Melbourne\\level0-1.jpg"));
-            _images.Add(new ViewModel.ImageFile("level 0-2", "..\\Images\\Melbourne\\level0-2.jpg"));
-            _images.Add(new ViewModel.ImageFile("promenade", "..\\Images\\Melbourne\\promenade.jpg"));
-            
-            _imageset = new MapViewModel("MCEC", _images);
+            _images.Add(new ViewModel.ImageFile("level 2, 3", "..\\Images\\Seattle\\2014 Guidebook\\map_level2_3.png"));
+            _images.Add(new ViewModel.ImageFile("level 4, 6", "..\\Images\\Seattle\\2014 Guidebook\\wscc_level4_6.jpg"));
+            _imageset = new MapViewModel("WSCC", _images);
         }
 
         private void createImageSetExpoMaps()
@@ -164,15 +141,10 @@ namespace PAX7.View
             _images.Add(new ViewModel.ImageFile("indie megabooth", "..\\Images\\Boston\\2014official\\indieMegaBooth.png"));
            // _images.Add(new ViewModel.ImageFile("exhibitor key", "..\\Images\\Boston\\2014official\\exhibitor_directory.png"));
              * */
-
-            /*
-            _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Seattle\\map_level1_2_3.png"));
-            _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Seattle\\map_level4_6.png"));
-             * */
-
-            _images.Add(new ViewModel.ImageFile("expo", "..\\Images\\Melbourne\\expo.jpg"));
-
-            _imageset = new MapViewModel("PAX layout", _images);
+            _images.Add(new ViewModel.ImageFile("level 4 - 1", "..\\Images\\Seattle\\2014 Guidebook\\expohall_level4.jpg"));
+            _images.Add(new ViewModel.ImageFile("level 4 - 2", "..\\Images\\Seattle\\2014 Guidebook\\expohall_level4p2.jpg"));
+            _images.Add(new ViewModel.ImageFile("level 6", "..\\Images\\Seattle\\2014 Guidebook\\expohall_level6.jpg"));
+            _imageset = new MapViewModel("Expo Hall", _images);
         }
 
         private void createImageSetShuttle()

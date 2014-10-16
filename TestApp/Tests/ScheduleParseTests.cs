@@ -2,6 +2,7 @@
 using System.Collections.Generic; //list<string>
 using System.Collections.ObjectModel; //observablecollection
 using System.IO.IsolatedStorage;
+using Microsoft.Silverlight.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PAX7.Model;
 using System.Xml;
@@ -19,16 +20,18 @@ namespace PAX7.Tests
         {
             IsolatedStorageSettings.ApplicationSettings.Clear();
         }
-        
+
         [TestMethod]
+        [Tag("scheduleparse")]
         // method to confirm that the test framework is running
         public void TestAlwaysPasses()
         {
             Assert.IsTrue(true);
         }
 
-        
-         [TestMethod]
+
+        [TestMethod]
+        [Tag("scheduleparse")]
         // method to confirm the initialiser doesn't fail: if it does, all the tests will silently pass :O
         public void SmokeTest()
         {
@@ -36,7 +39,7 @@ namespace PAX7.Tests
         }
 
          [TestMethod]
-        [TestProperty("TestCategory", "Constructors")]
+         [Tag("scheduleparse")]
         public void VerifyCreateNewSchedule()
         {
             var testSchedule = new Schedule();
@@ -52,7 +55,7 @@ namespace PAX7.Tests
 
         // creating schedule: read data from xml file and validate schedule Object is created
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [Tag("scheduleparse")]
         public void VerifyParsingGoodXMLToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -68,7 +71,9 @@ namespace PAX7.Tests
         ///  creating schedule: read data from xml file and validate the correct events were added to the schedule Object
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [Tag("scheduleparse")]
+         [Tag("io")]
+        [Tag("xml")]
         public void VerifyParsingGoodXMLToScheduleEvents()
         {
             List<string> filenames = new List<string>();
@@ -92,8 +97,7 @@ namespace PAX7.Tests
         ///  don't choke on bad xml file, make sure no exception made it out of the method
         /// </summary>
          [TestMethod]
-         [TestProperty("TestCategory", "IO")]
-         [TestProperty("TestCategory", "now")]
+         [Tag("scheduleparse")]
         public void VerifyParsingBadXMLToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -111,7 +115,8 @@ namespace PAX7.Tests
         ///  don't choke on bad event definitions, make sure no exception made it out of the method
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [Tag("scheduleparse")]
+         [Tag("io")]
         public void VerifyParsingBadEventsToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -134,7 +139,8 @@ namespace PAX7.Tests
         /// the xap stored contents.xml file
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [Tag("scheduleparse")]
+         [Tag("io")]
         public void VerifyParsingContentsFile()
         {
             List<string> filenames = new List<string>();
@@ -149,7 +155,8 @@ namespace PAX7.Tests
         /// Call the GetEventCategories method of the schedule and verifies it has loaded at least one day name
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [Tag("scheduleparse")]
+         [Tag("io")]
         public void VerifyParsingConventionDataFile()
         {
             List<string> days = new List<string>();
@@ -166,7 +173,8 @@ namespace PAX7.Tests
         ///  don't choke on bad date formats - events should be created with a fake date 
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [Tag("scheduleparse")]
+         [Tag("io")]
         public void VerifyParsingBadDatesToSchedule()
         {
             List<string> filenames = new List<string>();
@@ -202,7 +210,8 @@ namespace PAX7.Tests
         /// Referencing a missing xml file should not break the app - no exceptions thrown
         /// </summary>
          [TestMethod]
-        [TestProperty("TestCategory", "IO")]
+         [Tag("scheduleparse")]
+         [Tag("io")]
         public void VerifyParsingMissingXMLToSchedule()
         {
             List<string> filenames = new List<string>();

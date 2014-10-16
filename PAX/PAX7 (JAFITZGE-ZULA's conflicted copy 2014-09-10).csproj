@@ -61,13 +61,7 @@
     <Reference Include="Coding4Fun.Phone.Net">
       <HintPath>..\packages\Coding4Fun.Phone.Net.1.6.1\lib\sl4-windowsphone71\Coding4Fun.Phone.Net.dll</HintPath>
     </Reference>
-    <Reference Include="Google.WebAnalytics">
-      <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\Google.WebAnalytics.dll</HintPath>
-    </Reference>
     <Reference Include="IsolatedStorageExplorer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="MC.Phone.Analytics">
-      <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\MC.Phone.Analytics.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
@@ -81,21 +75,9 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsPhoneEssentials.Testing.0.7.2.88\lib\SL4-WindowsPhone\Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WebAnalytics">
-      <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\Microsoft.WebAnalytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WebAnalytics.Behaviors">
-      <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\Microsoft.WebAnalytics.Behaviors.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Xna.Framework" />
     <Reference Include="SilverlightSerializer.WP7">
       <HintPath>..\packages\WindowsPhoneEssentials.0.7.2.88\lib\SL4-WindowsPhone\SilverlightSerializer.WP7.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition">
-      <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\System.ComponentModel.Composition.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Composition.Initialization">
-      <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\System.ComponentModel.Composition.Initialization.dll</HintPath>
     </Reference>
     <Reference Include="System.Observable" />
     <Reference Include="System.Reactive">
@@ -109,9 +91,6 @@
     <Reference Include="system" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
-    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Telerik.Windows.Controls.Data, Version=2013.1.219.2040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
@@ -148,12 +127,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analytics\GoogleAnalyticsService.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilicode\IsoStoreSettings.cs" />
-    <Compile Include="Utilicode\Logger.cs" />
     <Compile Include="Utilicode\MenuOption.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\ISchedulePivotView.cs" />
@@ -218,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Images\Seattle\AccessibleMetro.PDF" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -242,17 +220,24 @@
     <Content Include="Images\Icons\logoCrossTransparent.png" />
     <Content Include="Images\Icons\questionmark.png" />
     <Content Include="Images\Icons\share.png" />
-    <Content Include="Images\Melbourne\downtown.JPG" />
-    <Content Include="Images\Melbourne\expo.JPG" />
-    <Content Include="Images\Melbourne\level0-1.JPG" />
-    <Content Include="Images\Melbourne\level0-2.JPG" />
-    <Content Include="Images\Melbourne\promenade.JPG" />
-    <Content Include="Images\Melbourne\world.JPG" />
+    <Content Include="Images\Seattle\2014 Guidebook\expohall_level4.jpg" />
+    <Content Include="Images\Seattle\2014 Guidebook\expohall_level4p2.jpg" />
+    <Content Include="Images\Seattle\2014 Guidebook\expohall_level6.jpg" />
+    <Content Include="Images\Seattle\2014 Guidebook\map_annex.png" />
+    <Content Include="Images\Seattle\2014 Guidebook\map_area_map.png" />
+    <Content Include="Images\Seattle\2014 Guidebook\map_level2_3.png" />
+    <Content Include="Images\Seattle\2014 Guidebook\world_map_2014.jpg" />
+    <Content Include="Images\Seattle\2014 Guidebook\wscc_level4_6.jpg" />
+    <Content Include="Images\Seattle\SeattleMapDowntown.jpg" />
+    <Content Include="README_FIRST.txt" />
     <Content Include="Images\Telerik\Frame.png" />
     <Content Include="Images\Telerik\FrameThumbnail.png" />
     <Content Include="XML\contents.xml" />
     <Content Include="XML\exhibitors.xml" />
-    <Content Include="XML\Friday.xml" />
+    <Content Include="XML\Friday.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="XML\monday.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\Sunday.xml" />
     <Content Include="XML\XMLschema.xml" />

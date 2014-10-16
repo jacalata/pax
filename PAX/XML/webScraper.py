@@ -1,6 +1,6 @@
 #PAX7 script for scraping the web schedule and turning it into an xml doc
 
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 import datetime
@@ -109,17 +109,19 @@ def main(argv):
             DOWNLOAD = True
     print ("Debug, Local, Short, Verbose = ", DEBUGMODE, TESTLOCALLY, SHORTMODE, DEBUGPRINT)               
 
-    
+    DEBUGMODE = True;
     if (TESTLOCALLY):
-        if (DEBUGMODE):
+        if (DOWNLOAD):
             print("TestLocally")
         pageLocation = sampledatafolder+"\schedule.htm"
         page = open(pageLocation, encoding='utf-8')
     else:
-        url = "http://prime.paxsite.com/schedule"
+        url = "http://aus.paxsite.com/schedule"
         if (DEBUGMODE):
             print(url)
-        sock = urlopen(url)
+        headers = { 'User-Agent' : 'Mozilla/5.0' }
+        req = Request(url, None, headers);
+        sock = urlopen(req);
         page = sock.read() #returns a bytes object
         #save the page for offline work or debugging
         if DOWNLOAD:
@@ -178,7 +180,11 @@ def main(argv):
                     detailUrl = os.path.join(offlinefolder, detailUrl + ".html")
                     detailPage = open(detailUrl, encoding=paxEncoding)
                 else:
-                    detailSock = urlopen(detailUrl)
+                    
+
+                    headers = { 'User-Agent' : 'Mozilla/5.0' }
+                    req = Request(detailUrl, None, headers);
+                    detailSock = urlopen(req);
                     detailPage = detailSock.read()
                     if DEBUGPRINT:
                         print(detailUrl)

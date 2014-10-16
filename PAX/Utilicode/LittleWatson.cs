@@ -11,6 +11,8 @@ using System.Windows.Shapes;
 using System.IO.IsolatedStorage;
 using System.IO;
 using Microsoft.Phone.Tasks;
+using PAX7.Utilicode;
+
 namespace PAX7
 {
     public class LittleWatson
@@ -65,6 +67,7 @@ namespace PAX7
                         email.To = "jacalata@live.com";
                         email.Subject = "PAX Digital Assistant auto-generated problem report";
                         email.Body = contents;
+                        email.Body += "== app activity log == ";
                         SafeDeleteFile(IsolatedStorageFile.GetUserStoreForApplication()); // line added 1/15/2011
                         email.Show();
                     }

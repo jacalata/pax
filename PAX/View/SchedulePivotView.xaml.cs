@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Microsoft.Phone.Tasks;
 using PAX7.Model;
+using PAX7.Utilicode;
 using PAX7.ViewModel;
 
 
@@ -9,6 +10,7 @@ namespace PAX7.View
 {
     public partial class SchedulePivotView
     {
+        private WPClogger logger;
         internal ScheduleViewModel vm = null;
         internal string pivotString = null;
         #region helper text strings
@@ -30,6 +32,7 @@ namespace PAX7.View
         internal SchedulePivotView(string pivotString)
         {
             this.pivotString = pivotString;
+            logger = new WPClogger();
             LoadSchedule();
         }
 
@@ -41,17 +44,16 @@ namespace PAX7.View
         /// <param name="e"></param>
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            // throws NullReferenceException and/or Object reference not set to instance of an object sometimes
             InitializeComponent();
 
             //read parameters and populate the pivot type
-            if (this.NavigationContext.QueryString.ContainsKey("PivotOn"))
-                this.pivotString = this.NavigationContext.QueryString["PivotOn"];
-            else 
-                this.pivotString = "Day";
+            this.pivotString = (this.NavigationContext.QueryString.ContainsKey("PivotOn")
+                ? this.NavigationContext.QueryString["PivotOn"]
+                : this.pivotString = "Day");
             
             base.OnNavigatedTo(e);
-            isStarView = (this.pivotString == ScheduleViewModel.PivotView.Stars.ToString());
-            ApplicationBar.IsVisible = isStarView;
+            ApplicationBar.IsVisible = (this.pivotString == ScheduleViewModel.PivotView.Stars.ToString());
 
             if (this.pivotString == ScheduleViewModel.PivotView.Search.ToString())
             {
@@ -76,6 +78,7 @@ namespace PAX7.View
         /// <param name="inputString">If populated, search the schedule for this string</param>
         internal void LoadSchedule(string inputString=null)
         {
+            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.scheduleload]);
             if ((inputString == null) && (this.pivotString == ScheduleViewModel.PivotView.Search.ToString()))
             {
                 // this could be caused by the test constructor?
@@ -91,6 +94,7 @@ namespace PAX7.View
         /// </summary>
         private void search()
         {
+            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.schedulesearch]);
             // instant ui reaction
             startProgressBar();
             // now begin actual search
@@ -178,6 +182,7 @@ namespace PAX7.View
 
         private void ScheduleEmail_Click(object sender, System.EventArgs e)
         {
+            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.sendschedule]);
             EmailComposeTask emailComposeTask = new EmailComposeTask();
             emailComposeTask.Subject = "My PAX Schedule";
             emailComposeTask.Body = "Here's a list of the PAX events I've picked out to see this year!\n\n";

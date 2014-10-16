@@ -87,7 +87,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_world"
                                          Width="170">
                         <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\Melbourne\world.jpg"/>
+                            <ImageBrush ImageSource="Images\Seattle\2014 Guidebook\world_map_2014.jpg"/>
                         </HyperlinkButton.Background>
                     </HyperlinkButton  >
                             
@@ -97,8 +97,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_level"
                                          Width="170">
                             <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\Melbourne\level0-1.JPG"/>
-                            <!-- seattle map_level1_2_3.png-->
+                            <ImageBrush ImageSource="Images\Seattle\2014 Guidebook\map_level2_3.png"></ImageBrush>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
 
@@ -107,7 +106,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_expo"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Melbourne\expo.JPG"/>
+                                <ImageBrush ImageSource="Images\Seattle\2014 Guidebook\expohall_level6.jpg"/>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                        
@@ -117,8 +116,7 @@
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_city"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Melbourne\downtown.jpg"/>
-                                <!-- seattle = seattle/seattleMapDowntown.jpg-->
+                                <ImageBrush ImageSource="Images\Seattle\SeattleMapDowntown.jpg"/>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                         
@@ -181,67 +179,37 @@
                     <TextBlock Text="useful local info"
                                Margin="20 18"/>
 
-                    <!-- Melbourne -->
-                    <!-- cab app -->
-                    <HyperlinkButton 
-                        NavigateUri="http://www.windowsphone.com/en-au/store/app/gocatch/d76b0eb5-bad6-429f-b99e-0ce85d953f93"
-                        TargetName="_blank"
-                        Content="- melbourne taxi app"
-                        HorizontalAlignment="Left"
-                        Margin="2 2"/>
-
-
-                    <!-- transit app -->
-                    <HyperlinkButton 
-                        NavigateUri="http://www.windowsphone.com/en-au/store/app/melbourne-transit/a075048d-6aa5-48e9-8751-ec8669c50cd9"
-                        TargetName="_blank"
-                        Content="- melbourne transit app"
-                        HorizontalAlignment="Left"
-                        Margin="2 2"/>
-
-
-                    <!-- tourist web page -->
-                    <HyperlinkButton 
-                        NavigateUri="http://m.visitmelbourne.com/pax"
-                        TargetName="_blank"
-                        Content="- melbourne tourist info"
-                        HorizontalAlignment="Left"
-                        Margin="2 2"/>
-                    
-                    
-                    <!-- Seattle 
-                    <!- Lost In Seattle
+                    <!-- Lost In Seattle -->
                     <HyperlinkButton 
                         NavigateUri="http://lostinseattle.com/"
                         TargetName="_blank"
                         Content="- Seattle businesses + opening hours"
                         HorizontalAlignment="Left"
-                        Margin="2 2"/> -->
+                        Margin="2 2"/> 
 
-                    <!-- eat24
+                    <!-- eat24-->
                     <HyperlinkButton 
                         NavigateUri="http://seattle.eat24hours.com/"
                         TargetName="_blank"
                         Content="- eat24 food delivery"
                         HorizontalAlignment="Left" 
-                        Margin="2 2"/> -->
+                        Margin="2 2"/>
                     
-                    <!-- OnebusAway
+                    <!-- OnebusAway-->
                     <HyperlinkButton 
                         NavigateUri="http://onebusaway.org/"
                         TargetName="_blank"
                         Content="- one bus away: seattle bus info"
                         HorizontalAlignment="Left"   
-                        Margin="2 2"/> -->
+                        Margin="2 2"/>
 
-                    <!-- prime 2014 party list
+                    <!-- prime 2014 party list-->
                     <HyperlinkButton 
                         NavigateUri="http://www.sidequesting.com/2014/07/the-big-pax-prime-2014-party-list-the-guide-to-events-parties-and-more/"
                         TargetName="_blank"
                         Content="- unofficial prime party list"
                         HorizontalAlignment="Left"   
                         Margin="2 2"/>
-                    -->
 
                      <!-- BOSTON -->
                     <!--MBTA web app 

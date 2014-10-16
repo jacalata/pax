@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Logging;
 using PAX7.Model; //schedule to prompt an update
 using PAX7.Utilicode; //settings
 
@@ -8,6 +9,7 @@ namespace PAX7.View
 {
     public partial class SettingsPage : PhoneApplicationPage
     {
+        private WPClogger logger;
 
         private bool _allowUpdate;
         private bool AllowAutoUpdate
@@ -43,6 +45,7 @@ namespace PAX7.View
         {
             InitializeComponent();
             Loaded += PageLoaded;
+            logger = new WPClogger();
         }
 
         
@@ -69,10 +72,12 @@ namespace PAX7.View
         {
             if (e.Success)
             {
+                //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.scheduleupdated]);
                 MessageBox.Show("Schedule Updated!"); 
             }
             else
             {
+                //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.scheduleerror]);
                 MessageBox.Show("Sorry, something went wrong updating your schedule data. It might be temporary, so try again later.");
             }
         }

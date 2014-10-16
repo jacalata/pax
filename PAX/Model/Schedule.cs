@@ -24,7 +24,7 @@ namespace PAX7.Model
 
         internal bool hasUpdateAvailable = false;
 
-        internal string currentAppVersion = "update4.0";
+        internal string currentAppVersion = "Aus20141015";
         internal string uriScheduleZip = "";
         internal string uriVersionInfo = "";
 
@@ -48,7 +48,7 @@ namespace PAX7.Model
             }
             string urlConventionName = makeURLSafe(conventionName);
             uriScheduleZip = @"http://paxwp7.nfshost.com/" + urlConventionName + @"schedule.zip";
-            uriVersionInfo = @"http://paxwp7.nfshost.com/" + urlConventionName + @"latestversion.txt";
+            uriVersionInfo = @"http://paxwp7.nfshost.com/"+ @"latestversion.txt";
                    
         }
 
