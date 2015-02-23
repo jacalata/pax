@@ -5,8 +5,6 @@ using System.Text;
 
 namespace PAX7.ViewModel
 {
-
-
     public class MapViewModel
     {
         private string _imageGroupName;

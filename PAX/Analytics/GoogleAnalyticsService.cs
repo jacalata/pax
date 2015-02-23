@@ -1,6 +1,7 @@
 using System.Windows;
 using System.ComponentModel.Composition.Hosting;
 using Google.WebAnalytics;
+using Microsoft.Devices;
 using Microsoft.WebAnalytics;
 using Microsoft.WebAnalytics.Behaviors;
 using Microsoft.WebAnalytics.Data;
@@ -16,13 +17,8 @@ namespace PAX7.Analytics
         public GoogleAnalyticsService()
         {
             _googleAnalytics = new GoogleAnalytics();
-     //       _googleAnalytics.CustomVariables.Add(new PropertyValue
-              //                                       {PropertyName = "Device ID", Value = AnalyticsProperties.DeviceId});
             _googleAnalytics.CustomVariables.Add(new PropertyValue
-                                                     {
-                                                         PropertyName = "Application Version",
-                                                         Value = AnalyticsProperties.ApplicationVersion
-                                                     });
+                                                     {PropertyName = "Application Version", Value = AnalyticsProperties.ApplicationVersion});
             _googleAnalytics.CustomVariables.Add(new PropertyValue
                                                      {PropertyName = "Device OS", Value = AnalyticsProperties.OsVersion});
             _googleAnalytics.CustomVariables.Add(new PropertyValue
@@ -32,6 +28,7 @@ namespace PAX7.Analytics
                                     IsPageTrackingEnabled = false,
                                     Services = {_googleAnalytics,}
                                 };
+  
         }
 
         public string WebPropertyId

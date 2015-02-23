@@ -10,7 +10,6 @@ namespace PAX7.View
 {
     public partial class SchedulePivotView
     {
-        private WPClogger logger;
         internal ScheduleViewModel vm = null;
         internal string pivotString = null;
         #region helper text strings
@@ -32,7 +31,6 @@ namespace PAX7.View
         internal SchedulePivotView(string pivotString)
         {
             this.pivotString = pivotString;
-            logger = new WPClogger();
             LoadSchedule();
         }
 
@@ -99,6 +97,8 @@ namespace PAX7.View
             startProgressBar();
             // now begin actual search
             LoadSchedule(_searchText.Text);
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("ScheduleView", "Search");
         }
 
         #region event reactions
@@ -205,6 +205,9 @@ namespace PAX7.View
             emailComposeTask.Body +=
                 "\ncreated with PAX Digital Assistant: http://www.windowsphone.com/en-us/store/app/pax-digital-assistant/6e56d005-983a-e011-854c-00237de2db9e";
             emailComposeTask.Show();
+
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("ScheduleView", "EmailSchedule");
         }
         #endregion
 

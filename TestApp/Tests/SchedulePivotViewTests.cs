@@ -25,14 +25,14 @@ namespace PAX7.Tests
     public class SchedulePivotViewTests : SilverlightTest
     {
 
-        private ScheduleViewModel MockViewModel;
+        //private ScheduleViewModel MockViewModel;
 
 
         [TestInitialize]
         [TestCleanup]
         public void _clearSchedule()
         {
-            MockViewModel = null;
+           // MockViewModel = null;
             IsolatedStorageSettings.ApplicationSettings.Clear();
         }
 

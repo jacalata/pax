@@ -29,14 +29,14 @@ namespace PAX7
         /// </summary>
         public App()
         {     
-            //hard coding to PAX East here. Will be replaced by a choice page l
+            //hard coding to PAX East here. Will be replaced by a choice page
             // save our value to the settings
             if (IsolatedStorageSettings.ApplicationSettings.Contains("CurrentConvention") == true)
             {
                 // key already exists, remove it  
                 IsolatedStorageSettings.ApplicationSettings.Remove("CurrentConvention");
             }
-            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXAUS]);
+            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXEAST]);
 
 
             IsolatedStorageSettings.ApplicationSettings.Save();

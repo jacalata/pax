@@ -22,9 +22,9 @@ namespace PAX7
             MenuOption option2 = new MenuOption("events by location", "/View/SchedulePivotView.xaml?PivotOn=Location");
             MenuOption option4 = new MenuOption("my schedule", "/View/SchedulePivotView.xaml?PivotOn=Stars");
             MenuOption option5 = new MenuOption("search", "/View/SchedulePivotView.xaml?PivotOn=Search");
-          //todo put back when expo list is up  MenuOption expo = new MenuOption("exhibitor list", "/View/SchedulePivotView.xaml?PivotOn=Expo");
+            MenuOption expo = new MenuOption("exhibitor list", "/View/SchedulePivotView.xaml?PivotOn=Expo");
             
-            menuOptions = new ObservableCollection<MenuOption>{option1, option2, option4, option5};//, expo};          
+            menuOptions = new ObservableCollection<MenuOption>{option1, option2, option4, option5, expo};          
             scheduleMenu.ItemsSource = menuOptions;
         }
             

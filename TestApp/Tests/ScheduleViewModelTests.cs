@@ -15,7 +15,6 @@ namespace PAX7.Tests
         
         private Schedule _schedule = new Schedule();
         private ScheduleViewModel MockViewModel;
-        private Event _event;
         private bool _callbackDone = false;
 
 
@@ -48,6 +47,7 @@ namespace PAX7.Tests
             _Events = _schedule.GetXMLEvents(true, filenames); //read from xap
             _schedule.SaveEvents(_Events); // to isolated storage
             Assert.IsNotNull(MockViewModel.schedule, "schedule member of viewmodel");
+            Assert.IsTrue(_callbackDone);
         }
         
         

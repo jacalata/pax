@@ -357,7 +357,7 @@ namespace PAX7.Tests
                     return false;
                 }
             }
-            catch (Exception e) // will this ever throw an exception? 
+            catch (Exception) // will this ever throw an exception? 
             {
                 return false;
             }

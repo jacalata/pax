@@ -16,6 +16,7 @@ generated_on = str(now)
 year = now.year #doesn't get specified, I guess they expect you to know what year it is
 paxEncoding = "utf-8" #is waht the pax site says they use
 
+currentSchedule = "http://east.paxsite.com/schedule";
 
 # pull the metadata straight out of the schedule where possible
 Locations = []
@@ -116,7 +117,7 @@ def main(argv):
         pageLocation = sampledatafolder+"\schedule.htm"
         page = open(pageLocation, encoding='utf-8')
     else:
-        url = "http://aus.paxsite.com/schedule"
+        url = currentSchedule;
         if (DEBUGMODE):
             print(url)
         headers = { 'User-Agent' : 'Mozilla/5.0' }

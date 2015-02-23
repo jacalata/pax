@@ -43,7 +43,7 @@
                 Margin="100"
                 FontSize="{StaticResource PhoneFontSizeLarge}"
              />
-            <toolkit:PerformanceProgressBar x:Name="LoadingProgressBar" />
+           <toolkit:PerformanceProgressBar x:Name="LoadingProgressBar" /> 
         </StackPanel>
 
         <!--Pivot Control-->

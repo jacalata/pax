@@ -51,6 +51,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Coding4Fun.Phone.Controls">
       <HintPath>..\packages\Coding4Fun.Phone.Controls.1.6.1\lib\sl4-windowsphone71\Coding4Fun.Phone.Controls.dll</HintPath>
@@ -64,13 +84,11 @@
     <Reference Include="Google.WebAnalytics">
       <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\Google.WebAnalytics.dll</HintPath>
     </Reference>
-    <Reference Include="IsolatedStorageExplorer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="MC.Phone.Analytics">
       <HintPath>..\packages\MSAF.GoogleAnalytics.1.5.4.2\lib\sl4-wp71\MC.Phone.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone" />
-    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
@@ -153,14 +171,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilicode\IsoStoreSettings.cs" />
-    <Compile Include="Utilicode\Logger.cs" />
     <Compile Include="Utilicode\MenuOption.cs" />
+    <Compile Include="Utilicode\TrackAction.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\ISchedulePivotView.cs" />
     <Compile Include="Utilicode\Converter.cs" />
     <Compile Include="Utilicode\LittleWatson.cs" />
     <Compile Include="Utilicode\MetroGridHelper.cs" />
-    <Compile Include="ViewModel\ScheduleDatabase.cs" />
     <Compile Include="ViewModel\ScheduleViewModel.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
@@ -178,13 +195,11 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Event.cs" />
+    <Compile Include="View\Model\Event.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilicode\StateUtilities.cs" />
     <Compile Include="Utilicode\TiltEffect.cs" />
-    <Compile Include="Model\Schedule.cs" />
-    <Compile Include="View\ViewModels\DataItemViewModel.cs" />
-    <Compile Include="View\ViewModels\MainDataViewModel.cs" />
+    <Compile Include="View\Model\Schedule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -196,10 +211,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ImageCarousel.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\SampleData\MainDataViewModelSampleData.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -235,6 +246,31 @@
     <Resource Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Background.png" />
+    <Content Include="Images\Boston\2015official\expo.jpg" />
+    <Content Include="Images\Boston\2015official\levelTile.jpg" />
+    <Content Include="Images\Boston\2015official\shuttleTile.JPG" />
+    <Content Include="Images\Boston\2015official\bcec_left.png" />
+    <Content Include="Images\Boston\2015official\bcec_lines.jpg" />
+    <Content Include="Images\Boston\2015official\bcec_right.png" />
+    <Content Include="Images\Boston\2015official\shuttles_1_6.JPG" />
+    <Content Include="Images\Boston\2015official\shuttles_7.JPG" />
+    <Content Include="Images\Boston\2015official\shuttle_info.JPG" />
+    <Content Include="Images\Boston\BCECfloorplan\bcecLevel0.png" />
+    <Content Include="Images\Boston\BCECfloorplan\bcecLevel1.png" />
+    <Content Include="Images\Boston\BCECfloorplan\bcecLevel2.png" />
+    <Content Include="Images\Boston\BCECfloorplan\bcecLevel3.png" />
+    <Content Include="Images\Boston\bcecParking.jpg" />
+    <Content Include="Images\Boston\bcecSurroundingParking.jpg" />
+    <Content Include="Images\Boston\bcecSurroundingStreets.jpg" />
+    <Content Include="Images\Boston\boston.jpg" />
+    <Content Include="Images\Boston\BostonMBTAMap.jpg" />
+    <Content Include="Images\Boston\bostonTile.jpg" />
+    <Content Include="Images\Boston\dyamaps2015\bcecLevel0.png" />
+    <Content Include="Images\Boston\dyamaps2015\bcecLevel1.png" />
+    <Content Include="Images\Boston\dyamaps2015\bcecLevel2.png" />
+    <Content Include="Images\Boston\dyamaps2015\bcecLevel3.png" />
+    <Content Include="Images\Boston\dyamaps2015\expo.png" />
+    <Content Include="Images\Boston\dyamaps2015\levelTile.png" />
     <Content Include="Images\Icons\Coming_Soon_Maps_173x173.png" />
     <Content Include="Images\Icons\download.png" />
     <Content Include="Images\Icons\feature.search.png" />
@@ -242,22 +278,12 @@
     <Content Include="Images\Icons\logoCrossTransparent.png" />
     <Content Include="Images\Icons\questionmark.png" />
     <Content Include="Images\Icons\share.png" />
-    <Content Include="Images\Melbourne\downtown.JPG" />
-    <Content Include="Images\Melbourne\expo.JPG" />
-    <Content Include="Images\Melbourne\level0-1.JPG" />
-    <Content Include="Images\Melbourne\level0-2.JPG" />
-    <Content Include="Images\Melbourne\promenade.JPG" />
-    <Content Include="Images\Melbourne\world.JPG" />
-    <Content Include="Images\Telerik\Frame.png" />
-    <Content Include="Images\Telerik\FrameThumbnail.png" />
     <Content Include="XML\contents.xml" />
     <Content Include="XML\exhibitors.xml" />
     <Content Include="XML\Friday.xml" />
     <Content Include="XML\Saturday.xml" />
     <Content Include="XML\Sunday.xml" />
     <Content Include="XML\XMLschema.xml" />
-    <Content Include="View\Images\Frame.png" />
-    <Content Include="View\Images\FrameThumbnail.png" />
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

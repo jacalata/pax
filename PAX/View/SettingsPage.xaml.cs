@@ -9,8 +9,6 @@ namespace PAX7.View
 {
     public partial class SettingsPage : PhoneApplicationPage
     {
-        private WPClogger logger;
-
         private bool _allowUpdate;
         private bool AllowAutoUpdate
         {
@@ -45,7 +43,6 @@ namespace PAX7.View
         {
             InitializeComponent();
             Loaded += PageLoaded;
-            logger = new WPClogger();
         }
 
         
@@ -65,6 +62,9 @@ namespace PAX7.View
             schedule = new Schedule();
             schedule.evt_updateCheckComplete += askUserToUpdate;
             schedule.evt_downloadScheduleComplete +=  notifyUserScheduleUpdated;
+
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("Settings", "Loaded");
         }
 
 
@@ -72,12 +72,10 @@ namespace PAX7.View
         {
             if (e.Success)
             {
-                //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.scheduleupdated]);
                 MessageBox.Show("Schedule Updated!"); 
             }
             else
             {
-                //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.scheduleerror]);
                 MessageBox.Show("Sorry, something went wrong updating your schedule data. It might be temporary, so try again later.");
             }
         }

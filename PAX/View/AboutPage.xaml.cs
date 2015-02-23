@@ -2,6 +2,7 @@
 using System.Windows;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
+using PAX7.Utilicode;
 
 namespace PAX7.View
 {
@@ -10,6 +11,8 @@ namespace PAX7.View
         public AboutPage()
         {
             InitializeComponent();
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("AboutPage", "Loaded");
         }
 
 
@@ -22,19 +25,16 @@ namespace PAX7.View
 
         private void rateButtonClick(object sender, RoutedEventArgs e)
         {
-            Microsoft.Phone.Tasks.MarketplaceReviewTask task =
-                new Microsoft.Phone.Tasks.MarketplaceReviewTask();
+            MarketplaceReviewTask task = new MarketplaceReviewTask();
             task.Show();
         }
 
-
-
+    
         private void emailButtonClick(object sender, RoutedEventArgs e)
         {
-            Microsoft.Phone.Tasks.EmailComposeTask task =
-                new Microsoft.Phone.Tasks.EmailComposeTask();
+            EmailComposeTask task = new EmailComposeTask();
             task.To = "jacalata@live.com";
-            task.Subject = "Feedback: PAX Digital Assistant, Pax East 13";
+            task.Subject = "Feedback: PAX Digital Assistant, PAX South 15";
             task.Show();
         }
 

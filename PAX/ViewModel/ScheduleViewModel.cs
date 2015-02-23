@@ -3,6 +3,7 @@ using System.Collections.Generic; //IEnumerable
 using System.Collections.ObjectModel;
 using System.Linq;
 using PAX7.Model;
+using PAX7.Utilicode;
 using PAX7.View;
 using Telerik.Windows.Data;//?
 
@@ -85,6 +86,9 @@ namespace PAX7.ViewModel
         /// </summary>
         internal void Schedule_ScheduleLoadingComplete(object sender, ScheduleLoadingEventArgs e)
         {
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("ScheduleViewModel", "Loaded", pivot);
+
             // Add the new Events            
             foreach (Event evt in e.Results)
                 events.Add(evt);
