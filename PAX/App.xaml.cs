@@ -36,7 +36,7 @@ namespace PAX7
                 // key already exists, remove it  
                 IsolatedStorageSettings.ApplicationSettings.Remove("CurrentConvention");
             }
-            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXEAST]);
+            IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXAUS]);
 
 
             IsolatedStorageSettings.ApplicationSettings.Save();

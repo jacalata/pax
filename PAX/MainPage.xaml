@@ -43,48 +43,47 @@
                     <toolkit:WrapPanel 
                         Orientation="Vertical"  
                         Name="localResources">
-                    <!-- area maps: no good equivalent for boston/south? 
+                    <!-- area maps: no good equivalent for boston/south?   -->
                         
                     <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_world"
                                          Width="170">
                         <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\South\world.jpg"/>
+                            <ImageBrush ImageSource="Images\Melbourne\world.jpg"/>
                         </HyperlinkButton.Background>
                     </HyperlinkButton  >
-                            -->
+                          
 
-                    <!-- floor maps
+                    <!-- floor maps-->
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_level"
                                          Width="170">
                             <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\Boston\2015official\levelTile.jpg"/>
-                             seattle map_level1_2_3.png
+                            <ImageBrush ImageSource="Images\Melbourne\conventionCenter.JPG"></ImageBrush>
                             </HyperlinkButton.Background>
-                        </HyperlinkButton  > -->
+                        </HyperlinkButton  > 
 
                         <!-- expo maps --> 
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_expo"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\2015official\levelTile.jpg"/>
+                                <ImageBrush ImageSource="Images\Melbourne\expo.jpg"/>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                        
 
-                        <!-- city map-->
+                        <!-- city map
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}"
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_city"
                                          Width="170">
                             <HyperlinkButton.Background>
                                 <ImageBrush ImageSource="Images\Boston\boston.jpg"/>
-                                <!-- seattle = seattle/seattleMapDowntown.jpg-->
+                                 seattle = seattle/seattleMapDowntown.jpg
                             </HyperlinkButton.Background>
-                        </HyperlinkButton  >
+                        </HyperlinkButton  >-->
                         
-                        <!-- shuttle printout -->
+                        <!-- shuttle printout 
 
                     <HyperlinkButton Style="{StaticResource imageButtonStyle}"
                                      NavigateUri="/View/ImageCarousel.xaml?Image=shuttle"
@@ -92,7 +91,7 @@
                         <HyperlinkButton.Background>
                             <ImageBrush ImageSource="Images\Boston\2015official\shuttleTile.JPG"/>
                         </HyperlinkButton.Background>
-                    </HyperlinkButton  >
+                    </HyperlinkButton  >-->
 
                 </toolkit:WrapPanel>
             </controls:PanoramaItem>
@@ -163,7 +162,7 @@
                      -->
                     
                     <!-- Melbourne -->
-                    <!-- cab app
+                    <!-- cab app-->
                     <HyperlinkButton 
                         NavigateUri="http://www.windowsphone.com/en-au/store/app/gocatch/d76b0eb5-bad6-429f-b99e-0ce85d953f93"
                         TargetName="_blank"
@@ -172,7 +171,7 @@
                         Margin="2 2"/>
 
 
-                   transit app 
+                    <!--  transit app -->
                     <HyperlinkButton 
                         NavigateUri="http://www.windowsphone.com/en-au/store/app/melbourne-transit/a075048d-6aa5-48e9-8751-ec8669c50cd9"
                         TargetName="_blank"
@@ -181,14 +180,14 @@
                         Margin="2 2"/>
 
 
-                    tourist web page 
+                    <!--   tourist web page -->
                     <HyperlinkButton 
                         NavigateUri="http://m.visitmelbourne.com/pax"
                         TargetName="_blank"
                         Content="- melbourne tourist info"
                         HorizontalAlignment="Left"
                         Margin="2 2"/>
-                    -->
+                  
                     
                     <!-- Seattle 
                     <!- Lost In Seattle
@@ -224,8 +223,8 @@
                         Margin="2 2"/>
                     -->
 
-                     <!-- BOSTON -->
-                    <!--MBTA web app -->
+                     <!-- BOSTON 
+                    <!- MBTA web app  ->
                     <HyperlinkButton
                         NavigateUri="http://www.mbtainfo.com/"
                         TargetName="_blank"
@@ -233,7 +232,7 @@
                         HorizontalAlignment="Left"   
                         Margin="2 2"/>
 
-                    <!--list of Boston taxi numbers -->
+                    <!- list of Boston taxi numbers ->
                     <HyperlinkButton
                         NavigateUri="http://www.bostoncitylinks.com/boston_taxi_cabs.html"
                         TargetName="_blank"
@@ -241,7 +240,7 @@
                         HorizontalAlignment="Left"   
                         Margin="2 2"/>
                     
-                    <!-- Boston shuttle info-->
+                    <!- Boston shuttle info ->
                     <HyperlinkButton
                         NavigateUri="http://app.trackwhatmatters.com:81/ridetrac/mainmenu"
                         TargetName="_blank"
@@ -249,7 +248,7 @@
                         HorizontalAlignment="Left"
                         Margin="2 2" />
                     
-
+-->
                 </StackPanel>
             </controls:PanoramaItem>
 

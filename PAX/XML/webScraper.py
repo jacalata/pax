@@ -16,7 +16,7 @@ generated_on = str(now)
 year = now.year #doesn't get specified, I guess they expect you to know what year it is
 paxEncoding = "utf-8" #is waht the pax site says they use
 
-currentSchedule = "http://east.paxsite.com/schedule";
+currentSchedule = "http://aus.paxsite.com/schedule";
 
 # pull the metadata straight out of the schedule where possible
 Locations = []

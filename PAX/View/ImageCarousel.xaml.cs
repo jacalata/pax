@@ -143,6 +143,7 @@ namespace PAX7.View
              * */
 
                _images.Add(new ViewModel.ImageFile("world", "..\\Images\\Melbourne\\world.jpg"));
+               _images.Add(new ViewModel.ImageFile("world", "..\\Images\\Melbourne\\downtown.JPG"));
            _imageset = new MapViewModel("World Maps", _images);
         }
 
@@ -151,19 +152,20 @@ namespace PAX7.View
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
             
+            /* Boston
             _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Boston\\dyamaps2015\\bcecLevel0.png"));
             _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Boston\\dyamaps2015\\bcecLevel1.png"));
             _images.Add(new ViewModel.ImageFile("level 2", "..\\Images\\Boston\\dyamaps2015\\bcecLevel2.png"));
             _images.Add(new ViewModel.ImageFile("level 3", "..\\Images\\Boston\\dyamaps2015\\bcecLevel3.png"));
-            _imageset = new MapViewModel("BCEC", _images);             
+            _imageset = new MapViewModel("BCEC", _images);     
+             */
             
            // _images.Add(new ViewModel.ImageFile("expo 4a", "..\\Images\\Seattle\\map_expo_4_a.PNG"));
             
-             /*AUS
-            _images.Add(new ViewModel.ImageFile("level 0-1", "..\\Images\\Melbourne\\level0-1.jpg"));
-            _images.Add(new ViewModel.ImageFile("level 0-2", "..\\Images\\Melbourne\\level0-2.jpg"));
-            _images.Add(new ViewModel.ImageFile("promenade", "..\\Images\\Melbourne\\promenade.jpg"));
-            */
+             /*AUS*/
+            _images.Add(new ViewModel.ImageFile("level 0-1", "..\\Images\\Melbourne\\conventionCenter.jpg"));
+            _imageset = new MapViewModel("convention", _images);
+            
 
             /*SOUTH
              _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\South\\sacc_1.jpg"));
@@ -176,19 +178,18 @@ namespace PAX7.View
         {
             List<ViewModel.ImageFile> _images = new List<ViewModel.ImageFile>();
             
+            /*
             _images.Add(new ViewModel.ImageFile("map 1", "..\\Images\\Boston\\2015official\\bcec_left.png"));
             _images.Add(new ViewModel.ImageFile("map 2", "..\\Images\\Boston\\2015official\\bcec_right.png"));
             _images.Add(new ViewModel.ImageFile("lines", "..\\Images\\Boston\\2015official\\bcec_lines.jpg"));
             _images.Add(new ViewModel.ImageFile("expo hall", "..\\Images\\Boston\\2015official\\expo.jpg"));
              
 
-            /*
             _images.Add(new ViewModel.ImageFile("level 0", "..\\Images\\Seattle\\map_level1_2_3.png"));
             _images.Add(new ViewModel.ImageFile("level 1", "..\\Images\\Seattle\\map_level4_6.png"));
              * */
             
-           //  _images.Add(new ViewModel.ImageFile("expo", "..\\Images\\Melbourne\\expo.jpg"));
-          //  _images.Add(new ViewModel.ImageFile("expo", "..\\Images\\South\\exhibit_hall.jpg"));
+             _images.Add(new ViewModel.ImageFile("expo", "..\\Images\\Melbourne\\expo.jpg"));
 
             _imageset = new MapViewModel("Expo Hall", _images);
         }
