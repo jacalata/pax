@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Logging;
 using PAX7.Model; //schedule to prompt an update
 using PAX7.Utilicode; //settings
 
@@ -8,7 +9,6 @@ namespace PAX7.View
 {
     public partial class SettingsPage : PhoneApplicationPage
     {
-
         private bool _allowUpdate;
         private bool AllowAutoUpdate
         {
@@ -60,8 +60,24 @@ namespace PAX7.View
             int scheduleVersion = IsoStoreSettings.GetScheduleVersion();
             TextBlock_scheduleVersion.Text = scheduleVersion.ToString();
             schedule = new Schedule();
-            schedule.evt_updateCheckComplete +=
-                new EventHandler(askUserToUpdate);
+            schedule.evt_updateCheckComplete += askUserToUpdate;
+            schedule.evt_downloadScheduleComplete +=  notifyUserScheduleUpdated;
+
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("Settings", "Loaded");
+        }
+
+
+        private void notifyUserScheduleUpdated(object sender, ScheduleDownloadEventArgs e)
+        {
+            if (e.Success)
+            {
+                MessageBox.Show("Schedule Updated!"); 
+            }
+            else
+            {
+                MessageBox.Show("Sorry, something went wrong updating your schedule data. It might be temporary, so try again later.");
+            }
         }
 
 

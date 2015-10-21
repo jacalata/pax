@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.IsolatedStorage;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,21 +25,25 @@ namespace PAX7.Tests
     public class SchedulePivotViewTests : SilverlightTest
     {
 
-        private ScheduleViewModel MockViewModel;
+        //private ScheduleViewModel MockViewModel;
 
 
+        [TestInitialize]
         [TestCleanup]
         public void _clearSchedule()
         {
-            MockViewModel = null;
+           // MockViewModel = null;
+            IsolatedStorageSettings.ApplicationSettings.Clear();
         }
 
 
-          [TestMethod]
-        [TestProperty("TestCategory", "Constructors")]
+        [TestMethod]
+        [Tag("constructor")]
+        [Tag("pivotview")]
         public void createSchedulePivotView()
         {
             string pivotType = "byDay";
+            Assert.IsTrue(IsolatedStorageSettings.ApplicationSettings.Count == 0);
             SchedulePivotView pivotView = new SchedulePivotView(pivotType);
             Assert.IsNotNull(pivotView);
         }

@@ -1,6 +1,6 @@
 #PAX7 script for scraping the web schedule and turning it into an xml doc
 
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
 import datetime
@@ -11,10 +11,17 @@ import string #for clearing weird characters out of strings for filenames
 import time #sleep between requests
 
 osPath = os.path.dirname(__file__)
+<<<<<<< HEAD
 generated_on = str(datetime.datetime.now())
 year = datetime.datetime.now().year #doesn't get specified, I guess they expect you to know what year it is
+=======
+now = datetime.datetime.now()
+generated_on = str(now)
+year = now.year #doesn't get specified, I guess they expect you to know what year it is
+>>>>>>> origin/East14
 paxEncoding = "utf-8" #is waht the pax site says they use
 
+currentSchedule = "http://aus.paxsite.com/schedule";
 
 # pull the metadata straight out of the schedule where possible
 Locations = []
@@ -108,17 +115,19 @@ def main(argv):
             DOWNLOAD = True
     print ("Debug, Local, Short, Verbose = ", DEBUGMODE, TESTLOCALLY, SHORTMODE, DEBUGPRINT)               
 
-    
+    DEBUGMODE = True;
     if (TESTLOCALLY):
-        if (DEBUGMODE):
+        if (DOWNLOAD):
             print("TestLocally")
         pageLocation = sampledatafolder+"\schedule.htm"
         page = open(pageLocation, encoding='utf-8')
     else:
-        url = "http://east.paxsite.com/schedule"
+        url = currentSchedule;
         if (DEBUGMODE):
             print(url)
-        sock = urlopen(url)
+        headers = { 'User-Agent' : 'Mozilla/5.0' }
+        req = Request(url, None, headers);
+        sock = urlopen(req);
         page = sock.read() #returns a bytes object
         #save the page for offline work or debugging
         if DOWNLOAD:
@@ -159,7 +168,7 @@ def main(argv):
             for eventInfo in events:
                 time.sleep(3)
                 # time format is Sunday 9/2/2013 10:00 am
-                eventTime = dayDate + "/" + year + " " + timeblock.find('h3', 'time').text
+                eventTime = dayDate + "/" + str(year) + " " + timeblock.find('h3', 'time').text
                 if DEBUGPRINT:
                     print(eventTime)
                 
@@ -177,7 +186,11 @@ def main(argv):
                     detailUrl = os.path.join(offlinefolder, detailUrl + ".html")
                     detailPage = open(detailUrl, encoding=paxEncoding)
                 else:
-                    detailSock = urlopen(detailUrl)
+                    
+
+                    headers = { 'User-Agent' : 'Mozilla/5.0' }
+                    req = Request(detailUrl, None, headers);
+                    detailSock = urlopen(req);
                     detailPage = detailSock.read()
                     if DEBUGPRINT:
                         print(detailUrl)
@@ -237,7 +250,7 @@ def main(argv):
                 endTime = endTime.replace("AM", " AM")
                 endTime = endTime.replace("PM", " PM")
 
-                eventEnd = dayDate + "/" + year + " " + endTime 
+                eventEnd = str(dayDate) + "/" + str(year) + " " + str(endTime)
                 if DEBUGPRINT:
                     print("end = " + eventEnd)
                 event.set('end', eventEnd)

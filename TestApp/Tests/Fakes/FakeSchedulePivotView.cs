@@ -11,9 +11,8 @@ using PAX7.View;
 
 namespace PAX7.Tests.Fakes
 {
-    public partial class FakeSchedulePivotView: Microsoft.Phone.Controls.PhoneApplicationPage
+    public partial class FakeSchedulePivotView : Microsoft.Phone.Controls.PhoneApplicationPage
     {
-
     }
 
     public partial class FakeSchedulePivotView
@@ -27,7 +26,7 @@ namespace PAX7.Tests.Fakes
         private ScheduleViewModel vm;        
         public string pivotString{  get;  set;}   //default = "Day"
         public string searchString{ get; set;}  
-        private bool doEvents = false;
+      //  private bool doEvents;// = false;
 
         public void OnLoadComplete()
         {
@@ -38,7 +37,7 @@ namespace PAX7.Tests.Fakes
    
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-           // vm = new ScheduleViewModel((ScheduleViewModel)this, pivotString, searchString);
+            vm = new ScheduleViewModel(new SchedulePivotView(), pivotString, searchString);
             vm.LoadSchedule();
         }
     }

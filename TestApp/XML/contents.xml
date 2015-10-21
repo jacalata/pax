@@ -1,13 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
-
-  <update date = "3/31/2012" />
-<files> 
-<file type="xml" name="friday.xml"/>
-<file type="xml" name="saturday.xml"/>
-<file type="xml" name="sunday.xml"/>
-<file type="xml" name="contests.xml" />
-<file type="xml" name="social.xml" />
-<file type="xml" name="Tabletop.xml" />
-</files>
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://dl.dropbox.com/u/1378014/pax/XMLschema.xml">
+  <version date = "4/10/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140410"/>
 </xs:schema>

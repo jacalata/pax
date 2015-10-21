@@ -1,0 +1,14 @@
+changes for new PAX
+
+0. clear out old *day.xml files and schedule.zip manually
+1. url in scraper.py - > xx.paxsite.com manually
+2. run scraper.py manually
+	 scraper outputs 3-4 files like Saturday.xml
+3. create contents.xml listing all output files created with creation date as id manually
+4. bundle *day.xml and contents.xml into schedule.zip manually
+5. edit latestversion.txt under PAXEast to have creation date matching new contents.xml manually
+6. copy schedule.zip to PAXEast manually
+8. test in app manually 
+	- prev con version and new install
+
+9. scrape exhibitors page! totally manually :(

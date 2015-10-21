@@ -43,7 +43,7 @@
                 Margin="100"
                 FontSize="{StaticResource PhoneFontSizeLarge}"
              />
-            <toolkit:PerformanceProgressBar x:Name="LoadingProgressBar" />
+           <toolkit:PerformanceProgressBar x:Name="LoadingProgressBar" /> 
         </StackPanel>
 
         <!--Pivot Control-->
@@ -58,6 +58,9 @@
             Margin="20,220,20,20" />
 
     </Grid>
-
-
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="Appbar" IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/share.png" Text="share" Click="ScheduleEmail_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

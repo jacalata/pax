@@ -3,6 +3,7 @@ using System.Collections.Generic; //IEnumerable
 using System.Collections.ObjectModel;
 using System.Linq;
 using PAX7.Model;
+using PAX7.Utilicode;
 using PAX7.View;
 using Telerik.Windows.Data;//?
 
@@ -31,7 +32,7 @@ namespace PAX7.ViewModel
     public class ScheduleViewModel
     {
         public ObservableCollection<ScheduleSlice> EventSlices;
-        public enum PivotView { Day, EventType, Location, Stars, Search }; 
+        public enum PivotView { Day, EventType, Location, Stars, Search, Expo }; 
         public enum SearchFields {Title, Description };
         public string pivotTemplateName; //choose between jumplist and listbox for different views of events
 
@@ -85,6 +86,9 @@ namespace PAX7.ViewModel
         /// </summary>
         internal void Schedule_ScheduleLoadingComplete(object sender, ScheduleLoadingEventArgs e)
         {
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("ScheduleViewModel", "Loaded", pivot);
+
             // Add the new Events            
             foreach (Event evt in e.Results)
                 events.Add(evt);
@@ -97,6 +101,8 @@ namespace PAX7.ViewModel
                 filterEventsByStars();
             else if (pivot.Equals((PivotView.Search).ToString()))
                 filterEventsBySearch();
+            else if (pivot.Equals((PivotView.Expo).ToString()))
+                filterEventsToExpo();
             else // default is by day (pivot.Equals(PivotView.Day.ToString())  )
                 filterEventsByDay();
  
@@ -118,6 +124,18 @@ namespace PAX7.ViewModel
             }
         }
 
+        // create a single loooong list of expo booths
+        void filterEventsToExpo()
+        {
+            var eventsVar =
+           (from Event in events
+            where Event.Kind.Equals("Expo")
+            select Event).ToList<Event>();
+            ScheduleSlice expoList = new ScheduleSlice("all exhibitors", eventsVar);
+            EventSlices.Add(expoList);
+
+        }
+
 
         /// <summary>
         /// create the slices, retrieving events that contain the given search term in either title or description,
@@ -125,10 +143,9 @@ namespace PAX7.ViewModel
         /// </summary>
        void filterEventsBySearch()
         {
-
               var eventsVar =
              (from Event in events
-              where isContainedIn(Event.Name, searchQuery)
+              where isContainedIn(Event.Name, searchQuery) 
               select Event).ToList<Event>();
              ScheduleSlice eventTitlesSlice = new ScheduleSlice("title", eventsVar);
              EventSlices.Add(eventTitlesSlice);
@@ -167,7 +184,7 @@ namespace PAX7.ViewModel
             {
                 eventsVar =
                 (from Event in events
-                 where Event.day.Equals(dayName)
+                 where Event.day.Equals(dayName) &&!Event.Kind.Equals("Expo")
                  select Event).ToList<Event>();
                 daySlice = new ScheduleSlice(dayName, eventsVar);
                 EventSlices.Add(daySlice);
@@ -188,7 +205,7 @@ namespace PAX7.ViewModel
            {
                eventsVar =
             (from Event in events
-             where Event.Kind == typeName
+             where Event.Kind == typeName && !Event.Kind.Equals("Expo")
              select Event).ToList<Event>();
                eventTypeSlice = new ScheduleSlice(typeName, eventsVar);
                if (eventsVar.Count != 0)
@@ -212,7 +229,7 @@ namespace PAX7.ViewModel
            {
                eventsVar =
             (from Event in events
-             where Event.Location.Contains(location)
+             where Event.Location.Contains(location) && !Event.Kind.Equals("Expo")
              select Event).ToList<Event>();
                eventLocationSlice = new ScheduleSlice(location, eventsVar);
                if (eventsVar.Count != 0)

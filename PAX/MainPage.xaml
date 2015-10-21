@@ -13,7 +13,8 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
 
 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    mc:Ignorable="d" 
+    d:DesignWidth="480" d:DesignHeight="768"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeLarge}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -34,45 +35,6 @@
                   
             </controls:PanoramaItem>
 
-            <!--Panorama item two: twitter feed-->
-            <controls:PanoramaItem  Foreground="{StaticResource PhoneAccentBrush}"
-                Header="twitter feeds" 
-                IsHitTestVisible="False" 
-                Visibility="Collapsed">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="40"/>
-                    </Grid.RowDefinitions>
-                  
-                    <!--
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
-                        <Border
-                            BorderBrush="{StaticResource PhoneForegroundBrush}"
-                            BorderThickness="{StaticResource PhoneBorderThickness}"
-                            Background="Transparent">
-                            <ListBox x:Name="tweetList" ItemsSource="{Binding tweetlist}" 
-                         ItemTemplate="{StaticResource tweetTemplate}">
-                            </ListBox>
-                        </Border>   
-                    </StackPanel>    
-                    <phone:WebBrowser x:Name="twitterBrowser" 
-                                      Source="{Binding twitterListUrl}"
-                                      />
-                    <StackPanel Orientation="Vertical">
-                        <Button x:Name="refreshButton" Content="refresh" 
-                        Click="refreshButton_Click" 
-                        HorizontalAlignment="Left" VerticalAlignment="Bottom"                            
-                    />
-                        <Button x:Name="getTwitterButton" Content="get real Twitter" 
-                        Click="getTwitterButton_Click" 
-                        HorizontalAlignment="right" VerticalAlignment="Bottom"                            
-                    />
-                    </StackPanel>
-                    -->
-                </Grid>               
-
-            </controls:PanoramaItem>
 
             <!--Panorama item two: local (to the phone) resources-->
            <controls:PanoramaItem 
@@ -81,49 +43,57 @@
                     <toolkit:WrapPanel 
                         Orientation="Vertical"  
                         Name="localResources">
-                    <!-- area maps: no good equivalent for boston? -->
-                        <!--
+                    <!-- area maps: no good equivalent for boston/south?   -->
+                        
                     <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
-                                     NavigateUri="/View/ImageViewer.xaml?Image=map_world"
+                                     NavigateUri="/View/ImageCarousel.xaml?Image=map_world"
                                          Width="170">
                         <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\map_world.png"/>
+                            <ImageBrush ImageSource="Images\Melbourne\world.jpg"/>
                         </HyperlinkButton.Background>
                     </HyperlinkButton  >
-                            -->
+                          
 
                     <!-- floor maps-->
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_level"
                                          Width="170">
                             <HyperlinkButton.Background>
-                            <ImageBrush ImageSource="Images\Boston\floorplanOverlays\levelTile.png"/>
-                            <!-- seattle map_level1_2_3.png-->
+                            <ImageBrush ImageSource="Images\Melbourne\conventionCenter.JPG"></ImageBrush>
                             </HyperlinkButton.Background>
-                        </HyperlinkButton  >
+                        </HyperlinkButton  > 
 
-                        <!-- expo maps --> <!-- using East 2011 for now-->
+                        <!-- expo maps --> 
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}" 
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_expo"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\2013official\levelTile.png"/>
+                                <ImageBrush ImageSource="Images\Melbourne\expo.jpg"/>
                             </HyperlinkButton.Background>
                         </HyperlinkButton  >
                        
 
-                        <!-- city map-->
+                        <!-- city map
                         <HyperlinkButton Style="{StaticResource imageButtonStyle}"
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_city"
                                          Width="170">
                             <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\BostonTile.jpg"/>
-                                <!-- seattle = seattle/seattleMapDowntown.jpg-->
+                                <ImageBrush ImageSource="Images\Boston\boston.jpg"/>
+                                 seattle = seattle/seattleMapDowntown.jpg
                             </HyperlinkButton.Background>
-                        </HyperlinkButton  >
+                        </HyperlinkButton  >-->
+                        
+                        <!-- shuttle printout 
 
+                    <HyperlinkButton Style="{StaticResource imageButtonStyle}"
+                                     NavigateUri="/View/ImageCarousel.xaml?Image=shuttle"
+                                         Width="170">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="Images\Boston\2015official\shuttleTile.JPG"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton  >-->
 
-                    </toolkit:WrapPanel>
+                </toolkit:WrapPanel>
             </controls:PanoramaItem>
            
             
@@ -151,15 +121,7 @@
                         Content="- twitter: @PAX_Lines"
                         HorizontalAlignment="Left"
                         Margin="2 2"/>
-
-                    <!-- twitter link-->
-                    <HyperlinkButton 
-                        NavigateUri="https://twitter.com/PAX_Tourney"
-                        TargetName="_blank" 
-                        Content="- twitter: @PAX_Tourney"
-                        HorizontalAlignment="Left"
-                        Margin="2 2"/>
-
+                    
                     <!-- official site-->
                     <HyperlinkButton
                         TargetName="_blank"
@@ -168,18 +130,67 @@
                          HorizontalAlignment="Left"
                         Margin="2 2"/>
 
-                    <!-- penny arcade-->
-                    <HyperlinkButton 
-                        NavigateUri="http://www.penny-arcade.com"
-                        TargetName="_blank" 
-                        Content="- Penny Arcade!" 
+                    <!-- official site-->
+                    <HyperlinkButton
+                        TargetName="_blank"
+                    NavigateUri="https://guidebook.com/guide/29381/"
+                        Content="- official Guidebook entry"
                          HorizontalAlignment="Left"
                         Margin="2 2"/>
 
+
                     <TextBlock Text="useful local info"
                                Margin="20 18"/>
+<!-- San Antonio-->
 
-                    <!-- Lost In Seattle 
+
+                    <!-- transit app 
+                    <HyperlinkButton 
+                        NavigateUri="http://www.viainfo.net/BusService/RiderTool.aspx"
+                        TargetName="_blank"
+                        Content="- san antonio bus planner"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/> -->
+
+                    <!-- tourist web page
+                    <HyperlinkButton 
+                        NavigateUri="http://www.windowsphone.com/en-us/store/app/san-antonio-guide/13620a29-ac44-48de-b252-a82014659136"
+                        TargetName="_blank"
+                        Content="- san antonio tourist app"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>                 
+                     -->
+                    
+                    <!-- Melbourne -->
+                    <!-- cab app-->
+                    <HyperlinkButton 
+                        NavigateUri="http://www.windowsphone.com/en-au/store/app/gocatch/d76b0eb5-bad6-429f-b99e-0ce85d953f93"
+                        TargetName="_blank"
+                        Content="- melbourne taxi app"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>
+
+
+                    <!--  transit app -->
+                    <HyperlinkButton 
+                        NavigateUri="http://www.windowsphone.com/en-au/store/app/melbourne-transit/a075048d-6aa5-48e9-8751-ec8669c50cd9"
+                        TargetName="_blank"
+                        Content="- melbourne transit app"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>
+
+
+                    <!--   tourist web page -->
+                    <HyperlinkButton 
+                        NavigateUri="http://m.visitmelbourne.com/pax"
+                        TargetName="_blank"
+                        Content="- melbourne tourist info"
+                        HorizontalAlignment="Left"
+                        Margin="2 2"/>
+                  
+                    
+                    <!-- Seattle 
+                    <!- Lost In Seattle
                     <HyperlinkButton 
                         NavigateUri="http://lostinseattle.com/"
                         TargetName="_blank"
@@ -187,13 +198,13 @@
                         HorizontalAlignment="Left"
                         Margin="2 2"/> -->
 
-                    <!-- eat24-->
+                    <!-- eat24
                     <HyperlinkButton 
                         NavigateUri="http://seattle.eat24hours.com/"
                         TargetName="_blank"
                         Content="- eat24 food delivery"
                         HorizontalAlignment="Left" 
-                        Margin="2 2"/>
+                        Margin="2 2"/> -->
                     
                     <!-- OnebusAway
                     <HyperlinkButton 
@@ -202,8 +213,18 @@
                         Content="- one bus away: seattle bus info"
                         HorizontalAlignment="Left"   
                         Margin="2 2"/> -->
-                    
-                    <!--MBTA web app -->
+
+                    <!-- prime 2014 party list
+                    <HyperlinkButton 
+                        NavigateUri="http://www.sidequesting.com/2014/07/the-big-pax-prime-2014-party-list-the-guide-to-events-parties-and-more/"
+                        TargetName="_blank"
+                        Content="- unofficial prime party list"
+                        HorizontalAlignment="Left"   
+                        Margin="2 2"/>
+                    -->
+
+                     <!-- BOSTON 
+                    <!- MBTA web app  ->
                     <HyperlinkButton
                         NavigateUri="http://www.mbtainfo.com/"
                         TargetName="_blank"
@@ -211,7 +232,7 @@
                         HorizontalAlignment="Left"   
                         Margin="2 2"/>
 
-                    <!--list of Boston taxi numbers -->
+                    <!- list of Boston taxi numbers ->
                     <HyperlinkButton
                         NavigateUri="http://www.bostoncitylinks.com/boston_taxi_cabs.html"
                         TargetName="_blank"
@@ -219,7 +240,15 @@
                         HorizontalAlignment="Left"   
                         Margin="2 2"/>
                     
-
+                    <!- Boston shuttle info ->
+                    <HyperlinkButton
+                        NavigateUri="http://app.trackwhatmatters.com:81/ridetrac/mainmenu"
+                        TargetName="_blank"
+                        Content=" - PAX hotel shuttles"
+                        HorizontalAlignment="Left"
+                        Margin="2 2" />
+                    
+-->
                 </StackPanel>
             </controls:PanoramaItem>
 

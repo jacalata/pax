@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-
+using Microsoft.Phone.Tasks;
+using PAX7.Model;
+using PAX7.Utilicode;
 using PAX7.ViewModel;
 
 
@@ -15,6 +17,8 @@ namespace PAX7.View
         private string emptySearchResults = "No events matched your search term.";
         private string baconResults = "The bacon is a lie.";
         #endregion
+
+        public bool isStarView { get; set; }
 
         public SchedulePivotView() { } //empty constructor 
 
@@ -38,15 +42,17 @@ namespace PAX7.View
         /// <param name="e"></param>
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            // throws NullReferenceException and/or Object reference not set to instance of an object sometimes
             InitializeComponent();
 
             //read parameters and populate the pivot type
-            if (this.NavigationContext.QueryString.ContainsKey("PivotOn"))
-                this.pivotString = this.NavigationContext.QueryString["PivotOn"];
-            else 
-                this.pivotString = "Day";
-
+            this.pivotString = (this.NavigationContext.QueryString.ContainsKey("PivotOn")
+                ? this.NavigationContext.QueryString["PivotOn"]
+                : this.pivotString = "Day");
+            
             base.OnNavigatedTo(e);
+            ApplicationBar.IsVisible = (this.pivotString == ScheduleViewModel.PivotView.Stars.ToString());
+
             if (this.pivotString == ScheduleViewModel.PivotView.Search.ToString())
             {
                 searchHeader.Visibility = Visibility.Visible;
@@ -70,6 +76,7 @@ namespace PAX7.View
         /// <param name="inputString">If populated, search the schedule for this string</param>
         internal void LoadSchedule(string inputString=null)
         {
+            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.scheduleload]);
             if ((inputString == null) && (this.pivotString == ScheduleViewModel.PivotView.Search.ToString()))
             {
                 // this could be caused by the test constructor?
@@ -85,10 +92,13 @@ namespace PAX7.View
         /// </summary>
         private void search()
         {
+            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.schedulesearch]);
             // instant ui reaction
             startProgressBar();
             // now begin actual search
             LoadSchedule(_searchText.Text);
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("ScheduleView", "Search");
         }
 
         #region event reactions
@@ -169,8 +179,37 @@ namespace PAX7.View
                 search();
             }
         }
-        #endregion
 
+        private void ScheduleEmail_Click(object sender, System.EventArgs e)
+        {
+            //logger.log(LogLevel.info, WPClogger.LogMessages[(int)LogActivity.sendschedule]);
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+            emailComposeTask.Subject = "My PAX Schedule";
+            emailComposeTask.Body = "Here's a list of the PAX events I've picked out to see this year!\n\n";
+
+
+            foreach (ScheduleSlice slice in vm.EventSlices)
+            {
+                if (slice.events.Count > 0)
+                {
+                    emailComposeTask.Body += slice.slicePageTitle + "\n";
+                    foreach (Event evt in slice.events)
+                    {
+                        emailComposeTask.Body += evt.friendlyStartTime + ", " + evt.Location + ": " +
+                                                 evt.Name + "\n";
+                    }
+                    emailComposeTask.Body += "\n";
+                }
+                
+            }
+            emailComposeTask.Body +=
+                "\ncreated with PAX Digital Assistant: http://www.windowsphone.com/en-us/store/app/pax-digital-assistant/6e56d005-983a-e011-854c-00237de2db9e";
+            emailComposeTask.Show();
+
+            AnalyticsTracker tracker = new AnalyticsTracker();
+            tracker.Track("ScheduleView", "EmailSchedule");
+        }
+        #endregion
 
         #region UI management
         /// <summary>
@@ -199,5 +238,7 @@ namespace PAX7.View
             LoadingProgressBar.Visibility = Visibility.Collapsed;
         }
         #endregion
+
+    
     }
 }
