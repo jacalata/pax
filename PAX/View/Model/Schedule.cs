@@ -24,7 +24,7 @@ namespace PAX7.Model
 
         internal bool hasUpdateAvailable = false;
 
-        internal string currentAppVersion = "Aus20141015";
+        internal string currentAppVersion = "Aus20151015";
         internal string uriScheduleZip = "";
         internal string uriVersionInfo = "";
 
@@ -48,7 +48,8 @@ namespace PAX7.Model
             }
             string urlConventionName = makeURLSafe(conventionName);
             uriScheduleZip = @"http://paxwp7.nfshost.com/" + urlConventionName + @"schedule.zip";
-            uriVersionInfo = @"http://paxwp7.nfshost.com/"+ @"latestversion.txt";
+            //TODO: really I need the version file to be different per con as well
+            uriVersionInfo = @"http://paxwp7.nfshost.com/"  + urlConventionName + @"latestversion.txt";
 
             AnalyticsTracker tracker = new AnalyticsTracker();
             tracker.Track("Schedule", "Constructed", conventionName);
@@ -469,6 +470,10 @@ namespace PAX7.Model
                                      StartTime = stamp,
                                      Location = item.Attribute("location").Value
                                  };
+                if (eventItems.Count<Event>() == 0)
+                {
+                    throw new XmlException("No Events parsed from xml file " + filename);
+                }
                 foreach (Event eventItem in eventItems)
                 {
                     events.Add(eventItem);

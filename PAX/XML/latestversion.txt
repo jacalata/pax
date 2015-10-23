@@ -1,8 +1,4 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://dl.dropbox.com/u/1378014/pax/XMLschema.xml">
-<<<<<<< HEAD
-<version date = "4/9/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140409"/>
-=======
-<version date = "3/26/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140326"/>
->>>>>>> origin/East14
+<version date = "10/15/2015" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20151015"/>
 </xs:schema>

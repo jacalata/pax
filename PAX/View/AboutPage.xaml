@@ -50,7 +50,7 @@
                             HorizontalAlignment="Left"                       
                             Content="take a user survey"/>
                     <TextBlock 
-                        Text="version - East 2015 2/22" Margin="20 20 0 0"
+                        Text="version - Aus 2015 10/23" Margin="20 20 0 0"
                                TextWrapping="Wrap"
                             /> 
                 </StackPanel>

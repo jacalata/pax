@@ -34,7 +34,7 @@ namespace PAX7.View
         {
             EmailComposeTask task = new EmailComposeTask();
             task.To = "jacalata@live.com";
-            task.Subject = "Feedback: PAX Digital Assistant, PAX South 15";
+            task.Subject = "Feedback: PAX Digital Assistant, PAX Aus 15";
             task.Show();
         }
 

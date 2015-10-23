@@ -1,14 +1,33 @@
-changes for new PAX
+changes for new schedule release
 
 0. clear out old *day.xml files and schedule.zip manually
 1. url in scraper.py - > xx.paxsite.com manually
 2. run scraper.py manually
 	 scraper outputs 3-4 files like Saturday.xml
+8. scrape exhibitors page totally manually 
 3. create contents.xml listing all output files created with creation date as id manually
-4. bundle *day.xml and contents.xml into schedule.zip manually
-5. edit latestversion.txt under PAXEast to have creation date matching new contents.xml manually
-6. copy schedule.zip to PAXEast manually
-8. test in app manually 
-	- prev con version and new install
+4. bundle *day.xml and exhibitors.xml and contents.xml into schedule.zip manually
+5. edit latestversion.txt in top-level folder to have creation date matching new contents.xml manually
+	location of latestversion is hardcoded in Schedule.cs to  @"http://paxwp7.nfshost.com/"+ @"latestversion.txt"; //todo make con specific
+	// remember that unless you issue a wp7 xap update (is that even possible? you need to keep it at the root for all wp7 users)
+6. copy schedule.zip to location listed in latestversion.txt manually
 
-9. scrape exhibitors page! totally manually :(
+additional changes for new app release (change of Con)
+1. refresh xml files included in project
+2. change image folder included in projects
+3. download new map files for new con
+4. change resources listed in Main.xml to correct city
+7. Update con choice in app 
+	1.  in App.xaml.cs manually line 39
+		IsolatedStorageSettings.ApplicationSettings.Add("CurrentConvention", ConventionName[(int)Convention.PAXAUS]);
+	2. in About.xaml version and email subject line manually
+	3. in Schedule.cs 
+        internal string currentAppVersion = "Aus20141015";
+9. test in app manually 
+	- prev con version/update
+	- as new install
+10. commit to github manually
+11. submit to store manually
+
+
+update homepage at http://paxwp7.nfshost.com/?

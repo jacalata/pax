@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xs:schema xmlns:xs="http://dl.dropbox.com/u/137814/pax/XMLschema.xml">
 
-<<<<<<< HEAD
-<version date = "4/10/2014" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20140410"/>
-=======
-<version date = "10/15/2015" fileLocation = "http://paxwp7.nfshost.com/PAX/schedule.zip" number ="20151015"/>
->>>>>>> origin/East14
+<version date = "10/15/2015" fileLocation = "http://paxwp7.nfshost.com/PAXEast/schedule.zip" number ="20151015"/>
 
 <files> 
   <file type="xml" name="friday.xml"/>
   <file type="xml" name="saturday.xml"/>
   <file type="xml" name="sunday.xml"/>
-<<<<<<< HEAD
-  <file type="xml" name="ExpoValues.xml"/>
-=======
   <file type="xml" name="exhibitors.xml"/>
->>>>>>> origin/East14
 </files>
 </xs:schema>

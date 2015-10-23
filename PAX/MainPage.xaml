@@ -73,17 +73,16 @@
                         </HyperlinkButton  >
                        
 
-                        <!-- city map
-                        <HyperlinkButton Style="{StaticResource imageButtonStyle}"
+                        <!-- city map -->
+                    <HyperlinkButton Style="{StaticResource imageButtonStyle}"
                                      NavigateUri="/View/ImageCarousel.xaml?Image=map_city"
                                          Width="170">
-                            <HyperlinkButton.Background>
-                                <ImageBrush ImageSource="Images\Boston\boston.jpg"/>
-                                 seattle = seattle/seattleMapDowntown.jpg
-                            </HyperlinkButton.Background>
-                        </HyperlinkButton  >-->
-                        
-                        <!-- shuttle printout 
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="Images\Melbourne\downtown.JPG"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton  >
+
+                    <!-- shuttle printout 
 
                     <HyperlinkButton Style="{StaticResource imageButtonStyle}"
                                      NavigateUri="/View/ImageCarousel.xaml?Image=shuttle"

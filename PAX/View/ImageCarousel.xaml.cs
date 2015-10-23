@@ -82,10 +82,10 @@ namespace PAX7.View
         #region citymaps
         private void createImageSetCity()
         {
-            createImageSetBoston();
+            //createImageSetBoston();
             //createImageSetSeattle
             //createImageSetSouth
-            //createImageSetAus
+            createImageSetAus();
         }
 
         /// <summary>
@@ -143,7 +143,6 @@ namespace PAX7.View
              * */
 
                _images.Add(new ViewModel.ImageFile("world", "..\\Images\\Melbourne\\world.jpg"));
-               _images.Add(new ViewModel.ImageFile("world", "..\\Images\\Melbourne\\downtown.JPG"));
            _imageset = new MapViewModel("World Maps", _images);
         }
 
