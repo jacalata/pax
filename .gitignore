@@ -64,7 +64,7 @@ local.properties
 *.dotCover
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
-#packages/
+packages/
 
 # Visual C++ cache files
 ipch/
@@ -150,6 +150,9 @@ sdist
 develop-eggs
 .installed.cfg
 
+#virtualenv
+PAX/XML/pax_scraper/*
+
 # Installer logs
 pip-log.txt
 
@@ -168,6 +171,3 @@ pip-log.txt
 
 # mercurial cruft
 .hg/
-PAX/XML/ECCC/56
-PAX/XML/ECCC/51
-PAX/XML/ECCC/45

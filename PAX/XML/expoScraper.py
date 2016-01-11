@@ -1,8 +1,9 @@
-#PAX7 script for scraping the web schedule and turning it into an xml doc
 
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 from xml.etree.ElementTree import Element, SubElement, Comment, tostring
+from fileUtils import saveStringAsFile, saveBytesAsFile, getOutputFolder
+from logging import debugPrint
 import datetime
 import sys
 import getopt
@@ -10,213 +11,95 @@ import os
 import string #for clearing weird characters out of strings for filenames
 import time #sleep between requests
 
+
 osPath = os.path.dirname(__file__)
-generated_on = str(datetime.datetime.now())
-year = datetime.datetime.now().year #doesn't get specified, I guess they expect you to know what year it is
-paxEncoding = "utf-8" #is waht the pax site says they use
 
-
-# pull the metadata straight out of the schedule where possible
-Locations = []
-Kinds = [] #"Tabletop", "Panel", "Show", "Contest", "Omegathon", "FreePlay", "D&D", "Social"]
-
-def usage():
-    print("open a command line and call python webScraper.py.")
-    print("arguments:")
-    print("d / --debug: include basic logging")
-    print("l / --local: test without hitting the server. Must provide local input")
-    print("s / --short: parse only the first boothDetail of each day, speed up test cycle")
-    print("v / --verbose: spew verbose logs for debugging")
-
-import string
-
-class Del:
-  def __init__(self, keep=string.ascii_letters+'\\'):
-    self.comp = dict((ord(c),c) for c in keep)
-  def __getitem__(self, k):
-    return self.comp.get(k)
-
-DD = Del()
-
-
-#extract file saving code, it gets used a lot in this
-#data is the (string) data to save in the file
-#filename is the filename to save it as
-#extension is usually either html or xml
-def saveStringAsFile(data, filename, DEBUGMODE):
-    safeFilename = filename#.translate(DD)
-    print(safeFilename)
-    fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
-    if DEBUGMODE:
-        print(type(data))
-    fileWriter.write(data)
-    fileWriter.close()
-
-def saveBytesAsFile(data, filename, DEBUGMODE):
-    safeFilename = filename#.translate(DD)
-    print(safeFilename)
-    fileWriter = open(safeFilename, 'w', encoding=paxEncoding)
-    if DEBUGMODE:
-        print(type(data))
-    fileWriter.write(data.decode())
-    fileWriter.close()
-
-def saveTextIOAsFile(data, filename, DEBUGMODE):
-    safeFilename = filename.translate(DD)
-    print(safeFilename)
-    fileWriter = open(safeFilename, 'w')
-    if DEBUGMODE:
-        print(type(data))
-    fileWriter.write(data.read())
-    fileWriter.close()
-
-def main(argv):
-    print ("Arguments")
-    print (argv)
-    print("---------------------------------------------------")
-
-    # set defaults
-    TESTLOCALLY = False
-    SHORTMODE = False
-    DEBUGMODE = True
-    DEBUGPRINT = False
-    DOWNLOAD = False
-
-    sampledatafolder = os.path.join(osPath,"sampledata")    
-    offlinefolder =  os.path.join(osPath, "offline")
-    print(sampledatafolder)
-
-    try:                                
-        opts, args = getopt.getopt(argv, "dhlsvz:", ["debug", "help", "local", "short", "verbose", "zdownload"])
-    except getopt.GetoptError:          
-        usage()                         
-        sys.exit(2)
-        
-    for opt, arg in opts:               
-        if opt in ("-d", "--debug"):
-            DEBUGMODE = True
-        elif opt in ("-h", "--help"):
-            usage()
-            sys.exit()
-        elif opt in ("-l", "--local"):
-            TESTLOCALLY = True    
-        elif opt in ("-s", "--short"):
-            SHORTMODE = True
-        elif opt in ("-v", "--verbose"):
-            DEBUGPRINT = True
-        elif opt in ("-z", "--zdownload"):
-            DOWNLOAD = True
-    print ("Debug, Local, Short, Verbose = ", DEBUGMODE, TESTLOCALLY, SHORTMODE, DEBUGPRINT)               
-
-    
+def getExpoXML(TESTLOCALLY, DEBUG , DOWNLOAD, SHORTMODE, filesInfo):
     if (TESTLOCALLY):
-        if (DEBUGMODE):
-            print("TestLocally")
-        pageLocation = sampledatafolder+"\schedule.htm"
+        debugPrintLabel(DEBUG , "TestLocally")
+        pageLocation = sampledatafolder+"\expolist.htm"
         page = open(pageLocation, encoding='utf-8')
     else:
-        url = "http://m.guidebook.com/guide/17939/list/54359/"
-        if (DEBUGMODE):
-            print(url)
+        url = "https://m.guidebook.com/guide/48636/list/184670/" #PAX Aus 2015
+        debugPrint(DEBUG , "expo url", url)
         sock = urlopen(url)
         page = sock.read() #returns a bytes object
         #save the page for offline work or debugging
         if DOWNLOAD:
-            saveBytesAsFile(page, offlinefolder+"\schedule.html", DEBUGMODE);
+            saveBytesAsFile(page, offlinefolder+"\expolist.html", DEBUG );
         sock.close()
 
-    soup = BeautifulSoup(page)
-    listing = soup.find('div', attrs={'class': 'list poi-list'}) 
-
+    soup = BeautifulSoup(page, "html.parser")
+    listing = soup.find('div', attrs={'class': 'content-pane'}) 
 
     root = Element('xml')
     root.set('version', '1.0')
     if not SHORTMODE:
-        root.append(Comment('Generated by ElementTree in webScraper.py at ' + generated_on))
+        root.append(Comment('Generated by ElementTree in webScraper.py at ')) #generated_on))
         #makes life easier if we generate it without a timestamp for super basic testing
     schedule = SubElement(root, 'Schedule')
         
-    booths=listing.findAll('a', attrs={'class': 'row has-arrow'})
-    if (True):
-        print(booths[0])
+    booths=listing.findAll('a', attrs={'class': 'cell-content'})
+
     if SHORTMODE:
+        print ("SHORTY")
         booths = [booths[0]]
         
-        # for each booth, get the location and name
+    # for each booth, get the location and name
     for boothDetailInfo in booths:
         
-        print("a booth")
-        if(DEBUGPRINT):
-            print(boothDetailInfo)
-
-
-         #   <a class="row has-arrow" href="/guide/17939/poi/1506219/">
-         #   <div class="row-content">
-         #       <h4>17-Bit</h4>
-         #   </div>
-         #</a>
+        debugPrint(DEBUG , "boothDetail html", boothDetailInfo)
 
         time.sleep(3)            
 
         boothDetail = SubElement(schedule, 'boothDetail')
-        if DEBUGPRINT:
-            print(boothDetailInfo)
         # to get more details, go through to the url
         detailUrl = "http://m.guidebook.com" + boothDetailInfo['href']
 
         if (TESTLOCALLY):
-            if DEBUGMODE:
-                print("TestLocally")
+            debugPrintLabel(DEBUG , "TestLocally")
             detailUrl = detailUrl.rsplit('/', 1)[1]
             detailUrl = os.path.join(offlinefolder, detailUrl + ".html")
             detailPage = open(detailUrl, encoding=paxEncoding)
         else:
             detailSock = urlopen(detailUrl)
             detailPage = detailSock.read()
-            if DEBUGPRINT:
-                print(detailUrl)
+            debugPrint(DEBUG , "detailUrl", detailUrl)
             if DOWNLOAD:
                 saveBytesAsFile(detailPage,
                             os.path.join(offlinefolder, detailUrl+".html"),
-                            DEBUGMODE)    
-        detailSoup = BeautifulSoup(detailPage)
-        boothDetailName = detailSoup.find('div', attrs={'class', 'event-poi-header'})
+                            DEBUG )    
+
+        detailSoup = BeautifulSoup(detailPage, "html.parser")
+        boothDetailName = detailSoup.find('header', attrs={'class', 'item'})
+        
+        debugPrint(DEBUG , "booth html: ", boothDetailName)
         actualName = boothDetailName.text.strip()
-        print(actualName)
+        debugPrint(DEBUG , "extracted location:", actualName)
         boothDetail.set('name', actualName)
 
 
-        boothDetailDetail = detailSoup.find(id='location')
-        if (DEBUGPRINT):
-            print(boothDetailDetail)
+        boothDetailDetail = detailSoup.find('div', attrs={'class', 'description'})
+        debugPrint(DEBUG , "booth Location html", boothDetailDetail)
 
-
-        # <div class="location-rating">
-        #    <div class="ui-split">
-        #       <div class="ui-split-item first">
-        #            <div class="item flush-right">
-        #                <a class="snow-button-empty full" id="location">
-        #                   Booth: 1125
-        #                </a>
-        #            </div>
-        #        </div>
-        
         boothDetailLocation=boothDetailDetail.text.strip()
-        print(boothDetailLocation)
+        debugPrint(DEBUG , "booth location text", boothDetailLocation)
           
-        if DEBUGPRINT:
-            print("location= " + boothDetailLocation)
         boothDetail.set('location', boothDetailLocation)
 
             
-    xml_string = tostring(root).decode('utf-8')
-    if DEBUGMODE or DEBUGPRINT:
-        print(xml_string)
+    debugPrint(DEBUG , "expo xml", root)
 
-    saveStringAsFile(xml_string, osPath+"\ExpoValues.xml", DEBUGMODE)
-    print("done")
+    expoFilename = "expo.xml"
 
-        
-if __name__ == "__main__":
-    main(sys.argv[1:])
+    xml_string = tostring(root).decode('utf-8')    
+    debugPrint(DEBUG , "expo xml", xml_string)
+    saveStringAsFile(xml_string, getOutputFolder(DEBUG )+ expoFilename, DEBUG )
+
+    fileDetail = SubElement(filesInfo, 'file')
+    fileDetail.set('type', 'xml')
+    fileDetail.set('name', expoFilename);  
+
+    print("expo scraper done")
+    return filesInfo
 
